@@ -1,0 +1,20 @@
+{
+  "kr.homereturn": {
+    "versionName": "0.3.8",
+    "versionCode": 20,
+    "url": "https://tong-app-updates-mk.pluckyrobin129.chatgpt.site/TongHome-0.3.8.apk",
+    "sha256": "86f962644869dfdd355f874ff6179b22ed0fa6c72634babd717fa20aec70cf7a",
+    "notes": "Google Play Protect 유해 앱 경고 신고로 업데이트 배포를 중지했습니다. 경고를 무시하고 설치하지 마세요. 원인을 확인 중입니다.",
+    "suspended": true,
+    "message": "Google Play Protect 유해 앱 경고 신고로 업데이트 배포를 중지했습니다. 경고를 무시하고 설치하지 마세요. 원인을 확인 중입니다."
+  },
+  "kr.tonggwon.square": {
+    "versionName": "1.1.1",
+    "versionCode": 6,
+    "url": "https://tong-app-updates-mk.pluckyrobin129.chatgpt.site/Tongstagram-1.1.1.apk",
+    "sha256": "57428a489721b74c3578b688788ad81ff5b871585247e95cfd455dd9a0873ebf",
+    "notes": "Google Play Protect 유해 앱 경고 신고로 업데이트 배포를 중지했습니다. 경고를 무시하고 설치하지 마세요. 원인을 확인 중입니다.",
+    "suspended": true,
+    "message": "Google Play Protect 유해 앱 경고 신고로 업데이트 배포를 중지했습니다. 경고를 무시하고 설치하지 마세요. 원인을 확인 중입니다."
+  }
+}

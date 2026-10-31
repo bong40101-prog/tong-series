@@ -1,0 +1,42 @@
+[
+  {
+    "name": "통SKY",
+    "package": "kr.tong.sky",
+    "versionName": "1.0.23",
+    "versionCode": 10123,
+    "minSdk": 33,
+    "file": "TongSKY-1.0.23.apk",
+    "sha256": "f121a8d84c9303c39c3a94fc230f673d2b418aac4ff6ba16f76e01da38ae7cfe",
+    "notes": "공항 도시 목록이 늦게 표시될 때 기다리도록 보강했습니다. 선택 불가·시간 초과 항목은 미확인으로 남기고 다음 노선으로 진행하며 기존 달력을 유지합니다. 호스트 검사 129개, NGO 화면 재현 7개와 기존 전체 화면 검사를 통과했습니다. 실기기 전체 수집 완료는 미확인입니다."
+  },
+  {
+    "name": "통캐치",
+    "package": "com.tong.catchapp",
+    "versionName": "0.1.5",
+    "versionCode": 6,
+    "minSdk": 26,
+    "file": "TongCatch-0.1.5.apk",
+    "sha256": "fb0bde3c675f0c5d383e2a50b28335ca7c8ce5306fc9084b879608b2a3f5059a",
+    "notes": "일부 기능에는 사용 정보 접근 권한 또는 Shizuku 설정이 필요합니다. 기록만으로 원인을 항상 확정할 수는 없습니다."
+  },
+  {
+    "name": "통홈복귀",
+    "package": "kr.homereturn",
+    "versionName": "0.3.11",
+    "versionCode": 23,
+    "minSdk": 26,
+    "file": "TongHome-0.3.11.apk",
+    "sha256": "97295db43db1b56746acd491c186e5c567829ed40b988a70df15fb5b6a23bd5c",
+    "notes": "수동 설치 검토판입니다. 이전 버전의 Play Protect 경고 해소 여부는 확인되지 않았습니다. 경고가 표시되면 설치를 진행하지 마세요."
+  },
+  {
+    "name": "통스타그램",
+    "package": "kr.tonggwon.square",
+    "versionName": "1.1.4",
+    "versionCode": 9,
+    "minSdk": 29,
+    "file": "Tongstagram-1.1.4.apk",
+    "sha256": "eb431dfe7cce3d6414fadf4376ae6790a483a016d33aed90683d22f13085b016",
+    "notes": "수동 설치 검토판입니다. 이전 버전의 Play Protect 경고 해소 여부는 확인되지 않았습니다. 경고가 표시되면 설치를 진행하지 마세요."
+  }
+]
