@@ -4,7 +4,7 @@ import android.app.*;import android.content.*;import android.content.pm.PackageM
 
 /** Offline, debug-only real Android startup/VirtualDisplay/WebView probe. */
 public final class LabInstrumentation extends Instrumentation {
- Context ctx;final JSONArray cases=new JSONArray();int intercepted=0;volatile String phase="created";int launchCounter=0;final ConcurrentHashMap<String,Activity> resumedActivities=new ConcurrentHashMap<>();
+ Context ctx;final JSONArray cases=new JSONArray();JSONArray cacheMemory=new JSONArray();int intercepted=0;volatile String phase="created";int launchCounter=0;final ConcurrentHashMap<String,Activity> resumedActivities=new ConcurrentHashMap<>();
  final String waiting="<!doctype html><meta name='viewport' content='width=device-width,initial-scale=1'><p>Offline startup fixture</p>";
  @Override public void onCreate(Bundle args){super.onCreate(args);start();}
  @Override public void onStart(){ctx=getTargetContext();Bundle result=new Bundle();try{
@@ -13,11 +13,11 @@ public final class LabInstrumentation extends Instrumentation {
   check(ctx.checkSelfPermission(android.Manifest.permission.INTERNET)==PackageManager.PERMISSION_DENIED,"probe APK must have no INTERNET permission");
   ctx.getSharedPreferences("settings",0).edit().putBoolean("testOffline",true).commit();
   ctx.getSharedPreferences("settings-asiana",0).edit().putBoolean("testOffline",true).commit();
-  runFullForm(false);stopBoth();runFullForm(true);stopBoth();runButtonStartup(true);stopBoth();runButtonStartup(false);stopBoth();
+  runFullForm(false);stopBoth();runFullForm(true);stopBoth();runButtonStartup(true);stopBoth();runButtonStartup(false);stopBoth();runLargeCacheRoundTrip();
   JSONObject report=new JSONObject().put("success",true).put("cases",cases).put("interceptedCollectLaunches",intercepted).put("appVersion",BuildConfig.VERSION_NAME).put("api",Build.VERSION.SDK_INT).put("webViewPackage",WebView.getCurrentWebViewPackage()==null?"none":WebView.getCurrentWebViewPackage().packageName).put("networkPermission",false);
   phase="probe.complete";report.put("phase",phase);save(report);android.util.Log.i("TongDeviceProbe","OFFLINE_DEVICE_PROBE_PASS "+report);result.putString("stream","OFFLINE_DEVICE_PROBE_PASS "+report+"\n");finish(Activity.RESULT_OK,result);
  }catch(Throwable failure){failure.printStackTrace();android.util.Log.e("TongDeviceProbe","OFFLINE_DEVICE_PROBE_FAIL phase="+phase,failure);try{save(progress().put("status","failed").put("success",false).put("error",failure.toString()));}catch(Exception ignored){}result.putString("stream","OFFLINE_DEVICE_PROBE_FAIL phase="+phase+" "+failure+"\n");finish(Activity.RESULT_CANCELED,result);}}
- JSONObject progress()throws Exception{return new JSONObject().put("status","running").put("phase",phase).put("cases",cases).put("interceptedCollectLaunches",intercepted).put("appVersion",BuildConfig.VERSION_NAME).put("api",Build.VERSION.SDK_INT).put("networkPermission",false);}
+ JSONObject progress()throws Exception{return new JSONObject().put("status","running").put("phase",phase).put("cases",cases).put("interceptedCollectLaunches",intercepted).put("appVersion",BuildConfig.VERSION_NAME).put("api",Build.VERSION.SDK_INT).put("networkPermission",false).put("cacheMemory",cacheMemory).put("runtimeMaxHeapBytes",Runtime.getRuntime().maxMemory());}
  void checkpoint(String value)throws Exception{phase=value;String message="DEVICE_STAGE "+value+" cases="+cases.length();android.util.Log.i("TongDeviceProbe",message);System.out.println(message);save(progress());}
  void save(JSONObject report)throws Exception{java.io.File temp=new java.io.File(ctx.getFilesDir(),"device-startup-report.tmp");try(java.io.FileOutputStream out=new java.io.FileOutputStream(temp)){out.write(report.toString(2).getBytes(StandardCharsets.UTF_8));}check(temp.renameTo(new java.io.File(ctx.getFilesDir(),"device-startup-report.json")),"cannot commit progressive device report");}
  @Override public void callActivityOnResume(Activity activity){super.callActivityOnResume(activity);String id=activity.getIntent().getStringExtra("__device_probe_launch");if(id!=null){resumedActivities.put(id,activity);android.util.Log.i("TongDeviceProbe","ACTIVITY_RESUMED "+activity.getClass().getSimpleName()+" "+id);}}
@@ -67,6 +67,30 @@ public final class LabInstrumentation extends Instrumentation {
  void runButtonStartup(boolean onlyOz)throws Exception{
   long start=SystemClock.elapsedRealtime();checkpoint(onlyOz?"OZ_BUTTON_SINGLE.START":"DUAL_BUTTON.START");ActivityMonitor monitor=new ActivityMonitor(){@Override public ActivityResult onStartActivity(Intent intent){if(intent.getComponent()!=null&&CollectActivity.class.getName().equals(intent.getComponent().getClassName())&&intent.hasExtra("batchKey")){intent.putExtra("__fixture",waiting).putExtra("shared",false);intercepted++;android.util.Log.i("TongDeviceProbe","COLLECT_INTENT_FIXTURE "+intercepted);}return null;}};addMonitor(monitor);
   try{if(!onlyOz)pressFullScan(false);pressFullScan(true);if(!onlyOz)assertSeparateBrowsers();check(browserReady(true),"OZ button startup must keep a real browser");cases.put(new JSONObject().put("name",onlyOz?"AsianaActivity full-route button startup":"KE full-route then OZ full-route button startup").put("passed",true).put("elapsedMs",SystemClock.elapsedRealtime()-start));checkpoint(onlyOz?"OZ_BUTTON_SINGLE.PASS":"DUAL_BUTTON.PASS");}finally{removeMonitor(monitor);}
+ }
+ void heap(JSONArray samples,String stage)throws Exception{Runtime rt=Runtime.getRuntime();samples.put(new JSONObject().put("stage",stage).put("usedHeapBytes",rt.totalMemory()-rt.freeMemory()).put("maxHeapBytes",rt.maxMemory()));checkpoint("LARGE_CACHE."+stage);}
+ // Canonical digest emits one scalar/key at a time; it never serializes the
+ // full records map or retains a second canonical copy of the cache body.
+ void digestBytes(java.security.MessageDigest digest,String scalar){digest.update(scalar.getBytes(StandardCharsets.UTF_8));}
+ void digestValue(java.security.MessageDigest digest,Object value)throws Exception{
+  if(value==null||value==JSONObject.NULL){digestBytes(digest,"null");return;}
+  if(value instanceof JSONObject object){digestBytes(digest,"{");java.util.ArrayList<String> keys=new java.util.ArrayList<>();for(java.util.Iterator<String> it=object.keys();it.hasNext();)keys.add(it.next());java.util.Collections.sort(keys);for(String key:keys){digestBytes(digest,JSONObject.quote(key));digestBytes(digest,":");digestValue(digest,object.get(key));digestBytes(digest,",");}digestBytes(digest,"}");return;}
+  if(value instanceof JSONArray array){digestBytes(digest,"[");for(int n=0;n<array.length();n++){digestValue(digest,array.get(n));digestBytes(digest,",");}digestBytes(digest,"]");return;}
+  digestBytes(digest,value instanceof String?JSONObject.quote((String)value):value.toString());
+ }
+ byte[] recordsDigest(JSONObject body)throws Exception{java.security.MessageDigest digest=java.security.MessageDigest.getInstance("SHA-256");digestValue(digest,body.getJSONObject("records"));return digest.digest();}
+ void runLargeCacheRoundTrip()throws Exception{
+  long start=SystemClock.elapsedRealtime();checkpoint("LARGE_CACHE.START");cacheMemory=new JSONArray();JSONArray heaps=cacheMemory;heap(heaps,"before.read");
+  JSONObject envelope;try(java.io.InputStream in=ctx.getAssets().open("device-cache-fixture.json")){envelope=new JSONObject(new String(in.readAllBytes(),StandardCharsets.UTF_8));}
+  check("gzip-base64".equals(envelope.optString("encoding")),"large cache fixture must keep the production gzip envelope");
+  JSONObject body=GitHubStore.unpack(envelope);envelope=null;heap(heaps,"after.unpack");
+  AsianaData.checkedCarrier(body);heap(heaps,"after.validate");int expectedCount=body.getJSONObject("records").length();check(expectedCount>=1000,"fixture must exercise at least 1000 real records");
+  byte[] expected=recordsDigest(body);heap(heaps,"before.pack");envelope=GitHubStore.packed(body);heap(heaps,"after.pack");
+  // Only one decoded cache body is held across each half of the round trip.
+  body=null;System.gc();Thread.sleep(150);heap(heaps,"original.released");
+  body=GitHubStore.unpack(envelope);envelope=null;heap(heaps,"roundtrip.unpacked");AsianaData.checkedCarrier(body);heap(heaps,"roundtrip.validated");
+  check(body.getJSONObject("records").length()==expectedCount,"large cache record count changed");check(java.security.MessageDigest.isEqual(expected,recordsDigest(body)),"large cache canonical record digest changed");body=null;System.gc();
+  heap(heaps,"complete");cases.put(new JSONObject().put("name","Real Asiana shared cache large-record codec round trip").put("passed",true).put("elapsedMs",SystemClock.elapsedRealtime()-start).put("memory",heaps));checkpoint("LARGE_CACHE.PASS");
  }
  String form(){
   YearMonth m=YearMonth.from(Search.today().plusMonths(1));String ym=m.toString().replace('-','.');String shortYm=ym.substring(2);String source=ZonedDateTime.now(Search.KST).format(DateTimeFormatter.ofPattern("yyyy. MM. dd. HH:mm",java.util.Locale.ROOT));
