@@ -1,0 +1,12 @@
+{
+  "tong-sky/src/main/java/kr/tong/sky/AirFranceActivity.java": "a2579e561845a13c075cddd319b615518cfb2f8ba55e30b4e483004d38954da2",
+  "tong-sky/src/main/java/kr/tong/sky/AirFranceAutoPlan.java": "c289af26ba3501f970166a39703f376dbd1eeeacc8d52fca655962b65d3654d9",
+  "tong-sky/src/main/java/kr/tong/sky/AirFranceAutoState.java": "d0a7b0b0a918d380a616e049a6c832365845d23e35966ba2d792393dc27c8c73",
+  "tong-sky/src/main/java/kr/tong/sky/AirFranceData.java": "72f3da4a1d4bc44ad4a319b0f942f4a83430544eb1a5eb5c523bed5434ca74e3",
+  "tong-sky/src/main/java/kr/tong/sky/AirFranceDb.java": "f1d5e6b2607b7ee64a2cfe584fcde5743affee3d002d35a7799812a873b25d40",
+  "tong-sky/src/main/java/kr/tong/sky/AirFranceDiagnostics.java": "a175839469c6c5890ee6bf6826cf32cc9e5e4e13470e5a75e8dc6ff11149b64e",
+  "tong-sky/src/main/java/kr/tong/sky/AirFranceDocumentStart.java": "f6cf38788a8d46f55b6bf8d2c6551b11ac19570b64a9fd10824a654dfd872209",
+  "tong-sky/src/main/assets/af-capture.js": "10ab0eff0824721527dca1a12c8b553ec65808b83d7321119ac152f0a2db3a44",
+  "tong-sky/src/main/assets/af-auto.js": "4537cd8acd5a7a387b56b2c7221d70c7cdc3bcb81ad8e704363c045722137a6c",
+  "tong-sky/src/main/AndroidManifest.xml": "9e72c3da15d856c98884cf63b3513316dd5a9633a0d69cfb07d4349205f91577"
+}
