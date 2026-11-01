@@ -13,7 +13,11 @@ Requires Java 17, Android SDK 35 / build-tools 35.0.0. The script copies source
 into a temporary directory, replaces debug LabInstrumentation only, removes
 INTERNET permission, uses a temporary test signing key, and deletes that key.
 The release signing identity and production source are not modified.
-input-af-sha256.json records the exact AF source/asset hashes copied for build.
+input-af-sha256.json records the exact AF source/asset and manifest hashes
+copied for build. Native launch waits for the latest resumed, focused live
+Activity instance; callback state logs distinguish locale relaunch or error
+callbacks from production capture injection. No manual install or direct
+normalized feed is used in place of production page lifecycle injection.
 
 Publish the APK as audit129-af-device/TongSKY-AF-offline-probe.apk and workflow
 as .github/workflows/tongsky129-af-device.yml (local af-device.yml). The workflow
@@ -43,7 +47,9 @@ Five cases, no repeat of the unchanged 128 large-cache/KE/OZ engine suite:
 Fixture HTML is served at a local intercepted official HTTPS base origin.
 The harness constructs an ordinary Android WebView, calls the production
 configure method, attaches it to the Activity and installs an interceptor
-before openOfficial can load any URL. A debug WebViewClient delegates
+before any fixture URL is loaded. The harness loads the search/auth fixture
+URL exactly once, avoiding an artificial HOME load/cancel race. A debug
+WebViewClient delegates
 production page lifecycle callbacks while intercepting every HTTP resource
 with in-memory fixture bytes. INTERNET is
 absent and asserted, so no real provider request is possible. The production

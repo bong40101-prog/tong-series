@@ -3,5 +3,6 @@
   "tong-sky/src/main/java/kr/tong/sky/AirFranceData.java": "dc4d772f8ee93a76fbeeef8ff395c2d285094c9ecffcb7128db7874d1540a025",
   "tong-sky/src/main/java/kr/tong/sky/AirFranceDb.java": "a6aa43f05b343da7ba171d93020a99fd2a91b4cf2d7ba079a95b0e2033e8918a",
   "tong-sky/src/main/java/kr/tong/sky/AirFranceDiagnostics.java": "82156bb8b3bba866346aa96a0f9308fc640ec91ea3359b960774d06598353a76",
-  "tong-sky/src/main/assets/af-capture.js": "35734094bd8591909948cda138a07c1b3ca266f74c029c4aa17eddcfd15f8dca"
+  "tong-sky/src/main/assets/af-capture.js": "35734094bd8591909948cda138a07c1b3ca266f74c029c4aa17eddcfd15f8dca",
+  "tong-sky/src/main/AndroidManifest.xml": "8b4670c1e384902b4e98b99371258bd31ad57bb560a350d1d4594d82a8821997"
 }
