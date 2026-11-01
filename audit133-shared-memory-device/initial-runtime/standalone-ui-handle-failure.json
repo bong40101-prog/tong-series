@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "workflowRunId": 41363459576,
+  "jobId": 125018571974,
+  "commit": "1f89dfe9d39048d2e4042cf5faa277228898a507",
+  "artifactId": 13106416216,
+  "artifactSha256": "376bf502fe81a83c87270f1edc1fe4ceb2c27213a18e7fe000e91846339e6bb3",
+  "api": 33,
+  "heapBytes": 201326592,
+  "phase": "OZ_ALONE_ALL.START",
+  "failureType": "HARNESS_STALE_ACTIVITY_HANDLE",
+  "observedAppFatalCount": 0,
+  "regionReads": 0,
+  "observedScreenRelaunchAndDraw": true,
+  "correction": "Select the current resumed MainActivity instance on the main thread on every focus/draw poll, surviving normal configuration recreation. No production or fixture changes.",
+  "memoryRegressionObserved": false,
+  "casesExecuted": 0
+}
