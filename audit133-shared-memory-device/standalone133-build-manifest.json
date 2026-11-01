@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "label": "standalone133",
+  "apk": "TongSKY-shared-memory-standalone133-probe.apk",
+  "apkSha256": "7178fd6388be2545b8b022774680425ae7673225f3944921a5287332ac42ed42",
+  "bytes": 4186436,
+  "productionInputsSha256": "a9c8c260aa863847e8b4a80aef3bf3ec73305e04e8f99584cd95ebacf1356a20",
+  "instrumentationSha256": "1c752c3f83ad98eac57bf218bd64cda6a6b2fe40212c1af9e18097984bccd77e",
+  "fixtureManifestSha256": "11c5caed23913a9fc4503ccd5b7ff43ae7b8e7d945a6704628dcd9f876e60a2f",
+  "productionJavaAssetsUnmodified": true,
+  "originalManifestSha256": "c11ea6c2f94b28a853d27810eca59a35520e814d468788861a0dde4a2e3f7c08",
+  "effectiveManifestSha256": "2573c39baecd9aa85971591df4a916647d4ea1290eb77aac9e8601f550591611",
+  "networkPermission": false,
+  "afProcess": ":airfrance",
+  "afManifestOverride": false,
+  "disposableDebugSigner": true,
+  "heapSetting": "API33 emulator192M asserted at runtime"
+}

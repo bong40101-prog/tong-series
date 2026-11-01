@@ -1,4 +1,4 @@
-name: TongSKY133 actual192MiB shared-cache OOM regression
+name: TongSKY133 standalone OZ all Europe and KE2027 startup
 on:
   push:
     branches: ['audit/tongsky-133-shared-memory']
@@ -31,11 +31,11 @@ jobs:
           disable-animations: true
           emulator-boot-timeout: 300
           emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -camera-back none
-          script: bash audit133-shared-memory-device/run-device.sh
-      - name: Save expected baseline crash and fixed-device evidence
+          script: bash audit133-shared-memory-device/run-standalone-device.sh
+      - name: Save standalone planning and first-progress evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: tongsky133-shared-memory-api33
-          path: audit133-shared-memory-device/reports/
+          name: tongsky133-standalone-api33
+          path: audit133-shared-memory-device/standalone-reports/
           retention-days: 7
