@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="kr.tong.sky">
+ <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+ <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+ <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+ <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+ <uses-permission android:name="android.permission.WAKE_LOCK" />
+ <application android:name="kr.tong.sky.SkyApplication" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:label="통SKY" android:icon="@drawable/ic_sky" android:theme="@style/AppTheme" android:allowBackup="false" android:usesCleartextTraffic="false" android:supportsRtl="true" android:debuggable="true">
+  <activity android:name="kr.tong.sky.MainActivity" android:configChanges="orientation|screenSize|smallestScreenSize|locale|layoutDirection" android:resizeableActivity="true" android:exported="true" android:windowSoftInputMode="adjustResize">
+   <intent-filter><action android:name="android.intent.action.MAIN" /><category android:name="android.intent.category.LAUNCHER" /></intent-filter>
+  </activity>
+  <activity android:name="kr.tong.sky.RemoteAFProbeActivity" android:process=":airfrance" android:launchMode="singleTask" android:configChanges="orientation|screenSize|smallestScreenSize|keyboardHidden|locale|layoutDirection" android:resizeableActivity="true" android:windowSoftInputMode="adjustResize" android:exported="false" /><activity-alias android:name="kr.tong.sky.AirFranceActivity" android:targetActivity="kr.tong.sky.RemoteAFProbeActivity" android:exported="false" /><activity android:name="kr.tong.sky.DiagnosticActivity" android:exported="false" />
+  <activity android:name="kr.tong.sky.CollectActivity" android:launchMode="singleTask" android:configChanges="orientation|screenSize|smallestScreenSize|locale|layoutDirection" android:resizeableActivity="true" android:exported="false" />
+  <service android:name="kr.tong.sky.CollectionService" android:exported="false" android:foregroundServiceType="dataSync" android:stopWithTask="false" />
+  <service android:name="kr.tong.sky.ReminderJob" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="true" />
+  <activity android:name="kr.tong.sky.AsianaActivity" android:configChanges="orientation|screenSize|smallestScreenSize|locale|layoutDirection" android:exported="false" />
+  <service android:name="kr.tong.sky.AsianaCollectionService" android:exported="false" android:foregroundServiceType="dataSync" android:stopWithTask="false" />
+ <activity android:name="kr.tong.sky.LabActivity" android:exported="true" /></application>
+<instrumentation android:name="kr.tong.sky.LabInstrumentation" android:targetPackage="kr.tong.sky" /></manifest>
