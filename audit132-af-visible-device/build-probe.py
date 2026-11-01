@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build explicit functional/process offline variants, never with the release key."""
 import argparse,pathlib,shutil,subprocess,tempfile,hashlib,json,xml.etree.ElementTree as ET
-p=argparse.ArgumentParser();p.add_argument('--source',required=True);p.add_argument('--sdk',required=True);p.add_argument('--out',required=True);a=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('--source',required=True);p.add_argument('--sdk',required=True);p.add_argument('--out',required=True);p.add_argument('--variant',choices=['both','functional','process'],default='both');a=p.parse_args()
 here=pathlib.Path(__file__).resolve().parent;out=pathlib.Path(a.out).resolve();out.mkdir(parents=True,exist_ok=True)
 sha=lambda path:hashlib.sha256(path.read_bytes()).hexdigest()
 with tempfile.TemporaryDirectory(prefix='tong-af132-source-') as tmp:
@@ -15,8 +15,8 @@ with tempfile.TemporaryDirectory(prefix='tong-af132-source-') as tmp:
   (out/name).write_text(json.dumps({str(path.relative_to(root)):sha(path) for path in inputs},indent=2)+'\n')
  key=pathlib.Path(tmp)/'debug.keystore';password=pathlib.Path(tmp)/'password.txt';password.write_text('android\n')
  subprocess.run(['keytool','-genkeypair','-noprompt','-keystore',str(key),'--storepass','android','--keypass','android','-alias','androiddebugkey','-keyalg','RSA','-keysize','2048','-validity','30','-dname','CN=Offline AF132 Test,O=Test,C=KR'],check=True,capture_output=True)
- evidence={'schema':1,'networkPermission':False,'disposableSharedDebugKey':True,'variants':{}}
- for mode in ('functional','process'):
+ evidence={'schema':1,'networkPermission':False,'disposableSharedDebugKey':a.variant=='both','variantSelection':a.variant,'variants':{}}
+ for mode in (('functional','process') if a.variant=='both' else (a.variant,)):
   tree=ET.ElementTree(ET.fromstring(original));doc=tree.getroot();app=doc.find('application');af=next(n for n in app.findall('activity') if n.get(ns+'name') in ('.AirFranceActivity','kr.tong.sky.AirFranceActivity'))
   production_process=af.get(ns+'process');assert production_process==':airfrance','Freeze must include production AF child process'
   for node in list(doc):

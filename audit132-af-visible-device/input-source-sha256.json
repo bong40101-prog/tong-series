@@ -1,5 +1,5 @@
 {
-  "tong-sky/src/main/java/kr/tong/sky/AirFranceActivity.java": "4b013523c03f96ad505bbca46ff459e7c77a4a6fab957bca435ce3ee5a967093",
+  "tong-sky/src/main/java/kr/tong/sky/AirFranceActivity.java": "a351aefa55e9aadea704f6f5077c8d7fa2f9b6a5f6c2108ab3cfd285595c8fbb",
   "tong-sky/src/main/java/kr/tong/sky/AirFranceAutoPlan.java": "c289af26ba3501f970166a39703f376dbd1eeeacc8d52fca655962b65d3654d9",
   "tong-sky/src/main/java/kr/tong/sky/AirFranceAutoState.java": "d0a7b0b0a918d380a616e049a6c832365845d23e35966ba2d792393dc27c8c73",
   "tong-sky/src/main/java/kr/tong/sky/AirFranceData.java": "fd524a205e6e0f59ba7e11dae477ce25cee4bb172e67778bffbe3e73052fedf5",
@@ -50,7 +50,7 @@
   "tong-sky/src/main/java/kr/tong/sky/Ui.java": "08fbca3ca271438678e2d058274df0c8111f4ce7b2b9310c0354d851387e509a",
   "tong-sky/src/main/java/kr/tong/sky/WebViewProcessPolicy.java": "3534d305b8c39676f08db4e148df2562fa3ce4727f9950f871a91da6dd1d1a49",
   "tong-sky/src/main/assets/af-capture.js": "49e6d1562b32429a44e439664ad5d85d8ec1737c289a4c9fbbcf451cf8d0edfa",
-  "tong-sky/src/main/assets/af-auto.js": "32d8bd9794c7ea3adb52d449093f63c6d387073ef32f9d8d465f7453857e4080",
+  "tong-sky/src/main/assets/af-auto.js": "bd5bd97b03a887b471291dd65f7a78993d3a2aef31b810088046c97a50fb5ef5",
   "tong-sky/src/main/assets/af-visible.js": "603775cd23a557a1434dc67b05f233b1ae31beb1969502d948638da607c98e13",
   "tong-sky/src/main/AndroidManifest.xml": "c11ea6c2f94b28a853d27810eca59a35520e814d468788861a0dde4a2e3f7c08",
   "tong-sky/scripts/build-local.py": "063fb2f85b7573d76a477e7b2f29a5749af5c9f97068fe52849f715a3354c1ee",

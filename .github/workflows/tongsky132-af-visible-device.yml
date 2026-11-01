@@ -1,4 +1,4 @@
-name: TongSKY 132 visible-card and AF process containment offline probes
+name: TongSKY 132 final visible-card format fallback functional probe
 on:
   push:
     branches: ['audit/tongsky-132-af-visible']
@@ -12,9 +12,7 @@ jobs:
       matrix:
         include:
           - api: 35
-            scope: all
-          - api: 33
-            scope: process
+            scope: functional
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:

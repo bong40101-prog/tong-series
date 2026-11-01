@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "workflowRunId": 41355090713,
+  "jobId": 124993333368,
+  "commit": "75bd6e6c4b331cacf63cfdc61691087a70afff85",
+  "api": 33,
+  "artifactId": 13102971509,
+  "artifactSha256": "486692f3f13573821b7c5c825b4347c39b1f583513269c5c973569fdc778d76e",
+  "processProbeApkSha256": "c4a1969413c9db30b1b96a8ddfac829185d81680435d18bf0af180d57d8e4a37",
+  "resultJsonSha256": "d5158bd7a32084d9b15dd70ce6160f974bfd9a817adb695a8eb59f93e7b15a06",
+  "success": true,
+  "evidenceMode": "production_process_smoke",
+  "mainPid": 3021,
+  "afPid": 3535,
+  "mainPidAfter": 3021,
+  "expectedChildCrashNonce": "74c4c6ca-40f6-4983-acb9-4ecbc6ef4560",
+  "expectedFatalCount": 1,
+  "unexpectedMainFatalCount": 0,
+  "anrCount": 0,
+  "sessionInterruptedBefore": 0,
+  "sessionInterruptedAfter": 0,
+  "scope": "Production AF process/profile with DEBUG alias inheriting production controller and local fixtures, INTERNET removed. Both real main KE/OZ foreground services progressed and saved after controlled child Java crash. No actual airline/GitHub access; unknown user crash cause is not diagnosed."
+}

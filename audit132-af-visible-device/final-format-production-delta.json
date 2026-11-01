@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "initialWorkflowRunId": 41355090713,
+  "initialCommit": "75bd6e6c4b331cacf63cfdc61691087a70afff85",
+  "changedProductionFiles": {
+    "tong-sky/src/main/java/kr/tong/sky/AirFranceActivity.java": {
+      "before": "4b013523c03f96ad505bbca46ff459e7c77a4a6fab957bca435ce3ee5a967093",
+      "after": "a351aefa55e9aadea704f6f5077c8d7fa2f9b6a5f6c2108ab3cfd285595c8fbb"
+    },
+    "tong-sky/src/main/assets/af-auto.js": {
+      "before": "32d8bd9794c7ea3adb52d449093f63c6d387073ef32f9d8d465f7453857e4080",
+      "after": "bd5bd97b03a887b471291dd65f7a78993d3a2aef31b810088046c97a50fb5ef5"
+    }
+  },
+  "unchangedProductionFileCount": 54,
+  "processBootstrapUnchanged": true,
+  "finalFunctionalProbeSha256": "b8e3987f5a6fa020a0d0ed97e67a2d6410f0b678cc71c10487af671f36635d06",
+  "initialProcessProbeSha256": "c4a1969413c9db30b1b96a8ddfac829185d81680435d18bf0af180d57d8e4a37",
+  "scope": "Final functional suite includes recognized200 schema fallback plus strict exclusions and offers-empty proof priority. Initial process/runtime evidence is retained separately; no claim of rerunning the final controller in the child process."
+}

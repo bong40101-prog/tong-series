@@ -1,0 +1,209 @@
+{
+  "appVersion": "1.0.32",
+  "api": 35,
+  "networkPermission": false,
+  "status": "passed",
+  "phase": "probe.complete",
+  "cases": [
+    {
+      "name": "Calendar-only witness plus visible Business cards triggers automatic traversal, captures two per-card MILES fares and preserves unknown flight identity",
+      "passed": true,
+      "elapsedMs": 12146
+    },
+    {
+      "name": "Later visible snapshot replaces current visible fares while preserving both observations in history",
+      "passed": true,
+      "elapsedMs": 8413
+    },
+    {
+      "name": "Same-document query-stripped SPA keeps only fresh native task and matching calendar provenance; visible fares still complete automatically",
+      "passed": true,
+      "elapsedMs": 9301
+    },
+    {
+      "name": "Body-only canonical detail capture arriving during DOM traversal takes priority without duplicate visible-offer persistence",
+      "passed": true,
+      "elapsedMs": 8867
+    },
+    {
+      "name": "Wrong date,cabin,missing MILES,header-only counts and authentication documents never produce visible success or empty availability",
+      "passed": true,
+      "elapsedMs": 52409
+    },
+    {
+      "name": "Unrecognized-query HTTP403/429 and active verification modal override otherwise valid DOM and stop without retries or false success",
+      "passed": true,
+      "elapsedMs": 45536
+    },
+    {
+      "name": "Foreground pause and user stop prevent DOM traversal and saving; resume completes normally and KE/OZ remain isolated",
+      "passed": true,
+      "elapsedMs": 29253
+    },
+    {
+      "name": "Both real KE/OZ foreground services parse and save while normal Asiana main opens AF, then continue after returning",
+      "passed": true,
+      "elapsedMs": 34527,
+      "before": {
+        "KE": {
+          "index": 0,
+          "success": 0,
+          "running": true,
+          "paused": false,
+          "finished": false,
+          "closed": false,
+          "foreground": true,
+          "platformForeground": true,
+          "message": ""
+        },
+        "OZ": {
+          "index": 0,
+          "success": 0,
+          "running": true,
+          "paused": false,
+          "finished": false,
+          "closed": false,
+          "foreground": true,
+          "platformForeground": true,
+          "message": ""
+        }
+      },
+      "duringAf": {
+        "KE": {
+          "index": 1,
+          "success": 1,
+          "running": true,
+          "paused": false,
+          "finished": false,
+          "closed": false,
+          "foreground": true,
+          "platformForeground": true,
+          "message": ""
+        },
+        "OZ": {
+          "index": 1,
+          "success": 1,
+          "running": true,
+          "paused": false,
+          "finished": false,
+          "closed": false,
+          "foreground": true,
+          "platformForeground": true,
+          "message": ""
+        }
+      },
+      "afterReturn": {
+        "KE": {
+          "index": 2,
+          "success": 2,
+          "running": false,
+          "paused": false,
+          "finished": false,
+          "closed": false,
+          "foreground": true,
+          "platformForeground": true,
+          "message": ""
+        },
+        "OZ": {
+          "index": 2,
+          "success": 2,
+          "running": false,
+          "paused": false,
+          "finished": false,
+          "closed": false,
+          "foreground": true,
+          "platformForeground": true,
+          "message": ""
+        }
+      },
+      "sharedBackend": false,
+      "fixtureBrowsersBlockNetwork": true
+    }
+  ],
+  "runtimeMaxHeapBytes": 201326592,
+  "evidenceMode": "debug_main_process_functional",
+  "success": true,
+  "requestCounts": {
+    "detail:2026-11-10": 1,
+    "search:2026-12-03": 1,
+    "search:2026-11-30": 1,
+    "document:reject-header-only": 1,
+    "calendar:2026-11-14": 1,
+    "search:2026-12-09": 1,
+    "calendar:2026-11-16": 1,
+    "unknown-stage:2026-11-30:scroll": 1,
+    "search:2026-12-06": 1,
+    "calendar:2026-11-18": 1,
+    "unknown-stage:2026-11-24:initial": 1,
+    "unknown-stage:2026-11-30:initial": 1,
+    "document:visible-stop": 1,
+    "calendar:2026-11-20": 1,
+    "unknown:2026-11-07": 1,
+    "unknown-stage:2026-12-06:initial": 1,
+    "document:collector-coexist-af": 1,
+    "document:visible-spa": 1,
+    "unknown:2026-11-04": 2,
+    "search:2026-11-22": 1,
+    "search:2026-11-24": 1,
+    "unknown:2026-11-30": 2,
+    "search:2026-11-20": 1,
+    "unknown-stage:2026-11-20:initial": 1,
+    "unknown-stage:2026-11-07:initial": 1,
+    "calendar:2026-11-04": 2,
+    "search:2026-11-27": 1,
+    "calendar:2026-11-07": 1,
+    "document:reject-wrong-date": 1,
+    "document:visible-photo": 1,
+    "calendar:2026-11-10": 1,
+    "document:unknown-restriction429": 1,
+    "unknown-stage:2026-12-03:initial": 1,
+    "unknown:2026-12-09": 1,
+    "calendar:2026-11-12": 1,
+    "document:canonical": 1,
+    "unknown:2026-12-03": 1,
+    "unknown:2026-12-06": 1,
+    "search:2026-11-12": 1,
+    "search:2026-11-14": 1,
+    "unknown-stage:2026-11-12:initial": 1,
+    "document:reject-contradictory-url": 1,
+    "search:2026-11-10": 1,
+    "unknown-stage:2026-12-09:initial": 1,
+    "unknown-stage:2026-11-27:scroll": 1,
+    "calendar:2026-12-03": 1,
+    "calendar:2026-12-06": 1,
+    "search:2026-11-16": 1,
+    "search:2026-11-18": 1,
+    "calendar:2026-12-09": 1,
+    "unknown-stage:2026-11-10:initial": 1,
+    "login:reject-auth": 1,
+    "unknown:2026-11-24": 1,
+    "unknown-stage:2026-11-14:initial": 1,
+    "unknown:2026-11-27": 2,
+    "unknown:2026-11-20": 1,
+    "unknown-stage:2026-11-27:initial": 1,
+    "unknown-stage:2026-11-04:initial": 2,
+    "calendar:2026-11-24": 1,
+    "document:unknown-restriction403": 1,
+    "document:reject-auth": 2,
+    "calendar:2026-11-27": 1,
+    "detail-response:2026-11-10": 1,
+    "document:unknown-restriction200": 1,
+    "search:2026-11-04": 2,
+    "search:2026-11-07": 1,
+    "document:reject-no-miles": 1,
+    "unknown-stage:2026-11-16:initial": 1,
+    "calendar:2026-11-30": 1,
+    "captcha-resource:unknown-restriction200": 1,
+    "unknown:2026-11-18": 1,
+    "unknown:2026-11-14": 1,
+    "document:visible-pause": 1,
+    "document:reject-wrong-cabin": 1,
+    "unknown-stage:2026-11-18:initial": 1,
+    "unknown:2026-11-16": 1,
+    "document:visible-update": 1,
+    "unknown:2026-11-10": 1,
+    "unknown:2026-11-12": 1
+  },
+  "simulatedLoginClicks": 0,
+  "webViewPackage": "com.google.android.webview"
+}

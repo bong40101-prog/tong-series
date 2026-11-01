@@ -38,5 +38,9 @@ run_probe() {
  grep -q OFFLINE_DEVICE_PROBE_PASS "$report_dir/instrumentation.txt"
  ! grep -q OFFLINE_DEVICE_PROBE_FAIL "$report_dir/instrumentation.txt"
 }
-if [ "${PROBE_SCOPE:-all}" = all ]; then run_probe functional; fi
-run_probe process
+case "${PROBE_SCOPE:-all}" in
+ all) run_probe functional; run_probe process ;;
+ functional) run_probe functional ;;
+ process) run_probe process ;;
+ *) exit 2 ;;
+esac

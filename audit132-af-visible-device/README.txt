@@ -48,9 +48,27 @@ share one disposable debug key that is destroyed after building; no release key 
 used. input-source-sha256.json records all production main Java and AF assets.
 probe-build-manifest.json plus both XML manifests document every test override.
 
-Workflow: audit/tongsky-132-af-visible,
-.github/workflows/tongsky132-af-visible-device.yml (template af-device.yml).
-API35 runs both variants; API33 runs the shorter process smoke in parallel.
+Initial workflow run41355090713/commit75bd6e6c ran API35 functional8groups plus
+process containment, and API33 process containment in parallel. Safe JSON results
+and provenance are in initial-runtime/. Original input maps/workflow/build metadata
+are retained as initial-* files. The original process APK is unchanged.
+
+Final follow-up changes only production AirFranceActivity.java and af-auto.js;
+all54other recorded production inputs, including process/profile/crash bootstrap,
+are unchanged. final-format-production-delta.json records both hashes. The final
+functional suite has10groups: the original8 plus recognized200 unsupported-schema
+fallback with strict witness/DOM proof (no-witness and explicit response-route
+contradiction remain failures), and canonical offers-empty proof priority. Empty
+offers complete only a NO_MATCHING_QUOTES observation without changing prior
+availability/history; calendar-empty alone cannot complete detailed availability.
+
+Current workflow: audit/tongsky-132-af-visible,
+.github/workflows/tongsky132-af-visible-device.yml (template af-device.yml),
+API35/functionalmode only. Process containment is not rerun for this small final
+controller/driver delta; do not describe the old process APK as rebuilt finalcode.
+Build only the final variant with --variant functional. Its fresh debug signer is
+different from the original process APK. To rerun both variants later, rebuild
+with --variant both so both receive the same disposable signer.
 Expected APKs: TongSKY-AF-visible-functional-probe.apk and
 TongSKY-AF-visible-process-probe.apk in this directory. Reports are separated by
 functional/process. Logs, expected AF crash marker and progressive case JSON are

@@ -1,0 +1,267 @@
+{
+  "appVersion": "1.0.32",
+  "api": 35,
+  "networkPermission": false,
+  "status": "passed",
+  "phase": "probe.complete",
+  "cases": [
+    {
+      "name": "Production AF process/profile captures real DOM fixtures; controlled AF-only Java crash preserves both real KE/OZ foreground services and fresh SQLite progress",
+      "passed": true,
+      "elapsedMs": 35313,
+      "mainPid": 4982,
+      "afPid": 5073,
+      "controlledChildJavaCrash": true,
+      "unexpectedMainFatalAllowed": false,
+      "before": {
+        "KE": {
+          "index": 0,
+          "success": 0,
+          "running": true,
+          "paused": false,
+          "finished": false,
+          "closed": false,
+          "foreground": true,
+          "platformForeground": true,
+          "message": ""
+        },
+        "OZ": {
+          "index": 0,
+          "success": 0,
+          "running": true,
+          "paused": false,
+          "finished": false,
+          "closed": false,
+          "foreground": true,
+          "platformForeground": true,
+          "message": ""
+        }
+      },
+      "duringAf": {
+        "KE": {
+          "index": 1,
+          "success": 1,
+          "running": true,
+          "paused": false,
+          "finished": false,
+          "closed": false,
+          "foreground": true,
+          "platformForeground": true,
+          "message": ""
+        },
+        "OZ": {
+          "index": 1,
+          "success": 1,
+          "running": true,
+          "paused": false,
+          "finished": false,
+          "closed": false,
+          "foreground": true,
+          "platformForeground": true,
+          "message": ""
+        }
+      },
+      "afterCrash": {
+        "KE": {
+          "index": 2,
+          "success": 2,
+          "running": false,
+          "paused": false,
+          "finished": false,
+          "closed": false,
+          "foreground": true,
+          "platformForeground": true,
+          "message": ""
+        },
+        "OZ": {
+          "index": 2,
+          "success": 2,
+          "running": false,
+          "paused": false,
+          "finished": false,
+          "closed": false,
+          "foreground": true,
+          "platformForeground": true,
+          "message": ""
+        }
+      }
+    }
+  ],
+  "runtimeMaxHeapBytes": 201326592,
+  "evidenceMode": "production_process_smoke",
+  "remoteEvidence": {
+    "mainPid": 4982,
+    "processAliasWrapper": true,
+    "expectedChildProcess": "kr.tong.sky:airfrance",
+    "before": {
+      "KE": {
+        "index": 0,
+        "success": 0,
+        "running": true,
+        "paused": false,
+        "finished": false,
+        "closed": false,
+        "foreground": true,
+        "platformForeground": true,
+        "message": ""
+      },
+      "OZ": {
+        "index": 0,
+        "success": 0,
+        "running": true,
+        "paused": false,
+        "finished": false,
+        "closed": false,
+        "foreground": true,
+        "platformForeground": true,
+        "message": ""
+      }
+    },
+    "journalSessionsBefore": {
+      "KE": "2b0f17d0-b5a3-48a4-85ad-2d9d0058a385",
+      "OZ": "d6935368-1a05-4fff-bfbe-5d4ecf121209"
+    },
+    "interruptedBefore": 0,
+    "childPid": 5073,
+    "initialChild": {
+      "schema": 1,
+      "appVersion": "1.0.32",
+      "pid": 5073,
+      "processName": "kr.tong.sky:airfrance",
+      "resumed": true,
+      "focused": false,
+      "closed": false,
+      "browserCreated": false,
+      "profileReady": true,
+      "profileDirectoryExists": false,
+      "fixtureFailure": "",
+      "state": {
+        "schema": 1,
+        "runId": "f0b02367-a5ed-4ec3-964d-c3d90e951e30",
+        "planId": "a22287e2b04a1bc95933d49623795fe54191b29741ff9d1c34066f92e1726ce1",
+        "index": 0,
+        "checked": 0,
+        "savedRows": 0,
+        "mode": "ready",
+        "phase": "prepare",
+        "reason": "",
+        "navigationIssued": false,
+        "loginObserved": false,
+        "loginReturnReapplied": false,
+        "nextEligibleAt": 0
+      }
+    },
+    "completedChild": {
+      "schema": 1,
+      "appVersion": "1.0.32",
+      "pid": 5073,
+      "processName": "kr.tong.sky:airfrance",
+      "resumed": true,
+      "focused": true,
+      "closed": false,
+      "browserCreated": true,
+      "profileReady": true,
+      "profileDirectoryExists": true,
+      "fixtureFailure": "",
+      "state": {
+        "schema": 1,
+        "runId": "f0b02367-a5ed-4ec3-964d-c3d90e951e30",
+        "planId": "a22287e2b04a1bc95933d49623795fe54191b29741ff9d1c34066f92e1726ce1",
+        "index": 1,
+        "checked": 1,
+        "savedRows": 2,
+        "mode": "complete",
+        "phase": "complete",
+        "reason": "",
+        "navigationIssued": false,
+        "loginObserved": false,
+        "loginReturnReapplied": false,
+        "nextEligibleAt": 1793570894201
+      }
+    },
+    "duringAf": {
+      "KE": {
+        "index": 1,
+        "success": 1,
+        "running": true,
+        "paused": false,
+        "finished": false,
+        "closed": false,
+        "foreground": true,
+        "platformForeground": true,
+        "message": ""
+      },
+      "OZ": {
+        "index": 1,
+        "success": 1,
+        "running": true,
+        "paused": false,
+        "finished": false,
+        "closed": false,
+        "foreground": true,
+        "platformForeground": true,
+        "message": ""
+      }
+    },
+    "expectedCrashNonce": "471a2481-7b56-44bd-a948-96c4e13d5b3c",
+    "expectedCrashPid": 5073,
+    "capturedCrash": {
+      "schema": 1,
+      "appVersion": "1.0.32",
+      "carrier": "APP",
+      "session": "app-crash-762b0ff1-c48d-4fe1-a405-925c55aac1f8",
+      "crashId": "762b0ff1-c48d-4fe1-a405-925c55aac1f8",
+      "pid": 5073,
+      "processName": "airfrance",
+      "thread": "main",
+      "threadId": 2,
+      "exceptionType": "kr.tong.sky.RemoteAFProbeActivity$OfflineIntentionalCrash",
+      "occurredAt": 1793570893205,
+      "at": "2026-11-02T07:08:13.205+09:00",
+      "event": "failure",
+      "code": "JAVA_CRASH",
+      "stage": "process",
+      "query": {},
+      "batch": "",
+      "message": "처리되지 않은 오류로 앱이 종료됐습니다. 아래에 예외 종류와 발생 위치를 기록했습니다.",
+      "detail": "kr.tong.sky.RemoteAFProbeActivity$OfflineIntentionalCrash\n  at kr.tong.sky.RemoteAFProbeActivity$1.run(RemoteAFProbeActivity.java:20)\n  at android.os.Handler.handleCallback(Handler.java:959)\n  at android.os.Handler.dispatchMessage(Handler.java:100)\n  at android.os.Looper.loopOnce(Looper.java:232)\n  at android.os.Looper.loop(Looper.java:317)\n  at android.app.ActivityThread.main(ActivityThread.java:8705)\n  at java.lang.reflect.Method.invoke(Method.java:-2)\n  at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:580)\n  at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:886)",
+      "elapsedMs": 17601,
+      "done": 0,
+      "total": 0,
+      "heap": {
+        "usedBytes": 3566976,
+        "maxBytes": 201326592
+      }
+    },
+    "afterCrash": {
+      "KE": {
+        "index": 2,
+        "success": 2,
+        "running": false,
+        "paused": false,
+        "finished": false,
+        "closed": false,
+        "foreground": true,
+        "platformForeground": true,
+        "message": ""
+      },
+      "OZ": {
+        "index": 2,
+        "success": 2,
+        "running": false,
+        "paused": false,
+        "finished": false,
+        "closed": false,
+        "foreground": true,
+        "platformForeground": true,
+        "message": ""
+      }
+    },
+    "mainPidAfter": 4982,
+    "interruptedAfter": 0
+  },
+  "success": true,
+  "requestCounts": {},
+  "simulatedLoginClicks": 0,
+  "webViewPackage": "com.google.android.webview"
+}
