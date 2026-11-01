@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "workflowRunId": 41360587921,
+  "jobId": 125009905649,
+  "commit": "8b6044702d597d44a8bf87f02026529b5707b428",
+  "artifactId": 13105630646,
+  "artifactSha256": "700209b412673af0f3b525b1677b8ad8dfe142207fd8073373323c8df0dd67cb",
+  "api": 33,
+  "runtimeMaxHeapBytes": 201326592,
+  "phase": "BOTH_SERVICES_STARTED",
+  "regionReads": 0,
+  "failureType": "HARNESS_API_INCOMPATIBILITY",
+  "exceptionType": "java.lang.NoSuchMethodError",
+  "missingApi": "java.nio.file.Files.readString(Path)",
+  "stackOwner": "LabInstrumentation.LocalConnection.prepare",
+  "productionSourceChangedForCorrection": false,
+  "correction": "Use API26-compatible Files.readAllBytes and Files.write in both debug-only local HTTP helpers. Production Java/assets and fixture bytes remain unchanged.",
+  "memoryRegressionObserved": false,
+  "fixedVersionExecuted": false
+}
