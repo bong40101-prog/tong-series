@@ -1,0 +1,17 @@
+# Actual API33 shared-cache memory regression
+
+This focused probe compares immutable1.0.32 and frozen1.0.33 production code on one Android13 emulator with an asserted192MiB app heap. Both debug APKs remove INTERNET permission and preserve the production AF child-process/profile configuration. Production Java and assets are copied without edits; the separate debug instrumentation and synthetic fixture assets are the only additions.
+
+The same deterministic synthetic OZ document has1194 current and911 previous snapshots,63840 complete calendar-day objects,172372 synthetic flight objects and22287247 plain UTF-8 bytes. KE uses24 current and18 previous snapshots with its own actual schema, without OZ flight arrays. The generator reads only the public airport catalog; it never reads or copies an existing user/shared cache body. Packed fixture hashes are in fixtures/fixture-manifest.json.
+
+The instrumentation installs a debug-only standard URLStreamHandlerFactory. Default production GitHubStore connections read and write a local synthetic GitHub Contents/blob/CAS store, including real outerbase64, SHA verification, gzip and production shared-record validation. No positive normalized packets, decoder-return objects, service active flags or lease deadlines are injected. Only serialized packed files are retained by the backend. A synthetic noncredential token exercises ordinary token storage.
+
+Both actual KE/OZ foreground services start with ordinary shared batches. They acquire the real common scanner lease against the local lock document. Before the first region body is returned, existing debug HTML fixtures are assigned on the main thread so post-import WebViews render local calendars with provider networking blocked. The probe asserts real scanner ownership and Android OS foreground-service state. Two pending current-month queries per carrier then require normal JS parsing, SQLite saves and shared CAS checkpoints.
+
+Every original current and previous snapshot is checked by a per-record SHA256 ledger, with original success timestamps preserved. An unrelated local seed must remain intact. Exact final row counts include all imported records, both new calendars and the seed. No record reduction, history deletion or arbitrary payload padding is used.
+
+The baseline phase passes its *regression expectation* only after observing an actual1.0.32 OutOfMemoryError/FATAL with the production GitHubStore and SharedCache stack at192MiB. The fixed phase requires successful completion and no unexpected fatal/ANR. A missing old-version OOM is a failed reproduction, never inferred from fixture size. Heap occupancy samples are not exact allocation peaks.
+
+Build baseline and fixed with build-probe.py --source SOURCE --sdk SDK --out OUT --label baseline132|fixed133. Copy the resulting APK, build manifest, production input map and effective manifest here. shared-memory-device.yml is uploaded as .github/workflows/tongsky133-shared-memory-device.yml. run-device.sh uninstalls only the synthetic emulator package between phases and captures reports/logs. No user desktop or BlueStacks control occurs.
+
+Scope: offline actual Android runtime and realistic synthetic cache structure. This does not validate live GitHub/airline availability or prove the user's private dataset is byte-identical. The prior1.0.32 AF functional/process evidence remains separate; this run deliberately does not repeat the broad AF suite.
