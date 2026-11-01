@@ -98,7 +98,7 @@ public final class LabInstrumentation extends Instrumentation {
   final java.io.File file;int revision=0,reads=0,writes=0;
   DiskBackend(java.io.File file){this.file=file;}
   public SharedCache.Document read()throws Exception{reads++;JSONObject envelope=new JSONObject(new String(java.nio.file.Files.readAllBytes(file.toPath()),StandardCharsets.UTF_8));return new SharedCache.Document("fixture-"+revision,GitHubStore.unpack(envelope));}
-  public void write(JSONObject body,String sha)throws Exception{check(("fixture-"+revision).equals(sha),"disk fixture revision conflict");java.nio.file.Files.writeString(file.toPath(),GitHubStore.packed(body).toString(),StandardCharsets.UTF_8);revision++;writes++;}
+  public void write(JSONObject body,String sha)throws Exception{check(("fixture-"+revision).equals(sha),"disk fixture revision conflict");java.nio.file.Files.write(file.toPath(),GitHubStore.packed(body).toString().getBytes(StandardCharsets.UTF_8));revision++;writes++;}
  }
  record ReuseFixture(String origin,String region,String key,JSONObject query,JSONObject local,long now,int count,byte[] unchangedDigest){}
  byte[] otherRecordsDigest(JSONObject body,String excluded)throws Exception{
@@ -111,7 +111,7 @@ public final class LabInstrumentation extends Instrumentation {
   // Only a separate one-record local test observation receives a fresh success
   // time; source dates and the downloaded public fixture remain unchanged.
   long now=SharedCache.expiresAt(latest)+2000;JSONObject local=new JSONObject(records.getJSONObject(key).toString());local.put("success",now-1000);JSONObject current=local.getJSONObject("current"),query=new JSONObject().put("carrier","OZ").put("origin",current.getString("origin")).put("destination",current.getString("destination")).put("month",current.getString("month"));
-  byte[] unchanged=otherRecordsDigest(body,key);int count=records.length();String origin=body.getString("origin"),region=body.getString("region");body.put("lease",new JSONObject().put("owner","device-offline-reuse").put("until",now+SharedCache.LEASE_MS));java.nio.file.Files.writeString(backend.file.toPath(),GitHubStore.packed(body).toString(),StandardCharsets.UTF_8);
+  byte[] unchanged=otherRecordsDigest(body,key);int count=records.length();String origin=body.getString("origin"),region=body.getString("region");body.put("lease",new JSONObject().put("owner","device-offline-reuse").put("until",now+SharedCache.LEASE_MS));java.nio.file.Files.write(backend.file.toPath(),GitHubStore.packed(body).toString().getBytes(StandardCharsets.UTF_8));
   return new ReuseFixture(origin,region,key,query,local,now,count,unchanged);
  }
  void runStagedCacheReuse()throws Exception{

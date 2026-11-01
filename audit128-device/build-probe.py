@@ -21,5 +21,5 @@ with tempfile.TemporaryDirectory(prefix='tong-device-source-') as tmp:
  key=pathlib.Path(tmp)/'debug.keystore';password=pathlib.Path(tmp)/'password.txt';password.write_text('android\n')
  subprocess.run(['keytool','-genkeypair','-noprompt','-keystore',str(key),'--storepass','android','--keypass','android','-alias','androiddebugkey','-keyalg','RSA','-keysize','2048','-validity','30','-dname','CN=Offline Test,O=Test,C=KR'],check=True,capture_output=True)
  subprocess.run(['python3',str(root/'tong-sky/scripts/build-local.py'),'--sdk',str(pathlib.Path(a.sdk).resolve()),'--out',str(out),'--keystore',str(key),'--password-file',str(password),'--debug'],check=True)
- apks=list(out.glob('TongSKY-*.apk'));assert len(apks)==1,apks;shutil.copy2(apks[0],out/'TongSKY-offline-probe.apk')
+ apks=[p for p in out.glob('TongSKY-*.apk') if p.name!='TongSKY-offline-probe.apk'];assert len(apks)==1,apks;shutil.copy2(apks[0],out/'TongSKY-offline-probe.apk')
 print(out/'TongSKY-offline-probe.apk')
