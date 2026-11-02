@@ -1,0 +1,46 @@
+name: TongSKY136 offline native performance comparison
+on:
+  push:
+    branches: ['audit/tongsky-136-performance']
+    paths: ['audit136-performance-device/**', '.github/workflows/tongsky136-performance-device.yml']
+permissions:
+  contents: read
+jobs:
+  device:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Prepare offline benchmark inputs
+        run: |
+          if [ -f audit136-performance-device/runtime-inputs.zip ]; then
+            unzip -q -o audit136-performance-device/runtime-inputs.zip -d .
+          fi
+      - name: Enable KVM access
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+      - name: Compare baseline135 and candidate136 on actual192MiB Android13
+        uses: ReactiveCircus/android-emulator-runner@a421e43855164a8197daf9d8d40fe71c6996bb0d
+        with:
+          api-level: 33
+          target: google_apis
+          arch: x86_64
+          profile: pixel_2
+          cores: 2
+          ram-size: 3072M
+          heap-size: 192M
+          disable-animations: true
+          emulator-boot-timeout: 300
+          emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -camera-back none
+          script: bash audit136-performance-device/run-device.sh
+      - name: Save native timing, request and preservation evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: tongsky136-performance-api33
+          path: audit136-performance-device/reports/
+          retention-days: 7

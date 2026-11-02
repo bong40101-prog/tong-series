@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "label": "candidate136",
+  "apk": "TongSKY-performance-candidate136-probe.apk",
+  "apkSha256": "37d5ed131418b3e4ffe69b3b09e087ad25aba40126b5f1285b17fdf5f0b21997",
+  "bytes": 4202806,
+  "productionInputsSha256": "128ae09108aab0bd6c6488ed0a792b033530ce16b1d4591ab89b0bbc85a44d02",
+  "instrumentationSha256": "a6151a96a5654e1b57f5fd0d14f3da943262d8812136ebab42442cc799a96fc5",
+  "fixtureManifestSha256": "11c5caed23913a9fc4503ccd5b7ff43ae7b8e7d945a6704628dcd9f876e60a2f",
+  "productionJavaAssetsUnmodified": true,
+  "originalManifestSha256": "c11ea6c2f94b28a853d27810eca59a35520e814d468788861a0dde4a2e3f7c08",
+  "effectiveManifestSha256": "2573c39baecd9aa85971591df4a916647d4ea1290eb77aac9e8601f550591611",
+  "networkPermission": false,
+  "afProcess": ":airfrance",
+  "afManifestOverride": false,
+  "disposableDebugSigner": true,
+  "heapSetting": "API33 emulator192M asserted at runtime"
+}
