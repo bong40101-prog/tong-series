@@ -1,4 +1,4 @@
-name: TongSKY mobile detail fix validation
+name: TongSKY monthly calendar restoration validation
 on:
   push:
     branches: ['fix/tongsky-1041-mobile']
@@ -42,7 +42,19 @@ jobs:
           "$signer" verify --min-sdk-version 33 --verbose --print-certs TongSKY-1.0.41-r2.apk | tee /tmp/signature.txt
           grep -Fq '5ee2986ae413b9dfb87724079b93d83a5dcaabf1d2fe96603418dec50cfe547d' /tmp/signature.txt
           sudo setfacl -m "u:$(id -un):rw" /dev/kvm
-      - name: Android 15 mobile lifecycle and non-resetting upgrade
+      - name: Native collector, weekday rules and lifecycle regressions
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/monthly-qa/libs evidence
+          base64 -d release1041-mobile/framework.tgz.b64 | tar xz -C /tmp/monthly-qa
+          curl -fsSL https://dl.google.com/dl/android/maven2/androidx/test/monitor/1.7.2/monitor-1.7.2.aar -o /tmp/monitor.aar
+          curl -fsSL https://dl.google.com/dl/android/maven2/androidx/test/espresso/espresso-idling-resource/3.6.1/espresso-idling-resource-3.6.1.aar -o /tmp/espresso.aar
+          unzip -p /tmp/monitor.aar classes.jar > /tmp/monthly-qa/libs/monitor.jar
+          unzip -p /tmp/espresso.aar classes.jar > /tmp/monthly-qa/libs/espresso.jar
+          mvn -B -f /tmp/monthly-qa/service/pom.xml -Dsky.classes.jar=/tmp/monthly-qa/classes.jar -Dandroid.test.libs=/tmp/monthly-qa/libs -Dtest=ServiceMonthlyCalendarTest,ServiceIntervalTest,ServiceBrowserFailureTest,RepeatMarkerPolicyTest test | tee evidence/framework.txt
+          cp /tmp/monthly-qa/service/target/surefire-reports/TEST-*.xml evidence/
+      - name: Android 15 monthly collection and non-resetting upgrade
         uses: ReactiveCircus/android-emulator-runner@a421e43855164a8197daf9d8d40fe71c6996bb0d
         with:
           api-level: 35
@@ -72,5 +84,6 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add TongSKY-1.0.41-r2.apk
-          git commit -m 'Stage TongSKY 1.0.41 mobile fix 10143 after Android validation'
+          git commit -m 'Stage TongSKY 1.0.41 monthly calendar restoration 10143 after Android validation'
+          git pull --rebase origin fix/tongsky-1041-mobile
           git push origin HEAD:refs/heads/fix/tongsky-1041-mobile

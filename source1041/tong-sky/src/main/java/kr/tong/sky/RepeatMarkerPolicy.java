@@ -30,6 +30,8 @@ final class RepeatMarkerPolicy {
   Map<String,JSONObject> days=new TreeMap<>();JSONArray values=snapshot==null?null:snapshot.optJSONArray("dates");if(values!=null)for(int i=0;i<values.length();i++){JSONObject day=values.optJSONObject(i);String value=day==null?"":day.optString("date");if(date(value)==null||!value.startsWith(snapshot.optString("month")+"-"))continue;if(days.put(value,day)!=null&&duplicates!=null)duplicates.add(value);}return days;
  }
  static boolean applies(JSONObject snapshot){return scope(snapshot,catalog)!=null;}
+ static boolean monthly(JSONObject snapshot){return snapshot!=null&&"KE".equals(snapshot.optString("carrier","KE"))&&"MONTHLY_CALENDAR".equals(snapshot.optString("collectionMethod"));}
+ static boolean usesCalendar(JSONObject snapshot){return monthly(snapshot)||applies(snapshot);}
  static JSONObject calendarSource(JSONObject day)throws Exception{
   if(day==null)return null;JSONObject original=day.optJSONObject("awardCalendarFlags");if(original==null)original=day.optJSONObject("legacyAwardFlags");if(original==null)original=day;JSONObject source=new JSONObject(original.toString());if(!source.has("status"))source.put("status",day.optString("status","UNKNOWN"));return source;
  }
@@ -39,7 +41,7 @@ final class RepeatMarkerPolicy {
  /** A view copy of the original calendar; no operator or timetable proof gates are used. */
  static JSONObject calendar(JSONObject raw)throws Exception{return calendar(raw,catalog);}
  static JSONObject calendar(JSONObject raw,JSONObject selected)throws Exception{
-  if(raw==null)return null;JSONObject view=new JSONObject(raw.toString());if(scope(raw,selected)==null)return view;Map<String,JSONObject> original=days(raw,null);JSONArray dates=view.optJSONArray("dates");if(dates==null)return view;
+  if(raw==null)return null;JSONObject view=new JSONObject(raw.toString());if(!monthly(raw)&&scope(raw,selected)==null)return view;Map<String,JSONObject> original=days(raw,null);JSONArray dates=view.optJSONArray("dates");if(dates==null)return view;
   for(int i=0;i<dates.length();i++){JSONObject day=dates.getJSONObject(i),source=calendarSource(original.get(day.optString("date")));String status=source==null?"UNKNOWN":source.optString("status","UNKNOWN");boolean observed=source!=null&&"OBSERVED".equals(status);for(String field:Search.ALL_FIELDS)observed&=source!=null&&source.opt(field) instanceof Boolean;if(!observed&&!"NO_FLIGHT".equals(status))status="UNKNOWN";day.put("status",status);JSONObject saved=new JSONObject().put("status",status).put("sourceKind","SAVED_CALENDAR");for(String field:Search.ALL_FIELDS){boolean marked=observed&&source.getBoolean(field);day.put(field,marked);saved.put(field,marked);}day.put("savedCalendarSource",saved);for(String key:new String[]{"savedAggregate","savedAggregatePendingReason","timetableReferenceConflict","timetableReferences","routeWeekdayLabel","routeWeekdaySource"})day.remove(key);}
   view=apply(raw,view,selected);JSONArray projected=view.getJSONArray("dates");for(int i=0;i<projected.length();i++){JSONObject day=projected.getJSONObject(i);if(excluded(day))for(String field:Search.ALL_FIELDS)day.put(field,false);}return view;
  }

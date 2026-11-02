@@ -1,0 +1,10 @@
+{
+  "name": "tongsky-asiana-regressions",
+  "private": true,
+  "scripts": {
+    "test": "node korean-air-regression.cjs && node asiana-region-recovery.cjs && node asiana-opening-recovery.cjs && node asiana-popup-regression.cjs && node asiana-airport-list.cjs && node asiana-airport-loading.cjs && node asiana-japan-region.cjs && node asiana-selection.cjs && node asiana-security.cjs && node asiana-parser.cjs && node asiana-day-cells.cjs && node asiana-oneway-state.cjs && node asiana-submit-result-race.cjs && node korean-air-race.cjs && node asiana-page-reuse.cjs && node asiana-observation137.cjs && node ke-schedule.cjs && node korean-air-monthly.cjs"
+  },
+  "devDependencies": {
+    "jsdom": "26.1.0"
+  }
+}

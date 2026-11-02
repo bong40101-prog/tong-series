@@ -21,6 +21,16 @@ adb shell am force-stop kr.tong.sky
 adb pull /data/user/0/kr.tong.sky/databases/. evidence/before-upgrade/
 python3 release1041/qa/fixtures.py check-reset evidence/before-upgrade
 python3 release1041/qa/fixtures.py fresh evidence/before-upgrade
+python3 - <<'PY'
+import sqlite3,json
+from pathlib import Path
+root=Path('evidence/before-upgrade')
+with sqlite3.connect(root/'tong-sky-asiana.db') as oz:
+    data=json.loads(oz.execute('SELECT data FROM snapshots LIMIT 1').fetchone()[0])
+data['carrier']='KE'
+with sqlite3.connect(root/'tong-sky.db') as ke:
+    ke.execute('INSERT INTO snapshots VALUES(?,?,?,?)',('ICN-JFK-2027-01',json.dumps(data),None,2))
+PY
 adb push evidence/before-upgrade/. /data/user/0/kr.tong.sky/databases/
 adb shell chown -R "$uid:$uid" /data/user/0/kr.tong.sky/databases
 adb shell restorecon -RF /data/user/0/kr.tong.sky
@@ -44,6 +54,17 @@ sleep 3
 adb shell am force-stop kr.tong.sky
 adb pull /data/user/0/kr.tong.sky/databases/. evidence/relaunch/
 python3 release1041/qa/fixtures.py check-fresh evidence/relaunch
+python3 - <<'PY'
+import sqlite3
+from pathlib import Path
+for folder in ['after-upgrade','relaunch']:
+    with sqlite3.connect(Path('evidence')/folder/'tong-sky.db') as ke:
+        assert ke.execute("SELECT COUNT(*) FROM snapshots WHERE k='ICN-JFK-2027-01'").fetchone()[0]==1
+    with sqlite3.connect(Path('evidence')/folder/'tong-sky-asiana.db') as oz:
+        for table in ['snapshots','errors','shared_outbox','batches','watches']:
+            assert oz.execute('SELECT COUNT(*) FROM '+table).fetchone()[0]==1
+print('PASS: fresh KE calendar and OZ snapshots, work and settings survive upgrade and relaunch')
+PY
 adb logcat -b crash -d > evidence/crash.txt
 ! grep -q 'Process: kr.tong.sky' evidence/crash.txt
 adb install mobile-probe.apk
