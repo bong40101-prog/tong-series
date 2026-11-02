@@ -2,12 +2,12 @@
   {
     "name": "통SKY",
     "package": "kr.tong.sky",
-    "versionName": "1.0.38",
-    "versionCode": 10138,
+    "versionName": "1.0.39",
+    "versionCode": 10139,
     "minSdk": 33,
-    "file": "TongSKY-1.0.38.apk",
-    "sha256": "bc9611c748f51e97f74b78282cfbadc0a625413d52b67fd7b81a6c850ab0a876",
-    "notes": "직접운항과 공동운항을 함께 유지하고 항공편별로 운항을 대조합니다. 비운항 표식만 제외하며 좌석 없음과 미확인을 구분합니다."
+    "file": "TongSKY-1.0.39.apk",
+    "sha256": "d73280c618829d437d3ed30a5988913047bf87a046569e07a2b7d322279f12b3",
+    "notes": "월별·방향별 운항요일표를 참고해 직접운항과 공동운항을 따로 대조합니다. 미확인 기간과 일정 불일치를 구분하며 원본·과거 기록은 유지합니다."
   },
   {
     "name": "통캐치",
