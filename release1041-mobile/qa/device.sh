@@ -71,9 +71,12 @@ from pathlib import Path
 for folder in ['after-upgrade','relaunch']:
     with sqlite3.connect(Path('evidence')/folder/'tong-sky.db') as ke:
         assert ke.execute("SELECT COUNT(*) FROM snapshots WHERE k='ICN-JFK-2027-01'").fetchone()[0]==1
-    with sqlite3.connect(Path('evidence')/folder/'tong-sky-asiana.db') as oz:
+    with sqlite3.connect(Path('evidence')/folder/'tong-sky-asiana.db') as oz, sqlite3.connect(Path('evidence/before-upgrade/tong-sky-asiana.db')) as before:
         for table in ['snapshots','errors','shared_outbox','batches','watches']:
-            assert oz.execute('SELECT COUNT(*) FROM '+table).fetchone()[0]==1
+            expected=set(before.execute('SELECT * FROM '+table).fetchall())
+            actual=set(oz.execute('SELECT * FROM '+table).fetchall())
+            assert expected.issubset(actual),(folder,table,'original rows changed or removed')
+            print('RETAINED',folder,table,len(expected),'original rows; total',len(actual))
 print('PASS: fresh KE calendar and OZ snapshots, work and settings survive upgrade and relaunch')
 PY
 adb logcat -b crash -d > evidence/crash.txt
