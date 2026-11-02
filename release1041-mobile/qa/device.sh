@@ -30,10 +30,21 @@ with sqlite3.connect(root/'tong-sky-asiana.db') as oz:
 data['carrier']='KE'
 with sqlite3.connect(root/'tong-sky.db') as ke:
     ke.execute('INSERT INTO snapshots VALUES(?,?,?,?)',('ICN-JFK-2027-01',json.dumps(data),None,2))
+for path in root.glob('*.db'):
+    db=sqlite3.connect(path);db.execute('PRAGMA wal_checkpoint(TRUNCATE)');db.close()
 PY
+# The isolated test app is stopped. Replace the complete checkpointed fixture,
+# including its journals, so an old device WAL cannot replay over new seed rows.
+adb shell rm -rf /data/user/0/kr.tong.sky/databases
+adb shell mkdir -p /data/user/0/kr.tong.sky/databases
 adb push evidence/before-upgrade/. /data/user/0/kr.tong.sky/databases/
 adb shell chown -R "$uid:$uid" /data/user/0/kr.tong.sky/databases
 adb shell restorecon -RF /data/user/0/kr.tong.sky
+mkdir -p evidence/seed-roundtrip
+adb pull /data/user/0/kr.tong.sky/databases/. evidence/seed-roundtrip/
+python3 release1041/qa/fixtures.py check-fresh evidence/seed-roundtrip
+adb pull /data/user/0/kr.tong.sky/shared_prefs/calendar-reset.xml evidence/reset-before.xml
+grep -q 'KE-20261103-1041' evidence/reset-before.xml
 adb shell dumpsys package kr.tong.sky > evidence/package-before.txt
 first=$(awk -F= '/firstInstallTime=/{print $2;exit}' evidence/package-before.txt)
 adb install -r TongSKY-1.0.41-r2.apk
