@@ -6,34 +6,23 @@ on:
 permissions:
   contents: read
 jobs:
-  package:
-    runs-on: ubuntu-latest
-    timeout-minutes: 8
-    permissions:
-      contents: write
-    steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
-      - name: Restore public signed bytes and verify identity with SDK
-        run: |
-          set -euo pipefail
-          python3 release-1041/restore.py
-          t=$(find "$ANDROID_HOME/build-tools" -name apksigner | sort -V | tail -1); test -x "$t"; b=$(dirname "$t")
-          "$t" verify --verbose --print-certs TongSKY-1.0.41.apk | tee "$RUNNER_TEMP/cert"
-          grep -F '5ee2986ae413b9dfb87724079b93d83a5dcaabf1d2fe96603418dec50cfe547d' "$RUNNER_TEMP/cert"
-          "$b/aapt" dump badging TongSKY-1.0.41.apk | grep -F "package: name='kr.tong.sky' versionCode='10142' versionName='1.0.41'"
-          "$b/zipalign" -c 4 TongSKY-1.0.41.apk
-          test "$(git hash-object TongSKY-1.0.41.apk)" = 6219dba700e73bd42573efb7a06e9a1f2b640c61
-          git add -f TongSKY-1.0.41.apk; git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Stage SDK-verified signed TongSKY 1.0.41 for publication'
-          git push origin HEAD:refs/heads/release/tongsky-1041
   device:
-    needs: package
     runs-on: ubuntu-latest
     timeout-minutes: 18
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           persist-credentials: false
-      - run: python3 release-1041/restore.py
+      - name: Verify signed update independently with Android tools
+        run: |
+          set -euo pipefail
+          echo '18847120cb30a35f615b9a943a39a205ed8fd20700c376eb849337ab639ebdbc  TongSKY-1.0.41.apk' | sha256sum -c -
+          python3 release-1041/restore.py
+          t=$(find "$ANDROID_HOME/build-tools" -name apksigner | sort -V | tail -1); b=$(dirname "$t")
+          "$t" verify --verbose --print-certs TongSKY-1.0.41.apk | tee /tmp/tong-cert
+          grep -F 5ee2986ae413b9dfb87724079b93d83a5dcaabf1d2fe96603418dec50cfe547d /tmp/tong-cert
+          "$b/aapt" dump badging TongSKY-1.0.41.apk | grep -F "package: name='kr.tong.sky' versionCode='10142' versionName='1.0.41'"
+          "$b/zipalign" -c 4 TongSKY-1.0.41.apk
       - name: Enable KVM
         run: |
           echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
