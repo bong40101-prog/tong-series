@@ -1,0 +1,87 @@
+name: TongSKY 10141 signed update verification
+on:
+  push:
+    branches: [release/tongsky-10141-verified]
+    paths: ['release-input/10141.zst.b64', '.github/workflows/verify-tongsky-10141.yml']
+permissions: {}
+jobs:
+  stage:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Reconstruct existing signed bytes and verify both packages
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile,ZipInfo,ZIP_STORED
+          import base64,hashlib,struct
+          src=Path('TongSKY-1.0.40.apk'); b=src.read_bytes()
+          assert hashlib.sha256(b).hexdigest()=='e97e2e19954ebebe87790861819b5bb6f53c0a8571926b3a386b7364a0d08efe'
+          with ZipFile(src) as a, ZipFile('/tmp/10141.dict','w') as out:
+              for n in a.namelist():
+                  if n.startswith('META-INF/'):continue
+                  i=ZipInfo(n,(2026,11,2,0,0,0)); i.create_system=0; i.external_attr=32; i.compress_type=ZIP_STORED
+                  r=(-(out.fp.tell()+30+len(n.encode())))%4
+                  if r:i.extra=struct.pack('<HH',0xcafe,r)+b'\0'*r
+                  out.writestr(i,a.read(n))
+          e=b.rfind(b'PK\x05\x06'); c=struct.unpack_from('<I',b,e+16)[0]; s=c-8-struct.unpack_from('<Q',b,c-24)[0]
+          with open('/tmp/10141.dict','ab') as f: f.write(b[s:c])
+          Path('/tmp/10141.zst').write_bytes(base64.b64decode(Path('release-input/10141.zst.b64').read_bytes()))
+          PY
+          echo '12fda938dedeb9445ad64c95639a47ad26fdc3875544e5daaba6243d49c84a4e  /tmp/10141.dict' | sha256sum -c -
+          echo 'c4b705acc90e048d675439b33b9e8890b00bf3a28e0e6756d6f0f43e4cfaa6e0  /tmp/10141.zst' | sha256sum -c -
+          zstd -qd --patch-from=/tmp/10141.dict /tmp/10141.zst -o TongSKY-1.0.40-r2.apk
+          echo '049b66eadb0776bd67c269f60b5bef8b66e60b745f108627303996104cb9e601  TongSKY-1.0.40-r2.apk' | sha256sum -c -
+          bt=$(find "$ANDROID_HOME/build-tools" -name apksigner | sort -V | tail -1); aapt=${bt%/*}/aapt
+          for f in TongSKY-1.0.40.apk TongSKY-1.0.40-r2.apk; do
+            "$bt" verify --min-sdk-version 33 --verbose --print-certs "$f" > "/tmp/$f.sign"; cat "/tmp/$f.sign"
+            grep -Fiq 'certificate SHA-256 digest: 5ee2986ae413b9dfb87724079b93d83a5dcaabf1d2fe96603418dec50cfe547d' "/tmp/$f.sign"
+          done
+          "$aapt" dump badging TongSKY-1.0.40-r2.apk > /tmp/badging.txt
+          grep -F "package: name='kr.tong.sky' versionCode='10141' versionName='1.0.40'" /tmp/badging.txt
+          git config user.name 'github-actions[bot]'; git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- TongSKY-1.0.40-r2.apk; git diff --cached --quiet || git commit -m 'Stage byte-verified signed TongSKY 1.0.40 r2 (10141) for device test'
+          git push origin HEAD:refs/heads/release/tongsky-10141-verified
+  device:
+    needs: stage
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: release/tongsky-10141-verified
+          persist-credentials: false
+      - name: Install Android 15 image and boot
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo '049b66eadb0776bd67c269f60b5bef8b66e60b745f108627303996104cb9e601  TongSKY-1.0.40-r2.apk' | sha256sum -c -
+          sudo setfacl -m "u:$(id -un):rw" /dev/kvm
+          sdkmanager 'system-images;android-35;google_apis;x86_64'
+          echo no | avdmanager create avd -n tongsky35 -k 'system-images;android-35;google_apis;x86_64' --force
+          export PATH="$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$PATH"
+          nohup emulator -avd tongsky35 -no-window -gpu swiftshader_indirect -no-audio -no-boot-anim -no-snapshot -memory 2048 > /tmp/tongsky-emu.log 2>&1 < /dev/null &
+          timeout 420 bash -c 'until adb shell getprop sys.boot_completed 2>/dev/null | tr -d "\r" | grep -qx 1; do sleep 2; done'
+      - name: Preserve package data across update and start launcher
+        shell: bash
+        run: |
+          set -euo pipefail
+          export PATH="$ANDROID_HOME/platform-tools:$PATH"
+          adb shell wm dismiss-keyguard; adb shell settings put global airplane_mode_on 1; adb shell svc wifi disable || true; adb shell svc data disable || true
+          adb install TongSKY-1.0.40.apk
+          adb shell dumpsys package kr.tong.sky > /tmp/base.txt; grep -m1 'versionCode=10140' /tmp/base.txt
+          first=$(awk -F= '/firstInstallTime=/{print $2;exit}' /tmp/base.txt); test -n "$first"
+          adb install -r TongSKY-1.0.40-r2.apk
+          adb shell dumpsys package kr.tong.sky > /tmp/r2.txt; grep -m1 'versionCode=10141' /tmp/r2.txt
+          test "$first" = "$(awk -F= '/firstInstallTime=/{print $2;exit}' /tmp/r2.txt)"
+          component=$(adb shell cmd package resolve-activity --brief -a android.intent.action.MAIN -c android.intent.category.LAUNCHER kr.tong.sky | tr -d '\r' | tail -1); test -n "$component"
+          adb logcat -c; adb shell am start -W -n "$component" | tee /tmp/start.txt; grep -q 'Status: ok' /tmp/start.txt
+          sleep 6; adb shell pidof kr.tong.sky; adb shell dumpsys activity activities > /tmp/activity.txt; grep -E '(mResumedActivity|topResumedActivity|ResumedActivity).*kr\.tong\.sky' /tmp/activity.txt
+          adb logcat -b crash -d > /tmp/crash.txt; ! grep -q 'Process: kr.tong.sky' /tmp/crash.txt
