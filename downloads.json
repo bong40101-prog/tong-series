@@ -2,12 +2,12 @@
   {
     "name": "통SKY",
     "package": "kr.tong.sky",
-    "versionName": "1.0.37",
-    "versionCode": 10137,
+    "versionName": "1.0.38",
+    "versionCode": 10138,
     "minSdk": 33,
-    "file": "TongSKY-1.0.37.apk",
-    "sha256": "470b76abfd7e6de83fb4063136e716e72e32da89a6668c2aae8635d2fa0e7d6a",
-    "notes": "대한항공 운항표 대조와 인천↔프랑크푸르트 왕복 수·금·일 조건을 적용했습니다. 저장 자료 충돌과 아시아나 판독 오류를 수정했습니다."
+    "file": "TongSKY-1.0.38.apk",
+    "sha256": "bc9611c748f51e97f74b78282cfbadc0a625413d52b67fd7b81a6c850ab0a876",
+    "notes": "직접운항과 공동운항을 함께 유지하고 항공편별로 운항을 대조합니다. 비운항 표식만 제외하며 좌석 없음과 미확인을 구분합니다."
   },
   {
     "name": "통캐치",
