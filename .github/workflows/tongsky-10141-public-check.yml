@@ -1,0 +1,28 @@
+name: TongSKY r2 public download verification
+on:
+  push:
+    branches: ['release/tongsky-10141-verified']
+    paths: ['.github/workflows/tongsky-10141-public-check.yml']
+permissions: {}
+jobs:
+  public:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Read the real Pages card and APK; verify search remains closed
+        shell: bash
+        run: |
+          set -euo pipefail
+          root='https://bong40101-prog.github.io/tong-series/'
+          for i in {1..24}; do
+            curl -fsSL --max-time 12 "${root}?release=10141-${GITHUB_RUN_ID}-${i}" -o /tmp/page.html || continue
+            if grep -Fq 'href="TongSKY-1.0.40-r2.apk"' /tmp/page.html && grep -Fq '버전 코드 10141' /tmp/page.html; then break; fi
+            sleep 5
+          done
+          grep -Fq 'href="TongSKY-1.0.40-r2.apk"' /tmp/page.html; grep -Fq '버전 코드 10141' /tmp/page.html
+          curl -fsSL --retry 3 --max-time 60 "${root}TongSKY-1.0.40-r2.apk" -o /tmp/public.apk
+          echo '049b66eadb0776bd67c269f60b5bef8b66e60b745f108627303996104cb9e601  /tmp/public.apk' | sha256sum -c -
+          test "$(wc -c < /tmp/public.apk)" -eq 3998587
+          curl -fsSL --retry 2 --max-time 25 "https://bong40101-prog.github.io/tong-sky-data/?verify=${GITHUB_RUN_ID}" -o /tmp/search.html
+          grep -Fq '오류로 현재 검색을 이용할 수 없습니다' /tmp/search.html; if grep -Eqi '<script([[:space:]]|>)' /tmp/search.html; then exit 1; fi
+          echo 'PASS live Pages button, release code, 3998587 bytes, signed APK SHA256, and maintenance-only search page'
