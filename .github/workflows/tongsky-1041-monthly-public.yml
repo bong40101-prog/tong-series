@@ -1,0 +1,35 @@
+name: Verify published TongSKY monthly calendar APK
+on:
+  push:
+    branches: [gh-pages]
+    paths: [TongSKY-1.0.41-r2.apk, .github/workflows/tongsky-1041-monthly-public.yml]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - name: Verify public signed file and download metadata
+        shell: bash
+        run: |
+          set -euo pipefail
+          expected=42cc0abe20208b823a03df1929d77f4f5441842ef2901cccddb8971edf6c7b7f
+          for attempt in $(seq 1 24); do
+            if curl -fsSL "https://bong40101-prog.github.io/tong-series/TongSKY-1.0.41-r2.apk?verify=10143-$attempt" -o /tmp/tongsky.apk && echo "$expected  /tmp/tongsky.apk" | sha256sum -c -; then break; fi
+            sleep 10
+          done
+          curl -fsSL https://bong40101-prog.github.io/tong-series/TongSKY-1.0.41-r2.apk -o /tmp/tongsky.apk
+          echo "$expected  /tmp/tongsky.apk" | sha256sum -c -
+          curl -fsSL 'https://bong40101-prog.github.io/tong-series/downloads.json' -o /tmp/downloads.json
+          python3 - <<'PY'
+          import json,zipfile
+          entries=json.load(open('/tmp/downloads.json'));app=next(x for x in entries if x['package']=='kr.tong.sky')
+          assert app['versionCode']==10143 and app['file']=='TongSKY-1.0.41-r2.apk'
+          assert app['sha256']=='42cc0abe20208b823a03df1929d77f4f5441842ef2901cccddb8971edf6c7b7f'
+          with zipfile.ZipFile('/tmp/tongsky.apk') as z:
+              js=z.read('assets/calendar.js').decode()
+              assert 'parse_flights' not in js and 'MONTHLY_CALENDAR' in js
+              assert 'assets/ke-schedule.js' not in z.namelist()
+          print('PASS: public APK hash, 10143 metadata and monthly-only adapter')
+          PY
