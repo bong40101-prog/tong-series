@@ -1,0 +1,31 @@
+{
+  "versionName": "1.0.41",
+  "release": "r3",
+  "versionCode": 10144,
+  "package": "kr.tong.sky",
+  "apkSha256": "4b0cad6e61f207ecc841f4fc2c7be69f40b536df5344005fcf6e537a6415f3e0",
+  "gitBlob": "7017682de69c8948e0de3ac0bc2cd51dec6af221",
+  "bytes": 3317761,
+  "signingCertificateSha256": "5ee2986ae413b9dfb87724079b93d83a5dcaabf1d2fe96603418dec50cfe547d",
+  "resetGeneration": "KE-20261103-1041",
+  "resetChange": false,
+  "serverReset": false,
+  "collectorAssetUnchanged": true,
+  "nativeFrameworkTests": 43,
+  "javascriptRegressionSuites": 18,
+  "androidApi": 35,
+  "upgradeFrom": 10143,
+  "upgradeTo": 10144,
+  "keAndOzRecordsPreserved": true,
+  "ciRun": 41548179527,
+  "sourceCommit": "4db366ef831f433f0a42ad5d99eb3b921deb9520",
+  "performance": {
+    "environment": "Robolectric API35; synthetic large existing audit records; 20 projections",
+    "baselineMs": 187.654776,
+    "optimizedMs": 33.89443,
+    "identicalOutput": true
+  },
+  "limitations": [
+    "Offline emulator and fixture validation; no end-to-end collection on the user's physical handset."
+  ]
+}
