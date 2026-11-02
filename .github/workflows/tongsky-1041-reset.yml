@@ -1,0 +1,65 @@
+name: TongSKY 1.0.41 reset release validation
+on:
+  push:
+    branches: ['release/tongsky-1041-reset']
+    paths: ['release1041/**', '.github/workflows/tongsky-1041-reset.yml']
+permissions:
+  contents: write
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Restore exact signed package and check identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile
+          import hashlib,base64
+          p=Path('TongSKY-1.0.40.apk')
+          assert hashlib.sha256(p.read_bytes()).hexdigest()=='e97e2e19954ebebe87790861819b5bb6f53c0a8571926b3a386b7364a0d08efe'
+          with ZipFile(p) as z: Path('/tmp/base.dict').write_bytes(b''.join(z.read(n) for n in sorted(z.namelist())))
+          assert hashlib.sha256(Path('/tmp/base.dict').read_bytes()).hexdigest()=='2979ed372c169658ce964d12672d6a12ba792a3ea1b3ecbb34993d19fb138fcc'
+          Path('/tmp/apk.zst').write_bytes(base64.b64decode(Path('release1041/apk.zst.b64').read_text()))
+          PY
+          zstd -qd --patch-from=/tmp/base.dict /tmp/apk.zst -o TongSKY-1.0.41.apk
+          echo '96042b0d709747dcae3d65d4e20bb2f66bab62921dc6376342a0b4a1e7469da4  TongSKY-1.0.41.apk' | sha256sum -c -
+          signer=$(find "$ANDROID_HOME/build-tools" -name apksigner | sort -V | tail -1)
+          "$signer" verify --min-sdk-version 33 --verbose --print-certs TongSKY-1.0.41.apk | tee /tmp/signature.txt
+          grep -Fq '5ee2986ae413b9dfb87724079b93d83a5dcaabf1d2fe96603418dec50cfe547d' /tmp/signature.txt
+          sudo setfacl -m "u:$(id -un):rw" /dev/kvm
+      - name: Upgrade and verify carrier-isolated reset on Android 15
+        uses: ReactiveCircus/android-emulator-runner@a421e43855164a8197daf9d8d40fe71c6996bb0d
+        with:
+          api-level: 35
+          target: google_apis
+          arch: x86_64
+          profile: pixel_2
+          cores: 2
+          ram-size: 3072M
+          disable-animations: true
+          emulator-boot-timeout: 360
+          emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -camera-back none
+          script: bash release1041/qa/device.sh
+      - name: Retain signed APK and test evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: tongsky-1041-reset-verification
+          path: |
+            evidence/
+            TongSKY-1.0.41.apk
+          if-no-files-found: error
+          retention-days: 7
+      - name: Stage the verified signed release
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add TongSKY-1.0.41.apk
+          git commit -m 'Stage verified signed TongSKY 1.0.41 (10142) after reset migration tests'
+          git push origin HEAD:refs/heads/release/tongsky-1041-reset

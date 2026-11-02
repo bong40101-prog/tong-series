@@ -1,0 +1,25 @@
+plugins { id 'com.android.application' }
+android {
+ namespace 'kr.tong.sky'
+ compileSdk 35
+ buildFeatures { buildConfig true }
+ defaultConfig {
+  buildConfigField "boolean", "SCANNER", "true"
+  applicationId 'kr.tong.sky'
+  minSdk 33
+  targetSdk 35
+  versionCode 10142
+  versionName '1.0.41'
+  testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+ }
+ compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
+ buildTypes { release { } }
+}
+dependencies {
+ implementation 'androidx.webkit:webkit:1.14.0'
+ androidTestImplementation 'androidx.test:runner:1.6.2'
+ androidTestImplementation 'androidx.test:core:1.6.1'
+ androidTestImplementation 'androidx.test.uiautomator:uiautomator:2.3.0'
+ androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+}
+
