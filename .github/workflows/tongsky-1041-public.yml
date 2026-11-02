@@ -1,0 +1,43 @@
+name: TongSKY 1.0.41 public download verification
+on:
+  push:
+    branches: ['release/tongsky-1041-reset']
+    paths: ['.github/workflows/tongsky-1041-public.yml']
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - name: Check published APK, download card and maintenance page
+        run: |
+          python3 - <<'PY'
+          import hashlib,json,time,urllib.request
+          suffix='?release=096b38dafbb5397e795dda426e5cdfed63b0d641'
+          def get(url):
+              with urllib.request.urlopen(urllib.request.Request(url+suffix,headers={'Cache-Control':'no-cache'}),timeout=30) as response:return response.read()
+          last=None
+          for attempt in range(12):
+              try:
+                  home=get('https://bong40101-prog.github.io/tong-series/').decode()
+                  assert 'href="TongSKY-1.0.41.apk"' in home
+                  assert '딱 한 번 초기화' in home
+                  apk=get('https://bong40101-prog.github.io/tong-series/TongSKY-1.0.41.apk')
+                  assert len(apk)==3334212
+                  assert hashlib.sha256(apk).hexdigest()=='96042b0d709747dcae3d65d4e20bb2f66bab62921dc6376342a0b4a1e7469da4'
+                  downloads=json.loads(get('https://bong40101-prog.github.io/tong-series/downloads.json'))
+                  sky=next(x for x in downloads if x['package']=='kr.tong.sky')
+                  assert sky['versionCode']==10142 and sky['versionName']=='1.0.41'
+                  search=get('https://bong40101-prog.github.io/tong-sky-data/').decode()
+                  assert '오류로 현재 검색을 이용할 수 없습니다.' in search
+                  assert 'src="app.js' not in search
+                  print('PASS public APK: 3334212 bytes; SHA256 matches verified Android release')
+                  print('PASS download card and version metadata: 1.0.41 (10142)')
+                  print('PASS one-time reset notice and search maintenance retained')
+                  break
+              except Exception as exc:
+                  last=exc
+                  if attempt==11:raise
+                  time.sleep(10)
+          PY
