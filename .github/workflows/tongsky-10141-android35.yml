@@ -1,0 +1,49 @@
+name: TongSKY r2 Android 15 release gate
+on:
+  push:
+    branches: ['release/tongsky-10141-verified']
+    paths: ['release-qa/**', '.github/workflows/tongsky-10141-android35.yml']
+permissions:
+  contents: read
+jobs:
+  upgrade:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Check signed release and compile independent on-device test
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo '049b66eadb0776bd67c269f60b5bef8b66e60b745f108627303996104cb9e601  TongSKY-1.0.40-r2.apk' | sha256sum -c -
+          echo 'e97e2e19954ebebe87790861819b5bb6f53c0a8571926b3a386b7364a0d08efe  TongSKY-1.0.40.apk' | sha256sum -c -
+          d8=$(find "$ANDROID_HOME/build-tools" -type f -name d8 | sort -V | tail -1); test -x "$d8"
+          platform="$ANDROID_HOME/platforms/android-35/android.jar"; test -r "$platform"
+          mkdir -p /tmp/qa10141/classes
+          javac --release 8 -classpath "$platform" -d /tmp/qa10141/classes release-qa/ScopeProbe.java
+          jar cf /tmp/qa10141/classes.jar -C /tmp/qa10141/classes .
+          "$d8" --min-api 33 --lib "$platform" --output /tmp/qa10141/probe.jar /tmp/qa10141/classes.jar
+          sudo setfacl -m "u:$(id -un):rw" /dev/kvm
+      - name: Test actual in-place installation, launch and calendar rules
+        uses: ReactiveCircus/android-emulator-runner@a421e43855164a8197daf9d8d40fe71c6996bb0d
+        with:
+          api-level: 35
+          target: google_apis
+          arch: x86_64
+          profile: pixel_2
+          cores: 2
+          ram-size: 3072M
+          disable-animations: true
+          emulator-boot-timeout: 360
+          emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -camera-back none
+          script: bash release-qa/device.sh
+      - name: Retain device evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: tongsky-10141-android35-evidence
+          path: evidence/
+          if-no-files-found: ignore
+          retention-days: 7
