@@ -2,12 +2,12 @@
   {
     "name": "통SKY",
     "package": "kr.tong.sky",
-    "versionName": "1.0.36",
-    "versionCode": 10136,
+    "versionName": "1.0.37",
+    "versionCode": 10137,
     "minSdk": 33,
-    "file": "TongSKY-1.0.36.apk",
-    "sha256": "2fa9c0e4aabb9dbf2bc28ceb6c30cfbda13da7883ca89a610cc775885b941cf0",
-    "notes": "공유 묶음 저장과 대기 병행으로 조회 처리를 개선했습니다. 아시아나 다음 달 연속 조회와 중단 후 공유 복구를 적용했습니다."
+    "file": "TongSKY-1.0.37.apk",
+    "sha256": "470b76abfd7e6de83fb4063136e716e72e32da89a6668c2aae8635d2fa0e7d6a",
+    "notes": "대한항공 운항표 대조와 인천↔프랑크푸르트 왕복 수·금·일 조건을 적용했습니다. 저장 자료 충돌과 아시아나 판독 오류를 수정했습니다."
   },
   {
     "name": "통캐치",
