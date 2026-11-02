@@ -1,0 +1,41 @@
+name: TongSKY r2 offline upgrade test
+on:
+  push:
+    branches: ['audit/tongsky-1040-r2-upgrade']
+    paths: ['qa/sky-r2/**', '.github/workflows/tongsky-r2-offline-qa.yml']
+permissions:
+  contents: read
+jobs:
+  offline-device:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Compare signed candidate bytes and verify Android signatures
+        run: |
+          set -eu
+          python3 qa/sky-r2/restore.py
+          verifier=$(find "$ANDROID_HOME/build-tools" -name apksigner | sort -V | tail -1)
+          "$verifier" verify --verbose --print-certs TongSKY-1.0.40-r2.apk
+      - name: Enable emulator acceleration
+        run: sudo chmod a+rw /dev/kvm
+      - name: Run offline update and two startup checks
+        uses: ReactiveCircus/android-emulator-runner@a421e43855164a8197daf9d8d40fe71c6996bb0d
+        with:
+          api-level: 35
+          target: google_apis
+          arch: x86_64
+          profile: pixel_2
+          ram-size: 3072M
+          disable-animations: true
+          emulator-boot-timeout: 300
+          script: bash qa/sky-r2/device.sh
+      - name: Save test results
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: tongsky-r2-upgrade-evidence
+          path: qa-result/
+          retention-days: 7
