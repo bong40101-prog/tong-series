@@ -8,7 +8,7 @@ android {
   applicationId 'kr.tong.sky'
   minSdk 33
   targetSdk 35
-  versionCode 10142
+  versionCode 10143
   versionName '1.0.41'
   testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
  }
