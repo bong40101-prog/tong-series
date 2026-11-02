@@ -1,0 +1,30 @@
+name: Prepare verified TongSKY r2 download card on staging
+on:
+  push:
+    branches: ['release/tongsky-10141-verified']
+    paths: ['.github/workflows/tongsky-10141-prepare-card.yml']
+permissions:
+  contents: write
+jobs:
+  card:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Only replace TongSKY card and verify its target
+        run: |
+          set -euo pipefail
+          echo '049b66eadb0776bd67c269f60b5bef8b66e60b745f108627303996104cb9e601  TongSKY-1.0.40-r2.apk' | sha256sum -c -
+          test "$(git hash-object index.html)" = 2eca9ef264aff5e6e9607ad6912d6fbec0870e6c
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+          p=Path('index.html');html=p.read_bytes().decode('utf-8')
+          pat=r'<article class="app" id="tongsky">.*?</article>'
+          card='''<article class="app" id="tongsky"><div class="heading"><span class="icon" aria-hidden="true">SKY</span><div><h2>통SKY</h2><div class="tag">1.0.40 수정판 r2 · Android 13 이상</div></div></div><p class="desc">대한항공·아시아나 마일리지 달력과 저장 결과를 확인합니다.</p><p class="tag">이번 수정</p><ul class="features"><li>대한항공 미주·유럽 26개 공항 왕복: 밴쿠버·토론토도 비운항 추정 대상에 포함합니다.</li><li>한 달의 같은 요일마다 세 좌석 표식이 모두 반복될 때만 숨깁니다. 일부만 일치하면 원래 표식을 유지하고 ‘확인필요’로 표시합니다.</li><li>아시아나는 ‘좌석 없음’과 날짜별 ‘비운항’ 안내를 구분합니다.</li></ul><p class="notice">기존 앱을 삭제하지 않고 업데이트할 수 있습니다. 비운항 추정은 실제 운항이 확정됐다는 뜻이 아닙니다. 통SKY 검색 홈페이지는 점검 중입니다.</p><a class="download" href="TongSKY-1.0.40-r2.apk" download="TongSKY-1.0.40-r2.apk">통SKY 수정판 APK 다운로드</a><details><summary>파일 정보</summary><p>표시 버전 1.0.40 · 버전 코드 10141 · kr.tong.sky · 3,998,587바이트</p><p class="hash">SHA256: 049b66eadb0776bd67c269f60b5bef8b66e60b745f108627303996104cb9e601</p></details></article>'''
+          assert len(re.findall(pat,html,re.S))==1
+          out,n=re.subn(pat,lambda _:card,html,flags=re.S)
+          assert n==1 and re.sub(pat,'',out,flags=re.S)==re.sub(pat,'',html,flags=re.S)
+          p.write_bytes(out.encode('utf-8'))
+          PY
+          git config user.name 'github-actions[bot]'; git config user.email '41898282+github-actions[bot]@users.noreply.github.com'; git add -- index.html; git commit -m 'Prepare r2 download card with Canada scope, Asiana distinction and exact hash'; git push origin HEAD:refs/heads/release/tongsky-10141-verified
