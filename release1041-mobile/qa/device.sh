@@ -10,10 +10,16 @@ adb shell svc wifi disable
 adb shell svc data disable
 adb install TongSKY-1.0.41.apk
 python3 release1041/qa/fixtures.py seed evidence/seed
-adb shell mkdir -p /data/user/0/kr.tong.sky/databases
+adb shell mkdir -p /data/user/0/kr.tong.sky/databases /data/user/0/kr.tong.sky/shared_prefs
+# Isolate reset/upgrade preservation from normal startup imports, including
+# the initial published 10142 launch; the signed production APK is unchanged.
+cat > evidence/offline-settings.xml <<'XML'
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?><map><boolean name="testOffline" value="true" /></map>
+XML
+adb push evidence/offline-settings.xml /data/user/0/kr.tong.sky/shared_prefs/settings.xml
 adb push evidence/seed/. /data/user/0/kr.tong.sky/databases/
 uid=$(adb shell stat -c %u /data/user/0/kr.tong.sky | tr -d '\r')
-adb shell chown -R "$uid:$uid" /data/user/0/kr.tong.sky/databases
+adb shell chown -R "$uid:$uid" /data/user/0/kr.tong.sky/databases /data/user/0/kr.tong.sky/shared_prefs
 adb shell restorecon -RF /data/user/0/kr.tong.sky
 adb shell am start -W -n kr.tong.sky/.MainActivity
 sleep 5
