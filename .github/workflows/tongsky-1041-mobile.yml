@@ -48,6 +48,9 @@ jobs:
           set -euo pipefail
           mkdir -p /tmp/monthly-qa/libs evidence
           base64 -d release1041-mobile/framework.tgz.b64 | tar xz -C /tmp/monthly-qa
+          mkdir -p /tmp/monthly-qa/service/src/test/resources
+          cp release1041-mobile/qa/fixtures/*.json /tmp/monthly-qa/service/src/test/resources/
+          cp source1041/tong-sky/tests/framework-region-import/src/test/java/kr/tong/sky/RepeatMarkerPolicyTest.java /tmp/monthly-qa/service/src/test/java/kr/tong/sky/
           curl -fsSL https://dl.google.com/dl/android/maven2/androidx/test/monitor/1.7.2/monitor-1.7.2.aar -o /tmp/monitor.aar
           curl -fsSL https://dl.google.com/dl/android/maven2/androidx/test/espresso/espresso-idling-resource/3.6.1/espresso-idling-resource-3.6.1.aar -o /tmp/espresso.aar
           unzip -p /tmp/monitor.aar classes.jar > /tmp/monthly-qa/libs/monitor.jar
