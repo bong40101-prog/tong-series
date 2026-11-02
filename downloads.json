@@ -22,12 +22,12 @@
   {
     "name": "통홈복귀",
     "package": "kr.homereturn",
-    "versionName": "0.3.13",
-    "versionCode": 25,
+    "versionName": "0.3.14",
+    "versionCode": 26,
     "minSdk": 26,
-    "file": "TongHome-0.3.13.apk",
-    "sha256": "f50db6a661e89a4401863d0f90816e35467546553d7bf012080c758f16744f3e",
-    "notes": "상태바·내비게이션바 겹침과 브라우저가 없을 때 앱이 종료되는 문제를 개선했습니다."
+    "file": "TongHome-0.3.14.apk",
+    "sha256": "2f228af87ad0b59c413bb23f2d47d3932bc3985e9251d732910399cb9d8acd98",
+    "notes": "에이닷 전화가 앞에 열린 상태에서는 홈 복귀를 실행하지 않습니다. 모든 앱에서 복귀 모드에도 적용합니다."
   },
   {
     "name": "통스타그램",
