@@ -48,7 +48,9 @@ final class TripSearch {
   List<Snapshot> projected=new ArrayList<>();for(Snapshot r:raw){if(Thread.currentThread().isInterrupted())throw new InterruptedException();JSONObject data=oz?RouteWeekdayFilter.apply(r.data):RepeatMarkerPolicy.calendar(r.data,catalog,references);if(oz)AsianaData.validate(data,data);projected.add(new Snapshot(data,r.success));}
   return new Dataset(projected,catalog,origin,oz);
  }
- static Result find(Dataset dataset,String region,int days,LocalDate today,LocalDate end)throws Exception{
+ static Result find(Dataset dataset,String region,int days,LocalDate today,LocalDate end)throws Exception{return find(dataset,region,days,today,end,"","");}
+ static Result find(Dataset dataset,String region,int days,LocalDate today,LocalDate end,String inCode,String outCode)throws Exception{
+  if(inCode==null||outCode==null)throw new IllegalArgumentException("IN·OUT 도시를 선택해 주세요.");
   if(!Arrays.asList(REGIONS).contains(region)||days<1||days>360||today.isAfter(end))throw new IllegalArgumentException("지역과 여행 일수(1~360일)를 선택해 주세요.");
   Map<String,JSONObject> cities=new TreeMap<>();JSONArray entries=dataset.catalog.getJSONObject("regions").optJSONArray(region);if(entries!=null)for(int i=0;i<entries.length();i++){JSONObject city=entries.getJSONObject(i);if(!dataset.origin.equals(city.getString("code")))cities.put(city.getString("code"),city);}
   Map<String,Snapshot> newest=new TreeMap<>();for(Snapshot r:dataset.records){JSONObject d=r.data;String key=Search.key(d);Snapshot previous=newest.get(key);if(previous==null||previous.success<r.success)newest.put(key,r);}
@@ -57,6 +59,7 @@ final class TripSearch {
    if(Thread.currentThread().isInterrupted())throw new InterruptedException();JSONObject record=snapshot.data;String origin=record.optString("origin"),destination=record.optString("destination");if(!dataset.origin.equals(origin)&&!dataset.origin.equals(destination))continue;
    if(!(dataset.oz?"OZ":"KE").equals(record.optString("carrier","KE")))continue;
    boolean out=dataset.origin.equals(origin);String code=out?destination:origin,month=record.optString("month");JSONObject city=cities.get(code);if(city==null||month.compareTo(start.substring(0,7))<0||month.compareTo(last.substring(0,7))>0)continue;
+   if(out&&!inCode.isEmpty()&&!inCode.equals(code)||!out&&!outCode.isEmpty()&&!outCode.equals(code))continue;
    result.months++;result.latest=Math.max(result.latest,snapshot.success);JSONArray dates=record.getJSONArray("dates");
    for(int i=0;i<dates.length();i++){JSONObject day=dates.getJSONObject(i);String date=day.getString("date");if(date.compareTo(start)<0||date.compareTo(last)>0||RepeatMarkerPolicy.excluded(day)||RepeatMarkerPolicy.review(day)||!SeatMarks.verified(day,dataset.oz))continue;
     boolean award=SeatMarks.marked(day,"prestigeAward",dataset.oz),upgrade=SeatMarks.marked(day,"prestigeUpgrade",dataset.oz);if(!award&&!upgrade)continue;

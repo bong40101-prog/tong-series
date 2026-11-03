@@ -8,8 +8,8 @@ android {
   applicationId 'kr.tong.sky'
   minSdk 33
   targetSdk 35
-  versionCode 10153
-  versionName '1.0.49'
+  versionCode 10154
+  versionName '1.0.50'
   testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
  }
  compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
