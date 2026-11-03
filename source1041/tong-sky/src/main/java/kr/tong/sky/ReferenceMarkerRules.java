@@ -40,19 +40,28 @@ final class ReferenceMarkerRules {
   JSONObject base=evaluateBase(raw,selected,context);String month=raw.optString("month");
   if(base==null||context==null||month.compareTo("2027-01")<0||base.getJSONArray("reviews").length()==0)return base;
   Inventory current=new Inventory(raw);if(current.invalid||current.duplicate)return base;
-  String nextMonth=YearMonth.parse(month).plusMonths(1).toString();TreeMap<String,JSONObject> months=context.routes.get(route(raw));JSONObject reference=months==null?null:months.get(nextMonth);
-  if(reference==null||!context.inspect(reference).complete)return base;
-  Inventory ref=context.inspect(reference);JSONObject refPolicy=RepeatMarkerPolicy.ownRule(reference,selected);JSONArray reviews=new JSONArray(),resolved=new JSONArray(),evidence=base.getJSONArray("evidence"),oldReviews=base.getJSONArray("reviews");
+  TreeMap<String,JSONObject> months=context.routes.get(route(raw));if(months==null)return base;
+  JSONArray reviews=new JSONArray(),resolved=new JSONArray(),evidence=base.getJSONArray("evidence"),oldReviews=base.getJSONArray("reviews");boolean compared=false;
   for(int i=0;i<oldReviews.length();i++){
-   JSONObject review=oldReviews.getJSONObject(i);int wd=review.getInt("weekday");JSONArray referenceDates=new JSONArray();boolean noTriplets=true,allObserved=true;
-   for(String date:ref.expected)if(weekday(date)==wd){referenceDates.put(date);noTriplets&=!triplet(ref.days.get(date));allObserved&=RepeatMarkerPolicy.flags(ref.days.get(date))!=null;}
-   JSONObject row=new JSONObject().put("weekday",wd).put("referenceMode","NEXT_MONTH_COMPARISON").put("referenceMonth",nextMonth).put("referenceStatus","COMPLETE").put("referenceDates",referenceDates).put("referenceSuccess",reference.opt("success"));
-   if(noTriplets&&allObserved){resolved.put(row.put("dates",review.getJSONArray("dates")).put("decision","KEEP_ORIGINAL_MARKERS"));continue;}
-   JSONArray dates=review.getJSONArray("dates"),matches=new JSONArray();boolean conflict=false;
-   for(int n=0;n<dates.length();n++){String date=dates.getString(n);if(triplet(current.days.get(date)))matches.put(date);else if(known(current.days.get(date)))conflict=true;}
-   if(proof(refPolicy.getJSONArray("evidence"),wd)!=null&&matches.length()>0&&!conflict){evidence.put(row.put("dates",matches));continue;}
-   for(Iterator<String> keys=row.keys();keys.hasNext();){String key=keys.next();review.put(key,row.get(key));}reviews.put(review);
+   JSONObject review=oldReviews.getJSONObject(i),pending=review;int wd=review.getInt("weekday");JSONArray checked=new JSONArray();YearMonth referenceMonth=YearMonth.parse(month);boolean decided=false;
+   // Read consecutive original snapshots; no inference is used as new evidence.
+   for(int step=0;step<12;step++){
+    referenceMonth=referenceMonth.plusMonths(1);JSONObject reference=months.get(referenceMonth.toString());if(reference==null||!context.inspect(reference).complete)break;
+    compared=true;checked.put(referenceMonth.toString());Inventory ref=context.inspect(reference);JSONArray referenceDates=new JSONArray();int referenceMatches=0;boolean allObserved=true;
+    for(String date:ref.expected)if(weekday(date)==wd){referenceDates.put(date);if(triplet(ref.days.get(date)))referenceMatches++;allObserved&=RepeatMarkerPolicy.flags(ref.days.get(date))!=null;}
+    JSONObject row=new JSONObject().put("weekday",wd).put("referenceMode","NEXT_MONTH_COMPARISON").put("referenceMonth",referenceMonth.toString()).put("referenceStatus","COMPLETE").put("referenceDates",referenceDates).put("referenceSuccess",reference.opt("success")).put("referenceCheckedMonths",new JSONArray(checked.toString()));
+    pending=new JSONObject(review.toString());for(Iterator<String> keys=row.keys();keys.hasNext();){String key=keys.next();pending.put(key,row.get(key));}
+    if(referenceMatches==0&&allObserved){resolved.put(row.put("dates",review.getJSONArray("dates")).put("decision","KEEP_ORIGINAL_MARKERS"));decided=true;break;}
+    if(referenceMatches==referenceDates.length()){
+     JSONArray dates=review.getJSONArray("dates"),matches=new JSONArray();boolean conflict=false;
+     for(int n=0;n<dates.length();n++){String date=dates.getString(n);if(triplet(current.days.get(date)))matches.put(date);else if(known(current.days.get(date)))conflict=true;}
+     if(matches.length()>0&&!conflict){evidence.put(row.put("dates",matches));decided=true;}break;
+    }
+    if(!allObserved)break;
+   }
+   if(!decided)reviews.put(pending);
   }
+  if(!compared)return base;
   evidence=sorted(evidence);JSONArray weekdays=new JSONArray();for(int i=0;i<evidence.length();i++)weekdays.put(evidence.getJSONObject(i).getInt("weekday"));
   return base.put("source",SOURCE).put("weekdays",weekdays).put("evidence",evidence).put("reviews",reviews).put("resolvedReviews",resolved);
  }
