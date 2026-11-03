@@ -1,0 +1,59 @@
+{
+  "version": "1.0.48",
+  "versionCode": 10152,
+  "apk": {
+    "sha256": "37c3d099f4f1faeb819db0b980c19ac8a07864d0f1b186148f1256042b56f9fa",
+    "bytes": 3350529,
+    "blob": "d3ebdfa973a11a7bcc7ef5950174120350cefd9c"
+  },
+  "commits": {
+    "app": "e04e805882ad50e0349806b190c6fbef3848a015",
+    "staged": "9745388a5c852f4577bc85195c13e7bc6d523bc1",
+    "website": "1c54db69251cb960dfae1b459c6cadd1c9662531",
+    "webSource": "16aba15800598e2245b6ad1b39fb4b1ab9bf8939",
+    "downloads": "31619f03ecece2d54ee6579bcd24175908fadcaf"
+  },
+  "verification": {
+    "webTests": 250,
+    "nativeTests": 88,
+    "tripParitySearches": 30,
+    "tripParityExactCombinations": 23573,
+    "calendarParityMonths": 1131,
+    "calendarParityDates": 34394,
+    "mobileAdapterCases": 24,
+    "mobileAdapterAssertions": 139,
+    "androidApi": 35,
+    "upgradeFromVersion": "1.0.42",
+    "upgradeToVersion": "1.0.48",
+    "newKeRecordPreserved": true,
+    "ozRecordAndSettingsPreserved": true,
+    "androidTripScreensBothCarriers": true,
+    "webMobileViewportWidth": 390,
+    "productionKeEurope7": {
+      "total": 72,
+      "groups": [
+        2,
+        36,
+        34
+      ]
+    },
+    "productionOzEurope10": {
+      "total": 861,
+      "groups": [
+        78,
+        284,
+        499
+      ]
+    },
+    "noDateRangeInTripDialog": true,
+    "publicDownloadSha256Verified": true
+  },
+  "ci": {
+    "run": 41593532210,
+    "job": 125775500055,
+    "status": "success",
+    "artifact": 13210554384,
+    "downloadPagesRun": 41593979688,
+    "downloadPagesStatus": "success"
+  }
+}
