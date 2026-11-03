@@ -62,6 +62,7 @@ jobs:
           with ZipFile(target,'w',ZIP_DEFLATED) as z:
               for n,v in files.items():z.writestr(n,v)
           PYCODE
+          mkdir -p /tmp/monthly-qa/service/src/test/resources
           base64 -d release1042/parity.json.gz.b64 | gzip -d > /tmp/monthly-qa/service/src/test/resources/parity.json
           cp release1042/qa/*.java /tmp/monthly-qa/service/src/test/java/kr/tong/sky/
           mkdir -p /tmp/monthly-qa/service/src/test/resources
