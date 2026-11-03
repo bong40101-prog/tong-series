@@ -8,7 +8,7 @@ import java.util.*;
 
 /** Read-only joins over the same projected calendars used by the dashboard. */
 final class TripSearch {
- static final String[] REGIONS={"유럽","미주","동남아시아/서남아시아","대양주/괌","러시아/몽골/중앙아시아","중동/아프리카"};
+ static final String[] REGIONS={"유럽","미주"};
  static final String[] LABELS={"보너스 왕복","보너스＋승급","승급＋보너스"};
  static final String[] IDS={"award-award","award-upgrade","upgrade-award"};
  static final String[] OUT={"prestigeAward","prestigeAward","prestigeUpgrade"};
