@@ -37,6 +37,26 @@ final class ReferenceMarkerRules {
  static int weekday(String date){return LocalDate.parse(date).getDayOfWeek().getValue()%7;}
  static JSONArray sorted(JSONArray array)throws Exception{JSONArray result=new JSONArray();for(int wd=0;wd<7;wd++){JSONObject row=proof(array,wd);if(row!=null)result.put(row);}return result;}
  static JSONObject evaluate(JSONObject raw,JSONObject selected,Context context)throws Exception{
+  JSONObject base=evaluateBase(raw,selected,context);String month=raw.optString("month");
+  if(base==null||context==null||month.compareTo("2027-01")<0||base.getJSONArray("reviews").length()==0)return base;
+  Inventory current=new Inventory(raw);if(current.invalid||current.duplicate)return base;
+  String nextMonth=YearMonth.parse(month).plusMonths(1).toString();TreeMap<String,JSONObject> months=context.routes.get(route(raw));JSONObject reference=months==null?null:months.get(nextMonth);
+  if(reference==null||!context.inspect(reference).complete)return base;
+  Inventory ref=context.inspect(reference);JSONObject refPolicy=RepeatMarkerPolicy.ownRule(reference,selected);JSONArray reviews=new JSONArray(),resolved=new JSONArray(),evidence=base.getJSONArray("evidence"),oldReviews=base.getJSONArray("reviews");
+  for(int i=0;i<oldReviews.length();i++){
+   JSONObject review=oldReviews.getJSONObject(i);int wd=review.getInt("weekday");JSONArray referenceDates=new JSONArray();boolean noTriplets=true,allObserved=true;
+   for(String date:ref.expected)if(weekday(date)==wd){referenceDates.put(date);noTriplets&=!triplet(ref.days.get(date));allObserved&=RepeatMarkerPolicy.flags(ref.days.get(date))!=null;}
+   JSONObject row=new JSONObject().put("weekday",wd).put("referenceMode","NEXT_MONTH_COMPARISON").put("referenceMonth",nextMonth).put("referenceStatus","COMPLETE").put("referenceDates",referenceDates).put("referenceSuccess",reference.opt("success"));
+   if(noTriplets&&allObserved){resolved.put(row.put("dates",review.getJSONArray("dates")).put("decision","KEEP_ORIGINAL_MARKERS"));continue;}
+   JSONArray dates=review.getJSONArray("dates"),matches=new JSONArray();boolean conflict=false;
+   for(int n=0;n<dates.length();n++){String date=dates.getString(n);if(triplet(current.days.get(date)))matches.put(date);else if(known(current.days.get(date)))conflict=true;}
+   if(proof(refPolicy.getJSONArray("evidence"),wd)!=null&&matches.length()>0&&!conflict){evidence.put(row.put("dates",matches));continue;}
+   for(Iterator<String> keys=row.keys();keys.hasNext();){String key=keys.next();review.put(key,row.get(key));}reviews.put(review);
+  }
+  evidence=sorted(evidence);JSONArray weekdays=new JSONArray();for(int i=0;i<evidence.length();i++)weekdays.put(evidence.getJSONObject(i).getInt("weekday"));
+  return base.put("source",SOURCE).put("weekdays",weekdays).put("evidence",evidence).put("reviews",reviews).put("resolvedReviews",resolved);
+ }
+ static JSONObject evaluateBase(JSONObject raw,JSONObject selected,Context context)throws Exception{
   JSONObject base=RepeatMarkerPolicy.ownRule(raw,selected);if(base==null)return null;String month=raw.getString("month");if(month.compareTo("2026-12")<0)return empty(base);
   Inventory current=new Inventory(raw);boolean december=month.equals("2026-12");if(current.invalid||current.duplicate)return december?empty(base):base;if(!december&&current.complete)return base;
   JSONObject reference=context==null?null:context.reference(raw,december);if(!december&&reference==null)return base;boolean complete=reference!=null&&context.inspect(reference).complete;

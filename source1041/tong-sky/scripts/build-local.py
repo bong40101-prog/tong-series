@@ -8,7 +8,7 @@ p=argparse.ArgumentParser();p.add_argument('--sdk',required=True);p.add_argument
 root=pathlib.Path(__file__).resolve().parents[2];sdk=pathlib.Path(a.sdk);out=pathlib.Path(a.out).resolve();out.mkdir(parents=True,exist_ok=True)
 tools=sdk/'build-tools/35.0.0';android=sdk/'platforms/android-35/android.jar';main=root/'tong-sky/src/main'
 def run(*args):subprocess.run([str(x) for x in args],check=True)
-for module,package,version,code,scanner,name in [('tong-sky','kr.tong.sky','1.0.42',10146,True,'TongSKY')]:
+for module,package,version,code,scanner,name in [('tong-sky','kr.tong.sky','1.0.43',10147,True,'TongSKY')]:
  work=out/module;shutil.rmtree(work,ignore_errors=True);work.mkdir(exist_ok=True);generated=work/'generated';generated.mkdir(exist_ok=True);classes=work/'classes';classes.mkdir(exist_ok=True);dex=work/'dex';dex.mkdir(exist_ok=True)
  # Pinned AndroidX runtime, including its generated resource namespaces. No downloads during a build.
  dep_root=root/module/'libraries';dependencies=json.loads((dep_root/'dependencies.json').read_text());dependency_jars=[];library_resources=[];packages=[]

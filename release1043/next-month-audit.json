@@ -1,0 +1,1359 @@
+{
+  "routeMonths": 588,
+  "dates": 17887,
+  "resolved": [
+    {
+      "route": "ICN-BUD",
+      "month": "2027-08",
+      "resolved": [
+        {
+          "weekday": 2,
+          "dates": [
+            "2027-08-03",
+            "2027-08-10",
+            "2027-08-17",
+            "2027-08-24",
+            "2027-08-31"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-09",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-09-07",
+            "2027-09-14",
+            "2027-09-21",
+            "2027-09-28"
+          ],
+          "referenceSuccess": 1793662025255
+        }
+      ]
+    },
+    {
+      "route": "BUD-ICN",
+      "month": "2027-08",
+      "resolved": [
+        {
+          "weekday": 4,
+          "dates": [
+            "2027-08-05",
+            "2027-08-12",
+            "2027-08-19",
+            "2027-08-26"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-09",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-09-02",
+            "2027-09-09",
+            "2027-09-16",
+            "2027-09-23",
+            "2027-09-30"
+          ],
+          "referenceSuccess": 1793662037326
+        }
+      ]
+    },
+    {
+      "route": "IST-ICN",
+      "month": "2027-05",
+      "resolved": [
+        {
+          "weekday": 0,
+          "dates": [
+            "2027-05-02",
+            "2027-05-09",
+            "2027-05-16",
+            "2027-05-23",
+            "2027-05-30"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-06",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-06-06",
+            "2027-06-13",
+            "2027-06-20",
+            "2027-06-27"
+          ],
+          "referenceSuccess": 1793662913691
+        }
+      ]
+    },
+    {
+      "route": "IST-ICN",
+      "month": "2027-08",
+      "resolved": [
+        {
+          "weekday": 0,
+          "dates": [
+            "2027-08-01",
+            "2027-08-08",
+            "2027-08-15",
+            "2027-08-22",
+            "2027-08-29"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-09",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-09-05",
+            "2027-09-12",
+            "2027-09-19",
+            "2027-09-26"
+          ],
+          "referenceSuccess": 1793662993313
+        },
+        {
+          "weekday": 1,
+          "dates": [
+            "2027-08-02",
+            "2027-08-09",
+            "2027-08-16",
+            "2027-08-23",
+            "2027-08-30"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-09",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-09-06",
+            "2027-09-13",
+            "2027-09-20",
+            "2027-09-27"
+          ],
+          "referenceSuccess": 1793662993313
+        }
+      ]
+    },
+    {
+      "route": "ICN-CDG",
+      "month": "2027-02",
+      "resolved": [
+        {
+          "weekday": 1,
+          "dates": [
+            "2027-02-01",
+            "2027-02-08",
+            "2027-02-15",
+            "2027-02-22"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-03",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-03-01",
+            "2027-03-08",
+            "2027-03-15",
+            "2027-03-22",
+            "2027-03-29"
+          ],
+          "referenceSuccess": 1793663575555
+        }
+      ]
+    },
+    {
+      "route": "ICN-CDG",
+      "month": "2027-08",
+      "resolved": [
+        {
+          "weekday": 2,
+          "dates": [
+            "2027-08-03",
+            "2027-08-10",
+            "2027-08-17",
+            "2027-08-24",
+            "2027-08-31"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-09",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-09-07",
+            "2027-09-14",
+            "2027-09-21",
+            "2027-09-28"
+          ],
+          "referenceSuccess": 1793663732710
+        }
+      ]
+    },
+    {
+      "route": "CDG-ICN",
+      "month": "2027-08",
+      "resolved": [
+        {
+          "weekday": 3,
+          "dates": [
+            "2027-08-04",
+            "2027-08-11",
+            "2027-08-18",
+            "2027-08-25"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-09",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-09-01",
+            "2027-09-08",
+            "2027-09-15",
+            "2027-09-22",
+            "2027-09-29"
+          ],
+          "referenceSuccess": 1793663744760
+        },
+        {
+          "weekday": 6,
+          "dates": [
+            "2027-08-07",
+            "2027-08-14",
+            "2027-08-21",
+            "2027-08-28"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-09",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-09-04",
+            "2027-09-11",
+            "2027-09-18",
+            "2027-09-25"
+          ],
+          "referenceSuccess": 1793663744760
+        }
+      ]
+    },
+    {
+      "route": "ICN-LAS",
+      "month": "2027-01",
+      "resolved": [
+        {
+          "weekday": 0,
+          "dates": [
+            "2027-01-03",
+            "2027-01-10",
+            "2027-01-17",
+            "2027-01-24",
+            "2027-01-31"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-02",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-02-07",
+            "2027-02-14",
+            "2027-02-21",
+            "2027-02-28"
+          ],
+          "referenceSuccess": 1793665105333
+        },
+        {
+          "weekday": 1,
+          "dates": [
+            "2027-01-04",
+            "2027-01-11",
+            "2027-01-18",
+            "2027-01-25"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-02",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-02-01",
+            "2027-02-08",
+            "2027-02-15",
+            "2027-02-22"
+          ],
+          "referenceSuccess": 1793665105333
+        },
+        {
+          "weekday": 2,
+          "dates": [
+            "2027-01-05",
+            "2027-01-12",
+            "2027-01-19",
+            "2027-01-26"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-02",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-02-02",
+            "2027-02-09",
+            "2027-02-16",
+            "2027-02-23"
+          ],
+          "referenceSuccess": 1793665105333
+        },
+        {
+          "weekday": 3,
+          "dates": [
+            "2027-01-06",
+            "2027-01-13",
+            "2027-01-20",
+            "2027-01-27"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-02",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-02-03",
+            "2027-02-10",
+            "2027-02-17",
+            "2027-02-24"
+          ],
+          "referenceSuccess": 1793665105333
+        },
+        {
+          "weekday": 4,
+          "dates": [
+            "2027-01-07",
+            "2027-01-14",
+            "2027-01-21",
+            "2027-01-28"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-02",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-02-04",
+            "2027-02-11",
+            "2027-02-18",
+            "2027-02-25"
+          ],
+          "referenceSuccess": 1793665105333
+        },
+        {
+          "weekday": 5,
+          "dates": [
+            "2027-01-01",
+            "2027-01-08",
+            "2027-01-15",
+            "2027-01-22",
+            "2027-01-29"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-02",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-02-05",
+            "2027-02-12",
+            "2027-02-19",
+            "2027-02-26"
+          ],
+          "referenceSuccess": 1793665105333
+        },
+        {
+          "weekday": 6,
+          "dates": [
+            "2027-01-02",
+            "2027-01-09",
+            "2027-01-16",
+            "2027-01-23",
+            "2027-01-30"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-02",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-02-06",
+            "2027-02-13",
+            "2027-02-20",
+            "2027-02-27"
+          ],
+          "referenceSuccess": 1793665105333
+        }
+      ]
+    },
+    {
+      "route": "LAS-ICN",
+      "month": "2027-01",
+      "resolved": [
+        {
+          "weekday": 1,
+          "dates": [
+            "2027-01-04",
+            "2027-01-11",
+            "2027-01-18",
+            "2027-01-25"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-02",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-02-01",
+            "2027-02-08",
+            "2027-02-15",
+            "2027-02-22"
+          ],
+          "referenceSuccess": 1793665117432
+        }
+      ]
+    },
+    {
+      "route": "ICN-LAS",
+      "month": "2027-07",
+      "resolved": [
+        {
+          "weekday": 5,
+          "dates": [
+            "2027-07-02",
+            "2027-07-09",
+            "2027-07-16",
+            "2027-07-23",
+            "2027-07-30"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-08",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-08-06",
+            "2027-08-13",
+            "2027-08-20",
+            "2027-08-27"
+          ],
+          "referenceSuccess": 1793665254545
+        }
+      ]
+    },
+    {
+      "route": "ICN-LAS",
+      "month": "2027-08",
+      "resolved": [
+        {
+          "weekday": 0,
+          "dates": [
+            "2027-08-01",
+            "2027-08-08",
+            "2027-08-15",
+            "2027-08-22",
+            "2027-08-29"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-09",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-09-05",
+            "2027-09-12",
+            "2027-09-19",
+            "2027-09-26"
+          ],
+          "referenceSuccess": 1793665278444
+        },
+        {
+          "weekday": 2,
+          "dates": [
+            "2027-08-03",
+            "2027-08-10",
+            "2027-08-17",
+            "2027-08-24",
+            "2027-08-31"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-09",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-09-07",
+            "2027-09-14",
+            "2027-09-21",
+            "2027-09-28"
+          ],
+          "referenceSuccess": 1793665278444
+        }
+      ]
+    },
+    {
+      "route": "YVR-ICN",
+      "month": "2027-05",
+      "resolved": [
+        {
+          "weekday": 0,
+          "dates": [
+            "2027-05-02",
+            "2027-05-09",
+            "2027-05-16",
+            "2027-05-23",
+            "2027-05-30"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-06",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-06-06",
+            "2027-06-13",
+            "2027-06-20",
+            "2027-06-27"
+          ],
+          "referenceSuccess": 1793665808511
+        },
+        {
+          "weekday": 6,
+          "dates": [
+            "2027-05-01",
+            "2027-05-08",
+            "2027-05-15",
+            "2027-05-22",
+            "2027-05-29"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-06",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-06-05",
+            "2027-06-12",
+            "2027-06-19",
+            "2027-06-26"
+          ],
+          "referenceSuccess": 1793665808511
+        }
+      ]
+    },
+    {
+      "route": "YVR-ICN",
+      "month": "2027-06",
+      "resolved": [
+        {
+          "weekday": 1,
+          "dates": [
+            "2027-06-07",
+            "2027-06-14",
+            "2027-06-21",
+            "2027-06-28"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-07",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-07-05",
+            "2027-07-12",
+            "2027-07-19",
+            "2027-07-26"
+          ],
+          "referenceSuccess": 1793665837409
+        },
+        {
+          "weekday": 2,
+          "dates": [
+            "2027-06-01",
+            "2027-06-08",
+            "2027-06-15",
+            "2027-06-22",
+            "2027-06-29"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-07",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-07-06",
+            "2027-07-13",
+            "2027-07-20",
+            "2027-07-27"
+          ],
+          "referenceSuccess": 1793665837409
+        }
+      ]
+    },
+    {
+      "route": "BOS-ICN",
+      "month": "2027-01",
+      "resolved": [
+        {
+          "weekday": 0,
+          "dates": [
+            "2027-01-03",
+            "2027-01-10",
+            "2027-01-17",
+            "2027-01-24",
+            "2027-01-31"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-02",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-02-07",
+            "2027-02-14",
+            "2027-02-21",
+            "2027-02-28"
+          ],
+          "referenceSuccess": 1793666027829
+        }
+      ]
+    },
+    {
+      "route": "BOS-ICN",
+      "month": "2027-06",
+      "resolved": [
+        {
+          "weekday": 3,
+          "dates": [
+            "2027-06-02",
+            "2027-06-09",
+            "2027-06-16",
+            "2027-06-23",
+            "2027-06-30"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-07",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-07-07",
+            "2027-07-14",
+            "2027-07-21",
+            "2027-07-28"
+          ],
+          "referenceSuccess": 1793666153624
+        }
+      ]
+    },
+    {
+      "route": "ICN-SEA",
+      "month": "2027-05",
+      "resolved": [
+        {
+          "weekday": 4,
+          "dates": [
+            "2027-05-06",
+            "2027-05-13",
+            "2027-05-20",
+            "2027-05-27"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-06",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-06-03",
+            "2027-06-10",
+            "2027-06-17",
+            "2027-06-24"
+          ],
+          "referenceSuccess": 1793666718014
+        }
+      ]
+    },
+    {
+      "route": "SEA-ICN",
+      "month": "2027-06",
+      "resolved": [
+        {
+          "weekday": 1,
+          "dates": [
+            "2027-06-07",
+            "2027-06-14",
+            "2027-06-21",
+            "2027-06-28"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-07",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-07-05",
+            "2027-07-12",
+            "2027-07-19",
+            "2027-07-26"
+          ],
+          "referenceSuccess": 1793666754826
+        },
+        {
+          "weekday": 2,
+          "dates": [
+            "2027-06-01",
+            "2027-06-08",
+            "2027-06-15",
+            "2027-06-22",
+            "2027-06-29"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-07",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-07-06",
+            "2027-07-13",
+            "2027-07-20",
+            "2027-07-27"
+          ],
+          "referenceSuccess": 1793666754826
+        },
+        {
+          "weekday": 3,
+          "dates": [
+            "2027-06-02",
+            "2027-06-09",
+            "2027-06-16",
+            "2027-06-23",
+            "2027-06-30"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-07",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-07-07",
+            "2027-07-14",
+            "2027-07-21",
+            "2027-07-28"
+          ],
+          "referenceSuccess": 1793666754826
+        },
+        {
+          "weekday": 4,
+          "dates": [
+            "2027-06-03",
+            "2027-06-10",
+            "2027-06-17",
+            "2027-06-24"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-07",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-07-01",
+            "2027-07-08",
+            "2027-07-15",
+            "2027-07-22",
+            "2027-07-29"
+          ],
+          "referenceSuccess": 1793666754826
+        },
+        {
+          "weekday": 6,
+          "dates": [
+            "2027-06-05",
+            "2027-06-12",
+            "2027-06-19",
+            "2027-06-26"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-07",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-07-03",
+            "2027-07-10",
+            "2027-07-17",
+            "2027-07-24",
+            "2027-07-31"
+          ],
+          "referenceSuccess": 1793666754826
+        }
+      ]
+    },
+    {
+      "route": "ICN-ORD",
+      "month": "2027-01",
+      "resolved": [
+        {
+          "weekday": 1,
+          "dates": [
+            "2027-01-04",
+            "2027-01-11",
+            "2027-01-18",
+            "2027-01-25"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-02",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-02-01",
+            "2027-02-08",
+            "2027-02-15",
+            "2027-02-22"
+          ],
+          "referenceSuccess": 1793666915229
+        },
+        {
+          "weekday": 4,
+          "dates": [
+            "2027-01-07",
+            "2027-01-14",
+            "2027-01-21",
+            "2027-01-28"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-02",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-02-04",
+            "2027-02-11",
+            "2027-02-18",
+            "2027-02-25"
+          ],
+          "referenceSuccess": 1793666915229
+        },
+        {
+          "weekday": 5,
+          "dates": [
+            "2027-01-01",
+            "2027-01-08",
+            "2027-01-15",
+            "2027-01-22",
+            "2027-01-29"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-02",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-02-05",
+            "2027-02-12",
+            "2027-02-19",
+            "2027-02-26"
+          ],
+          "referenceSuccess": 1793666915229
+        }
+      ]
+    },
+    {
+      "route": "ICN-ORD",
+      "month": "2027-02",
+      "resolved": [
+        {
+          "weekday": 0,
+          "dates": [
+            "2027-02-07",
+            "2027-02-14",
+            "2027-02-21",
+            "2027-02-28"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-03",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-03-07",
+            "2027-03-14",
+            "2027-03-21",
+            "2027-03-28"
+          ],
+          "referenceSuccess": 1793666940226
+        },
+        {
+          "weekday": 2,
+          "dates": [
+            "2027-02-02",
+            "2027-02-09",
+            "2027-02-16",
+            "2027-02-23"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-03",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-03-02",
+            "2027-03-09",
+            "2027-03-16",
+            "2027-03-23",
+            "2027-03-30"
+          ],
+          "referenceSuccess": 1793666940226
+        }
+      ]
+    },
+    {
+      "route": "ORD-ICN",
+      "month": "2027-02",
+      "resolved": [
+        {
+          "weekday": 0,
+          "dates": [
+            "2027-02-07",
+            "2027-02-14",
+            "2027-02-21",
+            "2027-02-28"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-03",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-03-07",
+            "2027-03-14",
+            "2027-03-21",
+            "2027-03-28"
+          ],
+          "referenceSuccess": 1793666952932
+        },
+        {
+          "weekday": 1,
+          "dates": [
+            "2027-02-01",
+            "2027-02-08",
+            "2027-02-15",
+            "2027-02-22"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-03",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-03-01",
+            "2027-03-08",
+            "2027-03-15",
+            "2027-03-22",
+            "2027-03-29"
+          ],
+          "referenceSuccess": 1793666952932
+        },
+        {
+          "weekday": 3,
+          "dates": [
+            "2027-02-03",
+            "2027-02-10",
+            "2027-02-17",
+            "2027-02-24"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-03",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-03-03",
+            "2027-03-10",
+            "2027-03-17",
+            "2027-03-24",
+            "2027-03-31"
+          ],
+          "referenceSuccess": 1793666952932
+        },
+        {
+          "weekday": 4,
+          "dates": [
+            "2027-02-04",
+            "2027-02-11",
+            "2027-02-18",
+            "2027-02-25"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-03",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-03-04",
+            "2027-03-11",
+            "2027-03-18",
+            "2027-03-25"
+          ],
+          "referenceSuccess": 1793666952932
+        },
+        {
+          "weekday": 5,
+          "dates": [
+            "2027-02-05",
+            "2027-02-12",
+            "2027-02-19",
+            "2027-02-26"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-03",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-03-05",
+            "2027-03-12",
+            "2027-03-19",
+            "2027-03-26"
+          ],
+          "referenceSuccess": 1793666952932
+        }
+      ]
+    },
+    {
+      "route": "ORD-ICN",
+      "month": "2027-06",
+      "resolved": [
+        {
+          "weekday": 1,
+          "dates": [
+            "2027-06-07",
+            "2027-06-14",
+            "2027-06-21",
+            "2027-06-28"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-07",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-07-05",
+            "2027-07-12",
+            "2027-07-19",
+            "2027-07-26"
+          ],
+          "referenceSuccess": 1793667052792
+        }
+      ]
+    },
+    {
+      "route": "ORD-ICN",
+      "month": "2027-08",
+      "resolved": [
+        {
+          "weekday": 4,
+          "dates": [
+            "2027-08-05",
+            "2027-08-12",
+            "2027-08-19",
+            "2027-08-26"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-09",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-09-02",
+            "2027-09-09",
+            "2027-09-16",
+            "2027-09-23",
+            "2027-09-30"
+          ],
+          "referenceSuccess": 1793667103876
+        }
+      ]
+    },
+    {
+      "route": "ICN-ATL",
+      "month": "2027-05",
+      "resolved": [
+        {
+          "weekday": 1,
+          "dates": [
+            "2027-05-03",
+            "2027-05-10",
+            "2027-05-17",
+            "2027-05-24",
+            "2027-05-31"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-06",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-06-07",
+            "2027-06-14",
+            "2027-06-21",
+            "2027-06-28"
+          ],
+          "referenceSuccess": 1793667316771
+        },
+        {
+          "weekday": 2,
+          "dates": [
+            "2027-05-04",
+            "2027-05-11",
+            "2027-05-18",
+            "2027-05-25"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-06",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-06-01",
+            "2027-06-08",
+            "2027-06-15",
+            "2027-06-22",
+            "2027-06-29"
+          ],
+          "referenceSuccess": 1793667316771
+        },
+        {
+          "weekday": 6,
+          "dates": [
+            "2027-05-01",
+            "2027-05-08",
+            "2027-05-15",
+            "2027-05-22",
+            "2027-05-29"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-06",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-06-05",
+            "2027-06-12",
+            "2027-06-19",
+            "2027-06-26"
+          ],
+          "referenceSuccess": 1793667316771
+        }
+      ]
+    },
+    {
+      "route": "ATL-ICN",
+      "month": "2027-06",
+      "resolved": [
+        {
+          "weekday": 3,
+          "dates": [
+            "2027-06-02",
+            "2027-06-09",
+            "2027-06-16",
+            "2027-06-23",
+            "2027-06-30"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-07",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-07-07",
+            "2027-07-14",
+            "2027-07-21",
+            "2027-07-28"
+          ],
+          "referenceSuccess": 1793667353142
+        },
+        {
+          "weekday": 6,
+          "dates": [
+            "2027-06-05",
+            "2027-06-12",
+            "2027-06-19",
+            "2027-06-26"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-07",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-07-03",
+            "2027-07-10",
+            "2027-07-17",
+            "2027-07-24",
+            "2027-07-31"
+          ],
+          "referenceSuccess": 1793667353142
+        }
+      ]
+    },
+    {
+      "route": "ICN-ATL",
+      "month": "2027-08",
+      "resolved": [
+        {
+          "weekday": 2,
+          "dates": [
+            "2027-08-03",
+            "2027-08-10",
+            "2027-08-17",
+            "2027-08-24",
+            "2027-08-31"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-09",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-09-07",
+            "2027-09-14",
+            "2027-09-21",
+            "2027-09-28"
+          ],
+          "referenceSuccess": 1793667390621
+        }
+      ]
+    },
+    {
+      "route": "ATL-ICN",
+      "month": "2027-08",
+      "resolved": [
+        {
+          "weekday": 0,
+          "dates": [
+            "2027-08-01",
+            "2027-08-08",
+            "2027-08-15",
+            "2027-08-22",
+            "2027-08-29"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-09",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-09-05",
+            "2027-09-12",
+            "2027-09-19",
+            "2027-09-26"
+          ],
+          "referenceSuccess": 1793667403448
+        },
+        {
+          "weekday": 1,
+          "dates": [
+            "2027-08-02",
+            "2027-08-09",
+            "2027-08-16",
+            "2027-08-23",
+            "2027-08-30"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-09",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-09-06",
+            "2027-09-13",
+            "2027-09-20",
+            "2027-09-27"
+          ],
+          "referenceSuccess": 1793667403448
+        },
+        {
+          "weekday": 2,
+          "dates": [
+            "2027-08-03",
+            "2027-08-10",
+            "2027-08-17",
+            "2027-08-24",
+            "2027-08-31"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-09",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-09-07",
+            "2027-09-14",
+            "2027-09-21",
+            "2027-09-28"
+          ],
+          "referenceSuccess": 1793667403448
+        },
+        {
+          "weekday": 4,
+          "dates": [
+            "2027-08-05",
+            "2027-08-12",
+            "2027-08-19",
+            "2027-08-26"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-09",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-09-02",
+            "2027-09-09",
+            "2027-09-16",
+            "2027-09-23",
+            "2027-09-30"
+          ],
+          "referenceSuccess": 1793667403448
+        },
+        {
+          "weekday": 5,
+          "dates": [
+            "2027-08-06",
+            "2027-08-13",
+            "2027-08-20",
+            "2027-08-27"
+          ],
+          "decision": "KEEP_ORIGINAL_MARKERS",
+          "referenceMode": "NEXT_MONTH_COMPARISON",
+          "referenceMonth": "2027-09",
+          "referenceStatus": "COMPLETE",
+          "referenceDates": [
+            "2027-09-03",
+            "2027-09-10",
+            "2027-09-17",
+            "2027-09-24"
+          ],
+          "referenceSuccess": 1793667403448
+        }
+      ]
+    }
+  ],
+  "chicago": {
+    "source": "USER_REFERENCE_MONTH_TRIPLET_V3",
+    "scope": "US",
+    "month": "2027-02",
+    "origin": "ICN",
+    "destination": "ORD",
+    "candidateDates": [
+      "2027-02-07",
+      "2027-02-09",
+      "2027-02-14"
+    ],
+    "weekdays": [],
+    "evidence": [],
+    "reviews": [],
+    "resolvedReviews": [
+      {
+        "weekday": 0,
+        "dates": [
+          "2027-02-07",
+          "2027-02-14",
+          "2027-02-21",
+          "2027-02-28"
+        ],
+        "decision": "KEEP_ORIGINAL_MARKERS",
+        "referenceMode": "NEXT_MONTH_COMPARISON",
+        "referenceMonth": "2027-03",
+        "referenceStatus": "COMPLETE",
+        "referenceDates": [
+          "2027-03-07",
+          "2027-03-14",
+          "2027-03-21",
+          "2027-03-28"
+        ],
+        "referenceSuccess": 1793666940226
+      },
+      {
+        "weekday": 2,
+        "dates": [
+          "2027-02-02",
+          "2027-02-09",
+          "2027-02-16",
+          "2027-02-23"
+        ],
+        "decision": "KEEP_ORIGINAL_MARKERS",
+        "referenceMode": "NEXT_MONTH_COMPARISON",
+        "referenceMonth": "2027-03",
+        "referenceStatus": "COMPLETE",
+        "referenceDates": [
+          "2027-03-02",
+          "2027-03-09",
+          "2027-03-16",
+          "2027-03-23",
+          "2027-03-30"
+        ],
+        "referenceSuccess": 1793666940226
+      }
+    ],
+    "excludedDates": []
+  }
+}
