@@ -21,6 +21,7 @@ final class DiagnosticEvent {
   if(m.contains("사용자")&&m.contains("중단"))return "USER_STOP";
   if(m.contains("HTTP 401")||m.contains("HTTP 403")||m.contains("HTTP 429")||m.contains("접근 제한"))return "ACCESS_RESTRICTED";
   if(m.contains("인증서"))return "TLS_ERROR";
+  if(m.contains("조회 가능 날짜 모두 운항편 없음"))return "CALENDAR_NO_FLIGHTS";
   if(m.contains("조회가 불가"))return "UNSUPPORTED_ITINERARY";
   if(m.contains("공식 도시 목록"))return "AIRPORT_NOT_LISTED";
   if(m.contains("시간 초과")||m.contains("응답을 확인하지"))return "STAGE_TIMEOUT";
@@ -35,6 +36,7 @@ final class DiagnosticEvent {
  static String title(String code){return switch(code){
   case "AIRPORT_NOT_LISTED" -> "공항 목록에서 찾지 못함";
   case "AIRPORT_SELECTION_TIMEOUT","STAGE_TIMEOUT" -> "선택·응답 시간 초과";
+  case "CALENDAR_NO_FLIGHTS" -> "원본 달력 운항편 없음";
   case "UNSUPPORTED_ITINERARY" -> "항공사 조회 불가 여정";
   case "NETWORK_ERROR" -> "통신 오류";
   case "ACCESS_RESTRICTED","TLS_ERROR" -> "접근·인증서 제한";

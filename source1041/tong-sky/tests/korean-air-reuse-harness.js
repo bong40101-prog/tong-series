@@ -24,5 +24,16 @@ function testKoreanAirReuse(source, baseline, december, january, alertHTML) {
  test(()=>{submit();replace();$('#travelCalendarListBtn').textContent='2026년 12월';check(adapter('parse',target).wait,'Replaced dates with old title wait');});
  test(()=>{document.body.insertAdjacentHTML('beforeend',alertHTML);for(const stage of ['reuse','result','filter','parse']){const r=adapter(stage,target);check(r.code==='UNSUPPORTED_ITINERARY'&&!r.data,'Official unavailable itinerary classified');}$('#keAlertModalTitleless').style.display='none';check(!adapter('parse',prior).code,'Hidden prior alert ignored');});
  test(()=>{document.body.insertAdjacentHTML('beforeend',alertHTML+'<p>Access denied</p>');const r=adapter('reuse',target);check(r.error&&!r.code&&!r.cold,'Security block takes precedence over skip/fallback');check(clicks===0,'Security never submits');});
+ // Live ICN-CNX no-flight cell structure, captured 2026-11-03.
+ function noFlights(){for(let day=1;day<=31;day++){const cell=$('#day_'+day);cell.className='bonus-calendar__td -no-flight';cell.setAttribute('aria-disabled','true');cell.innerHTML='<div class="bonus-calendar__day"><span aria-hidden="true">'+day+'</span><span class="ux-class-icon -no-flight -gray"> 운항편 없음 </span></div>';}}
+ function unavailable(day){const cell=$('#day_'+day);cell.className='bonus-calendar__td -disabled';cell.querySelector('.ux-class-icon').remove();}
+ test(()=>{noFlights();unavailable(30);unavailable(31);const r=adapter('parse',prior);check(r.code==='CALENDAR_NO_FLIGHTS'&&!r.data&&!r.wait,'29 explicit no-flight + 2 unavailable days finish immediately');check(clicks===0,'No detail or extra query');});
+ test(()=>{noFlights();const r=adapter('parse',prior);check(r.code==='CALENDAR_NO_FLIGHTS'&&!r.data,'Whole month no-flight is distinct from no-seat');});
+ test(()=>{noFlights();$('#day_5 .ux-class-icon').remove();const r=adapter('parse',prior);check(r.wait&&!r.code&&!r.data,'Unexplained blank stays unresolved');check(r.detail.includes('운항편 없음 30일'),'Wait diagnostic reports verified markers');});
+ test(()=>{noFlights();for(let day=1;day<=31;day++)unavailable(day);const r=adapter('parse',prior);check(r.wait&&!r.code&&!r.data,'All disabled is not a no-flight observation');});
+ test(()=>{noFlights();$('#day_5 .ux-class-icon').style.display='none';check(adapter('parse',prior).wait,'Hidden no-flight marker cannot complete');});
+ test(()=>{noFlights();$('#day_5 .ux-class-icon').textContent='좌석 없음';check(adapter('parse',prior).error,'Changed no-flight label rejected');});
+ test(()=>{noFlights();$('#day_5').insertAdjacentHTML('beforeend','<ul class="bonus-calendar__icons"><li>일반석 보너스</li></ul>');const r=adapter('parse',prior);check(r.error&&!r.code&&!r.data,'Conflicting seat icon rejected');});
+ test(()=>{noFlights();$('#travelCalendarPopup').style.display='none';check(adapter('parse',prior).wait,'Hidden result never classified');});
  return {cases,assertions,width:innerWidth};
 }

@@ -10,6 +10,7 @@ final class CollectionDiagnostics implements AutoCloseable {
  void start(JSONObject q,String batch,String stage,int done,int total){query=q;this.batch=batch;this.stage=stage;this.done=done;this.total=total;detail="";started=SystemClock.elapsedRealtime();track();}
  void prepare(String batch,int done,int total){query=null;this.batch=batch;stage="prepare";this.done=done;this.total=total;detail="";started=SystemClock.elapsedRealtime();track();}
  void step(String stage){if(this.stage.equals(stage))return;this.stage=stage;detail="";track();}
+ void progress(int done,int total){this.done=done;this.total=total;}
  void detail(String detail){this.detail=detail==null?"":detail;}
  void exception(Throwable error){StringBuilder text=new StringBuilder(detail).append('\n').append(error.getClass().getName()).append(": ").append(error.getMessage());StackTraceElement[] trace=error.getStackTrace();for(int i=0;i<Math.min(12,trace.length);i++)text.append("\n  at ").append(trace[i]);detail=DiagnosticEvent.clean(text.toString());}
  void track(){try{if(journal!=null)journal.track(event("attempt","IN_PROGRESS","조회 진행 중"));}catch(Exception e){warning="오류 기록 저장 실패 · 휴대폰 저장 공간을 확인하세요.";}}

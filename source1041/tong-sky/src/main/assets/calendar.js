@@ -143,7 +143,7 @@ if(stage==='parse'||stage==='parse_test'){
  const [year,month]=q.month.split('-').map(Number);
  if(text(d.querySelector('#travelCalendarListBtn'))!==year+'년 '+month+'월')return fail('결과 월 불일치');
  const tables=all('#bonusCalendarTableWrapEl table.bonus-calendar__table',d);if(tables.length!==1)return fail('달력 구조 변경');
- const days=new Date(Date.UTC(year,month,0)).getUTCDate();const seen=new Set();const dates=[];
+ const days=new Date(Date.UTC(year,month,0)).getUTCDate();const seen=new Set();const dates=[];let noFlightCount=0,disabledCount=0;
  for(const cell of all('tbody td',tables[0])){
   if(!cell.id){if(cell.getAttribute('aria-hidden')!=='true'||text(cell)!==''||cell.children.length)return fail('확인되지 않은 날짜 셀');continue;}
   const m=cell.id.match(/^day_([1-9]\d?)$/);const day=Number(m?.[1]);if(!m||day<1||day>days||seen.has(day)||cell.getAttribute('aria-hidden')==='true')return fail('날짜 누락·중복 또는 잘못된 날짜');seen.add(day);
@@ -155,11 +155,20 @@ if(stage==='parse'||stage==='parse_test'){
   if(noSeat.length&&(noSeat.length!==1||text(noSeat[0])!=='좌석 없음'||markers.length))return fail('좌석 없음 표식 불일치');
   const item={date:q.month+'-'+String(day).padStart(2,'0'),status:markers.length||noSeat.length?'OBSERVED':'UNKNOWN',economyAward:false,premiumAward:false,prestigeAward:false,premiumUpgrade:false,prestigeUpgrade:false,firstCombined:false};
   const unique=new Set();for(const marker of markers){if(!seatMap[marker]||unique.has(marker))return fail('알 수 없거나 중복된 좌석 표식');unique.add(marker);item[seatMap[marker]]=true;}
-  // No-flight cells have not been verified on a live page. Preserve as UNKNOWN, never invent no-seat.
+  // Verified on ICN-CNX October 2027 (2026-11-03): a no-flight icon is
+  // distinct from no-seat. Keep prior saved data and classify a fully empty
+  // operating calendar instead of waiting until the parser times out.
+  const noFlight=all('.bonus-calendar__day > span.ux-class-icon.-no-flight.-gray',cell).filter(visible);
+  if(noFlight.length&&(noFlight.length!==1||text(noFlight[0])!=='운항편 없음'||!cell.classList.contains('-no-flight')||cell.getAttribute('aria-disabled')!=='true'||markers.length||noSeat.length))return fail('운항편 없음 표식 불일치');
+  if(noFlight.length)noFlightCount++;
+  else if(cell.classList.contains('-disabled')&&cell.getAttribute('aria-disabled')==='true'&&!markers.length&&!noSeat.length)disabledCount++;
   dates.push(item);
  }
  if(seen.size!==days)return fail('한 달 날짜가 완전하지 않아 저장하지 않았습니다.');
- if(dates.every(d=>d.status==='UNKNOWN'))return wait();
+ if(dates.every(d=>d.status==='UNKNOWN')){
+  if(noFlightCount>0&&noFlightCount+disabledCount===days)return {error:'원본 달력의 조회 가능 날짜 모두 운항편 없음 · 기존 저장 자료를 유지합니다.',code:'CALENDAR_NO_FLIGHTS'};
+  return {wait:true,detail:'달력 좌석 표식 확인 대기 · 운항편 없음 '+noFlightCount+'일 · 선택 불가 '+disabledCount+'일'};
+ }
  dates.sort((a,b)=>a.date.localeCompare(b.date));
  const source=window.__tongSource||q.testSource;
  if(!source||!Number.isFinite(Date.parse(source)))return fail('대한항공 정보 기준 시각을 확인하지 못했습니다.');
