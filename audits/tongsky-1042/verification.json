@@ -66,5 +66,11 @@
     "durableCursor": 2,
     "network": "disabled offline fixtures",
     "debugOnlyFixtureBuild": true
+  },
+  "publicDeployment": {
+    "commit": "abe0c1b46f763f110230890598b26ec22ba449ef",
+    "pagesWorkflowRun": 41561622095,
+    "downloadedSha256": "5c759668a45126d11dfe7469378297115b01d4c017af294a106aab767e4f1af0",
+    "downloadVerified": true
   }
 }
