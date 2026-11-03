@@ -18,12 +18,12 @@ jobs:
           from pathlib import Path
           import base64,json,hashlib
           r=Path('release1042-background');h=json.loads((r/'hashes.json').read_text())
-          assert hashlib.sha256(Path('TongSKY-1.0.42.apk').read_bytes()).hexdigest()==h['release']
+          assert hashlib.sha256(Path('release1042-background/release-base.apk').read_bytes()).hexdigest()==h['release']
           Path('/tmp/debug.zst').write_bytes(base64.b64decode((r/'debug.zst.b64').read_text()))
           Path('/tmp/background-probe.apk').write_bytes(base64.b64decode((r/'probe.apk.b64').read_text()))
           assert hashlib.sha256(Path('/tmp/background-probe.apk').read_bytes()).hexdigest()==h['probe']
           PY
-          zstd -qd --long=27 --patch-from=TongSKY-1.0.42.apk /tmp/debug.zst -o /tmp/debug.apk
+          zstd -qd --long=27 --patch-from=release1042-background/release-base.apk /tmp/debug.zst -o /tmp/debug.apk
           python3 - <<'PY'
           from pathlib import Path
           import hashlib,json
