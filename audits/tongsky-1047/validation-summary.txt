@@ -1,0 +1,24 @@
+2026-11-03T05:13:03.1348044Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.142 s -- in kr.tong.sky.PageReuseTest
+2026-11-03T05:13:05.8387490Z [INFO] Tests run: 25, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.695 s -- in kr.tong.sky.ServiceMonthlyCalendarTest
+2026-11-03T05:13:06.9844167Z [INFO] Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.139 s -- in kr.tong.sky.ServiceBrowserFailureTest
+2026-11-03T05:13:07.0466743Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.057 s -- in kr.tong.sky.CollectionEligibilityTest
+2026-11-03T05:13:10.8418030Z PARITY_PASS: 1131 route-months / 34394 dates; Milan P12 U43; original inputs preserved
+2026-11-03T05:13:11.2637687Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.207 s -- in kr.tong.sky.ReferenceParityTest
+2026-11-03T05:13:11.3901400Z [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.119 s -- in kr.tong.sky.RouteNetworkAuditTest
+2026-11-03T05:13:11.8182781Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.426 s -- in kr.tong.sky.ServiceIntervalTest
+2026-11-03T05:13:12.1614300Z [INFO] Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.339 s -- in kr.tong.sky.RepeatMarkerPolicyTest
+2026-11-03T05:13:12.7951200Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.634 s -- in kr.tong.sky.CalendarOptimizationTest
+2026-11-03T05:13:12.9481514Z [INFO] Tests run: 81, Failures: 0, Errors: 0, Skipped: 0
+2026-11-03T05:15:11.9027260Z RETAINED after-upgrade snapshots 1 original rows; total 1
+2026-11-03T05:15:11.9036542Z RETAINED after-upgrade errors 1 original rows; total 1
+2026-11-03T05:15:11.9066547Z RETAINED after-upgrade shared_outbox 1 original rows; total 1
+2026-11-03T05:15:11.9087766Z RETAINED after-upgrade batches 1 original rows; total 1
+2026-11-03T05:15:11.9088359Z RETAINED after-upgrade watches 1 original rows; total 1
+2026-11-03T05:15:11.9091221Z RETAINED relaunch snapshots 1 original rows; total 1
+2026-11-03T05:15:11.9091793Z RETAINED relaunch errors 1 original rows; total 1
+2026-11-03T05:15:11.9092713Z RETAINED relaunch shared_outbox 1 original rows; total 1
+2026-11-03T05:15:11.9093280Z RETAINED relaunch batches 1 original rows; total 1
+2026-11-03T05:15:11.9093819Z RETAINED relaunch watches 1 original rows; total 1
+2026-11-03T05:15:11.9094497Z PASS: fresh KE calendar and OZ snapshots, work and settings survive upgrade and relaunch
+2026-11-03T05:15:23.9659821Z MOBILE_REUSE_PASS: 24 cases / 139 assertions / 320 CSS px
+2026-11-03T05:15:24.4529972Z PASS: signed 10146 -> 10151 upgrade and relaunch preserve new KE records; mobile adapter cases passed
