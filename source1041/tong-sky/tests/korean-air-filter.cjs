@@ -1,0 +1,11 @@
+const fs=require('fs'),{JSDOM}=require('jsdom'),assert=require('assert');
+const source=fs.readFileSync(__dirname+'/../src/main/assets/calendar.js','utf8');
+const labels=['일반석 보너스','프리미엄석 보너스','프리미엄석 좌석승급','프레스티지석 보너스','프레스티지석 좌석승급','일등석 보너스/좌석승급'];
+function test(change,run){const dom=new JSDOM('<body><div role="dialog" aria-label="보너스 좌석 필터">'+labels.map((label,i)=>`<input type="checkbox" id="f${i}" checked><label for="f${i}">${label}</label>`).join('')+'<button>닫기</button></div></body>',{runScripts:'outside-only'}),w=dom.window;Object.defineProperty(w.HTMLElement.prototype,'innerText',{get(){return this.textContent}});w.HTMLElement.prototype.scrollIntoView=function(){};w.HTMLElement.prototype.getBoundingClientRect=()=>({width:100,height:30});w.HTMLElement.prototype.getClientRects=function(){return this.isConnected?[{}]:[]};const inputs=[...w.document.querySelectorAll('input')];let closed=0,clicks=0;w.document.querySelector('button').onclick=()=>closed++;inputs.forEach(x=>x.addEventListener('click',()=>clicks++));change(w,inputs);const tick=()=>w.eval(source)("filter",{origin:'IAD',destination:'ICN',month:'2027-10'});try{run({w,inputs,tick,closed:()=>closed,clicks:()=>clicks});}finally{w.close();}}
+test(()=>{},x=>{assert.equal(x.tick().next,'parse');assert.equal(x.clicks(),0)});
+test((w,a)=>a.forEach(x=>x.checked=false),x=>{for(let i=0;i<6;i++){assert(x.tick().wait);assert.equal(x.closed(),0)}assert(x.inputs.every(x=>x.checked));assert.equal(x.tick().next,'parse');assert.equal(x.clicks(),6)});
+test((w,a)=>{a[0].checked=false;a[0].addEventListener('click',e=>e.preventDefault())},x=>{assert(x.tick().wait);for(let i=0;i<10;i++)assert(x.tick().wait);assert.equal(x.clicks(),1);assert.equal(x.closed(),0)});
+test((w,a)=>{a[2].checked=false;a[2].disabled=true},x=>{assert(x.tick().error);assert.equal(x.clicks(),0);assert.equal(x.closed(),0)});
+test(w=>w.document.querySelectorAll('label')[1].textContent=labels[0],x=>{assert(x.tick().error);assert.equal(x.closed(),0)});
+test((w,a)=>a[0].checked=false,x=>{assert(x.tick().wait);x.inputs[0].checked=true;assert.equal(x.tick().next,'parse');x.inputs[0].checked=false;assert(x.tick().error);assert.equal(x.clicks(),1)});
+console.log('PASS: KE filters all-on, six restored, delayed/failed selection, disabled, duplicate and reversion safeguards');

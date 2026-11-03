@@ -177,13 +177,15 @@ test('all six verified filters allow parsing', () => withPage(p => {
   assert.equal(p.run('filter').next, 'parse');
   assert.equal(clicks, 1);
 }, filter));
-test('a hidden seat class stops parsing', () => withPage(p => {
+test('a hidden seat class is restored before parsing', () => withPage(p => {
   p.d.querySelector('input').checked = false;
-  assert.match(p.run('filter').error, /일부 숨겨져/);
+  assert.equal(p.run('filter').wait, true);
+  assert.equal(p.d.querySelector('input').checked, true);
+  assert.equal(p.run('filter').next, 'parse');
 }, filter));
 test('a changed filter label stops parsing', () => withPage(p => {
   p.d.querySelector('label').textContent = '변경된 등급';
-  assert.match(p.run('filter').error, /일부 숨겨져/);
+  assert.match(p.run('filter').error, /필터 이름/);
 }, filter));
 test('an incomplete filter structure stops parsing', () => withPage(p => {
   p.d.querySelector('input').remove();

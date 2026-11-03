@@ -22,7 +22,7 @@ final class RepeatMarkerPolicy {
   JSONObject regions=selected==null?null:selected.optJSONObject("regions");if(regions==null)return null;
   Iterator<String> names=regions.keys();while(names.hasNext()){
    String region=names.next();JSONArray cities=regions.optJSONArray(region);if(cities==null)continue;
-   for(int i=0;i<cities.length();i++){JSONObject city=cities.optJSONObject(i);if(city==null)continue;String code=city.optString("code");if(!code.equals(snapshot.optString("origin"))&&!code.equals(snapshot.optString("destination")))continue;if("유럽".equals(region))return "EUROPE";if("미주".equals(region))return city.optString("countryCode");}
+   for(int i=0;i<cities.length();i++){JSONObject city=cities.optJSONObject(i);if(city==null)continue;String code=city.optString("code");if(!code.equals(snapshot.optString("origin"))&&!code.equals(snapshot.optString("destination")))continue;if("유럽".equals(region))return "EUROPE";if("동북아시아".equals(region)||"대한민국".equals(region))continue;if("US".equals(city.optString("countryCode")))return "US";if("미주".equals(region))return "AMERICAS";if("대양주/괌".equals(region))return "OCEANIA";return "ALL_ROUTES";}
   }return null;
  }
  private static LocalDate date(String value){try{if(value==null||!value.matches("[0-9]{4}-[0-9]{2}-[0-9]{2}"))return null;LocalDate date=LocalDate.parse(value);return date.toString().equals(value)?date:null;}catch(Exception ignored){return null;}}
@@ -36,21 +36,27 @@ final class RepeatMarkerPolicy {
   if(day==null)return null;JSONObject original=day.optJSONObject("awardCalendarFlags");if(original==null)original=day.optJSONObject("legacyAwardFlags");if(original==null)original=day;JSONObject source=new JSONObject(original.toString());if(!source.has("status"))source.put("status",day.optString("status","UNKNOWN"));return source;
  }
  // Read-only borrowed view for internal validation: avoid serializing an entire day repeatedly.
- private static JSONObject calendarView(JSONObject day)throws Exception{
+ static JSONObject calendarView(JSONObject day)throws Exception{
   if(day==null)return null;JSONObject source=day.optJSONObject("awardCalendarFlags");if(source==null)source=day.optJSONObject("legacyAwardFlags");if(source==null)source=day;if(source.has("status"))return source;
   JSONObject flags=new JSONObject().put("status",day.optString("status","UNKNOWN"));for(String field:Search.ALL_FIELDS)if(source.has(field))flags.put(field,source.get(field));return flags;
  }
- private static JSONObject flags(JSONObject day)throws Exception{
+ static JSONObject flags(JSONObject day)throws Exception{
   JSONObject original=calendarView(day);if(original==null||!"OBSERVED".equals(original.optString("status")))return null;for(String field:Search.ALL_FIELDS)if(!(original.opt(field) instanceof Boolean))return null;return original;
  }
  /** A view copy of the original calendar; no operator or timetable proof gates are used. */
  static JSONObject calendar(JSONObject raw)throws Exception{return calendar(raw,catalog);}
  static JSONObject calendar(JSONObject raw,JSONObject selected)throws Exception{
+  return calendar(raw,selected,null);
+ }
+ static JSONObject calendar(JSONObject raw,JSONObject selected,ReferenceMarkerRules.Context context)throws Exception{
   if(raw==null)return null;JSONObject view=new JSONObject(raw.toString());if(!monthly(raw)&&scope(raw,selected)==null)return view;Map<String,JSONObject> original=days(raw,null);JSONArray dates=view.optJSONArray("dates");if(dates==null)return view;
   for(int i=0;i<dates.length();i++){JSONObject day=dates.getJSONObject(i),source=calendarView(original.get(day.optString("date")));String status=source==null?"UNKNOWN":source.optString("status","UNKNOWN");boolean observed=source!=null&&"OBSERVED".equals(status);for(String field:Search.ALL_FIELDS)observed&=source!=null&&source.opt(field) instanceof Boolean;if(!observed&&!"NO_FLIGHT".equals(status))status="UNKNOWN";day.put("status",status);JSONObject saved=new JSONObject().put("status",status).put("sourceKind","SAVED_CALENDAR");for(String field:Search.ALL_FIELDS){boolean marked=observed&&source.getBoolean(field);day.put(field,marked);saved.put(field,marked);}day.put("savedCalendarSource",saved);for(String key:new String[]{"savedAggregate","savedAggregatePendingReason","timetableReferenceConflict","timetableReferences","routeWeekdayLabel","routeWeekdaySource"})day.remove(key);}
-  view=applyInto(raw,view,selected);JSONArray projected=view.getJSONArray("dates");for(int i=0;i<projected.length();i++){JSONObject day=projected.getJSONObject(i);if(excluded(day))for(String field:Search.ALL_FIELDS)day.put(field,false);}return view;
+  view=applyInto(raw,view,selected,context);JSONArray projected=view.getJSONArray("dates");for(int i=0;i<projected.length();i++){JSONObject day=projected.getJSONObject(i);if(excluded(day))for(String field:Search.ALL_FIELDS)day.put(field,false);}return view;
  }
  static JSONObject rule(JSONObject raw,JSONObject projected,JSONObject selected)throws Exception{
+  return ReferenceMarkerRules.evaluate(raw,selected,null);
+ }
+ static JSONObject ownRule(JSONObject raw,JSONObject selected)throws Exception{
   String scope=scope(raw,selected);if(scope==null||date(raw.optString("month")+"-01")==null)return null;YearMonth month=YearMonth.parse(raw.getString("month"));Set<String> duplicates=new HashSet<>();Map<String,JSONObject> days=days(raw,duplicates);SortedSet<String> candidates=new TreeSet<>();
   for(var entry:days.entrySet()){JSONObject f=flags(entry.getValue());if(!duplicates.contains(entry.getKey())&&f!=null&&f.optBoolean("economyAward")&&f.optBoolean("prestigeAward")&&f.optBoolean("prestigeUpgrade"))candidates.add(entry.getKey());}
   JSONArray evidence=new JSONArray(),reviews=new JSONArray(),weekdays=new JSONArray();
@@ -66,15 +72,20 @@ final class RepeatMarkerPolicy {
  }
  /** Mutates only an already detached view owned by this class. */
  private static JSONObject applyInto(JSONObject raw,JSONObject result,JSONObject selected)throws Exception{
-  result.remove("repeatMarkerPolicy");JSONArray dates=result.optJSONArray("dates");if(dates==null)return result;JSONObject rule=rule(raw,result,selected);JSONArray excluded=new JSONArray();Map<String,JSONObject> rawDays=days(raw,null);
+  return applyInto(raw,result,selected,null);
+ }
+ private static JSONObject applyInto(JSONObject raw,JSONObject result,JSONObject selected,ReferenceMarkerRules.Context context)throws Exception{
+  result.remove("repeatMarkerPolicy");JSONArray dates=result.optJSONArray("dates");if(dates==null)return result;JSONObject rule=ReferenceMarkerRules.evaluate(raw,selected,context);JSONArray excluded=new JSONArray();Map<String,JSONObject> rawDays=days(raw,null);
   for(int i=0;i<dates.length();i++){JSONObject day=dates.optJSONObject(i);if(day==null)continue;day.remove("repeatMarkerExclusion");day.remove("repeatMarkerReview");day.remove("repeatMarkerReviewFlags");day.remove("displayStatus");day.remove("displayFlags");if(rule==null)continue;decorate(day,rule);JSONObject original=rawDays.get(day.optString("date"));if(review(day)&&original!=null){JSONObject observed=flags(original);if(observed!=null){JSONObject stored=new JSONObject().put("status","OBSERVED").put("sourceKind","REVIEW_STORED_CALENDAR");for(String field:Search.ALL_FIELDS)stored.put(field,observed.getBoolean(field));day.put("repeatMarkerReviewFlags",stored);}}if(day.has("repeatMarkerExclusion"))excluded.put(day.optString("date"));}
   if(rule!=null)result.put("repeatMarkerPolicy",rule.put("excludedDates",excluded));return result;
  }
  private static void decorate(JSONObject day,JSONObject rule)throws Exception{
-  LocalDate date=date(day.optString("date"));if(date==null||!YearMonth.from(date).toString().equals(rule.optString("month")))return;int weekday=date.getDayOfWeek().getValue()%7;JSONArray evidence=rule.optJSONArray("evidence"),reviews=rule.optJSONArray("reviews");
-  if(evidence!=null)for(int n=0;n<evidence.length();n++){JSONObject found=evidence.getJSONObject(n);if(found.optInt("weekday",-1)==weekday)day.put("repeatMarkerExclusion",new JSONObject().put("source",SOURCE).put("kind","MONTH_WEEKDAY").put("month",rule.getString("month")).put("weekday",weekday).put("evidenceDates",new JSONArray(found.getJSONArray("dates").toString())));}
-  if(reviews!=null)for(int n=0;n<reviews.length();n++){JSONObject found=reviews.getJSONObject(n);if(found.optInt("weekday",-1)==weekday)day.put("repeatMarkerReview",new JSONObject(found.toString()).put("source",SOURCE).put("month",rule.getString("month")));}
+  LocalDate date=date(day.optString("date"));if(date==null||date.toString().compareTo(ReferenceMarkerRules.ORIGINAL_END)<=0||!YearMonth.from(date).toString().equals(rule.optString("month")))return;int weekday=date.getDayOfWeek().getValue()%7;JSONArray evidence=rule.optJSONArray("evidence"),reviews=rule.optJSONArray("reviews");
+  if(evidence!=null)for(int n=0;n<evidence.length();n++){JSONObject found=evidence.getJSONObject(n);if(found.optInt("weekday",-1)==weekday&&contains(found.getJSONArray("dates"),date.toString()))day.put("repeatMarkerExclusion",(found.has("referenceMonth")?new JSONObject(found.toString()):new JSONObject()).put("source",rule.getString("source")).put("kind",found.has("referenceMonth")?"REFERENCE_MONTH_WEEKDAY":"MONTH_WEEKDAY").put("month",rule.getString("month")).put("weekday",weekday).put("evidenceDates",new JSONArray(found.getJSONArray("dates").toString())));}
+  if(reviews!=null)for(int n=0;n<reviews.length();n++){JSONObject found=reviews.getJSONObject(n);if(found.optInt("weekday",-1)==weekday&&contains(found.getJSONArray("dates"),date.toString()))day.put("repeatMarkerReview",new JSONObject(found.toString()).put("source",rule.getString("source")).put("month",rule.getString("month")));}
  }
+ static boolean contains(JSONArray values,String date){for(int i=0;i<values.length();i++)if(date.equals(values.optString(i)))return true;return false;}
+ static JSONObject calendar(JSONObject raw,ReferenceMarkerRules.Context context)throws Exception{return calendar(raw,catalog,context);}
  static JSONObject missingDay(JSONObject snapshot,LocalDate date)throws Exception{
   JSONObject day=new JSONObject().put("date",date.toString()).put("status","UNKNOWN");for(String field:Search.ALL_FIELDS)day.put(field,false);JSONObject rule=snapshot==null?null:snapshot.optJSONObject("repeatMarkerPolicy");if(rule!=null)decorate(day,rule);return day;
  }

@@ -1,0 +1,108 @@
+name: TongSKY 1.0.42 calendar parity and collection recovery
+on:
+  push:
+    branches: ['fix/tongsky-1042']
+    paths: ['release1042/**', 'source1041/**', '.github/workflows/tongsky-1042.yml']
+permissions:
+  contents: write
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Restore and verify signed candidate and offline probe
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile
+          import json,hashlib,base64
+          root=Path('release1042');h=json.loads((root/'hashes.json').read_text())
+          old=Path('TongSKY-1.0.41-r4.apk');assert hashlib.sha256(old.read_bytes()).hexdigest()==h['old']
+          Path('/tmp/base.dict').write_bytes(old.read_bytes())
+          Path('/tmp/apk.zst').write_bytes(base64.b64decode((root/'apk.zst.b64').read_text()))
+          Path('mobile-probe.apk').write_bytes(base64.b64decode((root/'probe.apk.b64').read_text()))
+          assert hashlib.sha256(Path('mobile-probe.apk').read_bytes()).hexdigest()==h['probe']
+          PY
+          zstd -qd --long=27 --patch-from=/tmp/base.dict /tmp/apk.zst -o TongSKY-1.0.42.apk
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile
+          import json,hashlib
+          h=json.loads(Path('release1042/hashes.json').read_text())
+          assert hashlib.sha256(Path('TongSKY-1.0.42.apk').read_bytes()).hexdigest()==h['apk']
+          with ZipFile('TongSKY-1.0.42.apk') as z:release=z.read('assets/calendar.js')
+          with ZipFile('mobile-probe.apk') as z:probe=z.read('assets/candidate.js')
+          assert release==probe==Path('source1041/tong-sky/src/main/assets/calendar.js').read_bytes()
+          assert hashlib.sha256(release).hexdigest()==h['adapter']
+          PY
+          signer=$(find "$ANDROID_HOME/build-tools" -name apksigner | sort -V | tail -1)
+          "$signer" verify --min-sdk-version 33 --verbose --print-certs TongSKY-1.0.42.apk | tee /tmp/signature.txt
+          grep -Fq '5ee2986ae413b9dfb87724079b93d83a5dcaabf1d2fe96603418dec50cfe547d' /tmp/signature.txt
+          sudo setfacl -m "u:$(id -un):rw" /dev/kvm
+      - name: Native collector, weekday rules and lifecycle regressions
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/monthly-qa/libs evidence
+          base64 -d release1041-mobile/framework.tgz.b64 | tar xz -C /tmp/monthly-qa
+          python3 - <<'PYCODE'
+          from pathlib import Path
+          from zipfile import ZipFile,ZIP_DEFLATED
+          import json,base64,hashlib
+          patch=json.loads(Path('release1042/classes-update.json').read_text())
+          target=Path('/tmp/monthly-qa/classes.jar')
+          with ZipFile(target) as z:files={n:z.read(n) for n in z.namelist()}
+          for n in patch.get('removed',[]):files.pop(n,None)
+          files.update({n:base64.b64decode(v) for n,v in patch['updates'].items()})
+          digest=hashlib.sha256(b''.join(n.encode()+b'\0'+hashlib.sha256(files[n]).digest() for n in sorted(files) if n.endswith('.class'))).hexdigest()
+          assert digest==patch['fingerprint']
+          with ZipFile(target,'w',ZIP_DEFLATED) as z:
+              for n,v in files.items():z.writestr(n,v)
+          PYCODE
+          base64 -d release1042/parity.json.gz.b64 | gzip -d > /tmp/monthly-qa/service/src/test/resources/parity.json
+          cp release1042/qa/*.java /tmp/monthly-qa/service/src/test/java/kr/tong/sky/
+          mkdir -p /tmp/monthly-qa/service/src/test/resources
+          cp release1041-mobile/qa/fixtures/*.json /tmp/monthly-qa/service/src/test/resources/
+          cp source1041/tong-sky/tests/framework-region-import/src/test/java/kr/tong/sky/RepeatMarkerPolicyTest.java /tmp/monthly-qa/service/src/test/java/kr/tong/sky/
+          curl -fsSL https://dl.google.com/dl/android/maven2/androidx/test/monitor/1.7.2/monitor-1.7.2.aar -o /tmp/monitor.aar
+          curl -fsSL https://dl.google.com/dl/android/maven2/androidx/test/espresso/espresso-idling-resource/3.6.1/espresso-idling-resource-3.6.1.aar -o /tmp/espresso.aar
+          unzip -p /tmp/monitor.aar classes.jar > /tmp/monthly-qa/libs/monitor.jar
+          unzip -p /tmp/espresso.aar classes.jar > /tmp/monthly-qa/libs/espresso.jar
+          mvn -B -f /tmp/monthly-qa/service/pom.xml -Dsky.classes.jar=/tmp/monthly-qa/classes.jar -Dandroid.test.libs=/tmp/monthly-qa/libs -Dtongsky.assets="$GITHUB_WORKSPACE/source1041/tong-sky/src/main/assets" -Dtest=ServiceMonthlyCalendarTest,ServiceIntervalTest,ServiceBrowserFailureTest,RepeatMarkerPolicyTest,CalendarOptimizationTest,PageReuseTest,CollectionEligibilityTest,ReferenceParityTest test | tee evidence/framework.txt
+          cp /tmp/monthly-qa/service/target/surefire-reports/TEST-*.xml evidence/
+      - name: Android 15 monthly collection and non-resetting upgrade
+        uses: ReactiveCircus/android-emulator-runner@a421e43855164a8197daf9d8d40fe71c6996bb0d
+        with:
+          api-level: 35
+          target: google_apis
+          arch: x86_64
+          profile: pixel_2
+          cores: 2
+          ram-size: 3072M
+          disable-animations: true
+          emulator-boot-timeout: 360
+          emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -camera-back none
+          script: bash release1042/qa/device.sh
+      - name: Retain test evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: tongsky-1042-verification
+          path: |
+            evidence/
+            TongSKY-1.0.42.apk
+          if-no-files-found: error
+          retention-days: 7
+      - name: Stage validated signed APK
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add TongSKY-1.0.42.apk
+          git commit -m 'Stage TongSKY 1.0.42 calendar parity and recovery 10146 after Android validation'
+          git pull --rebase origin fix/tongsky-1042
+          git push origin HEAD:refs/heads/fix/tongsky-1042

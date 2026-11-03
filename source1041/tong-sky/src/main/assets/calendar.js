@@ -123,7 +123,15 @@ if(stage==='filter'){
  const expected=['일반석 보너스','프리미엄석 보너스','프리미엄석 좌석승급','프레스티지석 보너스','프레스티지석 좌석승급','일등석 보너스/좌석승급'];
  if(inputs.length!==6)return fail('좌석 필터 구조가 달라 수집을 중단했습니다.');
  const labels=inputs.map(e=>norm((e.labels&&Array.from(e.labels).map(text).join(' '))||e.getAttribute('aria-label')));
- if(expected.some(e=>!labels.includes(e))||inputs.some(e=>!e.checked))return fail('좌석 필터가 일부 숨겨져 있어 저장하지 않았습니다.');
+ if(expected.some(e=>!labels.includes(e))||new Set(labels).size!==6)return fail('좌석 필터 이름을 확인할 수 없어 저장하지 않았습니다.');
+ // Restore the visible filter through its own labels, then verify on another tick.
+ // Never set checked programmatically or save a partially filtered calendar.
+ let state=window.__tongKeFilter;
+ if(!state||state.key!==reuseKey||state.dialog!==d)state=window.__tongKeFilter={key:reuseKey,dialog:d,clicked:[],pending:null};
+ if(state.pending){const index=labels.indexOf(state.pending);if(index<0)return fail('좌석 필터 이름이 변경되어 저장하지 않았습니다.');if(!inputs[index].checked)return {wait:true,detail:'좌석 필터 선택 반영 대기 · '+state.pending};state.pending=null;}
+ const index=inputs.findIndex(e=>!e.checked);
+ if(index>=0){const input=inputs[index],name=labels[index];if(state.clicked.includes(name))return fail('좌석 필터 선택이 유지되지 않아 저장하지 않았습니다: '+name);if(input.disabled||input.getAttribute('aria-disabled')==='true')return fail('좌석 필터를 선택할 수 없어 저장하지 않았습니다: '+name);const label=Array.from(input.labels||[]).find(e=>d.contains(e)&&visible(e));if(!label)return {wait:true,detail:'좌석 필터 표시 대기 · '+name};state.clicked.push(name);state.pending=name;label.scrollIntoView({block:'center',inline:'nearest',behavior:'instant'});label.click();return {wait:true,detail:'좌석 필터 전체 표시 복구 · '+name};}
+
  const close=byText('button','선택 완료',d)||byText('button','닫기',d);return click(close,'parse');
 }
 if(stage==='parse'||stage==='parse_test'){

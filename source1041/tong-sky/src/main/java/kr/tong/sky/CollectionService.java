@@ -63,7 +63,7 @@ public final class CollectionService extends Service {
   if(startupFailed||closed||finished){stopSelf();return START_NOT_STICKY;}
   if(intent==null){end("수집이 중단됐습니다. 앱에서 이어서 시작하세요.",false);return START_NOT_STICKY;}
   if(STOP.equals(intent.getAction())){cancel("사용자가 알림에서 수집을 중단했습니다.");return START_NOT_STICKY;}
-  if(request!=null)return START_NOT_STICKY;request=intent;batchKey=intent.getStringExtra("batchKey");if(batchKey==null)batchKey="";
+  if(request!=null)return START_REDELIVER_INTENT;request=intent;batchKey=intent.getStringExtra("batchKey");if(batchKey==null)batchKey="";
   fixture=BuildConfig.DEBUG?intent.getStringExtra("__fixture"):null;allKeys=intent.getStringArrayListExtra("allBatchKeys");
   boolean share=intent.getBooleanExtra("shared",false);setStatus("조회 대상 목록을 준비하고 있습니다.");
   sharedWorker.execute(()->{
@@ -77,7 +77,7 @@ public final class CollectionService extends Service {
 
     handler.post(()->{if(isFinishing())return;if(share)prepareShared();else try{begin();}catch(Exception error){if(diagnostic!=null)diagnostic.exception(error);cancel("수집 준비 오류: "+error.getMessage());}});
    }catch(Exception error){if(diagnostic!=null)diagnostic.exception(error);handler.post(()->{if(!isFinishing())cancel("수집 목록 확인 오류: "+error.getMessage());});}
-  });return START_NOT_STICKY;
+  });return START_REDELIVER_INTENT;
  }
  JSONObject eligibleBatch(String key)throws Exception{JSONObject previous=db.batch(key);if(previous==null)throw new Exception("수집 목록 없음");JSONObject batch=RouteRules.filterBatch(previous,"KE",Search.today(),Search.lastDate(false));batch=PageReuse.orderRemaining(batch);db.batch(batch);return batch;}
  void prepareShared(){runSafely("공유 자료 준비 오류",()->prepareSharedOwned());}
@@ -276,11 +276,12 @@ public final class CollectionService extends Service {
   stopPlatformService();String message="안드로이드의 백그라운드 실행 시간이 끝났습니다. 저장 후 중단했으며 다음 실행에서 이어집니다.";
   try{cancel(message);}finally{if(!finished&&!closed)finishEnd(message,false);}
  }
+ @Override public void onTaskRemoved(Intent rootIntent){super.onTaskRemoved(rootIntent);if(!isFinishing())publish(false);}
  @Override public IBinder onBind(Intent intent){return null;}
  @Override public void onDestroy(){
   if(closed)return;
   closed=true;running=false;paused=true;typing=false;token++;if(sharedBatcher!=null)sharedBatcher.stop();handler.removeCallbacksAndMessages(null);
-  if(!finished){if(diagnostic!=null)diagnostic.failure("PROCESS_DESTROYED","시스템이 수집 서비스를 종료했습니다.",false);lastError="시스템이 수집을 중단했습니다. 앱에서 이어서 시작하세요.";try{if(lastState!=null){lastState.put("running",false).put("message",lastError);getSharedPreferences("collection",0).edit().putString("state",lastState.toString()).apply();}}catch(Exception ignored){}}
+  if(!finished){if(diagnostic!=null)diagnostic.failure("PROCESS_DESTROYED","시스템이 수집 서비스를 종료했습니다.",false);lastError="시스템이 수집 프로세스를 종료했습니다. 저장된 진행 위치에서 복구를 기다립니다.";try{if(lastState!=null){lastState.put("running",false).put("message",lastError);getSharedPreferences("collection",0).edit().putString("state",lastState.toString()).apply();}}catch(Exception ignored){}}
   if(web!=null){WebView old=web;web=null;try{old.stopLoading();}catch(RuntimeException ignored){}try{if(old.getParent() instanceof android.view.ViewGroup parent)parent.removeView(old);}catch(RuntimeException ignored){}try{old.destroy();}catch(RuntimeException ignored){}}
   if(presentation!=null){Presentation old=presentation;presentation=null;try{old.dismiss();}catch(RuntimeException ignored){}}
   if(display!=null){android.hardware.display.VirtualDisplay old=display;display=null;try{old.release();}catch(RuntimeException ignored){}}
