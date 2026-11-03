@@ -1,0 +1,7 @@
+# TongSKY 1.0.43
+
+Complete months with unresolved weekday warnings now compare the immediately following complete month on the same route and direction. When every reference weekday is observed and none carries the original three-marker combination, keep the current original seat flags and clear only the warning. Mixed/missing reference evidence remains unresolved; observed contradictions still prevent exclusions. The December 17 boundary, December/January rule, raw records, and OZ behavior remain unchanged.
+
+Production Chicago ICN→ORD February 2027 now has zero warning cells and the same 3 bonus / 22 upgrade / 2 first-class marked dates. Native and web projections match on 588 stored route-months and 17,887 dates. All 62 native tests, 235 website tests, 4 feedback endpoint/authentication tests, and the Android 15 signed 10146→10147 preservation/mobile checks passed.
+
+The website header now opens a private error/suggestion form. The existing server accepts a bounded submission into its private queue, with idempotent receipts and short-lived rate limiting. An exact, signature-verified GitHub OIDC workflow imports records into the owner's private GitHub issue inbox every five minutes (scheduler delays can extend this). Each importer run verifies that only the owner has repository access. Anonymous clients cannot read submissions; no GitHub credentials are sent to the website. A browser submission was verified as a real private issue and the synthetic test issue was closed. No raw calendar resets or rewrites were performed.

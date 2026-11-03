@@ -1,0 +1,51 @@
+{
+  "version": "1.0.43",
+  "versionCode": 10147,
+  "sha256": "2c6a4f300cdf8674c8a2cb67c4eb5f64722e7673951d4429ab3e60eba4dcb9c4",
+  "bytes": 3330049,
+  "sourceCommit": "5d6029413ccaeac63a97db59fa3d4c286d9248b4",
+  "stagedCommit": "d2c9b1e69cce4fa053a72756881c0f079146a5eb",
+  "publishedCommit": "5b9156d38e64766c1b174e417365153e0b318a79",
+  "websiteCommit": "89d929a39c9628f859b658ded6b34d627858dac4",
+  "workflowRun": 41570089474,
+  "nativeTests": 62,
+  "nativeParity": {
+    "routeMonths": 588,
+    "dates": 17887,
+    "eligibleDirections": 122
+  },
+  "websiteTests": 235,
+  "feedbackTests": 4,
+  "mobileTests": {
+    "scenarios": 16,
+    "assertions": 105,
+    "cssWidth": 320
+  },
+  "upgrade": {
+    "fromCode": 10146,
+    "toCode": 10147,
+    "resetGeneration": "KE-20261103-1041",
+    "recordsPreserved": true
+  },
+  "chicago": {
+    "month": "2027-02",
+    "direction": "ICN-ORD",
+    "comparedWith": "2027-03",
+    "reviews": 0,
+    "counts": [
+      3,
+      22,
+      2
+    ]
+  },
+  "feedback": {
+    "privateRepositoryOwnerOnlyVerified": true,
+    "browserReceipt": "ae3d3e19-e086-40a6-ae2f-1c51716acb0a",
+    "endToEndIssueNumber": 1,
+    "testIssueClosed": true,
+    "auth": "GitHub OIDC exact repository/workflow/branch; no browser token",
+    "syncMinutes": 5
+  },
+  "publicDownloadVerified": true,
+  "publicDownloadedSha256": "2c6a4f300cdf8674c8a2cb67c4eb5f64722e7673951d4429ab3e60eba4dcb9c4"
+}
