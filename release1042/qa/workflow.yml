@@ -26,7 +26,7 @@ jobs:
           Path('mobile-probe.apk').write_bytes(base64.b64decode((root/'probe.apk.b64').read_text()))
           assert hashlib.sha256(Path('mobile-probe.apk').read_bytes()).hexdigest()==h['probe']
           PY
-          zstd -qd --long=27 --patch-from=/tmp/base.dict /tmp/apk.zst -o TongSKY-1.0.42.apk
+          zstd -qdf --long=27 --patch-from=/tmp/base.dict /tmp/apk.zst -o TongSKY-1.0.42.apk
           python3 - <<'PY'
           from pathlib import Path
           from zipfile import ZipFile
