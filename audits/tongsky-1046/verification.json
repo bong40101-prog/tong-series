@@ -1,0 +1,45 @@
+{
+  "version": "1.0.46",
+  "versionCode": 10150,
+  "sourceCommit": "ce0e7a346e499514c9cf839dd9d07060bf9590b1",
+  "validatedCommit": "d173977be4ff1fe8845c047a3b6ef4b15af4657e",
+  "publicCommit": "de5c4ed47430c7672ccbcb06be7e1d6c5f2bc92e",
+  "apk": {
+    "sha256": "4521e142c9aff34c54cadaa15967e5a5f5125ba66df7d9bb26224cb15465e6eb",
+    "blob": "9c356fbe188e4930ad67881033d46fbd0f2a3a8d",
+    "bytes": 3334145
+  },
+  "workflow": {
+    "run": 41580144368,
+    "job": 125732803848,
+    "result": "success",
+    "nativeTests": 75,
+    "calendarParity": {
+      "routeMonths": 1131,
+      "dates": 34394
+    },
+    "mobile": {
+      "api": 35,
+      "cases": 16,
+      "assertions": 105,
+      "upgrade": "1.0.42/10146 -> 1.0.46/10150",
+      "dataPreserved": true
+    }
+  },
+  "counts": {
+    "auditedCarrierDestinations": 90,
+    "KE": 61,
+    "OZ": 29,
+    "KECurrentDirect": 48,
+    "OZCurrentDirect": 22,
+    "collectionBefore": 1438,
+    "collectionAfter": 1314
+  },
+  "publicDownloadVerification": {
+    "sha256": "4521e142c9aff34c54cadaa15967e5a5f5125ba66df7d9bb26224cb15465e6eb",
+    "byteForByteMatchesCandidate": true,
+    "pagesRun": 41580552052,
+    "versionVisibleInBrowser": "1.0.46",
+    "dataReset": false
+  }
+}

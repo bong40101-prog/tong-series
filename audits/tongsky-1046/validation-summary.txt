@@ -1,0 +1,22 @@
+2026-11-03T04:47:56.9695164Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.536 s -- in kr.tong.sky.PageReuseTest
+2026-11-03T04:47:59.8435185Z [INFO] Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.861 s -- in kr.tong.sky.ServiceMonthlyCalendarTest
+2026-11-03T04:48:00.8809489Z [INFO] Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.033 s -- in kr.tong.sky.ServiceBrowserFailureTest
+2026-11-03T04:48:00.9496503Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.065 s -- in kr.tong.sky.CollectionEligibilityTest
+2026-11-03T04:48:06.0327401Z PARITY_PASS: 1131 route-months / 34394 dates; Milan P12 U43; original inputs preserved
+2026-11-03T04:48:06.5905727Z ALL_ROUTE_SCOPE_PASS: 122 directions; December boundary and OZ isolation
+2026-11-03T04:48:06.6429556Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.689 s -- in kr.tong.sky.ReferenceParityTest
+2026-11-03T04:48:06.8197463Z [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.169 s -- in kr.tong.sky.RouteNetworkAuditTest
+2026-11-03T04:48:07.1870420Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.363 s -- in kr.tong.sky.ServiceIntervalTest
+2026-11-03T04:48:07.6136886Z [INFO] Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.422 s -- in kr.tong.sky.RepeatMarkerPolicyTest
+2026-11-03T04:48:08.3647930Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.751 s -- in kr.tong.sky.CalendarOptimizationTest
+2026-11-03T04:48:08.5389823Z [INFO] Tests run: 75, Failures: 0, Errors: 0, Skipped: 0
+2026-11-03T04:48:08.5438500Z [INFO] BUILD SUCCESS
+2026-11-03T04:49:51.3524922Z PASS: KE reset; OZ calendars, shared work, settings and history retained
+2026-11-03T04:49:52.0335099Z PASS: second launch preserves newly saved KE records
+2026-11-03T04:49:54.1955751Z     versionCode=10150 minSdk=33 targetSdk=35
+2026-11-03T04:50:03.8725106Z PASS: second launch preserves newly saved KE records
+2026-11-03T04:50:10.5214776Z PASS: second launch preserves newly saved KE records
+2026-11-03T04:50:10.6124473Z PASS: fresh KE calendar and OZ snapshots, work and settings survive upgrade and relaunch
+2026-11-03T04:50:21.2888050Z MOBILE_REUSE_PASS: 16 cases / 105 assertions / 320 CSS px
+2026-11-03T04:50:21.2889691Z PASS: API35 WebView 320css private-display mobile lifecycle; baseline reproduces wait; 1.0.35 and candidate save monthly marks without any date click or detail confirmation
+2026-11-03T04:50:21.5547100Z PASS: signed 10146 -> 10150 upgrade and relaunch preserve new KE records; mobile adapter cases passed
