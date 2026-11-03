@@ -1,0 +1,133 @@
+{
+  "webCommit": "5354a5ef0aa57c64f7a5841c1ac948d10c08d528",
+  "webTests": {
+    "passed": 239,
+    "failed": 0
+  },
+  "koreanAir": {
+    "dataCommit": "tree:b8c8ceb26e9dfaa1f0a5fb7ec06b9fbd8a066cdd",
+    "regions": [
+      {
+        "file": "americas.json",
+        "region": "미주",
+        "routeMonths": 312
+      },
+      {
+        "file": "central_asia.json",
+        "region": "러시아/몽골/중앙아시아",
+        "routeMonths": 0
+      },
+      {
+        "file": "europe.json",
+        "region": "유럽",
+        "routeMonths": 304
+      },
+      {
+        "file": "middle_east_africa.json",
+        "region": "중동/아프리카",
+        "routeMonths": 0
+      },
+      {
+        "file": "oceania.json",
+        "region": "대양주/괌",
+        "routeMonths": 77
+      },
+      {
+        "file": "se_asia.json",
+        "region": "동남아시아/서남아시아",
+        "routeMonths": 438
+      }
+    ],
+    "routeMonths": 1131,
+    "directions": 102,
+    "months": [
+      "2026-11",
+      "2026-12",
+      "2027-01",
+      "2027-02",
+      "2027-03",
+      "2027-04",
+      "2027-05",
+      "2027-06",
+      "2027-07",
+      "2027-08",
+      "2027-09",
+      "2027-10"
+    ],
+    "dates": 34394,
+    "resolvedReviewDates": 276,
+    "changedSeatDates": 0,
+    "changedExclusions": 0,
+    "remainingReviewDates": 3271,
+    "milan": [
+      12,
+      43
+    ]
+  },
+  "asiana": {
+    "blob": "a8585570f0f8220178474960485f78dd009cbb48",
+    "carrier": "OZ",
+    "routeMonths": 570,
+    "dates": 17362,
+    "changedRecords": 0
+  },
+  "chicago": [
+    {
+      "month": "2027-01",
+      "bonus": 6,
+      "upgrade": 11,
+      "first": 0,
+      "warnings": 0
+    },
+    {
+      "month": "2027-02",
+      "bonus": 3,
+      "upgrade": 22,
+      "first": 2,
+      "warnings": 0
+    }
+  ],
+  "notice": {
+    "count": 4,
+    "dismissalNamespace": "tongsky.notice.dismissed.v1.",
+    "existingIds": [
+      "operator",
+      "ke-range",
+      "excluded-region"
+    ],
+    "newId": "feedback",
+    "observedOpenAfterUpdate": [
+      "feedback"
+    ]
+  },
+  "release1044": {
+    "nativeTests": 63,
+    "parityRouteMonths": 1054,
+    "parityDates": 32054,
+    "androidUpgrade": "10147 -> 10148",
+    "runId": 41574630958,
+    "conclusion": "success"
+  },
+  "release1045": {
+    "versionName": "1.0.45",
+    "versionCode": 10149,
+    "apkSha256": "e83ef3b3499144484e26e93e575bbf238819c2fad40faef38de7f8ae634d585c",
+    "runId": 41575460136,
+    "nativeSourceCommit": "9af24c23b669ac815a7411a73ec01e484c1ae33c",
+    "nativeTests": 67,
+    "nativeFailures": 0,
+    "parityRouteMonths": 1131,
+    "parityDates": 34394,
+    "catalogDirections": 122,
+    "androidUpgrade": "10146 -> 10149",
+    "mobileCases": 16,
+    "mobileAssertions": 105,
+    "conclusion": "success",
+    "stagedCommit": "2a690fa30a5c279b05b74fbbe553629ef074925b",
+    "publishCommit": "7b57f63575e695c39c68f10717a1b627e00b7577",
+    "downloadSize": 3334145,
+    "publicDownloadVerified": true,
+    "publicDownloadSha256": "e83ef3b3499144484e26e93e575bbf238819c2fad40faef38de7f8ae634d585c",
+    "publicDownloadUrl": "https://bong40101-prog.github.io/tong-series/TongSKY-1.0.45.apk"
+  }
+}
