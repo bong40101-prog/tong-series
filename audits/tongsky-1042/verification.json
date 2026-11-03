@@ -1,0 +1,70 @@
+{
+  "version": "1.0.42",
+  "versionCode": 10146,
+  "sourceCommit": "dafaaa712e3d3e8fd7606b90da1a81fbca4fdfbd",
+  "testedApkCommit": "944e159785250dcdb486703d4ec8f55d816a44fe",
+  "sha256": "5c759668a45126d11dfe7469378297115b01d4c017af294a106aab767e4f1af0",
+  "workflowRun": 41560935467,
+  "nativeTests": 62,
+  "nativeParity": {
+    "routeMonths": 567,
+    "dates": 17249,
+    "eligibleDirections": 122
+  },
+  "websiteTests": 231,
+  "mobileReuseScenarios": 16,
+  "mobileReuseAssertions": 105,
+  "upgrade": {
+    "fromCode": 10145,
+    "toCode": 10146,
+    "resetGeneration": "KE-20261103-1041",
+    "newKeAndExistingOzRecordsPreserved": true
+  },
+  "currentAudit": {
+    "commit": "9744c8af6196d583c5fa9ad59c394ca9462d792f",
+    "keRouteMonths": 567,
+    "ozRouteMonths": 570,
+    "keDestinations": 24,
+    "incompleteMonthsRemainUnknown": true,
+    "rawCalendarsRewritten": false,
+    "pendingFailedRecord": "IAD-ICN-2027-10",
+    "followupCommit": "489d49e3b02de1da17751841a4661b3e857c92a0",
+    "keRouteMonthsIncludingFollowup": 568
+  },
+  "milan": {
+    "range": [
+      "2026-11-03",
+      "2027-10-28"
+    ],
+    "old": [
+      32,
+      63,
+      0
+    ],
+    "corrected": [
+      12,
+      43,
+      0
+    ],
+    "difference": {
+      "decemberBothDirections": 12,
+      "octoberBothDirections": 8
+    }
+  },
+  "filterLiveObservation": "IAD-ICN 2027-10 loaded normally; all six checkboxes selected at inspection. Prior log can also be triggered by an unchecked checkbox; bounded visible-label recovery verified offline.",
+  "backgroundWorkflowRun": 41561161280,
+  "latestParity": {
+    "routeMonths": 567,
+    "dataCommit": "9744c8af6196d583c5fa9ad59c394ca9462d792f"
+  },
+  "workflowAttempt": 2,
+  "background": {
+    "status": "passed",
+    "platform": "Android 15 API 35",
+    "activityTaskRemoved": true,
+    "savedAfterRemoval": 2,
+    "durableCursor": 2,
+    "network": "disabled offline fixtures",
+    "debugOnlyFixtureBuild": true
+  }
+}

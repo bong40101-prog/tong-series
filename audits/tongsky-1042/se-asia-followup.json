@@ -1,0 +1,24 @@
+{
+  "dataCommit": "489d49e3b02de1da17751841a4661b3e857c92a0",
+  "records": 1,
+  "updatedAt": 1793669799724,
+  "projections": [
+    {
+      "origin": "ICN",
+      "destination": "CXR",
+      "month": "2026-11",
+      "policy": {
+        "source": "USER_ALL_WEEKDAYS_TRIPLET_V2",
+        "scope": "ALL_ROUTES",
+        "month": "2026-11",
+        "origin": "ICN",
+        "destination": "CXR",
+        "candidateDates": [],
+        "weekdays": [],
+        "evidence": [],
+        "reviews": [],
+        "excludedDates": []
+      }
+    }
+  ]
+}
