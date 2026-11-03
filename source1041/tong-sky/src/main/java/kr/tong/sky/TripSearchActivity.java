@@ -3,7 +3,7 @@ package kr.tong.sky;
 import android.app.*;import android.os.*;import android.content.*;import android.graphics.*;import android.view.*;import android.view.inputmethod.*;import android.widget.*;import org.json.*;import java.util.*;import java.util.concurrent.*;
 
 /** Two inputs; no airline request, date-range filter, or writes to saved calendars. */
-public final class TripSearchActivity extends Activity {
+public class TripSearchActivity extends Activity {
  final ExecutorService worker=Executors.newSingleThreadExecutor();final Handler handler=new Handler(Looper.getMainLooper());
  Spinner region;EditText days;TextView status,empty;ListView list;Button search;final Button[] types=new Button[3];
  final List<String> regions=new ArrayList<>();String origin;boolean oz;volatile boolean closed;volatile int generation;int selectedType;TripSearch.Dataset dataset;TripSearch.Result result;
