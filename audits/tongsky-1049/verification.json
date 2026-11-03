@@ -1,0 +1,52 @@
+{
+  "version": "1.0.49",
+  "versionCode": 10153,
+  "scope": [
+    "유럽",
+    "미주"
+  ],
+  "carriers": [
+    "KE",
+    "OZ"
+  ],
+  "unchanged": [
+    "standard route-search regions",
+    "saved records",
+    "calendar projection rules",
+    "per-notice dismissal keys"
+  ],
+  "removedAnnouncement": "ke-range",
+  "remainingAnnouncements": [
+    "operator",
+    "excluded-region",
+    "feedback",
+    "recommendations"
+  ],
+  "apk": {
+    "sha256": "4b546a04c883eb3f4615b0c92ce048945670ed72026e7cff94785108a0dd3770",
+    "bytes": 3350529,
+    "blob": "64532d86c6e48b1ac17697f3af8d21079e90c18d"
+  },
+  "commits": {
+    "source": "554949b84adf798ab8718109b35ea83a159c15a8",
+    "staged": "4bbb68b82845a43c2d4ed2e345d834dd181e3b9a",
+    "web": "6a6f740c332e754bf15c37ef4b8c395064ba484d",
+    "webSource": "17710e951dae83e4342a3c63c490ba296df57e01",
+    "download": "b9547dd8e8d5a7baf86434bb1e677595331aef03"
+  },
+  "verification": {
+    "webTests": 18,
+    "nativeTests": 11,
+    "tripParitySearches": 10,
+    "tripParityExactCombinations": 5016,
+    "androidApi": 35,
+    "bothAirlineRecommendationScreensPassed": true,
+    "upgradeAndRelaunchPreserveRecords": true,
+    "mobileAdapterCases": 24,
+    "mobileAdapterAssertions": 139,
+    "ciRun": 41596375844,
+    "ciJob": 125784588824,
+    "ciStatus": "success",
+    "websiteDeployment": "success"
+  }
+}
