@@ -3,11 +3,11 @@
     "name": "통SKY",
     "package": "kr.tong.sky",
     "versionName": "1.0.41",
-    "versionCode": 10144,
+    "versionCode": 10145,
     "minSdk": 33,
-    "file": "TongSKY-1.0.41-r3.apk",
-    "sha256": "4b0cad6e61f207ecc841f4fc2c7be69f40b536df5344005fcf6e537a6415f3e0",
-    "notes": "모든 노선의 달력 처리에서 중복 JSON 복사와 반복 계산을 줄였습니다. 기존 월별 수집 방식, 원본 검증, 수집 기록과 1회 초기화 완료 상태를 유지합니다. Android 15에서 업데이트와 재실행 후 KE/OZ 기록 보존을 검증했습니다."
+    "file": "TongSKY-1.0.41-r4.apk",
+    "sha256": "b67d0c1bfee4c44f5e9bb1410c348cf6a1a1bcf9140ab7d21732f339af898420",
+    "notes": "대한항공 같은 방향의 다음 달 연속 조회를 최적화하고, 항공사의 조회 불가 안내를 즉시 처리합니다. 아시아나 미취항 치앙마이를 새 수집에서 제외하며 기존 저장 자료와 1회 초기화 완료 상태는 유지합니다."
   },
   {
     "name": "통캐치",

@@ -1,0 +1,38 @@
+{
+  "versionName": "1.0.41",
+  "release": "r4",
+  "versionCode": 10145,
+  "package": "kr.tong.sky",
+  "apkSha256": "b67d0c1bfee4c44f5e9bb1410c348cf6a1a1bcf9140ab7d21732f339af898420",
+  "gitBlob": "15d37db4fb77bd6b488c63154b7850b5c3cbf15e",
+  "bytes": 3321857,
+  "signingCertificateSha256": "5ee2986ae413b9dfb87724079b93d83a5dcaabf1d2fe96603418dec50cfe547d",
+  "resetGeneration": "KE-20261103-1041",
+  "resetChange": false,
+  "serverReset": false,
+  "nativeFrameworkTests": 56,
+  "javascriptRegressionSuites": 19,
+  "androidApi": 35,
+  "mobileReuseCases": 16,
+  "mobileReuseAssertions": 105,
+  "mobileViewportCss": 320,
+  "upgradeFrom": 10144,
+  "upgradeTo": 10145,
+  "keAndOzRecordsPreserved": true,
+  "ciRun": 41556278048,
+  "sourceCommit": "6abb1170eef744d208770abe20f81113ba68b51f",
+  "stagedCommit": "d73930a463c3e7bf454d5955118f4d28c2c6d86b",
+  "changes": [
+    "KE same-direction consecutive-month page reuse with fresh-date-node verification",
+    "Visible KE unavailable-itinerary alerts skip only the current batch item and preserve prior results",
+    "OZ CNX excluded from new collection; airport catalog and saved data preserved"
+  ],
+  "liveVerification": {
+    "date": "2026-11-03",
+    "ke": "Official ICN-LHR next-month UI; January-to-February replaces all 31 old nodes with 28 new nodes",
+    "oz": "Official CNX route page reports no Asiana-operated routes"
+  },
+  "limitations": [
+    "Native and WebView emulator validation plus live browser UI checks; no end-to-end speed measurement on the user's handset."
+  ]
+}
