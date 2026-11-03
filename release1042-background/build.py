@@ -1,5 +1,5 @@
 from pathlib import Path
-import subprocess,zipfile,base64,hashlib,json
+import subprocess,zipfile,base64,hashlib,json,sys
 r=Path(__file__).resolve().parent;out=r/'build';out.mkdir(exist_ok=True);(out/'classes').mkdir(exist_ok=True);(out/'dex').mkdir(exist_ok=True)
 sdk=Path('/workspace/scratch/06a46cae3e50/android-sdk');t=sdk/'build-tools/35.0.0';android=sdk/'platforms/android-35/android.jar'
 def run(*args):subprocess.run(list(map(str,args)),check=True)
@@ -13,6 +13,9 @@ with zipfile.ZipFile(out/'unsigned.apk','a') as z:
  for p in (out/'dex').glob('*.dex'):z.write(p,p.name)
 run(t/'zipalign','-f','4',out/'unsigned.apk',out/'aligned.apk')
 run(t/'apksigner','sign','--ks',r.parent/'private-signing/TongSky.keystore','--ks-pass','file:'+str(r.parent/'private-signing/password.txt'),'--out',r/'probe.apk',out/'aligned.apk')
+if '--probe-only' in sys.argv:
+ (r/'probe.apk.b64').write_text(base64.b64encode((r/'probe.apk').read_bytes()).decode())
+ h=json.loads((r/'hashes.json').read_text());h['probe']=hashlib.sha256((r/'probe.apk').read_bytes()).hexdigest();(r/'hashes.json').write_text(json.dumps(h,indent=2));sys.exit(0)
 run('zstd','-q','-f','-19','--long=27','--patch-from='+str(r.parent/'build1042/TongSKY-1.0.42.apk'),r.parent/'build1042-debug/TongSKY-1.0.42.apk','-o',r/'debug.zst')
 (r/'debug.zst.b64').write_text(base64.b64encode((r/'debug.zst').read_bytes()).decode());(r/'probe.apk.b64').write_text(base64.b64encode((r/'probe.apk').read_bytes()).decode())
 hash=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()

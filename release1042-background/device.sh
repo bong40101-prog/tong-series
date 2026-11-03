@@ -15,6 +15,8 @@ adb logcat -c
 adb shell am instrument -w kr.tong.sky.backgroundqa/.BackgroundProbe | tee evidence-background/result.txt
 adb logcat -b crash -d > evidence-background/crash.txt
 adb logcat -d > evidence-background/logcat.txt
+adb pull /data/user/0/kr.tong.sky/shared_prefs evidence-background/preferences
+adb pull /data/user/0/kr.tong.sky/databases evidence-background/databases
 grep -q 'BACKGROUND_PASS:' evidence-background/result.txt
 ! grep -q 'FAIL:' evidence-background/result.txt
 ! grep -q 'Process: kr.tong.sky' evidence-background/crash.txt
