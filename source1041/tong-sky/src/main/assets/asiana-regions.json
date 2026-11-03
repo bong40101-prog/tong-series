@@ -1,0 +1,278 @@
+{
+  "source": "https://m.flyasiana.com/C/KR/KO/booking/route?airportCd=LAX",
+  "checkedAt": "2026-10-30",
+  "note": "취항지 목록 기준. 노선별 실제 운항·보너스석 조회 성공을 보장하지 않음.",
+  "regions": {
+    "대한민국": [
+      {
+        "name": "서울(인천)",
+        "code": "ICN"
+      },
+      {
+        "name": "서울(김포)",
+        "code": "GMP"
+      },
+      {
+        "name": "제주",
+        "code": "CJU"
+      },
+      {
+        "name": "청주",
+        "code": "CJJ"
+      },
+      {
+        "name": "광주",
+        "code": "KWJ"
+      },
+      {
+        "name": "대구",
+        "code": "TAE"
+      },
+      {
+        "name": "여수",
+        "code": "RSU"
+      }
+    ],
+    "동북아시아": [
+      {
+        "name": "광저우(廣州)",
+        "code": "CAN"
+      },
+      {
+        "name": "나고야",
+        "code": "NGO"
+      },
+      {
+        "name": "난징(南京)",
+        "code": "NKG"
+      },
+      {
+        "name": "다롄(大連)",
+        "code": "DLC"
+      },
+      {
+        "name": "도쿄(나리타)",
+        "code": "NRT"
+      },
+      {
+        "name": "도쿄(하네다)",
+        "code": "HND"
+      },
+      {
+        "name": "미야자키",
+        "code": "KMI"
+      },
+      {
+        "name": "베이징(北京)",
+        "code": "PEK"
+      },
+      {
+        "name": "삿포로(치토세)",
+        "code": "CTS"
+      },
+      {
+        "name": "상하이(上海)/푸동",
+        "code": "PVG"
+      },
+      {
+        "name": "상하이(上海)",
+        "code": "SHA"
+      },
+      {
+        "name": "선전(深圳)",
+        "code": "SZX"
+      },
+      {
+        "name": "센다이",
+        "code": "SDJ"
+      },
+      {
+        "name": "시안(西安)",
+        "code": "XIY"
+      },
+      {
+        "name": "옌지(延吉)",
+        "code": "YNJ"
+      },
+      {
+        "name": "옌청(塩城)",
+        "code": "YNZ"
+      },
+      {
+        "name": "오사카(간사이)",
+        "code": "KIX"
+      },
+      {
+        "name": "오키나와",
+        "code": "OKA"
+      },
+      {
+        "name": "창사(長沙)",
+        "code": "CSX"
+      },
+      {
+        "name": "창춘(長春)",
+        "code": "CGQ"
+      },
+      {
+        "name": "청두(成都)/톈푸",
+        "code": "TFU"
+      },
+      {
+        "name": "충칭(重慶)",
+        "code": "CKG"
+      },
+      {
+        "name": "타이베이",
+        "code": "TPE"
+      },
+      {
+        "name": "톈진(天津)",
+        "code": "TSN"
+      },
+      {
+        "name": "하얼빈(哈爾濱)",
+        "code": "HRB"
+      },
+      {
+        "name": "항저우(杭州)",
+        "code": "HGH"
+      },
+      {
+        "name": "홍콩",
+        "code": "HKG"
+      },
+      {
+        "name": "후쿠오카",
+        "code": "FUK"
+      }
+    ],
+    "동남아시아/서남아시아": [
+      {
+        "name": "다낭",
+        "code": "DAD"
+      },
+      {
+        "name": "마닐라",
+        "code": "MNL"
+      },
+      {
+        "name": "방콕",
+        "code": "BKK"
+      },
+      {
+        "name": "싱가포르",
+        "code": "SIN"
+      },
+      {
+        "name": "자카르타",
+        "code": "CGK"
+      },
+      {
+        "name": "치앙마이",
+        "code": "CNX"
+      },
+      {
+        "name": "클라크필드",
+        "code": "CRK"
+      },
+      {
+        "name": "푸껫",
+        "code": "HKT"
+      },
+      {
+        "name": "프놈펜",
+        "code": "KTI"
+      },
+      {
+        "name": "하노이",
+        "code": "HAN"
+      },
+      {
+        "name": "호찌민",
+        "code": "SGN"
+      }
+    ],
+    "미주": [
+      {
+        "name": "뉴욕(JFK)",
+        "code": "JFK"
+      },
+      {
+        "name": "로스앤젤레스",
+        "code": "LAX"
+      },
+      {
+        "name": "샌프란시스코",
+        "code": "SFO"
+      },
+      {
+        "name": "시애틀",
+        "code": "SEA"
+      },
+      {
+        "name": "하와이(호놀룰루)",
+        "code": "HNL"
+      }
+    ],
+    "유럽": [
+      {
+        "name": "런던(히드로)",
+        "code": "LHR"
+      },
+      {
+        "name": "로마(다빈치)",
+        "code": "FCO"
+      },
+      {
+        "name": "밀라노(말펜사)",
+        "code": "MXP"
+      },
+      {
+        "name": "바르셀로나",
+        "code": "BCN"
+      },
+      {
+        "name": "부다페스트",
+        "code": "BUD"
+      },
+      {
+        "name": "이스탄불",
+        "code": "IST"
+      },
+      {
+        "name": "파리(샤를 드골)",
+        "code": "CDG"
+      },
+      {
+        "name": "프라하",
+        "code": "PRG"
+      },
+      {
+        "name": "프랑크푸르트",
+        "code": "FRA"
+      }
+    ],
+    "대양주/괌": [
+      {
+        "name": "시드니",
+        "code": "SYD"
+      }
+    ],
+    "러시아/몽골/중앙아시아": [
+      {
+        "name": "울란바타르",
+        "code": "UBN"
+      },
+      {
+        "name": "알마티",
+        "code": "ALA"
+      },
+      {
+        "name": "타슈켄트",
+        "code": "TAS"
+      }
+    ],
+    "중동/아프리카": []
+  }
+}

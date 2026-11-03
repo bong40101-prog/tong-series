@@ -66,4 +66,29 @@ public class ServiceMonthlyCalendarTest {
  @Test public void detailAndScheduleStagesAreRemovedFromCollector()throws Exception{
   CollectionService s=service();assertFalse(s.browserUrl("https://www.koreanair.com/flight-status?isSchedule=T"));assertTrue(s.browserUrl(CollectionService.SOURCE));for(var method:CollectionService.class.getDeclaredMethods())assertFalse(method.getName().contains("OperationSchedule"));
  }
+ @Test public void sameDirectionNextMonthReusesSuccessfulPageAfterMandatoryGap()throws Exception{
+  CollectionService s=service();running(s);JSONObject prior=s.query;JSONObject next=query(YearMonth.parse(prior.getString("month")).plusMonths(1));s.queue.add(next);
+  callback(s).onReceiveValue(new JSONObject().put("data",snapshot(prior,0)).put("reuseReady",true).toString());
+  assertTrue(s.reuseDocument);assertEquals(Search.key(prior),Search.key(s.lastSuccessfulQuery));
+  s.startNextOwned();assertFalse(s.running);assertEquals(0,((ProbeWeb)s.web).loads.size());
+  s.nextQueryAt=SystemClock.elapsedRealtime();s.startNextOwned();assertTrue(s.running);assertEquals("reuse",s.stage);assertEquals(0,((ProbeWeb)s.web).loads.size());
+ }
+ @Test public void coldFallbackIsAllowedOnlyBeforeSubmissionAndOnlyOnce()throws Exception{
+  CollectionService s=service();running(s);s.stage="reuse";callback(s).onReceiveValue("{\"cold\":true}");assertEquals("consent",s.stage);assertEquals(1,((ProbeWeb)s.web).loads.size());assertTrue(s.coldFallback);assertFalse(s.reuseDocument);
+  s.stage="reuse";callback(s).onReceiveValue("{\"cold\":true}");assertTrue(s.paused);assertEquals(1,((ProbeWeb)s.web).loads.size());
+  CollectionService submitted=service();running(submitted);submitted.stage="reuse";submitted.searchSubmitted=true;callback(submitted).onReceiveValue("{\"cold\":true}");assertTrue(submitted.paused);assertEquals(0,((ProbeWeb)submitted.web).loads.size());
+ }
+ @Test public void reloadOrStageChangeInvalidatesOldResultCallback()throws Exception{
+  for(boolean navigation:new boolean[]{false,true}){CollectionService s=service();running(s);ValueCallback<String> old=callback(s);if(navigation){s.documentEpoch++;s.clearPageReuse();}else s.stage="result";old.onReceiveValue(result(snapshot(s.query,0)));assertNull(s.db.data(Search.key(s.query)));assertEquals(0,s.success);}
+ }
+ @Test public void officialUnavailableItinerarySkipsOnlyCurrentQueryAndRetainsPriorData()throws Exception{
+  CollectionService s=service();running(s);s.stage="result";s.db.save(s.query,snapshot(s.query,1));String before=s.db.data(Search.key(s.query)).getJSONObject("current").toString();
+  s.regionBatch=new JSONObject().put("key","KE-ICN-test").put("carrier","KE").put("queries",new JSONArray().put(s.query));
+  callback(s).onReceiveValue("{\"error\":\"항공사 조회 불가 여정 · 미확인\",\"code\":\"UNSUPPORTED_ITINERARY\"}");
+  assertEquals(1,s.index);assertEquals(1,s.failures);assertEquals(0,s.success);assertFalse(s.paused);assertFalse(s.reuseDocument);assertEquals(before,s.db.data(Search.key(s.query)).getJSONObject("current").toString());assertEquals(1,s.regionBatch.getInt("cursor"));assertNotNull(s.db.error(Search.key(s.query)));assertTrue(s.nextQueryAt>SystemClock.elapsedRealtime());
+ }
+ @Test public void securityErrorCannotSkipToTheNextQuery()throws Exception{
+  CollectionService s=service();running(s);s.stage="reuse";s.regionBatch=new JSONObject().put("key","KE-ICN-test").put("queries",new JSONArray().put(s.query));callback(s).onReceiveValue("{\"error\":\"보안 확인 또는 접근 제한\"}");assertTrue(s.paused);assertEquals(0,s.index);assertEquals(0,((ProbeWeb)s.web).loads.size());
+ }
+
 }

@@ -19,10 +19,36 @@ function roots(){const r=[document];for(let i=0;i<r.length;i++)for(const e of r[
 const byText=(s,t,root=document)=>all(s,root).find(e=>visible(e)&&text(e)===t);
 const body=norm(document.body?.innerText);
 if(/access denied|접근이 차단|접속이 차단|비정상적인 접근|보안 문자|자동입력 방지|로봇이 아님|verify you are human|captcha challenge/i.test(body))return fail('보안 확인 또는 접근 제한으로 조회를 중단했습니다.');
+const reuseKey=[q.origin,q.destination,q.month].join('|');
+const currentReuse=()=>window.__tongKeReuse?.key===reuseKey?window.__tongKeReuse:null;
+const resultDialog=()=>one('[role="dialog"][aria-labelledby="modals-travelCalendar-title"]');
+const officialPage=()=>{try{return location.protocol==='https:'&&['koreanair.com','www.koreanair.com'].includes(location.hostname)&&!location.username&&!location.password&&(!location.port||location.port==='443')&&location.pathname==='/booking/book-and-manage/award-seat-availability';}catch(_){return false;}};
+const sourceClock=()=>{const m=body.match(/좌석 상황은 대한민국 시간\((\d{4})년\s*(\d{1,2})월\s*(\d{1,2})일\s*(\d{2}):(\d{2})\) 기준/);return m?m[1]+'-'+m[2].padStart(2,'0')+'-'+m[3].padStart(2,'0')+'T'+m[4]+':'+m[5]+':00+09:00':null;};
+const canUse=e=>visible(e)&&!e.disabled&&e.getAttribute('aria-disabled')!=='true';
+const monthText=month=>month.slice(0,4)+'년 '+Number(month.slice(5))+'월';
+const rightRoute=d=>{const codes=text(d?.querySelector('#modals-travelCalendar-title')).match(/\b[A-Z]{3}\b/g)||[];return codes.length===2&&codes[0]===q.origin&&codes[1]===q.destination;};
+const coldReuse=detail=>{if(currentReuse()?.submitted)return fail('이미 요청한 월은 다시 조회하지 않습니다.');if(currentReuse()?.cold)return wait();window.__tongKeSuccess=null;window.__tongKeReuse={key:reuseKey,cold:true};return {cold:true,detail};};
+// This is the visible airline response, not an inferred no-flight/no-seat result.
+if(['result','filter','parse','reuse'].includes(stage)){
+ const alert=one('#keAlertModalTitleless');
+ if(visible(alert)&&text(alert.querySelector('p'))==='검색하신 여정은 조회가 불가합니다.')return {error:'항공사 조회 불가 여정 · 미확인: 검색하신 여정은 조회가 불가합니다.',code:'UNSUPPORTED_ITINERARY'};
+}
 if(stage==='reuse'){
- const key=[q.origin,q.destination,q.month].join('|');
- if(window.__tongKeColdReuse===key)return wait();window.__tongKeColdReuse=key;
- return {cold:true,detail:'대한항공 월 전환 화면 재사용은 검증되지 않아 새 공식 화면을 엽니다.'};
+ const state=currentReuse();if(state?.submitted)return {next:'result',submitted:true};if(state?.cold)return wait();
+ const prior=window.__tongKeSuccess,d=resultDialog(),wrap=d?.querySelector('#bonusCalendarTableWrapEl'),button=d?.querySelector('#travelCalendarNextBtn');
+ const consecutive=prior&&new Date(prior.month+'-01T00:00:00Z');if(consecutive)consecutive.setUTCMonth(consecutive.getUTCMonth()+1);
+ if(!officialPage()||!prior||!consecutive||consecutive.toISOString().slice(0,7)!==q.month||prior.origin!==q.origin||prior.destination!==q.destination||d!==prior.dialog||wrap!==prior.wrap||!visible(d)||!rightRoute(d)||text(d.querySelector('#travelCalendarListBtn'))!==monthText(prior.month)||sourceClock()!==prior.source||!canUse(button)||wrap.innerHTML!==prior.calendar)return coldReuse('기존 달력의 노선·월·표식 또는 다음 달 버튼을 확인하지 못해 새 화면을 엽니다.');
+ const cells=all('tbody td[id^="day_"]',wrap);if(!cells.length)return coldReuse('이전 달력의 날짜를 확인하지 못해 새 화면을 엽니다.');
+ // Submit once. Do not accept a changed heading until every old date cell is replaced.
+ window.__tongKeReuse={key:reuseKey,submitted:true,dialog:d,wrap,cells,source:prior.source};button.click();return {next:'result',submitted:true};
+}
+const reuse=currentReuse();
+if(reuse?.submitted&&['result','filter','parse'].includes(stage)){
+ const d=resultDialog(),wrap=d?.querySelector('#bonusCalendarTableWrapEl');
+ if(!visible(d)||!wrap)return {wait:true,detail:'다음 달 결과 대기 · 이전 달력은 저장하지 않습니다.'};
+ if(!rightRoute(d))return fail('월 전환 결과의 노선이 요청한 노선과 다릅니다.');
+ if(sourceClock()!==reuse.source)return fail('월 전환 중 원본 기준 시각이 변경되어 저장하지 않았습니다.');
+ if(text(d.querySelector('#travelCalendarListBtn'))!==monthText(q.month)||reuse.cells.some(cell=>cell.isConnected&&wrap.contains(cell)))return {wait:true,detail:'다음 달 날짜 교체 대기 · 이전 달력은 저장하지 않습니다.'};
 }
 if(stage==='consent'){
  for(const r of roots()){const b=byText('button','필수 쿠키만 허용',r);if(b){b.click();return next('oneway');}}
@@ -131,7 +157,9 @@ if(stage==='parse'||stage==='parse_test'){
  if(!source||!Number.isFinite(Date.parse(source)))return fail('대한항공 정보 기준 시각을 확인하지 못했습니다.');
  const data={collectionMethod:"MONTHLY_CALENDAR",origin:q.origin,destination:q.destination,month:q.month,sourceUpdatedAt:source,collectedAt:new Date().toISOString(),dates};
  // The monthly calendar is the source. No per-flight or timetable capture is required.
- return {data};
+ const wrap=d.querySelector('#bonusCalendarTableWrapEl'),reuseReady=officialPage()&&sourceClock()===source&&canUse(d.querySelector('#travelCalendarNextBtn'));
+ window.__tongKeReuse=null;window.__tongKeSuccess=reuseReady?{origin:q.origin,destination:q.destination,month:q.month,source,dialog:d,wrap,calendar:wrap.innerHTML}:null;
+ return {data,reuseReady};
 }
 return fail('지원하지 않는 조회 단계');
 })
