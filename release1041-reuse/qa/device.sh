@@ -91,5 +91,6 @@ adb install mobile-probe.apk
 adb shell am instrument -w kr.tong.sky.mobileqa/.Probe | tee evidence/mobile-probe.txt
 grep -q 'PASS: API35 WebView 320css' evidence/mobile-probe.txt
 ! grep -q 'FAIL:' evidence/mobile-probe.txt
-grep -q 'MOBILE_REUSE_PASS' evidence/mobile-probe.txt
+adb logcat -d -s System.out:I > evidence/mobile-probe-detail.txt
+grep -q 'MOBILE_REUSE_PASS' evidence/mobile-probe-detail.txt
 echo 'PASS: signed 10144 -> 10145 upgrade and relaunch preserve new KE records; mobile adapter cases passed' | tee evidence/result.txt
