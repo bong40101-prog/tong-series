@@ -15,6 +15,13 @@ final class RouteRules {
  private static final Set<String> KE_ICN_UNLINKED=Set.of("ZRH","KKJ","NGB","TAK","SHI","SHA","URC","WUX","WEH","ISG","HIJ","TAG","BKI","CMB","CRK","MEL","SVO","VVO","LED","ALA","IKT","DXB","TLV","GMP","PUS","CJU","KWJ","KUV","TAE","RSU","USN","WJU","HIN","CJJ","KPO");
  private static final LocalDate KE_NETWORK_FROM=LocalDate.of(2026,10,30),KE_NETWORK_UNTIL=LocalDate.of(2026,12,17);
  private static final LocalDate KE_HIJ_START=LocalDate.of(2026,12,23);
+ // Suspension evidence is independent of the former 12/17 calendar horizon.
+ // No announced resumption: do not silently re-enable these pairs next month.
+ // See docs/route-audit-2026-11-03.json; this is not a permanent closure claim.
+ private static final Set<String> KE_SUSPENDED_ICN=Set.of("SVO","VVO","LED","IKT","DXB");
+ private static final LocalDate KE_SUSPENSION_CHECKED=LocalDate.of(2026,11,3);
+ // Published KE409/410 seasonal operation, inclusive in each departure city.
+ private static final LocalDate KE_MEL_START=LocalDate.of(2026,12,18),KE_MEL_END=LocalDate.of(2027,3,14);
  // Asiana's 2026-06-17 notice suspends OZ232/231 from 2026-07-01,
  // with no announced end. This applies only to its ICN-HNL pair.
  private static final LocalDate OZ_HNL_SUSPENDED_FROM=LocalDate.of(2026,7,1);
@@ -32,6 +39,8 @@ final class RouteRules {
    if(OZ_UNSERVED.contains(o)||OZ_UNSERVED.contains(d))return "공식 미취항지";
    if(icnOther(o,d,OZ_ICN_UNLINKED))return "공식 인천 운항 조합 없음";
   }else{
+   if(!today.isBefore(KE_SUSPENSION_CHECKED)&&icnOther(o,d,KE_SUSPENDED_ICN))return "운항 중단 · 재개 일정 미확인(2026-11-03 확인)";
+   if(!today.isBefore(KE_SUSPENSION_CHECKED)&&icnOther(o,d,Set.of("MEL"))&&(last.isBefore(KE_MEL_START)||first.isAfter(KE_MEL_END)))return "공지된 계절 운항 기간 밖(2026-12-18~2027-03-14)";
    if(("ICN".equals(o)&&"HIJ".equals(d)||"HIJ".equals(o)&&"ICN".equals(d))&&last.isBefore(KE_HIJ_START))return "조회 기간 이후 취항";
    if(!today.isBefore(KE_NETWORK_FROM)&&!last.isAfter(KE_NETWORK_UNTIL)&&icnOther(o,d,KE_ICN_UNLINKED))return "현재 공식 인천 직항 노선도 미포함";
   }
