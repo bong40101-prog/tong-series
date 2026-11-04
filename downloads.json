@@ -2,12 +2,12 @@
   {
     "name": "통SKY",
     "package": "kr.tong.sky",
-    "versionName": "1.0.41",
-    "versionCode": 10145,
+    "versionName": "1.0.50",
+    "versionCode": 10154,
     "minSdk": 33,
-    "file": "TongSKY-1.0.41-r4.apk",
-    "sha256": "b67d0c1bfee4c44f5e9bb1410c348cf6a1a1bcf9140ab7d21732f339af898420",
-    "notes": "대한항공 같은 방향의 다음 달 연속 조회를 최적화하고, 항공사의 조회 불가 안내를 즉시 처리합니다. 아시아나 미취항 치앙마이를 새 수집에서 제외하며 기존 저장 자료와 1회 초기화 완료 상태는 유지합니다."
+    "file": "TongSKY-1.0.50.apk",
+    "sha256": "80ae2cfc5188be28410374ef071cc0f9c4e45f6a087c20f50709eb03831a4976",
+    "notes": "대한항공·아시아나 추천일정에서 IN 도착 도시와 OUT 출발 도시를 선택할 수 있습니다. 선택하지 않은 쪽은 유럽·미주 해당 지역 전체에서 찾습니다."
   },
   {
     "name": "통캐치",
@@ -22,12 +22,12 @@
   {
     "name": "통홈복귀",
     "package": "kr.homereturn",
-    "versionName": "0.3.14",
-    "versionCode": 26,
+    "versionName": "0.3.15",
+    "versionCode": 27,
     "minSdk": 26,
-    "file": "TongHome-0.3.14.apk",
-    "sha256": "2f228af87ad0b59c413bb23f2d47d3932bc3985e9251d732910399cb9d8acd98",
-    "notes": "에이닷 전화가 앞에 열린 상태에서는 홈 복귀를 실행하지 않습니다. 모든 앱에서 복귀 모드에도 적용합니다."
+    "file": "TongHome-0.3.15.apk",
+    "sha256": "1165425cc223aff623e2818d235aa4c26673948ab26fa965e874a0ae8fe5857a",
+    "notes": "잠금 화면·꺼진 화면에서 에이닷 수신전화 예외가 누락되던 문제를 수정했습니다. 전화 수신·통화 중 홈 복귀를 차단합니다."
   },
   {
     "name": "통스타그램",
