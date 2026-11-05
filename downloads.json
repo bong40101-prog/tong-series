@@ -2,12 +2,12 @@
   {
     "name": "통SKY",
     "package": "kr.tong.sky",
-    "versionName": "1.0.51",
-    "versionCode": 10155,
+    "versionName": "1.0.52",
+    "versionCode": 10156,
     "minSdk": 33,
-    "file": "TongSKY-1.0.51.apk",
-    "sha256": "b65713dd644d12eb312d51715ed4567bfd428bf2f892c12b90c995c630ad7c7c",
-    "notes": "사용방법 버튼을 상단에 추가했습니다. 저장 일정·GitHub 연결·백그라운드 수집·추천일정 설명을 앱에서 확인할 수 있습니다."
+    "file": "TongSKY-1.0.52.apk",
+    "sha256": "1f6dcce5dae3994f116a31a8b25fe86dd4774c5663e238afce7e07d70b314df6",
+    "notes": "대한항공 오전 9시 조회 범위와 전체 날짜 선택 불가 대기를 수정했습니다. GitHub 공유 수집 잠금을 재확인하고, 아시아나 예약정보 이관 대상의 조회 불가 사유를 구분합니다. 기존 저장 자료와 사용방법 안내는 유지됩니다."
   },
   {
     "name": "통캐치",
