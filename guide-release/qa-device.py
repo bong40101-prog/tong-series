@@ -10,8 +10,18 @@ def run(*args):
 def adb(*args):return run('adb','-s','emulator-5554',*args)
 def shell(*args):return adb('shell',*args)
 def dump():
-    shell('uiautomator','dump','/sdcard/guide.xml')
-    return ET.fromstring(adb('exec-out','cat','/sdcard/guide.xml'))
+    # WebView accessibility can be unavailable during startup. Never reuse
+    # a previous activity's dump when uiautomator reports a missing root.
+    for attempt in range(10):
+        shell('rm','-f','/sdcard/guide.xml')
+        result=shell('uiautomator','dump','/sdcard/guide.xml')
+        if 'UI hierchary dumped to' in result or 'UI hierarchy dumped to' in result:
+            try:return ET.fromstring(adb('exec-out','cat','/sdcard/guide.xml'))
+            except ET.ParseError:pass
+        print('Waiting for current accessibility tree:',result.strip(),flush=True)
+        time.sleep(1)
+    with (out/'missing-root.png').open('wb') as f:subprocess.run(['adb','-s','emulator-5554','exec-out','screencap','-p'],stdout=f,check=True)
+    raise AssertionError('Current accessibility tree unavailable')
 def node(label):
     for el in dump().iter('node'):
         if label in (el.get('text'),el.get('content-desc')):return el
