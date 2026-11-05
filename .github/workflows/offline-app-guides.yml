@@ -57,6 +57,7 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add TongHome-0.3.16.apk Tongstagram-1.1.7.apk TongSKY-1.0.51.apk TongGlow-1.0.5.apk
+          if git diff --cached --quiet; then exit 0; fi
           git commit -m 'Stage four signed app updates with offline manuals after Android validation'
           git pull --rebase origin feat/offline-app-guides
           git push origin HEAD:refs/heads/feat/offline-app-guides
