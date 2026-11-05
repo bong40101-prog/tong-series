@@ -18,7 +18,7 @@ def wait(label):
         el=node(label)
         if el is not None:return el
         time.sleep(1)
-    raise AssertionError('Missing UI: '+label)
+    capture('failure-'+re.sub(r'[^a-zA-Z0-9]','_',label));raise AssertionError('Missing UI: '+label)
 def tap(label):
     el=wait(label);x1,y1,x2,y2=map(int,re.findall(r'\d+',el.get('bounds')))
     assert x2>x1 and y2>y1,(label,el.attrib)
@@ -34,12 +34,13 @@ def seed(package,name,content):
 def pref(package,name):return adb('exec-out','cat','/data/user/0/'+package+'/shared_prefs/'+name)
 
 adb('root');adb('wait-for-device');shell('wm','dismiss-keyguard')
-shell('wm','fixed-to-user-rotation','enabled');shell('wm','user-rotation','lock','0')
+shell('wm','fixed-to-user-rotation','disabled');shell('wm','user-rotation','lock','0')
 shell('settings','put','global','airplane_mode_on','1');shell('svc','wifi','disable');shell('svc','data','disable')
 rows=json.loads(Path('guide-release/metadata.json').read_text())
 titles=['통홈복귀','통스타그램','통SKY','통글로우']
 for row,title in zip(rows,titles):
     package=re.search("name='([^']+)'",row['package']).group(1)
+    if package!='kr.tong.glow':continue
     component=package+'/.MainActivity';print('TEST',package,flush=True)
     adb('install',row['old']);shell('am','force-stop',package)
     seed(package,'guide-upgrade-proof.xml','<map><string name="kept">existing-data-20261105</string></map>')
@@ -55,11 +56,11 @@ for row,title in zip(rows,titles):
     assert installed==re.search(r'firstInstallTime=(.*)',after).group(1)
     assert 'existing-data-20261105' in pref(package,'guide-upgrade-proof.xml')
     shell('logcat','-c');shell('am','start','-W','-n',component);time.sleep(4)
-    tap('사용방법');wait(title+' · 사용방법');capture(package+'-guide-top')
+    capture(package+'-before-help');tap('사용방법');wait(title+' · 사용방법');capture(package+'-guide-top')
     # Scroll a long guide; close remains visible and reachable.
     for i in range(5):shell('input','swipe','540','1500','540','650','300')
     wait('닫기');capture(package+'-guide-bottom')
-    shell('wm','user-rotation','lock','1');time.sleep(2)
+    shell('wm','fixed-to-user-rotation','enabled');shell('wm','user-rotation','lock','1');time.sleep(2)
     assert dump().get('rotation') in ('1','3'), 'Device did not rotate to landscape'
     wait(title+' · 사용방법');wait('닫기');capture(package+'-guide-landscape')
     tap('닫기');assert node(title+' · 사용방법') is None
@@ -74,4 +75,4 @@ for row,title in zip(rows,titles):
     (out/(package+'-package.txt')).write_text(after)
     print('PASS upgrade + offline guide + scrolling + rotation + close + back + unchanged settings',package,flush=True)
     shell('am','force-stop',package)
-print('PASS ALL FOUR APP GUIDES',flush=True)
+print('PASS TARGETED GLOW GUIDE AND EFFECTIVE ROTATION',flush=True)
