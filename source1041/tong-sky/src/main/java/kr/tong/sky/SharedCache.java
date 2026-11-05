@@ -45,7 +45,7 @@ final class SharedCache {
  static boolean fresh(JSONObject payload,long now){return payload!=null&&!OperationPolicy.requiresRequery(payload.optJSONObject("current"))&&freshTimestamp(payload.optLong("success",0),now);}
  static boolean collectionFresh(JSONObject payload,long now)throws Exception{return collectionFresh(payload,payload==null?"KE":payload.getJSONObject("current").optString("carrier","KE"),now,OperationPolicy.current());}
  static boolean collectionFresh(JSONObject payload,String carrier,long now,OperationPolicy policy)throws Exception{
-  if(payload==null||!freshTimestamp(payload.optLong("success",0),now))return false;if(!"KE".equals(carrier))return fresh(payload,now);JSONObject original=payload.getJSONObject("current");if(RepeatMarkerPolicy.usesCalendar(original)){Search.validateSnapshot(original,original);JSONArray calendar=original.getJSONArray("dates");for(int n=0;n<calendar.length();n++){JSONObject source=RepeatMarkerPolicy.calendarSource(calendar.getJSONObject(n));if(source==null||!Set.of("OBSERVED","UNKNOWN","NO_FLIGHT").contains(source.optString("status")))return false;for(String field:Search.ALL_FIELDS)if(!(source.opt(field) instanceof Boolean)||!"OBSERVED".equals(source.optString("status"))&&source.getBoolean(field))return false;}return true;}JSONObject normalized=policy.payload(payload),snapshot=normalized.getJSONObject("current");List<JSONObject> weeks=OperationSchedule.embedded(snapshot);if(weeks.isEmpty())return false;OperationSchedule.Applied applied=OperationSchedule.applyWithCoverage(snapshot,List.of());Set<String> explicitDates=new HashSet<>();for(JSONObject week:OperationSchedule.union(snapshot,weeks))if(week.getInt("schema")==2)for(int i=0;i<7;i++)explicitDates.add(week.getJSONArray("dates").getJSONObject(i).getString("date"));LocalDate today=Instant.ofEpochMilli(now).atZone(Search.KST).toLocalDate(),limit=Search.lastDate(false,today);YearMonth month=YearMonth.parse(snapshot.getString("month"));LocalDate first=month.atDay(1).isBefore(today)?today:month.atDay(1),last=month.atEndOfMonth().isAfter(limit)?limit:month.atEndOfMonth();if(first.isAfter(last))return true;
+  if(payload==null||!freshTimestamp(payload.optLong("success",0),now))return false;if(!"KE".equals(carrier))return fresh(payload,now);JSONObject original=payload.getJSONObject("current");if(RepeatMarkerPolicy.usesCalendar(original)){Search.validateSnapshot(original,original);JSONArray calendar=original.getJSONArray("dates");for(int n=0;n<calendar.length();n++){JSONObject source=RepeatMarkerPolicy.calendarSource(calendar.getJSONObject(n));if(source==null||!Set.of("OBSERVED","UNKNOWN","NO_FLIGHT").contains(source.optString("status")))return false;for(String field:Search.ALL_FIELDS)if(!(source.opt(field) instanceof Boolean)||!"OBSERVED".equals(source.optString("status"))&&source.getBoolean(field))return false;}return true;}JSONObject normalized=policy.payload(payload),snapshot=normalized.getJSONObject("current");List<JSONObject> weeks=OperationSchedule.embedded(snapshot);if(weeks.isEmpty())return false;OperationSchedule.Applied applied=OperationSchedule.applyWithCoverage(snapshot,List.of());Set<String> explicitDates=new HashSet<>();for(JSONObject week:OperationSchedule.union(snapshot,weeks))if(week.getInt("schema")==2)for(int i=0;i<7;i++)explicitDates.add(week.getJSONArray("dates").getJSONObject(i).getString("date"));LocalDate today=Instant.ofEpochMilli(now).atZone(Search.KST).toLocalDate(),limit=Search.lastDate(false,Instant.ofEpochMilli(now).atZone(Search.KST));YearMonth month=YearMonth.parse(snapshot.getString("month"));LocalDate first=month.atDay(1).isBefore(today)?today:month.atDay(1),last=month.atEndOfMonth().isAfter(limit)?limit:month.atEndOfMonth();if(first.isAfter(last))return true;
   JSONArray days=applied.snapshot().getJSONArray("dates");for(int i=0;i<days.length();i++){JSONObject day=days.getJSONObject(i);LocalDate date=LocalDate.parse(day.getString("date"));if(date.isBefore(first)||date.isAfter(last))continue;if(day.optInt("operationSchema")!=2||!day.optBoolean("operationCompleteOperators")||!Set.of("CAPTURED","NO_MARKS").contains(day.optString("flightDetailStatus"))||!explicitDates.contains(day.getString("date"))||!OperationSchedule.SOURCE.equals(day.optString("operationSource"))||!("OPERATING".equals(day.optString("operationStatus"))||"NO_FLIGHT".equals(day.optString("operationStatus")))||day.optBoolean("operationRequiresRequery"))return false;}return true;
  }
  boolean reusable(JSONObject payload,long now)throws Exception{return payload!=null&&RegionScope.allowed(payload.optJSONObject("current"),origin)&&collectionFresh(payload,carrier,now,operationPolicy);}
@@ -91,10 +91,17 @@ final class SharedCache {
  private void merge(RegionDocument document,String key,JSONObject payload,long now)throws Exception {
   mergeObservation(document,key,payload,now,false);
  }
- private void owned(RegionDocument document)throws Exception {JSONObject lease=document.metadata().optJSONObject("lease");if(lease==null||!owner.equals(lease.optString("owner")))throw new IOException("공유 수집 권한이 종료되어 현재 수집을 중단합니다.");}
+ private static final class OwnershipLost extends IOException {OwnershipLost(){super("공유 수집 권한을 다시 확인했으나 일치하지 않아 중단합니다. 기존 자료는 유지합니다.");}}
+ private void owned(RegionDocument document)throws OwnershipLost {JSONObject metadata=document==null?null:document.metadata(),lease=metadata==null?null:metadata.optJSONObject("lease");if(lease==null||!owner.equals(lease.optString("owner")))throw new OwnershipLost();}
+ // Retry reads only. Never reclaim a foreign lease or write from a stale body.
+ private RegionRead openOwnedRegion()throws Exception {
+  for(int attempt=0;;attempt++){
+   RegionRead read=backend.openRegion();try{owned(read.document());return read;}catch(OwnershipLost e){read.close();if(attempt==2)throw e;Thread.sleep(attempt==0?250:750);}catch(Exception|Error e){read.close();throw e;}
+  }
+ }
  private void finishCheckpoint(RegionDocument document,String sha,boolean release,long now)throws Exception {checkedRegion(document,now);JSONObject b=document.metadata();if(release)b.remove("lease");else b.put("lease",new JSONObject().put("owner",owner).put("until",now+LEASE_MS));b.put("updatedAt",now);writeScopedRegion(document,sha);}
  void checkpoint(Map<String,JSONObject> saved,boolean release,long now)throws Exception{
-  for(int n=0;n<3;n++)try(RegionRead read=backend.openRegion()){
+  for(int n=0;n<3;n++)try(RegionRead read=openOwnedRegion()){
    RegionDocument document=checkedRegion(read.document(),now);try{owned(document);for(var item:saved.entrySet())merge(document,item.getKey(),item.getValue(),now);try{finishCheckpoint(document,read.sha(),release,now);return;}catch(Conflict e){if(n==2)throw e;}}finally{if(document!=read.document())document.close();}
   }
  }
@@ -102,7 +109,7 @@ final class SharedCache {
   * by the successful CAS. Source time outranks an unrelated device wall clock. */
  Set<String> checkpointPending(Map<String,JSONObject> saved,boolean release,long now)throws Exception{
   if(saved==null||saved.size()>20)throw new IOException("공유 대기 묶음 크기 오류");
-  for(int n=0;n<3;n++)try(RegionRead read=backend.openRegion()){
+  for(int n=0;n<3;n++)try(RegionRead read=openOwnedRegion()){
    RegionDocument document=checkedRegion(read.document(),now);try{
     owned(document);Set<String> covered=new LinkedHashSet<>();
     for(var item:saved.entrySet()){mergePending(document,item.getKey(),item.getValue(),now);covered.add(item.getKey());}
@@ -147,7 +154,7 @@ final class SharedCache {
  }
  int reuseLocalRegion(SkyDb db,List<JSONObject> pending,long now)throws Exception{return reuseLocalRegion(db::data,pending,now);}
  int reuseLocalRegion(LocalRecords local,List<JSONObject> pending,long now)throws Exception {
-  for(int n=0;n<3;n++)try(RegionRead read=backend.openRegion()){
+  for(int n=0;n<3;n++)try(RegionRead read=openOwnedRegion()){
    RegionDocument document=checkedRegion(read.document(),now);try{owned(document);int count=0;for(JSONObject q:pending){validateCarrier(q,carrier);String key=Search.key(q);JSONObject payload=local.data(key);if(reusable(payload,now)){merge(document,key,payload,now);count++;}}if(count==0)return 0;try{finishCheckpoint(document,read.sha(),false,now);return count;}catch(Conflict e){if(n==2)throw e;}}finally{if(document!=read.document())document.close();}
   }throw new IOException("휴대폰 공유 자료 재사용 실패");
  }

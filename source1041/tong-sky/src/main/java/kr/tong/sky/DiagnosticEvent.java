@@ -21,6 +21,8 @@ final class DiagnosticEvent {
   if(m.contains("사용자")&&m.contains("중단"))return "USER_STOP";
   if(m.contains("HTTP 401")||m.contains("HTTP 403")||m.contains("HTTP 429")||m.contains("접근 제한"))return "ACCESS_RESTRICTED";
   if(m.contains("인증서"))return "TLS_ERROR";
+  if(m.contains("원본 달력 전체 날짜 선택 불가"))return "CALENDAR_UNAVAILABLE";
+  if(m.contains("예약정보 이관 대상"))return "AIRLINE_TRANSFER_UNAVAILABLE";
   if(m.contains("조회 가능 날짜 모두 운항편 없음"))return "CALENDAR_NO_FLIGHTS";
   if(m.contains("조회가 불가"))return "UNSUPPORTED_ITINERARY";
   if(m.contains("공식 도시 목록"))return "AIRPORT_NOT_LISTED";
@@ -36,6 +38,8 @@ final class DiagnosticEvent {
  static String title(String code){return switch(code){
   case "AIRPORT_NOT_LISTED" -> "공항 목록에서 찾지 못함";
   case "AIRPORT_SELECTION_TIMEOUT","STAGE_TIMEOUT" -> "선택·응답 시간 초과";
+  case "CALENDAR_UNAVAILABLE" -> "전체 날짜 선택 불가 · 미확인";
+  case "AIRLINE_TRANSFER_UNAVAILABLE" -> "예약정보 이관 대상 · 조회 불가";
   case "CALENDAR_NO_FLIGHTS" -> "원본 달력 운항편 없음";
   case "UNSUPPORTED_ITINERARY" -> "항공사 조회 불가 여정";
   case "NETWORK_ERROR" -> "통신 오류";

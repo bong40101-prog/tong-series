@@ -19,7 +19,7 @@ public class MainActivity extends Activity {
  final java.util.concurrent.ExecutorService planningWorker=java.util.concurrent.Executors.newSingleThreadExecutor(r->new Thread(r,"TongSKY-plan"));
  volatile boolean planningClosed=false;boolean preparingCollection=false;int planningGeneration=0;String preparingRegion;
  static void requirePlanningWorker(){if(android.os.Looper.myLooper()==android.os.Looper.getMainLooper())throw new IllegalStateException("조회 목록 작업은 백그라운드에서 실행해야 합니다.");}
- CollectionPlan snapshotCollectionPlan(String region)throws Exception{boolean oz=isAsiana();LocalDate today=Search.today();return new CollectionPlan(code(batchOrigin),region,oz,catalog().toString(),today,Search.lastDate(oz,today),System.currentTimeMillis());}
+ CollectionPlan snapshotCollectionPlan(String region)throws Exception{boolean oz=isAsiana();LocalDate today=Search.today();return new CollectionPlan(code(batchOrigin),region,oz,catalog().toString(),today,Search.lastDate(oz),System.currentTimeMillis());}
  JSONArray buildCollectionPlan(CollectionPlan plan)throws Exception{
   requirePlanningWorker();JSONObject catalog=new JSONObject(plan.catalogJson);
   if(!plan.asiana){if(plan.region==null)return RegionBatch.all(plan.origin,catalog,plan.today,plan.startedAt);JSONObject batch=RegionBatch.create(plan.origin,plan.region,catalog,plan.today,plan.startedAt,plan.limit,"KE");return batch.getJSONArray("queries").length()==0?new JSONArray():new JSONArray().put(batch);}

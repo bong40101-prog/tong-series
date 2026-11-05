@@ -253,7 +253,9 @@ public final class AsianaCollectionService extends Service {
 
  void saveCursor()throws Exception{if(regionBatch!=null){regionBatch.put("cursor",priorCompleted+index).put("failures",failures).put("error","");if(priorCompleted+index==regionBatch.getJSONArray("queries").length())regionBatch.put("completedAt",System.currentTimeMillis());db.batch(regionBatch);}}
  void skipCurrent(String message){skipCurrent(DiagnosticEvent.code(message),message);}
- void skipCurrent(String code,String message){clearPageReuse();if(!running||paused||isFinishing()||regionBatch==null||query==null)return;if(diagnostic!=null)diagnostic.failure(code,message,true);running=false;typing=false;token++;try{observations().error(query,message);failures++;index++;saveCursor();updateProgress(false);setStatus(message+" · 기존 결과 유지 · 다음 항목까지 1.5초 대기");nextQueryAt=SystemClock.elapsedRealtime()+BETWEEN_QUERIES_MS;scheduleNext(BETWEEN_QUERIES_MS);}catch(Exception e){if(diagnostic!=null)diagnostic.exception(e);cancel("수집 상태를 저장하지 못했습니다.");}}
+ void skipCurrent(String code,String message){
+  if("UNSUPPORTED_ITINERARY".equals(code)&&asiana&&query!=null&&AsianaQueryFailure.transferPeriod(query.optString("month"),Search.today())){code="AIRLINE_TRANSFER_UNAVAILABLE";message="예약정보 이관 대상 기간 · 항공사 조회 불가 · 미확인: "+message;}
+  clearPageReuse();if(!running||paused||isFinishing()||regionBatch==null||query==null)return;if(diagnostic!=null)diagnostic.failure(code,message,true);running=false;typing=false;token++;try{observations().error(query,message);failures++;index++;saveCursor();updateProgress(false);setStatus(message+" · 기존 결과 유지 · 다음 항목까지 1.5초 대기");nextQueryAt=SystemClock.elapsedRealtime()+BETWEEN_QUERIES_MS;scheduleNext(BETWEEN_QUERIES_MS);}catch(Exception e){if(diagnostic!=null)diagnostic.exception(e);cancel("수집 상태를 저장하지 못했습니다.");}}
  void cancel(String message){
   if(finished||closed)return;clearPageReuse();message=failureMessage(message);boolean interruptedQuery=running;running=false;paused=true;typing=false;token++;lastError=message;handler.removeCallbacksAndMessages(null);
   try{if(diagnostic!=null)diagnostic.stop(message);}catch(RuntimeException error){recordException(error);}

@@ -165,7 +165,17 @@ if(stage==='parse'||stage==='parse_test'){
   dates.push(item);
  }
  if(seen.size!==days)return fail('한 달 날짜가 완전하지 않아 저장하지 않았습니다.');
+ if(disabledCount!==days)window.__tongKeDisabled=null;
  if(dates.every(d=>d.status==='UNKNOWN')){
+  if(disabledCount===days){
+   const source=window.__tongSource||q.testSource;
+   if(!source||!Number.isFinite(Date.parse(source)))return wait();
+   // Two stable reads avoid mistaking a loading/transition calendar for an unavailable month.
+   const prior=window.__tongKeDisabled,now=performance.now(),table=tables[0];
+   if(!prior||prior.key!==reuseKey||prior.dialog!==d||prior.table!==table||prior.source!==source){window.__tongKeDisabled={key:reuseKey,dialog:d,table,source,at:now};return {wait:true,detail:'전체 날짜 선택 불가 · 달력 반영 확인 중'};}
+   if(now-prior.at<1500)return {wait:true,detail:'전체 날짜 선택 불가 · 달력 반영 확인 중'};
+   return {error:'원본 달력 전체 날짜 선택 불가 · 미확인 · 기존 저장 자료를 유지합니다.',code:'CALENDAR_UNAVAILABLE'};
+  }
   if(noFlightCount>0&&noFlightCount+disabledCount===days)return {error:'원본 달력의 조회 가능 날짜 모두 운항편 없음 · 기존 저장 자료를 유지합니다.',code:'CALENDAR_NO_FLIGHTS'};
   return {wait:true,detail:'달력 좌석 표식 확인 대기 · 운항편 없음 '+noFlightCount+'일 · 선택 불가 '+disabledCount+'일'};
  }
