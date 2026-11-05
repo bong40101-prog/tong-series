@@ -16,7 +16,7 @@
     "versionCode": 10,
     "minSdk": 26,
     "file": "TongCatch-0.1.9.apk",
-    "sha256": "1d1344d3085be7425a20fa9e2adb1ed1333e85bb0b5df1714ff9314ddaceee5a",
+    "sha256": "f9e15189d08d93c3390b2f12c3e17ab1b0c61ba987ed5564365ec1b4cbc4be20",
     "notes": "CPU 유지 잠금을 제거하고 화면 꺼짐 시 사용 기록 조회 간격을 늘렸습니다. 대상 앱의 호출 로그는 들어오는 대로 저장합니다."
   },
   {
