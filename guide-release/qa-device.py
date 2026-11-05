@@ -34,7 +34,7 @@ def seed(package,name,content):
 def pref(package,name):return adb('exec-out','cat','/data/user/0/'+package+'/shared_prefs/'+name)
 
 adb('root');adb('wait-for-device');shell('wm','dismiss-keyguard')
-shell('settings','put','system','accelerometer_rotation','0');shell('settings','put','system','user_rotation','0')
+shell('wm','fixed-to-user-rotation','enabled');shell('wm','user-rotation','lock','0')
 shell('settings','put','global','airplane_mode_on','1');shell('svc','wifi','disable');shell('svc','data','disable')
 rows=json.loads(Path('guide-release/metadata.json').read_text())
 titles=['통홈복귀','통스타그램','통SKY','통글로우']
@@ -59,10 +59,11 @@ for row,title in zip(rows,titles):
     # Scroll a long guide; close remains visible and reachable.
     for i in range(5):shell('input','swipe','540','1500','540','650','300')
     wait('닫기');capture(package+'-guide-bottom')
-    shell('settings','put','system','user_rotation','1');time.sleep(2)
+    shell('wm','user-rotation','lock','1');time.sleep(2)
+    assert dump().get('rotation') in ('1','3'), 'Device did not rotate to landscape'
     wait(title+' · 사용방법');wait('닫기');capture(package+'-guide-landscape')
     tap('닫기');assert node(title+' · 사용방법') is None
-    shell('settings','put','system','user_rotation','0');time.sleep(2)
+    shell('wm','user-rotation','lock','0');time.sleep(2)
     tap('사용방법');wait(title+' · 사용방법');shell('input','keyevent','4');time.sleep(1)
     assert node(title+' · 사용방법') is None,(package,'back did not close guide')
     if package=='kr.homereturn':
