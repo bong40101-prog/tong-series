@@ -3,8 +3,11 @@ from pathlib import Path
 import xml.etree.ElementTree as ET
 
 out=Path('evidence');out.mkdir(exist_ok=True)
-def run(*args):return subprocess.check_output(list(map(str,args)),text=True,stderr=subprocess.STDOUT)
-def adb(*args):return run('adb',*args)
+def run(*args):
+    result=subprocess.run(list(map(str,args)),text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
+    if result.returncode:print(result.stdout,flush=True);result.check_returncode()
+    return result.stdout
+def adb(*args):return run('adb','-s','emulator-5554',*args)
 def shell(*args):return adb('shell',*args)
 def dump():
     shell('uiautomator','dump','/sdcard/guide.xml')
@@ -33,7 +36,7 @@ def seed(package,name,content):
     shell('chown','-R',uid+':'+uid,dest);shell('restorecon','-RF','/data/user/0/'+package)
 def pref(package,name):return adb('exec-out','cat','/data/user/0/'+package+'/shared_prefs/'+name)
 
-adb('root');adb('wait-for-device');shell('wm','dismiss-keyguard')
+adb('wait-for-device');adb('root');adb('wait-for-device');shell('wm','dismiss-keyguard')
 shell('wm','fixed-to-user-rotation','disabled');shell('wm','user-rotation','lock','0')
 shell('settings','put','global','airplane_mode_on','1');shell('svc','wifi','disable');shell('svc','data','disable')
 rows=json.loads(Path('guide-release/metadata.json').read_text())
