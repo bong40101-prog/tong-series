@@ -1,0 +1,10 @@
+{
+  "release": "1.0.52",
+  "versionCode": 10156,
+  "apkSHA256": "1f6dcce5dae3994f116a31a8b25fe86dd4774c5663e238afce7e07d70b314df6",
+  "dataReset": false,
+  "calendarPolicyChanged": false,
+  "networkDataWritesDuringInvestigation": false,
+  "sourceNotice": "https://flyasiana.com/C/KR/KO/customer/notice/detail?force=true&id=CM202610140002530842",
+  "sourceBookingTime": "https://www.koreanair.com/contents/booking/reservation-guide/how-to-book/booking-guide"
+}
