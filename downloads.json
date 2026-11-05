@@ -2,12 +2,12 @@
   {
     "name": "통SKY",
     "package": "kr.tong.sky",
-    "versionName": "1.0.50",
-    "versionCode": 10154,
+    "versionName": "1.0.51",
+    "versionCode": 10155,
     "minSdk": 33,
-    "file": "TongSKY-1.0.50.apk",
-    "sha256": "80ae2cfc5188be28410374ef071cc0f9c4e45f6a087c20f50709eb03831a4976",
-    "notes": "대한항공·아시아나 추천일정에서 IN 도착 도시와 OUT 출발 도시를 선택할 수 있습니다. 선택하지 않은 쪽은 유럽·미주 해당 지역 전체에서 찾습니다."
+    "file": "TongSKY-1.0.51.apk",
+    "sha256": "b65713dd644d12eb312d51715ed4567bfd428bf2f892c12b90c995c630ad7c7c",
+    "notes": "사용방법 버튼을 상단에 추가했습니다. 저장 일정·GitHub 연결·백그라운드 수집·추천일정 설명을 앱에서 확인할 수 있습니다."
   },
   {
     "name": "통캐치",
@@ -22,31 +22,31 @@
   {
     "name": "통홈복귀",
     "package": "kr.homereturn",
-    "versionName": "0.3.15",
-    "versionCode": 27,
+    "versionName": "0.3.16",
+    "versionCode": 28,
     "minSdk": 26,
-    "file": "TongHome-0.3.15.apk",
-    "sha256": "1165425cc223aff623e2818d235aa4c26673948ab26fa965e874a0ae8fe5857a",
-    "notes": "잠금 화면·꺼진 화면에서 에이닷 수신전화 예외가 누락되던 문제를 수정했습니다. 전화 수신·통화 중 홈 복귀를 차단합니다."
+    "file": "TongHome-0.3.16.apk",
+    "sha256": "a613ae0cdaa0bac2f6536fcbf2caec448bc7e3fb3167fd5eff5c882e3592ec66",
+    "notes": "사용방법 버튼을 상단에 추가했습니다. 전화 수신 보호·접근성 설정·홈 복귀 범위와 문제 해결 방법을 앱에서 확인할 수 있습니다."
   },
   {
     "name": "통스타그램",
     "package": "kr.tonggwon.square",
-    "versionName": "1.1.6",
-    "versionCode": 11,
+    "versionName": "1.1.7",
+    "versionCode": 12,
     "minSdk": 29,
-    "file": "Tongstagram-1.1.6.apk",
-    "sha256": "6ad319f4846fcb8f35975cac55b9aa5a4b698f5b69c816a765441e67cb0a0147",
-    "notes": "브라우저가 없을 때 앱이 종료되는 문제를 수정했습니다."
+    "file": "Tongstagram-1.1.7.apk",
+    "sha256": "26f0586276d683700c531ec0f70f3f46df241f13ae76683b7164936882c6b1c8",
+    "notes": "사용방법 버튼을 추가했습니다. 사진 선택·구도 조절·여백 배경·저장과 공유 방법을 앱에서 확인할 수 있습니다."
   },
   {
     "name": "통글로우",
     "package": "kr.tong.glow",
-    "versionName": "1.0.4",
-    "versionCode": 5,
+    "versionName": "1.0.5",
+    "versionCode": 6,
     "minSdk": 26,
-    "file": "TongGlow-1.0.4.apk",
-    "sha256": "dfe6e6c09af4fd17976202a0e1a7cd62743ce921b1dc80562e0225e1f1bcc609",
-    "notes": "항공으로 추정되는 긴 연결선 표시를 개선했습니다. 기존 기록에도 다시 가져오기 없이 적용됩니다."
+    "file": "TongGlow-1.0.5.apk",
+    "sha256": "d7f376b8f1a544c5d0fbc3bdd2f77290b2b9e759ff85a5f9b05db19a3f7dd62a",
+    "notes": "사용방법 버튼을 첫 화면에 추가했습니다. 타임라인 가져오기·지도 설정·백업과 복원 방법을 앱에서 확인할 수 있습니다."
   }
 ]

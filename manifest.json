@@ -1,18 +1,18 @@
 {
   "kr.homereturn": {
-    "versionName": "0.3.15",
-    "versionCode": 27,
-    "url": "https://bong40101-prog.github.io/tong-series/TongHome-0.3.15.apk",
-    "sha256": "1165425cc223aff623e2818d235aa4c26673948ab26fa965e874a0ae8fe5857a",
+    "versionName": "0.3.16",
+    "versionCode": 28,
+    "url": "https://bong40101-prog.github.io/tong-series/TongHome-0.3.16.apk",
+    "sha256": "a613ae0cdaa0bac2f6536fcbf2caec448bc7e3fb3167fd5eff5c882e3592ec66",
     "notes": "Google Play Protect 유해 앱 경고 신고로 업데이트 배포를 중지했습니다. 경고를 무시하고 설치하지 마세요. 원인을 확인 중입니다.",
     "suspended": true,
     "message": "Google Play Protect 유해 앱 경고 신고로 업데이트 배포를 중지했습니다. 경고를 무시하고 설치하지 마세요. 원인을 확인 중입니다."
   },
   "kr.tonggwon.square": {
-    "versionName": "1.1.6",
-    "versionCode": 11,
-    "url": "https://bong40101-prog.github.io/tong-series/Tongstagram-1.1.6.apk",
-    "sha256": "6ad319f4846fcb8f35975cac55b9aa5a4b698f5b69c816a765441e67cb0a0147",
+    "versionName": "1.1.7",
+    "versionCode": 12,
+    "url": "https://bong40101-prog.github.io/tong-series/Tongstagram-1.1.7.apk",
+    "sha256": "26f0586276d683700c531ec0f70f3f46df241f13ae76683b7164936882c6b1c8",
     "notes": "Google Play Protect 유해 앱 경고 신고로 업데이트 배포를 중지했습니다. 경고를 무시하고 설치하지 마세요. 원인을 확인 중입니다.",
     "suspended": true,
     "message": "Google Play Protect 유해 앱 경고 신고로 업데이트 배포를 중지했습니다. 경고를 무시하고 설치하지 마세요. 원인을 확인 중입니다."
