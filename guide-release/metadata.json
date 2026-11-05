@@ -1,0 +1,38 @@
+[
+  {
+    "file": "TongHome-0.3.16.apk",
+    "old": "TongHome-0.3.15.apk",
+    "sha256": "a613ae0cdaa0bac2f6536fcbf2caec448bc7e3fb3167fd5eff5c882e3592ec66",
+    "old_sha256": "1165425cc223aff623e2818d235aa4c26673948ab26fa965e874a0ae8fe5857a",
+    "bytes": 107454,
+    "cert": "f4989fbeb50f4b209a8291bc3f84c053fb2cab8780a2b8a4c2954d77d5af95ab",
+    "package": "package: name='kr.homereturn' versionCode='28' versionName='0.3.16' platformBuildVersionName='15' platformBuildVersionCode='35' compileSdkVersion='35' compileSdkVersionCodename='15'"
+  },
+  {
+    "file": "Tongstagram-1.1.7.apk",
+    "old": "Tongstagram-1.1.6.apk",
+    "sha256": "26f0586276d683700c531ec0f70f3f46df241f13ae76683b7164936882c6b1c8",
+    "old_sha256": "6ad319f4846fcb8f35975cac55b9aa5a4b698f5b69c816a765441e67cb0a0147",
+    "bytes": 57819,
+    "cert": "f4989fbeb50f4b209a8291bc3f84c053fb2cab8780a2b8a4c2954d77d5af95ab",
+    "package": "package: name='kr.tonggwon.square' versionCode='12' versionName='1.1.7' platformBuildVersionName='15' platformBuildVersionCode='35' compileSdkVersion='35' compileSdkVersionCodename='15'"
+  },
+  {
+    "file": "TongSKY-1.0.51.apk",
+    "old": "TongSKY-1.0.50.apk",
+    "sha256": "b65713dd644d12eb312d51715ed4567bfd428bf2f892c12b90c995c630ad7c7c",
+    "old_sha256": "80ae2cfc5188be28410374ef071cc0f9c4e45f6a087c20f50709eb03831a4976",
+    "bytes": 3354625,
+    "cert": "5ee2986ae413b9dfb87724079b93d83a5dcaabf1d2fe96603418dec50cfe547d",
+    "package": "package: name='kr.tong.sky' versionCode='10155' versionName='1.0.51' platformBuildVersionName='15' platformBuildVersionCode='35' compileSdkVersion='35' compileSdkVersionCodename='15'"
+  },
+  {
+    "file": "TongGlow-1.0.5.apk",
+    "old": "TongGlow-1.0.4.apk",
+    "sha256": "d7f376b8f1a544c5d0fbc3bdd2f77290b2b9e759ff85a5f9b05db19a3f7dd62a",
+    "old_sha256": "dfe6e6c09af4fd17976202a0e1a7cd62743ce921b1dc80562e0225e1f1bcc609",
+    "bytes": 152790,
+    "cert": "ea59be29561d3c5fd73232c7c832a231a4f21e0c162506253c845ac79623adcb",
+    "package": "package: name='kr.tong.glow' versionCode='6' versionName='1.0.5' platformBuildVersionName='15' platformBuildVersionCode='35' compileSdkVersion='35' compileSdkVersionCodename='15'"
+  }
+]
