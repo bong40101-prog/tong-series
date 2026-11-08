@@ -1,0 +1,37 @@
+name: Stage verified TongSKY 1.0.53 APK
+on:
+  push:
+    branches: ['release/tongsky-1053-apk']
+    paths: ['release1053/**', '.github/workflows/tongsky-1053-apk.yml']
+permissions:
+  contents: write
+jobs:
+  stage:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Restore independently verified signed APK
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import json,hashlib,base64,subprocess
+          r=Path('release1053');h=json.loads((r/'hashes.json').read_text())
+          assert h['version']=='1.0.53' and h['versionCode']==10157
+          assert hashlib.sha256(Path('TongSKY-1.0.52.apk').read_bytes()).hexdigest()==h['old']
+          Path('/tmp/apk.zst').write_bytes(base64.b64decode((r/'apk.zst.b64').read_text()))
+          subprocess.run(['zstd','-qdf','--long=27','--patch-from=TongSKY-1.0.52.apk','/tmp/apk.zst','-o',h['file'] if 'file' in h else 'TongSKY-1.0.53.apk'],check=True)
+          apk=Path('TongSKY-1.0.53.apk')
+          assert hashlib.sha256(apk.read_bytes()).hexdigest()==h['apk']
+          assert apk.stat().st_size==h['bytes']
+          PY
+          signer=$(find "$ANDROID_HOME/build-tools" -name apksigner | sort -V | tail -1)
+          "$signer" verify --min-sdk-version 33 --verbose --print-certs TongSKY-1.0.53.apk | tee /tmp/signature.txt
+          grep -Fq '5ee2986ae413b9dfb87724079b93d83a5dcaabf1d2fe96603418dec50cfe547d' /tmp/signature.txt
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add TongSKY-1.0.53.apk
+          git commit -m 'Stage verified TongSKY 1.0.53 signed APK'
+          git pull --rebase origin release/tongsky-1053-apk
+          git push origin HEAD:refs/heads/release/tongsky-1053-apk
