@@ -18,7 +18,7 @@ function stats(){const now=new Date(),date=new Date(+now+32400000).toISOString()
    assert.equal(await page.locator('[role="tab"][aria-selected="true"]').count(),1);
    assert((await page.locator('#trend-caption').textContent()).includes(group.windowHours===24?'24시간':'7일'));
   }
-  await page.locator('[data-category="camping"]').click();assert(await page.locator('#trend-empty').isVisible());
+  await page.locator('[data-category="camping"]').click();assert.equal(await page.locator('#trend-empty').isVisible(),feed.groups.find(g=>g.id==='camping').items.length===0);
   await page.locator('[data-category="all"]').click();await page.locator('[data-category="all"]').press('ArrowRight');assert.equal(await page.locator('[role="tab"][aria-selected="true"]').getAttribute('data-category'),'food');
   assert.equal(await page.locator('.app').count(),4);assert.equal(await page.locator('#tongsky').count(),0);
   const downloads=await page.locator('.app a[download]').evaluateAll(es=>es.map(e=>e.getAttribute('href')));
