@@ -1,0 +1,27 @@
+name: Tong Series control tower tests
+on:
+  push:
+    branches: [control-tower-20261109, gh-pages]
+    paths: ['index.html', 'control-tower.css', 'control-tower.js', 'trends.js', 'scripts/update-trends.py', 'tests/**', '.github/workflows/control-tower-tests.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python3 -m unittest discover -s tests -p 'test_*.py'
+      - run: npm install --no-save --package-lock=false jsdom@26.1.0 playwright@1.56.1
+      - run: node --test tests/control-tower.test.cjs
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/control-tower-ui.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: control-tower-ui
+          path: test-evidence/
