@@ -1,0 +1,107 @@
+{
+  "source": "https://trends.google.com/trending?geo=KR&hours=24",
+  "country": "KR",
+  "updatedAt": "2026-11-09T02:11:44.983179+00:00",
+  "items": [
+    {
+      "title": "서동주",
+      "traffic": "200000",
+      "startedAt": ""
+    },
+    {
+      "title": "이준호",
+      "traffic": "20000",
+      "startedAt": ""
+    },
+    {
+      "title": "난방",
+      "traffic": "20000",
+      "startedAt": ""
+    },
+    {
+      "title": "아틀레티코 대 바르셀로나",
+      "traffic": "20000",
+      "startedAt": ""
+    },
+    {
+      "title": "맨유 대 애스턴 빌라",
+      "traffic": "20000",
+      "startedAt": ""
+    },
+    {
+      "title": "닥터x: 하얀 마피아의 시대",
+      "traffic": "20000",
+      "startedAt": ""
+    },
+    {
+      "title": "생계",
+      "traffic": "20000",
+      "startedAt": ""
+    },
+    {
+      "title": "할증",
+      "traffic": "5000",
+      "startedAt": ""
+    },
+    {
+      "title": "서울특별시",
+      "traffic": "10000",
+      "startedAt": ""
+    },
+    {
+      "title": "도란",
+      "traffic": "5000",
+      "startedAt": ""
+    },
+    {
+      "title": "젠슨 황",
+      "traffic": "20000",
+      "startedAt": ""
+    },
+    {
+      "title": "전력",
+      "traffic": "5000",
+      "startedAt": ""
+    },
+    {
+      "title": "sbs",
+      "traffic": "10000",
+      "startedAt": ""
+    },
+    {
+      "title": "blg",
+      "traffic": "2000",
+      "startedAt": ""
+    },
+    {
+      "title": "크리스털 팰리스 대 리버풀",
+      "traffic": "10000",
+      "startedAt": ""
+    },
+    {
+      "title": "매일경제신문",
+      "traffic": "2000",
+      "startedAt": ""
+    },
+    {
+      "title": "김유정",
+      "traffic": "5000",
+      "startedAt": ""
+    },
+    {
+      "title": "치어리더",
+      "traffic": "5000",
+      "startedAt": ""
+    },
+    {
+      "title": "선덜랜드 대 첼시",
+      "traffic": "5000",
+      "startedAt": ""
+    },
+    {
+      "title": "농업",
+      "traffic": "2000",
+      "startedAt": ""
+    }
+  ]
+}
