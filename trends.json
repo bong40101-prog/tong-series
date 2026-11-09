@@ -1,7 +1,7 @@
 {
   "source": "https://trends.google.com/trending?geo=KR&hours=24",
   "country": "KR",
-  "updatedAt": "2026-11-09T02:11:44.983179+00:00",
+  "updatedAt": "2026-11-09T02:14:20.596318+00:00",
   "items": [
     {
       "title": "서동주",
@@ -39,7 +39,17 @@
       "startedAt": ""
     },
     {
+      "title": "젠슨 황 부인",
+      "traffic": "20000",
+      "startedAt": ""
+    },
+    {
       "title": "할증",
+      "traffic": "5000",
+      "startedAt": ""
+    },
+    {
+      "title": "도란",
       "traffic": "5000",
       "startedAt": ""
     },
@@ -49,18 +59,13 @@
       "startedAt": ""
     },
     {
-      "title": "도란",
-      "traffic": "5000",
-      "startedAt": ""
-    },
-    {
-      "title": "젠슨 황",
-      "traffic": "20000",
-      "startedAt": ""
-    },
-    {
       "title": "전력",
       "traffic": "5000",
+      "startedAt": ""
+    },
+    {
+      "title": "blg",
+      "traffic": "2000",
       "startedAt": ""
     },
     {
@@ -69,8 +74,8 @@
       "startedAt": ""
     },
     {
-      "title": "blg",
-      "traffic": "2000",
+      "title": "김유정",
+      "traffic": "5000",
       "startedAt": ""
     },
     {
@@ -84,23 +89,18 @@
       "startedAt": ""
     },
     {
-      "title": "김유정",
-      "traffic": "5000",
-      "startedAt": ""
-    },
-    {
       "title": "치어리더",
-      "traffic": "5000",
-      "startedAt": ""
-    },
-    {
-      "title": "선덜랜드 대 첼시",
       "traffic": "5000",
       "startedAt": ""
     },
     {
       "title": "농업",
       "traffic": "2000",
+      "startedAt": ""
+    },
+    {
+      "title": "삼성 우승",
+      "traffic": "20000",
       "startedAt": ""
     }
   ]
