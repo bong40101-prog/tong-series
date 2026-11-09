@@ -1,0 +1,18 @@
+{
+  "date": "2026-11-09",
+  "backendCommit": "634dc6e322cd673ee03debbd566297e8a67c5d60",
+  "reviewCommit": "3bf3281cbe0dc9d6b6a0e51433c6b182f6761b24",
+  "uiRun": 42571237547,
+  "unitChecks": 21,
+  "viewports": 8,
+  "categories": 10,
+  "readOnlyStats": true,
+  "existingAppDownloadsPreserved": true,
+  "ipStatisticsUnchanged": true,
+  "ranking": "Google source order, max 20",
+  "windows": {
+    "allHours": 24,
+    "categoryHours": 168
+  },
+  "camping": "title and related term filter; no invented entries"
+}

@@ -1,107 +1,930 @@
 {
-  "source": "https://trends.google.com/trending?geo=KR&hours=24",
+  "schema": 2,
   "country": "KR",
-  "updatedAt": "2026-11-09T02:14:20.596318+00:00",
+  "source": "https://trends.google.com/trending?geo=KR&hours=24&hl=ko",
+  "updatedAt": "2026-11-09T06:10:08.033637+00:00",
   "items": [
     {
-      "title": "서동주",
-      "traffic": "200000",
-      "startedAt": ""
-    },
-    {
       "title": "이준호",
-      "traffic": "20000",
-      "startedAt": ""
+      "traffic": "100000"
     },
     {
       "title": "난방",
-      "traffic": "20000",
-      "startedAt": ""
+      "traffic": "20000"
     },
     {
       "title": "아틀레티코 대 바르셀로나",
-      "traffic": "20000",
-      "startedAt": ""
-    },
-    {
-      "title": "맨유 대 애스턴 빌라",
-      "traffic": "20000",
-      "startedAt": ""
-    },
-    {
-      "title": "닥터x: 하얀 마피아의 시대",
-      "traffic": "20000",
-      "startedAt": ""
+      "traffic": "20000"
     },
     {
       "title": "생계",
-      "traffic": "20000",
-      "startedAt": ""
+      "traffic": "20000"
     },
     {
       "title": "젠슨 황 부인",
-      "traffic": "20000",
-      "startedAt": ""
+      "traffic": "20000"
+    },
+    {
+      "title": "홍창기",
+      "traffic": "10000"
+    },
+    {
+      "title": "중앙일보",
+      "traffic": "20000"
+    },
+    {
+      "title": "맨유 대 애스턴 빌라",
+      "traffic": "20000"
     },
     {
       "title": "할증",
-      "traffic": "5000",
-      "startedAt": ""
+      "traffic": "10000"
     },
     {
-      "title": "도란",
-      "traffic": "5000",
-      "startedAt": ""
+      "title": "김연아",
+      "traffic": "5000"
     },
     {
-      "title": "서울특별시",
-      "traffic": "10000",
-      "startedAt": ""
-    },
-    {
-      "title": "전력",
-      "traffic": "5000",
-      "startedAt": ""
-    },
-    {
-      "title": "blg",
-      "traffic": "2000",
-      "startedAt": ""
-    },
-    {
-      "title": "sbs",
-      "traffic": "10000",
-      "startedAt": ""
+      "title": "삼성 우승 할인",
+      "traffic": "20000"
     },
     {
       "title": "김유정",
-      "traffic": "5000",
-      "startedAt": ""
+      "traffic": "20000"
     },
     {
-      "title": "크리스털 팰리스 대 리버풀",
-      "traffic": "10000",
-      "startedAt": ""
+      "title": "도란",
+      "traffic": "20000"
     },
     {
-      "title": "매일경제신문",
-      "traffic": "2000",
-      "startedAt": ""
+      "title": "삼전닉스",
+      "traffic": "20000"
     },
     {
-      "title": "치어리더",
-      "traffic": "5000",
-      "startedAt": ""
+      "title": "최태원",
+      "traffic": "10000"
     },
     {
-      "title": "농업",
-      "traffic": "2000",
-      "startedAt": ""
+      "title": "전력",
+      "traffic": "5000"
     },
     {
-      "title": "삼성 우승",
-      "traffic": "20000",
-      "startedAt": ""
+      "title": "노점상",
+      "traffic": "2000"
+    },
+    {
+      "title": "권동진 부상",
+      "traffic": "5000"
+    },
+    {
+      "title": "아나운서",
+      "traffic": "2000"
+    },
+    {
+      "title": "alice huang",
+      "traffic": "5000"
+    }
+  ],
+  "groups": [
+    {
+      "id": "all",
+      "label": "전체",
+      "windowHours": 24,
+      "source": "https://trends.google.com/trending?geo=KR&hours=24&hl=ko",
+      "method": "google_feed_order",
+      "googleCategoryIds": [],
+      "updatedAt": "2026-11-09T06:10:08.033637+00:00",
+      "status": "ok",
+      "refreshFailed": false,
+      "totalAvailable": 181,
+      "items": [
+        {
+          "title": "이준호",
+          "traffic": "100000"
+        },
+        {
+          "title": "난방",
+          "traffic": "20000"
+        },
+        {
+          "title": "아틀레티코 대 바르셀로나",
+          "traffic": "20000"
+        },
+        {
+          "title": "생계",
+          "traffic": "20000"
+        },
+        {
+          "title": "젠슨 황 부인",
+          "traffic": "20000"
+        },
+        {
+          "title": "홍창기",
+          "traffic": "10000"
+        },
+        {
+          "title": "중앙일보",
+          "traffic": "20000"
+        },
+        {
+          "title": "맨유 대 애스턴 빌라",
+          "traffic": "20000"
+        },
+        {
+          "title": "할증",
+          "traffic": "10000"
+        },
+        {
+          "title": "김연아",
+          "traffic": "5000"
+        },
+        {
+          "title": "삼성 우승 할인",
+          "traffic": "20000"
+        },
+        {
+          "title": "김유정",
+          "traffic": "20000"
+        },
+        {
+          "title": "도란",
+          "traffic": "20000"
+        },
+        {
+          "title": "삼전닉스",
+          "traffic": "20000"
+        },
+        {
+          "title": "최태원",
+          "traffic": "10000"
+        },
+        {
+          "title": "전력",
+          "traffic": "5000"
+        },
+        {
+          "title": "노점상",
+          "traffic": "2000"
+        },
+        {
+          "title": "권동진 부상",
+          "traffic": "5000"
+        },
+        {
+          "title": "아나운서",
+          "traffic": "2000"
+        },
+        {
+          "title": "alice huang",
+          "traffic": "5000"
+        }
+      ]
+    },
+    {
+      "id": "food",
+      "label": "음식",
+      "windowHours": 168,
+      "source": "https://trends.google.com/trending?geo=KR&hours=168&hl=ko",
+      "method": "google_category",
+      "googleCategoryIds": [
+        5
+      ],
+      "updatedAt": "2026-11-09T06:10:08.033637+00:00",
+      "status": "ok",
+      "refreshFailed": false,
+      "totalAvailable": 20,
+      "items": [
+        {
+          "title": "밥",
+          "traffic": "20000"
+        },
+        {
+          "title": "노점상",
+          "traffic": "2000"
+        },
+        {
+          "title": "라면",
+          "traffic": "50000"
+        },
+        {
+          "title": "냄비",
+          "traffic": "10000"
+        },
+        {
+          "title": "독소",
+          "traffic": "1000"
+        },
+        {
+          "title": "커피",
+          "traffic": "20000"
+        },
+        {
+          "title": "백종원",
+          "traffic": "5000"
+        },
+        {
+          "title": "인도네시아",
+          "traffic": "500"
+        },
+        {
+          "title": "한국의 소주",
+          "traffic": "20000"
+        },
+        {
+          "title": "도루묵",
+          "traffic": "500"
+        },
+        {
+          "title": "물김치",
+          "traffic": "2000"
+        },
+        {
+          "title": "돈 스파이크",
+          "traffic": "2000"
+        },
+        {
+          "title": "송미령",
+          "traffic": "500"
+        },
+        {
+          "title": "할인",
+          "traffic": "1000"
+        },
+        {
+          "title": "음식점",
+          "traffic": "500"
+        },
+        {
+          "title": "t.o.p",
+          "traffic": "1000"
+        },
+        {
+          "title": "한우",
+          "traffic": "1000"
+        },
+        {
+          "title": "샤인머스캣",
+          "traffic": "200"
+        },
+        {
+          "title": "롯데마트",
+          "traffic": "100"
+        },
+        {
+          "title": "버거킹",
+          "traffic": "100"
+        }
+      ]
+    },
+    {
+      "id": "people",
+      "label": "사람·연예",
+      "windowHours": 168,
+      "source": "https://trends.google.com/trending?geo=KR&hours=168&hl=ko",
+      "method": "google_category",
+      "googleCategoryIds": [
+        4
+      ],
+      "updatedAt": "2026-11-09T06:10:08.033637+00:00",
+      "status": "ok",
+      "refreshFailed": false,
+      "totalAvailable": 184,
+      "items": [
+        {
+          "title": "이준호",
+          "traffic": "100000"
+        },
+        {
+          "title": "심현섭",
+          "traffic": "50000"
+        },
+        {
+          "title": "가능한 사랑",
+          "traffic": "20000"
+        },
+        {
+          "title": "김다예",
+          "traffic": "20000"
+        },
+        {
+          "title": "이도",
+          "traffic": "10000"
+        },
+        {
+          "title": "김유정",
+          "traffic": "20000"
+        },
+        {
+          "title": "임창정",
+          "traffic": "2000"
+        },
+        {
+          "title": "닥터x: 하얀 마피아의 시대",
+          "traffic": "20000"
+        },
+        {
+          "title": "윤여정",
+          "traffic": "500"
+        },
+        {
+          "title": "마산가고파국화축제",
+          "traffic": "1000"
+        },
+        {
+          "title": "생일",
+          "traffic": "500"
+        },
+        {
+          "title": "신아영",
+          "traffic": "200"
+        },
+        {
+          "title": "이요원",
+          "traffic": "100000"
+        },
+        {
+          "title": "기인",
+          "traffic": "2000"
+        },
+        {
+          "title": "지수",
+          "traffic": "20000"
+        },
+        {
+          "title": "이유리",
+          "traffic": "20000"
+        },
+        {
+          "title": "하정우",
+          "traffic": "10000"
+        },
+        {
+          "title": "김우석",
+          "traffic": "2000"
+        },
+        {
+          "title": "아침",
+          "traffic": "20000"
+        },
+        {
+          "title": "송중기",
+          "traffic": "50000"
+        }
+      ]
+    },
+    {
+      "id": "camping",
+      "label": "캠핑",
+      "windowHours": 168,
+      "source": "https://trends.google.com/trending?geo=KR&hours=168&hl=ko",
+      "method": "related_keyword_filter",
+      "googleCategoryIds": [],
+      "updatedAt": "2026-11-09T06:10:08.033637+00:00",
+      "status": "ok",
+      "refreshFailed": false,
+      "totalAvailable": 0,
+      "items": []
+    },
+    {
+      "id": "cars",
+      "label": "차량",
+      "windowHours": 168,
+      "source": "https://trends.google.com/trending?geo=KR&hours=168&hl=ko",
+      "method": "google_category",
+      "googleCategoryIds": [
+        1
+      ],
+      "updatedAt": "2026-11-09T06:10:08.033637+00:00",
+      "status": "ok",
+      "refreshFailed": false,
+      "totalAvailable": 17,
+      "items": [
+        {
+          "title": "지리자동차",
+          "traffic": "20000"
+        },
+        {
+          "title": "현대 싼타페",
+          "traffic": "20000"
+        },
+        {
+          "title": "비야 디",
+          "traffic": "100000"
+        },
+        {
+          "title": "테슬라 사이버트럭",
+          "traffic": "5000"
+        },
+        {
+          "title": "테슬라 모델 y",
+          "traffic": "20000"
+        },
+        {
+          "title": "기아 텔루라이드",
+          "traffic": "10000"
+        },
+        {
+          "title": "tesla",
+          "traffic": "1000"
+        },
+        {
+          "title": "자동차",
+          "traffic": "10000"
+        },
+        {
+          "title": "일론 머스크",
+          "traffic": "500"
+        },
+        {
+          "title": "교차로",
+          "traffic": "500"
+        },
+        {
+          "title": "현대 제네시스",
+          "traffic": "1000"
+        },
+        {
+          "title": "기아 스포티지",
+          "traffic": "1000"
+        },
+        {
+          "title": "제네시스 g90",
+          "traffic": "1000"
+        },
+        {
+          "title": "현대자동차",
+          "traffic": "500"
+        },
+        {
+          "title": "tsla",
+          "traffic": "200"
+        },
+        {
+          "title": "제네시스 gv90",
+          "traffic": "100"
+        },
+        {
+          "title": "테슬라 주가",
+          "traffic": "100"
+        }
+      ]
+    },
+    {
+      "id": "travel",
+      "label": "여행",
+      "windowHours": 168,
+      "source": "https://trends.google.com/trending?geo=KR&hours=168&hl=ko",
+      "method": "google_category",
+      "googleCategoryIds": [
+        19
+      ],
+      "updatedAt": "2026-11-09T06:10:08.033637+00:00",
+      "status": "ok",
+      "refreshFailed": false,
+      "totalAvailable": 14,
+      "items": [
+        {
+          "title": "항공 승무원",
+          "traffic": "500"
+        },
+        {
+          "title": "주차",
+          "traffic": "50000"
+        },
+        {
+          "title": "제주항공",
+          "traffic": "1000"
+        },
+        {
+          "title": "부정승차",
+          "traffic": "5000"
+        },
+        {
+          "title": "운임",
+          "traffic": "10000"
+        },
+        {
+          "title": "여객선",
+          "traffic": "2000"
+        },
+        {
+          "title": "외국인",
+          "traffic": "1000"
+        },
+        {
+          "title": "관광객",
+          "traffic": "2000"
+        },
+        {
+          "title": "조선호텔앤리조트",
+          "traffic": "1000"
+        },
+        {
+          "title": "내장산ic",
+          "traffic": "1000"
+        },
+        {
+          "title": "인천광역시",
+          "traffic": "200"
+        },
+        {
+          "title": "한국고속철도",
+          "traffic": "500"
+        },
+        {
+          "title": "항공기",
+          "traffic": "200"
+        },
+        {
+          "title": "노원구",
+          "traffic": "200"
+        }
+      ]
+    },
+    {
+      "id": "finance",
+      "label": "경제·금융",
+      "windowHours": 168,
+      "source": "https://trends.google.com/trending?geo=KR&hours=168&hl=ko",
+      "method": "google_category",
+      "googleCategoryIds": [
+        3
+      ],
+      "updatedAt": "2026-11-09T06:10:08.033637+00:00",
+      "status": "ok",
+      "refreshFailed": false,
+      "totalAvailable": 264,
+      "items": [
+        {
+          "title": "sk하이닉스",
+          "traffic": "200000"
+        },
+        {
+          "title": "생계",
+          "traffic": "20000"
+        },
+        {
+          "title": "최태원",
+          "traffic": "20000"
+        },
+        {
+          "title": "전력",
+          "traffic": "5000"
+        },
+        {
+          "title": "공장",
+          "traffic": "2000"
+        },
+        {
+          "title": "철도망",
+          "traffic": "2000"
+        },
+        {
+          "title": "알 테오 젠",
+          "traffic": "2000"
+        },
+        {
+          "title": "연구",
+          "traffic": "500"
+        },
+        {
+          "title": "환기",
+          "traffic": "20000"
+        },
+        {
+          "title": "서울교통공사 채용",
+          "traffic": "1000"
+        },
+        {
+          "title": "로켓",
+          "traffic": "200"
+        },
+        {
+          "title": "노무라 증권",
+          "traffic": "50000"
+        },
+        {
+          "title": "노태문",
+          "traffic": "20000"
+        },
+        {
+          "title": "항공 승무원",
+          "traffic": "500"
+        },
+        {
+          "title": "농업",
+          "traffic": "2000"
+        },
+        {
+          "title": "매일경제신문",
+          "traffic": "2000"
+        },
+        {
+          "title": "개발제한구역",
+          "traffic": "2000"
+        },
+        {
+          "title": "보험",
+          "traffic": "20000"
+        },
+        {
+          "title": "압구정동",
+          "traffic": "5000"
+        },
+        {
+          "title": "과태료",
+          "traffic": "5000"
+        }
+      ]
+    },
+    {
+      "id": "tech",
+      "label": "IT·과학",
+      "windowHours": 168,
+      "source": "https://trends.google.com/trending?geo=KR&hours=168&hl=ko",
+      "method": "google_category",
+      "googleCategoryIds": [
+        15,
+        18
+      ],
+      "updatedAt": "2026-11-09T06:10:08.033637+00:00",
+      "status": "ok",
+      "refreshFailed": false,
+      "totalAvailable": 30,
+      "items": [
+        {
+          "title": "악성 소프트웨어",
+          "traffic": "5000"
+        },
+        {
+          "title": "보이저 1호",
+          "traffic": "1000"
+        },
+        {
+          "title": "지포스",
+          "traffic": "2000"
+        },
+        {
+          "title": "자동차",
+          "traffic": "10000"
+        },
+        {
+          "title": "더중앙플러스",
+          "traffic": "10000"
+        },
+        {
+          "title": "컴퓨터",
+          "traffic": "2000"
+        },
+        {
+          "title": "tsmc",
+          "traffic": "2000"
+        },
+        {
+          "title": "젤다",
+          "traffic": "5000"
+        },
+        {
+          "title": "우주망원경",
+          "traffic": "2000"
+        },
+        {
+          "title": "폴더 블 스마트 폰",
+          "traffic": "5000"
+        },
+        {
+          "title": "kt 삼성",
+          "traffic": "2000"
+        },
+        {
+          "title": "젤다 의 전설 시간 의 오카리나",
+          "traffic": "2000"
+        },
+        {
+          "title": "근육",
+          "traffic": "5000"
+        },
+        {
+          "title": "마이크로소프트",
+          "traffic": "2000"
+        },
+        {
+          "title": "그래픽 카드",
+          "traffic": "2000"
+        },
+        {
+          "title": "엑스박스 게임 패스",
+          "traffic": "1000"
+        },
+        {
+          "title": "화산",
+          "traffic": "200"
+        },
+        {
+          "title": "공룡",
+          "traffic": "500"
+        },
+        {
+          "title": "창신메모리테크놀로지",
+          "traffic": "2000"
+        },
+        {
+          "title": "sony",
+          "traffic": "500"
+        }
+      ]
+    },
+    {
+      "id": "sports",
+      "label": "스포츠",
+      "windowHours": 168,
+      "source": "https://trends.google.com/trending?geo=KR&hours=168&hl=ko",
+      "method": "google_category",
+      "googleCategoryIds": [
+        17
+      ],
+      "updatedAt": "2026-11-09T06:10:08.033637+00:00",
+      "status": "ok",
+      "refreshFailed": false,
+      "totalAvailable": 264,
+      "items": [
+        {
+          "title": "아틀레티코 대 바르셀로나",
+          "traffic": "20000"
+        },
+        {
+          "title": "홍창기",
+          "traffic": "20000"
+        },
+        {
+          "title": "맨유 대 애스턴 빌라",
+          "traffic": "20000"
+        },
+        {
+          "title": "삼성 우승 할인",
+          "traffic": "500000"
+        },
+        {
+          "title": "권동진 부상",
+          "traffic": "5000"
+        },
+        {
+          "title": "시애틀 사운더스 대 엘에이 fc",
+          "traffic": "50000"
+        },
+        {
+          "title": "야구",
+          "traffic": "20000"
+        },
+        {
+          "title": "황유민",
+          "traffic": "10000"
+        },
+        {
+          "title": "pakistan vs sri lanka",
+          "traffic": "1000"
+        },
+        {
+          "title": "노시환",
+          "traffic": "20000"
+        },
+        {
+          "title": "치어리더",
+          "traffic": "10000"
+        },
+        {
+          "title": "김도영",
+          "traffic": "10000"
+        },
+        {
+          "title": "크리스털 팰리스 대 리버풀",
+          "traffic": "10000"
+        },
+        {
+          "title": "신인감독 김연경",
+          "traffic": "5000"
+        },
+        {
+          "title": "리즈 유나이티드 대 토트넘",
+          "traffic": "50000"
+        },
+        {
+          "title": "선덜랜드 대 첼시",
+          "traffic": "5000"
+        },
+        {
+          "title": "강원 대 전북",
+          "traffic": "5000"
+        },
+        {
+          "title": "허인서",
+          "traffic": "20000"
+        },
+        {
+          "title": "트로이 왓슨",
+          "traffic": "100"
+        },
+        {
+          "title": "마인츠 05 대 바이에른",
+          "traffic": "20000"
+        }
+      ]
+    },
+    {
+      "id": "health",
+      "label": "건강",
+      "windowHours": 168,
+      "source": "https://trends.google.com/trending?geo=KR&hours=168&hl=ko",
+      "method": "google_category",
+      "googleCategoryIds": [
+        7
+      ],
+      "updatedAt": "2026-11-09T06:10:08.033637+00:00",
+      "status": "ok",
+      "refreshFailed": false,
+      "totalAvailable": 29,
+      "items": [
+        {
+          "title": "장기 기증",
+          "traffic": "50000"
+        },
+        {
+          "title": "소금",
+          "traffic": "20000"
+        },
+        {
+          "title": "독소",
+          "traffic": "1000"
+        },
+        {
+          "title": "혈당",
+          "traffic": "10000"
+        },
+        {
+          "title": "습관",
+          "traffic": "2000"
+        },
+        {
+          "title": "임신",
+          "traffic": "2000"
+        },
+        {
+          "title": "유방암",
+          "traffic": "5000"
+        },
+        {
+          "title": "걷기",
+          "traffic": "20000"
+        },
+        {
+          "title": "마라톤",
+          "traffic": "10000"
+        },
+        {
+          "title": "의약품",
+          "traffic": "500"
+        },
+        {
+          "title": "세균",
+          "traffic": "10000"
+        },
+        {
+          "title": "건강보험",
+          "traffic": "1000"
+        },
+        {
+          "title": "간호사",
+          "traffic": "5000"
+        },
+        {
+          "title": "구급차",
+          "traffic": "1000"
+        },
+        {
+          "title": "허가",
+          "traffic": "2000"
+        },
+        {
+          "title": "전공의",
+          "traffic": "500"
+        },
+        {
+          "title": "근육",
+          "traffic": "5000"
+        },
+        {
+          "title": "수사",
+          "traffic": "1000"
+        },
+        {
+          "title": "hiv",
+          "traffic": "200"
+        },
+        {
+          "title": "인천국제공항",
+          "traffic": "500"
+        }
+      ]
     }
   ]
 }
