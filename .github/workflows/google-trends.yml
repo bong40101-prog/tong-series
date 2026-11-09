@@ -8,8 +8,7 @@ on:
     paths: [.github/workflows/google-trends.yml]
 permissions:
   contents: write
-  pages: write
-  id-token: write
+  actions: write
 concurrency:
   group: tong-series-google-trends
   cancel-in-progress: false
@@ -17,9 +16,6 @@ jobs:
   update:
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -38,9 +34,7 @@ jobs:
             if git push origin HEAD:gh-pages; then exit 0; fi
           done
           exit 1
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: .
-      - name: Publish refreshed homepage
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Deploy from the permitted gh-pages branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run publish-trends.yml --repo "$GITHUB_REPOSITORY" --ref gh-pages
