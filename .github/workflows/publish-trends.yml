@@ -1,0 +1,29 @@
+name: Publish refreshed Google trends homepage
+on:
+  workflow_dispatch:
+  push:
+    branches: [gh-pages]
+    paths: [.github/workflows/publish-trends.yml]
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: tong-series-trends-publish
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deployment
+        uses: actions/deploy-pages@v4
