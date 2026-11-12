@@ -2,86 +2,86 @@
   "schema": 2,
   "country": "KR",
   "source": "https://trends.google.com/trending?geo=KR&hours=24&hl=ko",
-  "updatedAt": "2026-11-11T23:42:07.182728+00:00",
+  "updatedAt": "2026-11-12T04:18:18.553683+00:00",
   "items": [
     {
+      "title": "중국",
+      "traffic": "50000"
+    },
+    {
       "title": "이종석",
-      "traffic": "20000"
-    },
-    {
-      "title": "빵",
-      "traffic": "20000"
-    },
-    {
-      "title": "이형범",
-      "traffic": "20000"
-    },
-    {
-      "title": "사위",
-      "traffic": "20000"
+      "traffic": "50000"
     },
     {
       "title": "일진전기",
       "traffic": "20000"
     },
     {
-      "title": "담배",
-      "traffic": "20000"
-    },
-    {
-      "title": "의약품",
+      "title": "잠실 주공 5 단지 아파트",
       "traffic": "10000"
-    },
-    {
-      "title": "3 루수",
-      "traffic": "5000"
-    },
-    {
-      "title": "김태희",
-      "traffic": "5000"
-    },
-    {
-      "title": "지진",
-      "traffic": "10000"
-    },
-    {
-      "title": "치즈",
-      "traffic": "5000"
-    },
-    {
-      "title": "구자욱",
-      "traffic": "5000"
-    },
-    {
-      "title": "스마일게이트",
-      "traffic": "5000"
     },
     {
       "title": "메이저 리그 사커",
-      "traffic": "2000"
+      "traffic": "20000"
     },
     {
-      "title": "자동차",
+      "title": "빵",
+      "traffic": "50000"
+    },
+    {
+      "title": "세무사 수석",
       "traffic": "10000"
     },
     {
-      "title": "ai안경",
-      "traffic": "5000"
+      "title": "담배",
+      "traffic": "20000"
     },
     {
       "title": "이지현",
       "traffic": "10000"
     },
     {
-      "title": "운세",
+      "title": "홈런",
+      "traffic": "10000"
+    },
+    {
+      "title": "하지원",
+      "traffic": "10000"
+    },
+    {
+      "title": "박동원",
       "traffic": "5000"
     },
     {
-      "title": "토마토",
-      "traffic": "2000"
+      "title": "의약품",
+      "traffic": "20000"
     },
     {
-      "title": "아들",
+      "title": "지진",
+      "traffic": "10000"
+    },
+    {
+      "title": "땅집고",
+      "traffic": "5000"
+    },
+    {
+      "title": "3 루수",
+      "traffic": "10000"
+    },
+    {
+      "title": "김태희",
+      "traffic": "10000"
+    },
+    {
+      "title": "남편",
+      "traffic": "10000"
+    },
+    {
+      "title": "학원",
+      "traffic": "5000"
+    },
+    {
+      "title": "로제",
       "traffic": "5000"
     }
   ],
@@ -93,89 +93,89 @@
       "source": "https://trends.google.com/trending?geo=KR&hours=24&hl=ko",
       "method": "google_feed_order",
       "googleCategoryIds": [],
-      "updatedAt": "2026-11-11T23:42:07.182728+00:00",
+      "updatedAt": "2026-11-12T04:18:18.553683+00:00",
       "status": "ok",
       "refreshFailed": false,
-      "totalAvailable": 143,
+      "totalAvailable": 142,
       "items": [
         {
+          "title": "중국",
+          "traffic": "50000"
+        },
+        {
           "title": "이종석",
-          "traffic": "20000"
-        },
-        {
-          "title": "빵",
-          "traffic": "20000"
-        },
-        {
-          "title": "이형범",
-          "traffic": "20000"
-        },
-        {
-          "title": "사위",
-          "traffic": "20000"
+          "traffic": "50000"
         },
         {
           "title": "일진전기",
           "traffic": "20000"
         },
         {
-          "title": "담배",
-          "traffic": "20000"
-        },
-        {
-          "title": "의약품",
+          "title": "잠실 주공 5 단지 아파트",
           "traffic": "10000"
-        },
-        {
-          "title": "3 루수",
-          "traffic": "5000"
-        },
-        {
-          "title": "김태희",
-          "traffic": "5000"
-        },
-        {
-          "title": "지진",
-          "traffic": "10000"
-        },
-        {
-          "title": "치즈",
-          "traffic": "5000"
-        },
-        {
-          "title": "구자욱",
-          "traffic": "5000"
-        },
-        {
-          "title": "스마일게이트",
-          "traffic": "5000"
         },
         {
           "title": "메이저 리그 사커",
-          "traffic": "2000"
+          "traffic": "20000"
         },
         {
-          "title": "자동차",
+          "title": "빵",
+          "traffic": "50000"
+        },
+        {
+          "title": "세무사 수석",
           "traffic": "10000"
         },
         {
-          "title": "ai안경",
-          "traffic": "5000"
+          "title": "담배",
+          "traffic": "20000"
         },
         {
           "title": "이지현",
           "traffic": "10000"
         },
         {
-          "title": "운세",
+          "title": "홈런",
+          "traffic": "10000"
+        },
+        {
+          "title": "하지원",
+          "traffic": "10000"
+        },
+        {
+          "title": "박동원",
           "traffic": "5000"
         },
         {
-          "title": "토마토",
-          "traffic": "2000"
+          "title": "의약품",
+          "traffic": "20000"
         },
         {
-          "title": "아들",
+          "title": "지진",
+          "traffic": "10000"
+        },
+        {
+          "title": "땅집고",
+          "traffic": "5000"
+        },
+        {
+          "title": "3 루수",
+          "traffic": "10000"
+        },
+        {
+          "title": "김태희",
+          "traffic": "10000"
+        },
+        {
+          "title": "남편",
+          "traffic": "10000"
+        },
+        {
+          "title": "학원",
+          "traffic": "5000"
+        },
+        {
+          "title": "로제",
           "traffic": "5000"
         }
       ]
@@ -189,41 +189,45 @@
       "googleCategoryIds": [
         5
       ],
-      "updatedAt": "2026-11-11T23:42:07.182728+00:00",
+      "updatedAt": "2026-11-12T04:18:18.553683+00:00",
       "status": "ok",
       "refreshFailed": false,
-      "totalAvailable": 19,
+      "totalAvailable": 18,
       "items": [
         {
           "title": "빵",
-          "traffic": "20000"
+          "traffic": "50000"
         },
         {
           "title": "사과",
           "traffic": "10000"
         },
         {
-          "title": "임영웅",
-          "traffic": "2000"
-        },
-        {
           "title": "죽도시장",
-          "traffic": "100"
+          "traffic": "500"
         },
         {
           "title": "밥",
           "traffic": "20000"
         },
         {
+          "title": "kfc 둠스데이",
+          "traffic": "500"
+        },
+        {
+          "title": "배달의민족",
+          "traffic": "1000"
+        },
+        {
           "title": "라면",
           "traffic": "50000"
         },
         {
-          "title": "가래떡",
+          "title": "엽떡데이",
           "traffic": "2000"
         },
         {
-          "title": "엽떡데이",
+          "title": "가래떡",
           "traffic": "2000"
         },
         {
@@ -237,10 +241,6 @@
         {
           "title": "피클",
           "traffic": "1000"
-        },
-        {
-          "title": "kfc 둠스데이",
-          "traffic": "500"
         },
         {
           "title": "커피",
@@ -265,10 +265,6 @@
         {
           "title": "수능날",
           "traffic": "100"
-        },
-        {
-          "title": "t.o.p",
-          "traffic": "1000"
         }
       ]
     },
@@ -281,90 +277,90 @@
       "googleCategoryIds": [
         4
       ],
-      "updatedAt": "2026-11-11T23:42:07.182728+00:00",
+      "updatedAt": "2026-11-12T04:18:18.553683+00:00",
       "status": "ok",
       "refreshFailed": false,
-      "totalAvailable": 178,
+      "totalAvailable": 179,
       "items": [
         {
           "title": "이종석",
-          "traffic": "20000"
-        },
-        {
-          "title": "이준호",
-          "traffic": "200000"
-        },
-        {
-          "title": "임준우",
-          "traffic": "20000"
+          "traffic": "50000"
         },
         {
           "title": "이도",
           "traffic": "50000"
         },
         {
-          "title": "김태희",
-          "traffic": "5000"
-        },
-        {
-          "title": "이효정",
-          "traffic": "20000"
-        },
-        {
           "title": "이지현",
-          "traffic": "10000"
-        },
-        {
-          "title": "운세",
-          "traffic": "10000"
-        },
-        {
-          "title": "박신영",
           "traffic": "20000"
+        },
+        {
+          "title": "임준우",
+          "traffic": "20000"
+        },
+        {
+          "title": "하지원",
+          "traffic": "10000"
+        },
+        {
+          "title": "김태희",
+          "traffic": "10000"
         },
         {
           "title": "로제",
           "traffic": "5000"
         },
         {
-          "title": "이재아",
-          "traffic": "2000"
-        },
-        {
-          "title": "임영웅",
-          "traffic": "2000"
-        },
-        {
-          "title": "정웅인",
-          "traffic": "2000"
-        },
-        {
-          "title": "존 박",
+          "title": "이재 아",
           "traffic": "5000"
         },
         {
-          "title": "이재진",
-          "traffic": "5000"
+          "title": "빅토르 안",
+          "traffic": "10000"
         },
         {
-          "title": "양홍원",
-          "traffic": "1000"
+          "title": "한지민",
+          "traffic": "2000"
+        },
+        {
+          "title": "나연",
+          "traffic": "10000"
+        },
+        {
+          "title": "이준호",
+          "traffic": "200000"
+        },
+        {
+          "title": "전현무계획",
+          "traffic": "500"
         },
         {
           "title": "인터뷰",
           "traffic": "20000"
         },
         {
-          "title": "마산가고파국화축제",
-          "traffic": "2000"
+          "title": "장도연",
+          "traffic": "500"
+        },
+        {
+          "title": "이효정",
+          "traffic": "20000"
         },
         {
           "title": "조혜련",
           "traffic": "20000"
         },
         {
-          "title": "연애박사",
+          "title": "은행나무",
           "traffic": "200"
+        },
+        {
+          "title": "심현섭",
+          "traffic": "50000"
+        },
+        {
+          "title": "운세",
+          "traffic": "10000"
         }
       ]
     },
@@ -375,7 +371,7 @@
       "source": "https://trends.google.com/trending?geo=KR&hours=168&hl=ko",
       "method": "related_keyword_filter",
       "googleCategoryIds": [],
-      "updatedAt": "2026-11-11T23:42:07.182728+00:00",
+      "updatedAt": "2026-11-12T04:18:18.553683+00:00",
       "status": "ok",
       "refreshFailed": false,
       "totalAvailable": 0,
@@ -390,7 +386,7 @@
       "googleCategoryIds": [
         1
       ],
-      "updatedAt": "2026-11-11T23:42:07.182728+00:00",
+      "updatedAt": "2026-11-12T04:18:18.553683+00:00",
       "status": "ok",
       "refreshFailed": false,
       "totalAvailable": 18,
@@ -444,6 +440,10 @@
           "traffic": "500"
         },
         {
+          "title": "일론 머스크",
+          "traffic": "500"
+        },
+        {
           "title": "파주시",
           "traffic": "500"
         },
@@ -454,10 +454,6 @@
         {
           "title": "샤오펑 모터스",
           "traffic": "500"
-        },
-        {
-          "title": "제네시스 g90",
-          "traffic": "1000"
         },
         {
           "title": "현대자동차",
@@ -478,10 +474,10 @@
       "googleCategoryIds": [
         19
       ],
-      "updatedAt": "2026-11-11T23:42:07.182728+00:00",
+      "updatedAt": "2026-11-12T04:18:18.553683+00:00",
       "status": "ok",
       "refreshFailed": false,
-      "totalAvailable": 13,
+      "totalAvailable": 10,
       "items": [
         {
           "title": "수안보온천",
@@ -504,16 +500,8 @@
           "traffic": "500"
         },
         {
-          "title": "여객선",
-          "traffic": "2000"
-        },
-        {
           "title": "항공 승무원",
           "traffic": "500"
-        },
-        {
-          "title": "제주항공",
-          "traffic": "1000"
         },
         {
           "title": "인도네시아",
@@ -526,10 +514,6 @@
         {
           "title": "노이 바이 국제 공항",
           "traffic": "100"
-        },
-        {
-          "title": "열차",
-          "traffic": "500"
         },
         {
           "title": "인천광역시",
@@ -546,90 +530,90 @@
       "googleCategoryIds": [
         3
       ],
-      "updatedAt": "2026-11-11T23:42:07.182728+00:00",
+      "updatedAt": "2026-11-12T04:18:18.553683+00:00",
       "status": "ok",
       "refreshFailed": false,
-      "totalAvailable": 235,
+      "totalAvailable": 238,
       "items": [
-        {
-          "title": "빵",
-          "traffic": "20000"
-        },
         {
           "title": "일진전기",
           "traffic": "20000"
+        },
+        {
+          "title": "잠실 주공 5 단지 아파트",
+          "traffic": "10000"
+        },
+        {
+          "title": "세무사 수석",
+          "traffic": "20000"
+        },
+        {
+          "title": "빵",
+          "traffic": "50000"
         },
         {
           "title": "코어위브",
           "traffic": "5000"
         },
         {
-          "title": "철도망",
+          "title": "지진",
           "traffic": "10000"
+        },
+        {
+          "title": "땅집고",
+          "traffic": "5000"
         },
         {
           "title": "토마토",
           "traffic": "2000"
         },
         {
-          "title": "세무사 수석",
-          "traffic": "2000"
+          "title": "제주항공",
+          "traffic": "1000"
         },
         {
-          "title": "미국 항공 우주국",
-          "traffic": "2000"
+          "title": "서동주",
+          "traffic": "200000"
         },
         {
-          "title": "신동빈",
-          "traffic": "2000"
+          "title": "sk그룹",
+          "traffic": "50000"
+        },
+        {
+          "title": "물류신문",
+          "traffic": "1000"
         },
         {
           "title": "한진",
           "traffic": "2000"
         },
         {
-          "title": "연금",
+          "title": "이재용",
+          "traffic": "2000"
+        },
+        {
+          "title": "sk하이닉스 채용",
+          "traffic": "2000"
+        },
+        {
+          "title": "이더리움",
+          "traffic": "500"
+        },
+        {
+          "title": "대장-홍대선",
           "traffic": "20000"
-        },
-        {
-          "title": "조원태",
-          "traffic": "2000"
-        },
-        {
-          "title": "주차장",
-          "traffic": "1000"
-        },
-        {
-          "title": "하이닉스 채용",
-          "traffic": "2000"
         },
         {
           "title": "난방",
           "traffic": "100000"
         },
         {
-          "title": "기부",
-          "traffic": "200"
+          "title": "던파",
+          "traffic": "2000"
         },
         {
-          "title": "원익홀딩스",
-          "traffic": "200"
-        },
-        {
-          "title": "최태원",
-          "traffic": "50000"
-        },
-        {
-          "title": "sk하이닉스",
-          "traffic": "200000"
-        },
-        {
-          "title": "광공해",
-          "traffic": "200"
-        },
-        {
-          "title": "차장",
-          "traffic": "200"
+          "title": "정년",
+          "traffic": "20000"
         }
       ]
     },
@@ -643,15 +627,11 @@
         15,
         18
       ],
-      "updatedAt": "2026-11-11T23:42:07.182728+00:00",
+      "updatedAt": "2026-11-12T04:18:18.553683+00:00",
       "status": "ok",
       "refreshFailed": false,
       "totalAvailable": 20,
       "items": [
-        {
-          "title": "뉴데일리",
-          "traffic": "10000"
-        },
         {
           "title": "쇠족제비",
           "traffic": "2000"
@@ -659,10 +639,6 @@
         {
           "title": "삼성 갤럭시 z 시리즈",
           "traffic": "20000"
-        },
-        {
-          "title": "삼성sds",
-          "traffic": "100"
         },
         {
           "title": "악성 소프트웨어",
@@ -677,6 +653,14 @@
           "traffic": "1000"
         },
         {
+          "title": "삼성sds",
+          "traffic": "200"
+        },
+        {
+          "title": "시즈오카현",
+          "traffic": "5000"
+        },
+        {
           "title": "지포스",
           "traffic": "2000"
         },
@@ -689,20 +673,20 @@
           "traffic": "2000"
         },
         {
-          "title": "tsmc",
-          "traffic": "2000"
-        },
-        {
           "title": "페이블 5.2",
           "traffic": "500"
         },
         {
-          "title": "아이폰",
-          "traffic": "500"
+          "title": "tsmc",
+          "traffic": "2000"
         },
         {
           "title": "보이저 1호",
           "traffic": "1000"
+        },
+        {
+          "title": "아이폰",
+          "traffic": "500"
         },
         {
           "title": "챗봇",
@@ -739,13 +723,17 @@
       "googleCategoryIds": [
         17
       ],
-      "updatedAt": "2026-11-11T23:42:07.182728+00:00",
+      "updatedAt": "2026-11-12T04:18:18.553683+00:00",
       "status": "ok",
       "refreshFailed": false,
-      "totalAvailable": 214,
+      "totalAvailable": 219,
       "items": [
         {
           "title": "이형범",
+          "traffic": "20000"
+        },
+        {
+          "title": "메이저 리그 사커",
           "traffic": "20000"
         },
         {
@@ -753,60 +741,56 @@
           "traffic": "20000"
         },
         {
-          "title": "3 루수",
-          "traffic": "5000"
-        },
-        {
-          "title": "백용환",
-          "traffic": "10000"
-        },
-        {
-          "title": "구자욱",
-          "traffic": "500000"
-        },
-        {
-          "title": "메이저 리그 사커",
-          "traffic": "2000"
-        },
-        {
           "title": "홈런",
-          "traffic": "2000"
+          "traffic": "10000"
         },
         {
           "title": "박동원",
           "traffic": "20000"
         },
         {
+          "title": "오스틴 딘",
+          "traffic": "10000"
+        },
+        {
+          "title": "3 루수",
+          "traffic": "10000"
+        },
+        {
+          "title": "구자욱",
+          "traffic": "10000"
+        },
+        {
+          "title": "전병우",
+          "traffic": "1000"
+        },
+        {
+          "title": "apbc 중계",
+          "traffic": "50000"
+        },
+        {
+          "title": "신유빈",
+          "traffic": "1000"
+        },
+        {
+          "title": "메랍",
+          "traffic": "1000"
+        },
+        {
           "title": "박진만",
           "traffic": "100000"
         },
         {
-          "title": "김효주",
-          "traffic": "2000"
+          "title": "kt 대 삼성",
+          "traffic": "500000"
         },
         {
-          "title": "국제 a매치",
-          "traffic": "500"
-        },
-        {
-          "title": "포체티노",
-          "traffic": "20000"
-        },
-        {
-          "title": "테니스",
-          "traffic": "200"
+          "title": "백용환",
+          "traffic": "10000"
         },
         {
           "title": "김예건",
           "traffic": "10000"
-        },
-        {
-          "title": "테일러 프리츠",
-          "traffic": "200"
-        },
-        {
-          "title": "엘리나 스비톨리나",
-          "traffic": "1000"
         },
         {
           "title": "아틀레티코 대 바르셀로나",
@@ -817,12 +801,12 @@
           "traffic": "50000"
         },
         {
-          "title": "이재영",
-          "traffic": "10000"
+          "title": "맨유 대 애스턴 빌라",
+          "traffic": "20000"
         },
         {
-          "title": "김도영",
-          "traffic": "50000"
+          "title": "김효주",
+          "traffic": "2000"
         }
       ]
     },
@@ -835,34 +819,30 @@
       "googleCategoryIds": [
         7
       ],
-      "updatedAt": "2026-11-11T23:42:07.182728+00:00",
+      "updatedAt": "2026-11-12T04:18:18.553683+00:00",
       "status": "ok",
       "refreshFailed": false,
-      "totalAvailable": 24,
+      "totalAvailable": 19,
       "items": [
         {
-          "title": "의약품",
-          "traffic": "10000"
+          "title": "담배",
+          "traffic": "20000"
         },
         {
-          "title": "흡연",
-          "traffic": "2000"
+          "title": "의약품",
+          "traffic": "20000"
         },
         {
           "title": "건강보험",
           "traffic": "10000"
         },
         {
-          "title": "기사",
-          "traffic": "10000"
-        },
-        {
-          "title": "장기 기증",
-          "traffic": "50000"
-        },
-        {
           "title": "스타틴",
           "traffic": "5000"
+        },
+        {
+          "title": "기사",
+          "traffic": "10000"
         },
         {
           "title": "소금",
@@ -873,10 +853,6 @@
           "traffic": "2000"
         },
         {
-          "title": "약국",
-          "traffic": "200"
-        },
-        {
           "title": "혈당",
           "traffic": "10000"
         },
@@ -885,16 +861,8 @@
           "traffic": "5000"
         },
         {
-          "title": "마라톤",
-          "traffic": "10000"
-        },
-        {
           "title": "습관",
           "traffic": "2000"
-        },
-        {
-          "title": "간호사",
-          "traffic": "5000"
         },
         {
           "title": "세균",
@@ -902,10 +870,6 @@
         },
         {
           "title": "커피",
-          "traffic": "2000"
-        },
-        {
-          "title": "허가",
           "traffic": "2000"
         },
         {
@@ -918,6 +882,22 @@
         },
         {
           "title": "의료",
+          "traffic": "200"
+        },
+        {
+          "title": "전공의",
+          "traffic": "500"
+        },
+        {
+          "title": "인천국제공항",
+          "traffic": "500"
+        },
+        {
+          "title": "hiv",
+          "traffic": "200"
+        },
+        {
+          "title": "환자",
           "traffic": "200"
         }
       ]
