@@ -2,18 +2,14 @@
   "schema": 2,
   "country": "KR",
   "source": "https://trends.google.com/trending?geo=KR&hours=24&hl=ko",
-  "updatedAt": "2026-11-13T08:42:03.348727+00:00",
+  "updatedAt": "2026-11-13T16:44:35.921502+00:00",
   "items": [
     {
       "title": "시청률",
-      "traffic": "20000"
+      "traffic": "50000"
     },
     {
-      "title": "아웃룩",
-      "traffic": "20000"
-    },
-    {
-      "title": "황정리",
+      "title": "한국 사우디",
       "traffic": "20000"
     },
     {
@@ -21,11 +17,11 @@
       "traffic": "20000"
     },
     {
-      "title": "정명훈",
-      "traffic": "10000"
+      "title": "손준호",
+      "traffic": "20000"
     },
     {
-      "title": "손준호",
+      "title": "단타",
       "traffic": "10000"
     },
     {
@@ -33,27 +29,11 @@
       "traffic": "20000"
     },
     {
-      "title": "메르세데스-벤츠",
+      "title": "정명훈",
       "traffic": "10000"
     },
     {
-      "title": "왕 즈이",
-      "traffic": "20000"
-    },
-    {
-      "title": "outlook",
-      "traffic": "20000"
-    },
-    {
-      "title": "조희대",
-      "traffic": "20000"
-    },
-    {
-      "title": "평가",
-      "traffic": "5000"
-    },
-    {
-      "title": "젠슨황 사임",
+      "title": "메르세데스-벤츠",
       "traffic": "20000"
     },
     {
@@ -61,27 +41,47 @@
       "traffic": "10000"
     },
     {
-      "title": "김창평",
+      "title": "평가",
+      "traffic": "5000"
+    },
+    {
+      "title": "닥터x: 하얀 마피아의 시대 11화",
+      "traffic": "5000"
+    },
+    {
+      "title": "내일 날씨",
+      "traffic": "200000"
+    },
+    {
+      "title": "주간조선",
+      "traffic": "5000"
+    },
+    {
+      "title": "미스 베트남",
       "traffic": "2000"
     },
     {
-      "title": "백승호",
-      "traffic": "5000"
+      "title": "구본현",
+      "traffic": "2000"
+    },
+    {
+      "title": "김현태",
+      "traffic": "2000"
     },
     {
       "title": "여자 복식",
       "traffic": "5000"
     },
     {
-      "title": "사우디아라비아 축구 국가대표팀",
+      "title": "오산시",
       "traffic": "2000"
     },
     {
-      "title": "유홍준",
-      "traffic": "5000"
+      "title": "비서",
+      "traffic": "2000"
     },
     {
-      "title": "강신철",
+      "title": "복지",
       "traffic": "2000"
     }
   ],
@@ -93,21 +93,17 @@
       "source": "https://trends.google.com/trending?geo=KR&hours=24&hl=ko",
       "method": "google_feed_order",
       "googleCategoryIds": [],
-      "updatedAt": "2026-11-13T08:42:03.348727+00:00",
+      "updatedAt": "2026-11-13T16:44:35.921502+00:00",
       "status": "ok",
       "refreshFailed": false,
-      "totalAvailable": 173,
+      "totalAvailable": 183,
       "items": [
         {
           "title": "시청률",
-          "traffic": "20000"
+          "traffic": "50000"
         },
         {
-          "title": "아웃룩",
-          "traffic": "20000"
-        },
-        {
-          "title": "황정리",
+          "title": "한국 사우디",
           "traffic": "20000"
         },
         {
@@ -115,11 +111,11 @@
           "traffic": "20000"
         },
         {
-          "title": "정명훈",
-          "traffic": "10000"
+          "title": "손준호",
+          "traffic": "20000"
         },
         {
-          "title": "손준호",
+          "title": "단타",
           "traffic": "10000"
         },
         {
@@ -127,27 +123,11 @@
           "traffic": "20000"
         },
         {
-          "title": "메르세데스-벤츠",
+          "title": "정명훈",
           "traffic": "10000"
         },
         {
-          "title": "왕 즈이",
-          "traffic": "20000"
-        },
-        {
-          "title": "outlook",
-          "traffic": "20000"
-        },
-        {
-          "title": "조희대",
-          "traffic": "20000"
-        },
-        {
-          "title": "평가",
-          "traffic": "5000"
-        },
-        {
-          "title": "젠슨황 사임",
+          "title": "메르세데스-벤츠",
           "traffic": "20000"
         },
         {
@@ -155,27 +135,47 @@
           "traffic": "10000"
         },
         {
-          "title": "김창평",
+          "title": "평가",
+          "traffic": "5000"
+        },
+        {
+          "title": "닥터x: 하얀 마피아의 시대 11화",
+          "traffic": "5000"
+        },
+        {
+          "title": "내일 날씨",
+          "traffic": "200000"
+        },
+        {
+          "title": "주간조선",
+          "traffic": "5000"
+        },
+        {
+          "title": "미스 베트남",
           "traffic": "2000"
         },
         {
-          "title": "백승호",
-          "traffic": "5000"
+          "title": "구본현",
+          "traffic": "2000"
+        },
+        {
+          "title": "김현태",
+          "traffic": "2000"
         },
         {
           "title": "여자 복식",
           "traffic": "5000"
         },
         {
-          "title": "사우디아라비아 축구 국가대표팀",
+          "title": "오산시",
           "traffic": "2000"
         },
         {
-          "title": "유홍준",
-          "traffic": "5000"
+          "title": "비서",
+          "traffic": "2000"
         },
         {
-          "title": "강신철",
+          "title": "복지",
           "traffic": "2000"
         }
       ]
@@ -189,11 +189,15 @@
       "googleCategoryIds": [
         5
       ],
-      "updatedAt": "2026-11-13T08:42:03.348727+00:00",
+      "updatedAt": "2026-11-13T16:44:35.921502+00:00",
       "status": "ok",
       "refreshFailed": false,
       "totalAvailable": 19,
       "items": [
+        {
+          "title": "대한민국",
+          "traffic": "500"
+        },
         {
           "title": "빵",
           "traffic": "50000"
@@ -215,12 +219,12 @@
           "traffic": "2000"
         },
         {
-          "title": "배달의민족",
-          "traffic": "1000"
-        },
-        {
           "title": "노점상",
           "traffic": "5000"
+        },
+        {
+          "title": "배달의민족",
+          "traffic": "1000"
         },
         {
           "title": "엽떡데이",
@@ -245,10 +249,6 @@
         {
           "title": "커피",
           "traffic": "2000"
-        },
-        {
-          "title": "피클",
-          "traffic": "1000"
         },
         {
           "title": "독소",
@@ -281,21 +281,21 @@
       "googleCategoryIds": [
         4
       ],
-      "updatedAt": "2026-11-13T08:42:03.348727+00:00",
+      "updatedAt": "2026-11-13T16:44:35.921502+00:00",
       "status": "ok",
       "refreshFailed": false,
       "totalAvailable": 179,
       "items": [
         {
-          "title": "이종석",
+          "title": "시청률",
           "traffic": "100000"
         },
         {
-          "title": "시청률",
-          "traffic": "50000"
+          "title": "자폐",
+          "traffic": "20000"
         },
         {
-          "title": "황정리",
+          "title": "손준호",
           "traffic": "20000"
         },
         {
@@ -303,7 +303,7 @@
           "traffic": "20000"
         },
         {
-          "title": "자폐",
+          "title": "황정리",
           "traffic": "20000"
         },
         {
@@ -311,23 +311,39 @@
           "traffic": "10000"
         },
         {
-          "title": "손준호",
-          "traffic": "10000"
+          "title": "데블스플랜3",
+          "traffic": "20000"
         },
         {
-          "title": "유홍준",
+          "title": "주간조선",
           "traffic": "5000"
+        },
+        {
+          "title": "영화",
+          "traffic": "2000"
         },
         {
           "title": "옥순이",
           "traffic": "2000"
         },
         {
-          "title": "이재 아",
-          "traffic": "10000"
+          "title": "이종석",
+          "traffic": "100000"
+        },
+        {
+          "title": "민희진",
+          "traffic": "1000"
         },
         {
           "title": "크러쉬",
+          "traffic": "2000"
+        },
+        {
+          "title": "꿈꾸던 어른이 되었나요",
+          "traffic": "1000"
+        },
+        {
+          "title": "직장인대호",
           "traffic": "2000"
         },
         {
@@ -335,35 +351,19 @@
           "traffic": "200000"
         },
         {
-          "title": "이지현",
-          "traffic": "20000"
+          "title": "쿠플",
+          "traffic": "500"
         },
         {
           "title": "임준우",
           "traffic": "20000"
         },
         {
-          "title": "하지원",
-          "traffic": "20000"
+          "title": "유빈",
+          "traffic": "500"
         },
         {
-          "title": "심현섭",
-          "traffic": "50000"
-        },
-        {
-          "title": "해변",
-          "traffic": "2000"
-        },
-        {
-          "title": "전현무",
-          "traffic": "2000"
-        },
-        {
-          "title": "정웅인",
-          "traffic": "2000"
-        },
-        {
-          "title": "이효정",
+          "title": "이지현",
           "traffic": "20000"
         }
       ]
@@ -375,7 +375,7 @@
       "source": "https://trends.google.com/trending?geo=KR&hours=168&hl=ko",
       "method": "related_keyword_filter",
       "googleCategoryIds": [],
-      "updatedAt": "2026-11-13T08:42:03.348727+00:00",
+      "updatedAt": "2026-11-13T16:44:35.921502+00:00",
       "status": "ok",
       "refreshFailed": false,
       "totalAvailable": 0,
@@ -390,14 +390,14 @@
       "googleCategoryIds": [
         1
       ],
-      "updatedAt": "2026-11-13T08:42:03.348727+00:00",
+      "updatedAt": "2026-11-13T16:44:35.921502+00:00",
       "status": "ok",
       "refreshFailed": false,
-      "totalAvailable": 17,
+      "totalAvailable": 16,
       "items": [
         {
           "title": "메르세데스-벤츠",
-          "traffic": "10000"
+          "traffic": "20000"
         },
         {
           "title": "현대 포터",
@@ -452,10 +452,6 @@
           "traffic": "500"
         },
         {
-          "title": "일론 머스크",
-          "traffic": "500"
-        },
-        {
           "title": "파주시",
           "traffic": "500"
         },
@@ -474,18 +470,22 @@
       "googleCategoryIds": [
         19
       ],
-      "updatedAt": "2026-11-13T08:42:03.348727+00:00",
+      "updatedAt": "2026-11-13T16:44:35.921502+00:00",
       "status": "ok",
       "refreshFailed": false,
-      "totalAvailable": 9,
+      "totalAvailable": 10,
       "items": [
-        {
-          "title": "여행",
-          "traffic": "20000"
-        },
         {
           "title": "수안보온천",
           "traffic": "2000"
+        },
+        {
+          "title": "아던트뉴스",
+          "traffic": "500"
+        },
+        {
+          "title": "여행",
+          "traffic": "20000"
         },
         {
           "title": "서울특별시",
@@ -526,77 +526,49 @@
       "googleCategoryIds": [
         3
       ],
-      "updatedAt": "2026-11-13T08:42:03.348727+00:00",
+      "updatedAt": "2026-11-13T16:44:35.921502+00:00",
       "status": "ok",
       "refreshFailed": false,
-      "totalAvailable": 213,
+      "totalAvailable": 219,
       "items": [
         {
-          "title": "천궁",
-          "traffic": "20000"
+          "title": "단타",
+          "traffic": "10000"
         },
         {
           "title": "메르세데스-벤츠",
-          "traffic": "10000"
+          "traffic": "20000"
         },
         {
           "title": "공장",
           "traffic": "10000"
         },
         {
+          "title": "nvidia stock",
+          "traffic": "5000"
+        },
+        {
           "title": "비서",
           "traffic": "2000"
+        },
+        {
+          "title": "천궁",
+          "traffic": "50000"
+        },
+        {
+          "title": "대한민국 중소벤처기업부",
+          "traffic": "10000"
         },
         {
           "title": "땅집고",
           "traffic": "20000"
         },
         {
-          "title": "휘발유",
-          "traffic": "5000"
-        },
-        {
-          "title": "블랙웰",
-          "traffic": "1000"
-        },
-        {
-          "title": "sk해운",
-          "traffic": "1000"
-        },
-        {
-          "title": "sk하이닉스 채용",
-          "traffic": "5000"
-        },
-        {
-          "title": "양승조",
-          "traffic": "1000"
+          "title": "농민",
+          "traffic": "2000"
         },
         {
           "title": "일진전기",
-          "traffic": "20000"
-        },
-        {
-          "title": "주간조선",
-          "traffic": "200"
-        },
-        {
-          "title": "이더 리움",
-          "traffic": "500"
-        },
-        {
-          "title": "두산에너빌리티",
-          "traffic": "10000"
-        },
-        {
-          "title": "이자",
-          "traffic": "10000"
-        },
-        {
-          "title": "아프리카돼지열병",
-          "traffic": "500"
-        },
-        {
-          "title": "잠실 주공 5 단지 아파트",
           "traffic": "20000"
         },
         {
@@ -604,11 +576,39 @@
           "traffic": "100000"
         },
         {
-          "title": "이재용",
-          "traffic": "10000"
+          "title": "대한민국 기후에너지환경부",
+          "traffic": "200"
+        },
+        {
+          "title": "잠실 주공 5 단지 아파트",
+          "traffic": "20000"
+        },
+        {
+          "title": "빵",
+          "traffic": "50000"
         },
         {
           "title": "참치캔",
+          "traffic": "10000"
+        },
+        {
+          "title": "sk하이닉스",
+          "traffic": "200000"
+        },
+        {
+          "title": "코어위브",
+          "traffic": "10000"
+        },
+        {
+          "title": "최태원",
+          "traffic": "50000"
+        },
+        {
+          "title": "생계",
+          "traffic": "50000"
+        },
+        {
+          "title": "두산에너빌리티",
           "traffic": "10000"
         }
       ]
@@ -623,18 +623,18 @@
         15,
         18
       ],
-      "updatedAt": "2026-11-13T08:42:03.348727+00:00",
+      "updatedAt": "2026-11-13T16:44:35.921502+00:00",
       "status": "ok",
       "refreshFailed": false,
-      "totalAvailable": 23,
+      "totalAvailable": 25,
       "items": [
         {
-          "title": "아웃룩",
-          "traffic": "20000"
+          "title": "ai 안경",
+          "traffic": "10000"
         },
         {
-          "title": "ai안경",
-          "traffic": "20000"
+          "title": "아웃룩",
+          "traffic": "50000"
         },
         {
           "title": "outlook",
@@ -643,6 +643,10 @@
         {
           "title": "삼성 갤럭시 z 시리즈",
           "traffic": "20000"
+        },
+        {
+          "title": "원드라이브",
+          "traffic": "2000"
         },
         {
           "title": "안드로이드",
@@ -661,11 +665,11 @@
           "traffic": "5000"
         },
         {
-          "title": "폴더블 스마트폰",
-          "traffic": "1000"
+          "title": "비디오 게임",
+          "traffic": "200"
         },
         {
-          "title": "스마트폰",
+          "title": "폴더블 스마트폰",
           "traffic": "1000"
         },
         {
@@ -673,12 +677,12 @@
           "traffic": "1000"
         },
         {
-          "title": "tsmc",
-          "traffic": "2000"
+          "title": "스마트폰",
+          "traffic": "1000"
         },
         {
-          "title": "zoom",
-          "traffic": "200"
+          "title": "tsmc",
+          "traffic": "2000"
         },
         {
           "title": "보이저 1호",
@@ -693,19 +697,15 @@
           "traffic": "200"
         },
         {
+          "title": "zoom",
+          "traffic": "200"
+        },
+        {
           "title": "아이폰",
           "traffic": "500"
         },
         {
           "title": "챗봇",
-          "traffic": "200"
-        },
-        {
-          "title": "lg ai 연구원",
-          "traffic": "200"
-        },
-        {
-          "title": "화산",
           "traffic": "200"
         }
       ]
@@ -719,73 +719,77 @@
       "googleCategoryIds": [
         17
       ],
-      "updatedAt": "2026-11-13T08:42:03.348727+00:00",
+      "updatedAt": "2026-11-13T16:44:35.921502+00:00",
       "status": "ok",
       "refreshFailed": false,
-      "totalAvailable": 230,
+      "totalAvailable": 225,
       "items": [
+        {
+          "title": "한국 사우디",
+          "traffic": "20000"
+        },
         {
           "title": "왕 즈이",
           "traffic": "20000"
-        },
-        {
-          "title": "홈런",
-          "traffic": "20000"
-        },
-        {
-          "title": "김창평",
-          "traffic": "2000"
         },
         {
           "title": "백승호",
           "traffic": "5000"
         },
         {
-          "title": "여자 복식",
-          "traffic": "5000"
-        },
-        {
-          "title": "사우디아라비아 축구 국가대표팀",
-          "traffic": "2000"
-        },
-        {
           "title": "apbc",
           "traffic": "10000"
         },
         {
-          "title": "서승재",
+          "title": "여자 복식",
           "traffic": "5000"
         },
         {
-          "title": "아시아 프로야구 챔피언십",
-          "traffic": "1000"
-        },
-        {
-          "title": "이승엽",
-          "traffic": "2000"
-        },
-        {
-          "title": "원태인",
-          "traffic": "50000"
+          "title": "한국 일본 야구",
+          "traffic": "20000"
         },
         {
           "title": "포체티노",
           "traffic": "20000"
         },
         {
-          "title": "이형범",
-          "traffic": "20000"
+          "title": "우스만",
+          "traffic": "5000"
         },
         {
-          "title": "삼성스토어",
-          "traffic": "100000"
+          "title": "이형범",
+          "traffic": "20000"
         },
         {
           "title": "박진만",
           "traffic": "100000"
         },
         {
+          "title": "원태인",
+          "traffic": "20000"
+        },
+        {
           "title": "임준우",
+          "traffic": "20000"
+        },
+        {
+          "title": "김창평",
+          "traffic": "5000"
+        },
+        {
+          "title": "배드민턴",
+          "traffic": "10000"
+        },
+        {
+          "title": "오스틴 딘",
+          "traffic": "20000"
+        },
+        {
+          "title": "메이저 리그 사커",
+          "traffic": "20000"
+        },
+        {
+          "title": "구자욱",
           "traffic": "20000"
         },
         {
@@ -793,16 +797,12 @@
           "traffic": "5000"
         },
         {
-          "title": "메이저 리그 사커",
+          "title": "삼성스토어",
+          "traffic": "100000"
+        },
+        {
+          "title": "apbc 중계",
           "traffic": "20000"
-        },
-        {
-          "title": "네이션스리그",
-          "traffic": "5000"
-        },
-        {
-          "title": "이탈리아 대 프랑스",
-          "traffic": "5000"
         }
       ]
     },
@@ -815,26 +815,30 @@
       "googleCategoryIds": [
         7
       ],
-      "updatedAt": "2026-11-13T08:42:03.348727+00:00",
+      "updatedAt": "2026-11-13T16:44:35.921502+00:00",
       "status": "ok",
       "refreshFailed": false,
-      "totalAvailable": 18,
+      "totalAvailable": 20,
       "items": [
+        {
+          "title": "약국",
+          "traffic": "20000"
+        },
+        {
+          "title": "마운자로",
+          "traffic": "20000"
+        },
         {
           "title": "장기 이식",
           "traffic": "20000"
         },
         {
           "title": "한국보훈복지의료공단",
-          "traffic": "1000"
+          "traffic": "2000"
         },
         {
           "title": "사우나",
           "traffic": "2000"
-        },
-        {
-          "title": "의약품",
-          "traffic": "20000"
         },
         {
           "title": "스타틴",
@@ -849,12 +853,12 @@
           "traffic": "10000"
         },
         {
-          "title": "만성콩팥병",
-          "traffic": "2000"
-        },
-        {
           "title": "유방암",
           "traffic": "5000"
+        },
+        {
+          "title": "만성콩팥병",
+          "traffic": "2000"
         },
         {
           "title": "습관",
@@ -883,6 +887,10 @@
         {
           "title": "의료",
           "traffic": "200"
+        },
+        {
+          "title": "의약품",
+          "traffic": "500"
         },
         {
           "title": "hiv",
