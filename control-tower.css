@@ -14,3 +14,7 @@ html{scroll-behavior:smooth}body{background:radial-gradient(ellipse at 90% 0,#dc
 .site-open{margin-top:auto;padding-top:12px;min-height:34px}
 @media(max-width:800px){.site-card{padding:16px;min-height:120px}}
 @media(max-width:620px){.site-card{display:flex;flex-direction:column;gap:10px;min-height:108px}.site-card-top,.site-open{grid-column:auto;grid-row:auto}.site-open{width:100%;margin-top:auto}}
+
+/* Daily visitor badge (radar, food) */
+.site-card-top{width:100%}.today-visitors{margin-left:auto;text-align:right;flex-shrink:0;line-height:1.2}.today-visitors span{display:block;font-size:11px;color:#6b7f95;font-weight:600}.today-visitors strong{display:block;font-size:22px;font-weight:800;color:#172d45;letter-spacing:-.02em}
+@media(max-width:800px){.today-visitors strong{font-size:18px}}
