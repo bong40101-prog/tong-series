@@ -2,87 +2,87 @@
   "schema": 2,
   "country": "KR",
   "source": "https://trends.google.com/trending?geo=KR&hours=24&hl=ko",
-  "updatedAt": "2026-11-21T22:20:46.863827+00:00",
+  "updatedAt": "2026-11-22T02:22:56.465556+00:00",
   "items": [
-    {
-      "title": "추성훈",
-      "traffic": "50000"
-    },
     {
       "title": "토트넘 대 입스위치",
       "traffic": "20000"
+    },
+    {
+      "title": "김세의",
+      "traffic": "10000"
     },
     {
       "title": "대통령",
       "traffic": "20000"
     },
     {
-      "title": "농산물",
-      "traffic": "5000"
-    },
-    {
-      "title": "첼시 대 리즈 유나이티드",
-      "traffic": "5000"
-    },
-    {
       "title": "레알 마드리드 대 셀타 비고",
-      "traffic": "2000"
+      "traffic": "10000"
     },
     {
       "title": "뉴캐슬 대 아스널",
-      "traffic": "5000"
+      "traffic": "10000"
     },
     {
-      "title": "김세의",
-      "traffic": "5000"
-    },
-    {
-      "title": "압구정동",
-      "traffic": "20000"
+      "title": "첼시 대 리즈 유나이티드",
+      "traffic": "10000"
     },
     {
       "title": "손정의",
       "traffic": "10000"
     },
     {
-      "title": "빅터 레이예스",
-      "traffic": "20000"
-    },
-    {
-      "title": "만장일치",
+      "title": "경매",
       "traffic": "5000"
     },
     {
-      "title": "경매",
+      "title": "강사",
+      "traffic": "5000"
+    },
+    {
+      "title": "인터 마이애미 대 콜럼버스 크루",
       "traffic": "2000"
+    },
+    {
+      "title": "배추",
+      "traffic": "10000"
+    },
+    {
+      "title": "도경완",
+      "traffic": "2000"
+    },
+    {
+      "title": "최미나수",
+      "traffic": "2000"
+    },
+    {
+      "title": "수출규제",
+      "traffic": "2000"
+    },
+    {
+      "title": "농산물",
+      "traffic": "5000"
     },
     {
       "title": "파워리프팅",
       "traffic": "2000"
     },
     {
-      "title": "왕즈이",
-      "traffic": "2000"
-    },
-    {
-      "title": "장동혁",
-      "traffic": "1000"
-    },
-    {
-      "title": "소형모듈원자로",
-      "traffic": "2000"
-    },
-    {
-      "title": "편의점",
+      "title": "리야드",
       "traffic": "5000"
     },
     {
       "title": "로또1251",
-      "traffic": "1000"
+      "traffic": "2000"
     },
     {
-      "title": "코번트리 대 크리스털 팰리스",
-      "traffic": "1000"
+      "title": "kg모빌리티",
+      "traffic": "5000"
+    },
+    {
+      "title": "대치동",
+      "traffic": "2000"
     }
   ],
   "groups": [
@@ -93,90 +93,90 @@
       "source": "https://trends.google.com/trending?geo=KR&hours=24&hl=ko",
       "method": "google_feed_order",
       "googleCategoryIds": [],
-      "updatedAt": "2026-11-21T22:20:46.863827+00:00",
+      "updatedAt": "2026-11-22T02:22:56.465556+00:00",
       "status": "ok",
       "refreshFailed": false,
-      "totalAvailable": 151,
+      "totalAvailable": 154,
       "items": [
-        {
-          "title": "추성훈",
-          "traffic": "50000"
-        },
         {
           "title": "토트넘 대 입스위치",
           "traffic": "20000"
+        },
+        {
+          "title": "김세의",
+          "traffic": "10000"
         },
         {
           "title": "대통령",
           "traffic": "20000"
         },
         {
-          "title": "농산물",
-          "traffic": "5000"
-        },
-        {
-          "title": "첼시 대 리즈 유나이티드",
-          "traffic": "5000"
-        },
-        {
           "title": "레알 마드리드 대 셀타 비고",
-          "traffic": "2000"
+          "traffic": "10000"
         },
         {
           "title": "뉴캐슬 대 아스널",
-          "traffic": "5000"
+          "traffic": "10000"
         },
         {
-          "title": "김세의",
-          "traffic": "5000"
-        },
-        {
-          "title": "압구정동",
-          "traffic": "20000"
+          "title": "첼시 대 리즈 유나이티드",
+          "traffic": "10000"
         },
         {
           "title": "손정의",
           "traffic": "10000"
         },
         {
-          "title": "빅터 레이예스",
-          "traffic": "20000"
-        },
-        {
-          "title": "만장일치",
+          "title": "경매",
           "traffic": "5000"
         },
         {
-          "title": "경매",
+          "title": "강사",
+          "traffic": "5000"
+        },
+        {
+          "title": "인터 마이애미 대 콜럼버스 크루",
           "traffic": "2000"
+        },
+        {
+          "title": "배추",
+          "traffic": "10000"
+        },
+        {
+          "title": "도경완",
+          "traffic": "2000"
+        },
+        {
+          "title": "최미나수",
+          "traffic": "2000"
+        },
+        {
+          "title": "수출규제",
+          "traffic": "2000"
+        },
+        {
+          "title": "농산물",
+          "traffic": "5000"
         },
         {
           "title": "파워리프팅",
           "traffic": "2000"
         },
         {
-          "title": "왕즈이",
-          "traffic": "2000"
-        },
-        {
-          "title": "장동혁",
-          "traffic": "1000"
-        },
-        {
-          "title": "소형모듈원자로",
-          "traffic": "2000"
-        },
-        {
-          "title": "편의점",
+          "title": "리야드",
           "traffic": "5000"
         },
         {
           "title": "로또1251",
-          "traffic": "1000"
+          "traffic": "2000"
         },
         {
-          "title": "코번트리 대 크리스털 팰리스",
-          "traffic": "1000"
+          "title": "kg모빌리티",
+          "traffic": "5000"
+        },
+        {
+          "title": "대치동",
+          "traffic": "2000"
         }
       ]
     },
@@ -189,7 +189,7 @@
       "googleCategoryIds": [
         5
       ],
-      "updatedAt": "2026-11-21T22:20:46.863827+00:00",
+      "updatedAt": "2026-11-22T02:22:56.465556+00:00",
       "status": "ok",
       "refreshFailed": false,
       "totalAvailable": 19,
@@ -227,15 +227,15 @@
           "traffic": "1000"
         },
         {
-          "title": "술",
-          "traffic": "5000"
-        },
-        {
           "title": "샤인 머스 캣",
           "traffic": "5000"
         },
         {
           "title": "자영업",
+          "traffic": "1000"
+        },
+        {
+          "title": "막걸리",
           "traffic": "1000"
         },
         {
@@ -281,13 +281,21 @@
       "googleCategoryIds": [
         4
       ],
-      "updatedAt": "2026-11-21T22:20:46.863827+00:00",
+      "updatedAt": "2026-11-22T02:22:56.465556+00:00",
       "status": "ok",
       "refreshFailed": false,
-      "totalAvailable": 149,
+      "totalAvailable": 152,
       "items": [
         {
           "title": "배종옥",
+          "traffic": "50000"
+        },
+        {
+          "title": "유재석",
+          "traffic": "10000"
+        },
+        {
+          "title": "원빈",
           "traffic": "20000"
         },
         {
@@ -295,76 +303,68 @@
           "traffic": "10000"
         },
         {
-          "title": "장윤정",
-          "traffic": "20000"
-        },
-        {
-          "title": "유재석",
-          "traffic": "10000"
-        },
-        {
-          "title": "브루노 마스",
-          "traffic": "1000"
+          "title": "최미나수",
+          "traffic": "2000"
         },
         {
           "title": "홍의정",
           "traffic": "20000"
         },
         {
-          "title": "지수",
-          "traffic": "500"
-        },
-        {
-          "title": "시즌2",
+          "title": "굿파트너2",
           "traffic": "100000"
         },
         {
-          "title": "강지환",
+          "title": "브루노 마스",
           "traffic": "2000"
         },
         {
           "title": "1박 2일",
+          "traffic": "1000"
+        },
+        {
+          "title": "빅뱅 기립 (giiirip)",
+          "traffic": "5000"
+        },
+        {
+          "title": "마마",
+          "traffic": "5000"
+        },
+        {
+          "title": "김원효",
+          "traffic": "500"
+        },
+        {
+          "title": "mama 2026",
+          "traffic": "2000"
+        },
+        {
+          "title": "김호영",
           "traffic": "200"
+        },
+        {
+          "title": "지수",
+          "traffic": "2000"
+        },
+        {
+          "title": "viviz",
+          "traffic": "500"
+        },
+        {
+          "title": "장윤정",
+          "traffic": "20000"
+        },
+        {
+          "title": "jisoo sun showers (from \"the angry birds movie 3”)",
+          "traffic": "500"
         },
         {
           "title": "승리",
           "traffic": "20000"
         },
         {
-          "title": "전현무",
-          "traffic": "500"
-        },
-        {
-          "title": "고현정",
-          "traffic": "100000"
-        },
-        {
-          "title": "최미나수",
-          "traffic": "500"
-        },
-        {
           "title": "연예인",
           "traffic": "10000"
-        },
-        {
-          "title": "황재균",
-          "traffic": "5000"
-        },
-        {
-          "title": "임현주",
-          "traffic": "50000"
-        },
-        {
-          "title": "신성일",
-          "traffic": "200"
-        },
-        {
-          "title": "두산 베어스",
-          "traffic": "20000"
-        },
-        {
-          "title": "핑클",
-          "traffic": "20000"
         }
       ]
     },
@@ -375,7 +375,7 @@
       "source": "https://trends.google.com/trending?geo=KR&hours=168&hl=ko",
       "method": "related_keyword_filter",
       "googleCategoryIds": [],
-      "updatedAt": "2026-11-21T22:20:46.863827+00:00",
+      "updatedAt": "2026-11-22T02:22:56.465556+00:00",
       "status": "ok",
       "refreshFailed": false,
       "totalAvailable": 0,
@@ -390,14 +390,22 @@
       "googleCategoryIds": [
         1
       ],
-      "updatedAt": "2026-11-21T22:20:46.863827+00:00",
+      "updatedAt": "2026-11-22T02:22:56.465556+00:00",
       "status": "ok",
       "refreshFailed": false,
       "totalAvailable": 12,
       "items": [
         {
           "title": "전기 자동차",
-          "traffic": "10000"
+          "traffic": "20000"
+        },
+        {
+          "title": "도경완",
+          "traffic": "2000"
+        },
+        {
+          "title": "kg모빌리티",
+          "traffic": "5000"
         },
         {
           "title": "기아 텔루라이드",
@@ -406,14 +414,6 @@
         {
           "title": "g80 하이브리드",
           "traffic": "1000"
-        },
-        {
-          "title": "운전",
-          "traffic": "5000"
-        },
-        {
-          "title": "하이브리드 차량",
-          "traffic": "10000"
         },
         {
           "title": "기아 k5",
@@ -432,7 +432,7 @@
           "traffic": "2000"
         },
         {
-          "title": "로보택시",
+          "title": "테슬라 사이버캡",
           "traffic": "2000"
         },
         {
@@ -454,7 +454,7 @@
       "googleCategoryIds": [
         19
       ],
-      "updatedAt": "2026-11-21T22:20:46.863827+00:00",
+      "updatedAt": "2026-11-22T02:22:56.465556+00:00",
       "status": "ok",
       "refreshFailed": false,
       "totalAvailable": 9,
@@ -470,6 +470,10 @@
         {
           "title": "호텔 영일대",
           "traffic": "1000"
+        },
+        {
+          "title": "고려대",
+          "traffic": "500"
         },
         {
           "title": "겨울",
@@ -488,10 +492,6 @@
           "traffic": "1000"
         },
         {
-          "title": "골프",
-          "traffic": "5000"
-        },
-        {
           "title": "ktx 지연",
           "traffic": "100"
         }
@@ -506,19 +506,11 @@
       "googleCategoryIds": [
         3
       ],
-      "updatedAt": "2026-11-21T22:20:46.863827+00:00",
+      "updatedAt": "2026-11-22T02:22:56.465556+00:00",
       "status": "ok",
       "refreshFailed": false,
-      "totalAvailable": 203,
+      "totalAvailable": 207,
       "items": [
-        {
-          "title": "농산물",
-          "traffic": "5000"
-        },
-        {
-          "title": "압구정동",
-          "traffic": "20000"
-        },
         {
           "title": "손정의",
           "traffic": "10000"
@@ -528,68 +520,76 @@
           "traffic": "10000"
         },
         {
-          "title": "한국수력원자력",
+          "title": "수출규제",
+          "traffic": "10000"
+        },
+        {
+          "title": "농산물",
           "traffic": "5000"
         },
         {
-          "title": "소형모듈원자로",
+          "title": "한국수력원자력",
+          "traffic": "10000"
+        },
+        {
+          "title": "노동 시장",
           "traffic": "2000"
         },
         {
-          "title": "ai 버블",
-          "traffic": "5000"
+          "title": "담보 대출",
+          "traffic": "1000"
         },
         {
           "title": "탈선",
           "traffic": "2000"
         },
         {
-          "title": "태양광 발전",
-          "traffic": "2000"
+          "title": "앤트로픽 주가",
+          "traffic": "20000"
         },
         {
           "title": "입양",
-          "traffic": "200"
+          "traffic": "1000"
+        },
+        {
+          "title": "인공지능",
+          "traffic": "1000"
+        },
+        {
+          "title": "인천광역시",
+          "traffic": "500"
         },
         {
           "title": "와콤",
-          "traffic": "200"
+          "traffic": "500"
         },
         {
-          "title": "경제",
-          "traffic": "1000"
+          "title": "압구정동",
+          "traffic": "20000"
+        },
+        {
+          "title": "송미령",
+          "traffic": "500"
         },
         {
           "title": "사과",
           "traffic": "50000"
         },
         {
+          "title": "ai 버블",
+          "traffic": "10000"
+        },
+        {
           "title": "삼성sdi",
           "traffic": "100000"
         },
         {
-          "title": "리플",
-          "traffic": "20000"
+          "title": "나경원",
+          "traffic": "200"
         },
         {
-          "title": "송미령",
-          "traffic": "100"
-        },
-        {
-          "title": "10억",
-          "traffic": "20000"
-        },
-        {
-          "title": "스티로폼",
-          "traffic": "50000"
-        },
-        {
-          "title": "굴",
-          "traffic": "2000"
-        },
-        {
-          "title": "운전",
-          "traffic": "5000"
+          "title": "퇴직금",
+          "traffic": "10000"
         }
       ]
     },
@@ -603,10 +603,10 @@
         15,
         18
       ],
-      "updatedAt": "2026-11-21T22:20:46.863827+00:00",
+      "updatedAt": "2026-11-22T02:22:56.465556+00:00",
       "status": "ok",
       "refreshFailed": false,
-      "totalAvailable": 31,
+      "totalAvailable": 30,
       "items": [
         {
           "title": "리만가설",
@@ -614,7 +614,7 @@
         },
         {
           "title": "와콤",
-          "traffic": "200"
+          "traffic": "500"
         },
         {
           "title": "서강대학교",
@@ -641,12 +641,12 @@
           "traffic": "1000"
         },
         {
-          "title": "lean",
-          "traffic": "500"
-        },
-        {
           "title": "nginx",
           "traffic": "2000"
+        },
+        {
+          "title": "riemann hypothesis",
+          "traffic": "500"
         },
         {
           "title": "ces",
@@ -681,11 +681,11 @@
           "traffic": "1000"
         },
         {
-          "title": "젠틀몬스터",
+          "title": "교수",
           "traffic": "500"
         },
         {
-          "title": "교수",
+          "title": "젠틀몬스터",
           "traffic": "500"
         }
       ]
@@ -699,90 +699,90 @@
       "googleCategoryIds": [
         17
       ],
-      "updatedAt": "2026-11-21T22:20:46.863827+00:00",
+      "updatedAt": "2026-11-22T02:22:56.465556+00:00",
       "status": "ok",
       "refreshFailed": false,
-      "totalAvailable": 197,
+      "totalAvailable": 199,
       "items": [
-        {
-          "title": "토트넘 대 입스위치",
-          "traffic": "50000"
-        },
         {
           "title": "임지열",
           "traffic": "20000"
         },
         {
-          "title": "첼시 대 리즈 유나이티드",
-          "traffic": "5000"
+          "title": "토트넘 대 입스위치",
+          "traffic": "50000"
         },
         {
           "title": "레알 마드리드 대 셀타 비고",
-          "traffic": "2000"
+          "traffic": "10000"
         },
         {
           "title": "뉴캐슬 대 아스널",
-          "traffic": "5000"
+          "traffic": "10000"
+        },
+        {
+          "title": "첼시 대 리즈 유나이티드",
+          "traffic": "10000"
         },
         {
           "title": "당구",
           "traffic": "10000"
         },
         {
-          "title": "빅터 레이예스",
-          "traffic": "20000"
-        },
-        {
-          "title": "김아림",
-          "traffic": "10000"
+          "title": "인터 마이애미 대 콜럼버스 크루",
+          "traffic": "2000"
         },
         {
           "title": "파워리프팅",
           "traffic": "2000"
         },
         {
-          "title": "왕즈이",
+          "title": "김아림",
           "traffic": "10000"
         },
         {
-          "title": "코번트리 대 크리스털 팰리스",
-          "traffic": "1000"
-        },
-        {
-          "title": "real madrid vs celta",
-          "traffic": "500"
-        },
-        {
-          "title": "유현 조",
-          "traffic": "5000"
-        },
-        {
-          "title": "알렉산더 즈베레프",
+          "title": "이정후",
           "traffic": "2000"
         },
         {
-          "title": "샬케 대 슈투트가르트",
-          "traffic": "500"
+          "title": "코번트리 대 크리스털 팰리스",
+          "traffic": "2000"
         },
         {
-          "title": "묀헨글라트바흐 대 도르트문트",
-          "traffic": "500"
+          "title": "구자욱",
+          "traffic": "10000"
         },
         {
-          "title": "newcastle vs arsenal",
-          "traffic": "500"
+          "title": "왕즈이",
+          "traffic": "20000"
+        },
+        {
+          "title": "탬파베이 레이스",
+          "traffic": "1000"
         },
         {
           "title": "강경호",
-          "traffic": "1000"
+          "traffic": "2000"
         },
         {
-          "title": "이정후",
-          "traffic": "1000"
+          "title": "real madrid vs rc celta de vigo standings",
+          "traffic": "500"
         },
         {
           "title": "카타르 축구 국가대표팀",
           "traffic": "20000"
+        },
+        {
+          "title": "inter miami vs columbus",
+          "traffic": "500"
+        },
+        {
+          "title": "real madrid vs celta",
+          "traffic": "1000"
+        },
+        {
+          "title": "오현규",
+          "traffic": "5000"
         }
       ]
     },
@@ -795,30 +795,30 @@
       "googleCategoryIds": [
         7
       ],
-      "updatedAt": "2026-11-21T22:20:46.863827+00:00",
+      "updatedAt": "2026-11-22T02:22:56.465556+00:00",
       "status": "ok",
       "refreshFailed": false,
-      "totalAvailable": 20,
+      "totalAvailable": 19,
       "items": [
+        {
+          "title": "콜레라",
+          "traffic": "1000"
+        },
         {
           "title": "심장병",
           "traffic": "5000"
-        },
-        {
-          "title": "콜레라",
-          "traffic": "200"
         },
         {
           "title": "혈당",
           "traffic": "50000"
         },
         {
-          "title": "습관",
-          "traffic": "10000"
-        },
-        {
           "title": "치매",
           "traffic": "20000"
+        },
+        {
+          "title": "습관",
+          "traffic": "10000"
         },
         {
           "title": "운동",
@@ -849,11 +849,11 @@
           "traffic": "2000"
         },
         {
-          "title": "아리바이오",
+          "title": "hlb테라퓨틱스",
           "traffic": "1000"
         },
         {
-          "title": "hlb테라퓨틱스",
+          "title": "아리바이오",
           "traffic": "1000"
         },
         {
@@ -870,10 +870,6 @@
         },
         {
           "title": "동물병원",
-          "traffic": "200"
-        },
-        {
-          "title": "응급",
           "traffic": "200"
         },
         {
