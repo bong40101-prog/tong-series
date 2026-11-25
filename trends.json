@@ -2,7 +2,7 @@
   "schema": 2,
   "country": "KR",
   "source": "https://trends.google.com/trending?geo=KR&hours=24&hl=ko",
-  "updatedAt": "2026-11-25T13:40:17.627470+00:00",
+  "updatedAt": "2026-11-25T22:47:37.504386+00:00",
   "items": [
     {
       "title": "반도체",
@@ -14,75 +14,75 @@
     },
     {
       "title": "고소영",
-      "traffic": "20000"
+      "traffic": "50000"
     },
     {
       "title": "빅테크",
       "traffic": "20000"
     },
     {
-      "title": "에릭 페디",
+      "title": "하사",
+      "traffic": "20000"
+    },
+    {
+      "title": "강남",
+      "traffic": "20000"
+    },
+    {
+      "title": "스포르팅 대 맨유",
       "traffic": "10000"
     },
     {
       "title": "트레킹",
-      "traffic": "5000"
-    },
-    {
-      "title": "노소영",
-      "traffic": "20000"
-    },
-    {
-      "title": "가시마 앤틀러스 대 전북",
       "traffic": "10000"
     },
     {
       "title": "임차인",
-      "traffic": "5000"
+      "traffic": "10000"
     },
     {
       "title": "서훈",
+      "traffic": "10000"
+    },
+    {
+      "title": "세무사",
       "traffic": "5000"
     },
     {
-      "title": "고경표 음주 운전",
-      "traffic": "5000"
-    },
-    {
-      "title": "이한범",
+      "title": "성유리",
       "traffic": "5000"
     },
     {
       "title": "재산세",
-      "traffic": "2000"
+      "traffic": "5000"
     },
     {
-      "title": "나인 투 식스",
+      "title": "백화점",
       "traffic": "5000"
+    },
+    {
+      "title": "클뤼프 브뤼허 대 리버풀",
+      "traffic": "5000"
+    },
+    {
+      "title": "사과",
+      "traffic": "10000"
     },
     {
       "title": "루카 윌리엄스 바넷",
       "traffic": "5000"
     },
     {
-      "title": "에콰도르 u-17 대 대한민국 u-17",
-      "traffic": "1000"
+      "title": "난방",
+      "traffic": "5000"
     },
     {
-      "title": "강남",
-      "traffic": "1000"
+      "title": "이한범",
+      "traffic": "10000"
     },
     {
-      "title": "에디 차",
-      "traffic": "2000"
-    },
-    {
-      "title": "공휴일",
-      "traffic": "2000"
-    },
-    {
-      "title": "대전광역시",
-      "traffic": "2000"
+      "title": "sabah 대 바르셀로나",
+      "traffic": "5000"
     }
   ],
   "groups": [
@@ -93,10 +93,10 @@
       "source": "https://trends.google.com/trending?geo=KR&hours=24&hl=ko",
       "method": "google_feed_order",
       "googleCategoryIds": [],
-      "updatedAt": "2026-11-25T13:40:17.627470+00:00",
+      "updatedAt": "2026-11-25T22:47:37.504386+00:00",
       "status": "ok",
       "refreshFailed": false,
-      "totalAvailable": 208,
+      "totalAvailable": 190,
       "items": [
         {
           "title": "반도체",
@@ -108,75 +108,75 @@
         },
         {
           "title": "고소영",
-          "traffic": "20000"
+          "traffic": "50000"
         },
         {
           "title": "빅테크",
           "traffic": "20000"
         },
         {
-          "title": "에릭 페디",
+          "title": "하사",
+          "traffic": "20000"
+        },
+        {
+          "title": "강남",
+          "traffic": "20000"
+        },
+        {
+          "title": "스포르팅 대 맨유",
           "traffic": "10000"
         },
         {
           "title": "트레킹",
-          "traffic": "5000"
-        },
-        {
-          "title": "노소영",
-          "traffic": "20000"
-        },
-        {
-          "title": "가시마 앤틀러스 대 전북",
           "traffic": "10000"
         },
         {
           "title": "임차인",
-          "traffic": "5000"
+          "traffic": "10000"
         },
         {
           "title": "서훈",
+          "traffic": "10000"
+        },
+        {
+          "title": "세무사",
           "traffic": "5000"
         },
         {
-          "title": "고경표 음주 운전",
-          "traffic": "5000"
-        },
-        {
-          "title": "이한범",
+          "title": "성유리",
           "traffic": "5000"
         },
         {
           "title": "재산세",
-          "traffic": "2000"
+          "traffic": "5000"
         },
         {
-          "title": "나인 투 식스",
+          "title": "백화점",
           "traffic": "5000"
+        },
+        {
+          "title": "클뤼프 브뤼허 대 리버풀",
+          "traffic": "5000"
+        },
+        {
+          "title": "사과",
+          "traffic": "10000"
         },
         {
           "title": "루카 윌리엄스 바넷",
           "traffic": "5000"
         },
         {
-          "title": "에콰도르 u-17 대 대한민국 u-17",
-          "traffic": "1000"
+          "title": "난방",
+          "traffic": "5000"
         },
         {
-          "title": "강남",
-          "traffic": "1000"
+          "title": "이한범",
+          "traffic": "10000"
         },
         {
-          "title": "에디 차",
-          "traffic": "2000"
-        },
-        {
-          "title": "공휴일",
-          "traffic": "2000"
-        },
-        {
-          "title": "대전광역시",
-          "traffic": "2000"
+          "title": "sabah 대 바르셀로나",
+          "traffic": "5000"
         }
       ]
     },
@@ -189,11 +189,15 @@
       "googleCategoryIds": [
         5
       ],
-      "updatedAt": "2026-11-25T13:40:17.627470+00:00",
+      "updatedAt": "2026-11-25T22:47:37.504386+00:00",
       "status": "ok",
       "refreshFailed": false,
       "totalAvailable": 12,
       "items": [
+        {
+          "title": "편의점",
+          "traffic": "200"
+        },
         {
           "title": "배추",
           "traffic": "20000"
@@ -215,10 +219,6 @@
           "traffic": "2000"
         },
         {
-          "title": "미역국",
-          "traffic": "20000"
-        },
-        {
           "title": "팝콘",
           "traffic": "500"
         },
@@ -227,8 +227,8 @@
           "traffic": "1000"
         },
         {
-          "title": "자영업",
-          "traffic": "1000"
+          "title": "머랭롤",
+          "traffic": "100"
         },
         {
           "title": "버거킹 초콜릿와퍼",
@@ -253,29 +253,29 @@
       "googleCategoryIds": [
         4
       ],
-      "updatedAt": "2026-11-25T13:40:17.627470+00:00",
+      "updatedAt": "2026-11-25T22:47:37.504386+00:00",
       "status": "ok",
       "refreshFailed": false,
-      "totalAvailable": 155,
+      "totalAvailable": 158,
       "items": [
         {
           "title": "고소영",
-          "traffic": "20000"
+          "traffic": "50000"
         },
         {
           "title": "김호중",
           "traffic": "50000"
         },
         {
+          "title": "강남",
+          "traffic": "20000"
+        },
+        {
           "title": "배용준",
           "traffic": "20000"
         },
         {
-          "title": "푸른길",
-          "traffic": "20000"
-        },
-        {
-          "title": "오정태",
+          "title": "이도현",
           "traffic": "20000"
         },
         {
@@ -283,60 +283,60 @@
           "traffic": "10000"
         },
         {
-          "title": "원현주",
-          "traffic": "50000"
-        },
-        {
-          "title": "이도현",
+          "title": "오정태",
           "traffic": "20000"
         },
         {
-          "title": "나인 투 식스",
+          "title": "성유리",
           "traffic": "5000"
         },
         {
-          "title": "강남",
-          "traffic": "1000"
-        },
-        {
-          "title": "현경렬",
-          "traffic": "10000"
-        },
-        {
-          "title": "과즙세연",
+          "title": "시그널",
           "traffic": "5000"
+        },
+        {
+          "title": "황윤성",
+          "traffic": "2000"
+        },
+        {
+          "title": "은퇴요원+관리팀",
+          "traffic": "2000"
         },
         {
           "title": "김서형",
           "traffic": "5000"
         },
         {
+          "title": "김지민",
+          "traffic": "5000"
+        },
+        {
+          "title": "이혼",
+          "traffic": "50000"
+        },
+        {
+          "title": "과즙세연",
+          "traffic": "5000"
+        },
+        {
+          "title": "성시경",
+          "traffic": "2000"
+        },
+        {
+          "title": "유은성",
+          "traffic": "500"
+        },
+        {
           "title": "청룡영화상",
-          "traffic": "1000"
+          "traffic": "2000"
+        },
+        {
+          "title": "김새롬",
+          "traffic": "2000"
         },
         {
           "title": "남진",
           "traffic": "200000"
-        },
-        {
-          "title": "은퇴 요원 관리팀",
-          "traffic": "2000"
-        },
-        {
-          "title": "재혼황후",
-          "traffic": "2000"
-        },
-        {
-          "title": "차정원",
-          "traffic": "20000"
-        },
-        {
-          "title": "김혜수",
-          "traffic": "50000"
-        },
-        {
-          "title": "김지민",
-          "traffic": "5000"
         }
       ]
     },
@@ -347,7 +347,7 @@
       "source": "https://trends.google.com/trending?geo=KR&hours=168&hl=ko",
       "method": "related_keyword_filter",
       "googleCategoryIds": [],
-      "updatedAt": "2026-11-25T13:40:17.627470+00:00",
+      "updatedAt": "2026-11-25T22:47:37.504386+00:00",
       "status": "ok",
       "refreshFailed": false,
       "totalAvailable": 0,
@@ -362,7 +362,7 @@
       "googleCategoryIds": [
         1
       ],
-      "updatedAt": "2026-11-25T13:40:17.627470+00:00",
+      "updatedAt": "2026-11-25T22:47:37.504386+00:00",
       "status": "ok",
       "refreshFailed": false,
       "totalAvailable": 9,
@@ -414,38 +414,38 @@
       "googleCategoryIds": [
         19
       ],
-      "updatedAt": "2026-11-25T13:40:17.627470+00:00",
+      "updatedAt": "2026-11-25T22:47:37.504386+00:00",
       "status": "ok",
       "refreshFailed": false,
       "totalAvailable": 10,
       "items": [
         {
           "title": "트레킹",
-          "traffic": "5000"
+          "traffic": "10000"
+        },
+        {
+          "title": "무궁화호",
+          "traffic": "2000"
+        },
+        {
+          "title": "대한민국 법무부",
+          "traffic": "2000"
         },
         {
           "title": "관광",
           "traffic": "50000"
         },
         {
-          "title": "무궁화호",
-          "traffic": "1000"
-        },
-        {
           "title": "호텔 영일대",
           "traffic": "1000"
         },
         {
-          "title": "겨울",
-          "traffic": "2000"
+          "title": "고려대",
+          "traffic": "500"
         },
         {
           "title": "인천발 ktx",
           "traffic": "200"
-        },
-        {
-          "title": "고려대",
-          "traffic": "500"
         },
         {
           "title": "항공",
@@ -470,7 +470,7 @@
       "googleCategoryIds": [
         3
       ],
-      "updatedAt": "2026-11-25T13:40:17.627470+00:00",
+      "updatedAt": "2026-11-25T22:47:37.504386+00:00",
       "status": "ok",
       "refreshFailed": false,
       "totalAvailable": 236,
@@ -480,80 +480,80 @@
           "traffic": "200000"
         },
         {
-          "title": "상장",
-          "traffic": "100000"
-        },
-        {
           "title": "연금 개혁",
           "traffic": "50000"
+        },
+        {
+          "title": "상장",
+          "traffic": "100000"
         },
         {
           "title": "빅테크",
           "traffic": "20000"
         },
         {
-          "title": "성심당",
-          "traffic": "20000"
+          "title": "재산세",
+          "traffic": "5000"
         },
         {
-          "title": "국가장학금",
+          "title": "사과",
           "traffic": "10000"
         },
         {
-          "title": "재산세",
+          "title": "난방",
+          "traffic": "5000"
+        },
+        {
+          "title": "세무조사",
           "traffic": "2000"
         },
         {
-          "title": "난방",
+          "title": "삼성전기",
+          "traffic": "5000"
+        },
+        {
+          "title": "대야",
+          "traffic": "2000"
+        },
+        {
+          "title": "대한광통신",
           "traffic": "1000"
         },
         {
-          "title": "대만",
+          "title": "존리",
           "traffic": "2000"
         },
         {
           "title": "해군",
-          "traffic": "500"
-        },
-        {
-          "title": "증안 펀드",
-          "traffic": "5000"
-        },
-        {
-          "title": "마이크론 테크놀로지",
-          "traffic": "500"
-        },
-        {
-          "title": "pce 발표",
-          "traffic": "200"
-        },
-        {
-          "title": "pce",
-          "traffic": "500"
-        },
-        {
-          "title": "산업단지",
-          "traffic": "10000"
-        },
-        {
-          "title": "국민연금공단",
           "traffic": "2000"
         },
         {
-          "title": "컨테이너선",
+          "title": "스테이블코인",
           "traffic": "5000"
         },
         {
-          "title": "퇴직",
-          "traffic": "20000"
+          "title": "사직",
+          "traffic": "1000"
         },
         {
-          "title": "숲",
-          "traffic": "5000"
+          "title": "기초노령연금",
+          "traffic": "2000"
         },
         {
-          "title": "채무",
-          "traffic": "5000"
+          "title": "농업",
+          "traffic": "2000"
+        },
+        {
+          "title": "kf-21 보라매",
+          "traffic": "1000"
+        },
+        {
+          "title": "매일경제",
+          "traffic": "10000"
+        },
+        {
+          "title": "무궁화호",
+          "traffic": "2000"
         }
       ]
     },
@@ -567,18 +567,18 @@
         15,
         18
       ],
-      "updatedAt": "2026-11-25T13:40:17.627470+00:00",
+      "updatedAt": "2026-11-25T22:47:37.504386+00:00",
       "status": "ok",
       "refreshFailed": false,
-      "totalAvailable": 30,
+      "totalAvailable": 28,
       "items": [
         {
           "title": "리만가설",
           "traffic": "50000"
         },
         {
-          "title": "주주",
-          "traffic": "2000"
+          "title": "보안",
+          "traffic": "200"
         },
         {
           "title": "헤드폰",
@@ -589,14 +589,6 @@
           "traffic": "2000"
         },
         {
-          "title": "노벨상",
-          "traffic": "500"
-        },
-        {
-          "title": "행동",
-          "traffic": "200"
-        },
-        {
           "title": "27수능",
           "traffic": "10000"
         },
@@ -605,23 +597,19 @@
           "traffic": "2000"
         },
         {
+          "title": "슈퍼문",
+          "traffic": "1000"
+        },
+        {
           "title": "반도체 메모리",
           "traffic": "1000"
         },
         {
-          "title": "대한전선",
-          "traffic": "200"
+          "title": "노벨상",
+          "traffic": "500"
         },
         {
           "title": "애플",
-          "traffic": "2000"
-        },
-        {
-          "title": "lean",
-          "traffic": "1000"
-        },
-        {
-          "title": "jensen huang",
           "traffic": "2000"
         },
         {
@@ -637,20 +625,32 @@
           "traffic": "1000"
         },
         {
-          "title": "lg디스플레이",
+          "title": "lean",
           "traffic": "1000"
+        },
+        {
+          "title": "jensen huang",
+          "traffic": "2000"
+        },
+        {
+          "title": "대한전선",
+          "traffic": "200"
         },
         {
           "title": "nginx",
           "traffic": "2000"
         },
         {
-          "title": "리벨리온",
-          "traffic": "500"
+          "title": "lg디스플레이",
+          "traffic": "1000"
         },
         {
-          "title": "안개",
-          "traffic": "1000"
+          "title": "삼성디스플레이",
+          "traffic": "200"
+        },
+        {
+          "title": "리벨리온",
+          "traffic": "500"
         }
       ]
     },
@@ -663,21 +663,25 @@
       "googleCategoryIds": [
         17
       ],
-      "updatedAt": "2026-11-25T13:40:17.627470+00:00",
+      "updatedAt": "2026-11-25T22:47:37.504386+00:00",
       "status": "ok",
       "refreshFailed": false,
-      "totalAvailable": 226,
+      "totalAvailable": 237,
       "items": [
         {
           "title": "에릭 페디",
+          "traffic": "20000"
+        },
+        {
+          "title": "스포르팅 대 맨유",
           "traffic": "10000"
         },
         {
-          "title": "가시마 앤틀러스 대 전북",
+          "title": "fifa u-17 월드컵",
           "traffic": "10000"
         },
         {
-          "title": "이한범",
+          "title": "클뤼프 브뤼허 대 리버풀",
           "traffic": "5000"
         },
         {
@@ -685,68 +689,64 @@
           "traffic": "50000"
         },
         {
-          "title": "에콰도르 u-17 대 대한민국 u-17",
-          "traffic": "1000"
-        },
-        {
-          "title": "fifa u-17 월드컵",
+          "title": "이한범",
           "traffic": "10000"
         },
         {
-          "title": "에디 차",
+          "title": "sabah 대 바르셀로나",
+          "traffic": "5000"
+        },
+        {
+          "title": "psg 대 로마",
           "traffic": "2000"
         },
         {
-          "title": "thanksgiving 2026",
-          "traffic": "1000"
+          "title": "당구",
+          "traffic": "5000"
         },
         {
-          "title": "세인트루이스 시티 sc 대 엘에이 fc",
-          "traffic": "100000"
+          "title": "가시마 앤틀러스 대 전북",
+          "traffic": "10000"
         },
         {
-          "title": "afc u-23 아시안컵",
-          "traffic": "2000"
+          "title": "챔피언스리그",
+          "traffic": "5000"
         },
         {
           "title": "챔스",
           "traffic": "10000"
         },
         {
-          "title": "persib bandung vs fc seoul",
+          "title": "에디 차",
+          "traffic": "5000"
+        },
+        {
+          "title": "선수",
+          "traffic": "2000"
+        },
+        {
+          "title": "afc u-23 아시안컵",
+          "traffic": "2000"
+        },
+        {
+          "title": "양준혁",
+          "traffic": "1000"
+        },
+        {
+          "title": "sporting vs man utd",
+          "traffic": "1000"
+        },
+        {
+          "title": "สปอร์ติงลิสบอน พบ แมนยู",
           "traffic": "500"
         },
         {
-          "title": "페이즈",
-          "traffic": "200"
+          "title": "손아섭",
+          "traffic": "500"
         },
         {
-          "title": "최재훈",
-          "traffic": "20000"
-        },
-        {
-          "title": "탁구",
-          "traffic": "20000"
-        },
-        {
-          "title": "투수",
-          "traffic": "10000"
-        },
-        {
-          "title": "김혜성",
-          "traffic": "10000"
-        },
-        {
-          "title": "리버풀 대 맨유",
-          "traffic": "20000"
-        },
-        {
-          "title": "헤타페 대 아틀레티코",
-          "traffic": "50000"
-        },
-        {
-          "title": "챔피언스리그",
-          "traffic": "2000"
+          "title": "sabah vs barcelona",
+          "traffic": "1000"
         }
       ]
     },
@@ -759,14 +759,22 @@
       "googleCategoryIds": [
         7
       ],
-      "updatedAt": "2026-11-25T13:40:17.627470+00:00",
+      "updatedAt": "2026-11-25T22:47:37.504386+00:00",
       "status": "ok",
       "refreshFailed": false,
-      "totalAvailable": 17,
+      "totalAvailable": 18,
       "items": [
+        {
+          "title": "대야",
+          "traffic": "2000"
+        },
         {
           "title": "무신사",
           "traffic": "20000"
+        },
+        {
+          "title": "간호사",
+          "traffic": "200"
         },
         {
           "title": "항생제",
@@ -777,20 +785,16 @@
           "traffic": "20000"
         },
         {
+          "title": "알테오젠",
+          "traffic": "200"
+        },
+        {
           "title": "심장병",
           "traffic": "5000"
         },
         {
-          "title": "임신",
-          "traffic": "500"
-        },
-        {
           "title": "습관",
           "traffic": "10000"
-        },
-        {
-          "title": "노화",
-          "traffic": "200"
         },
         {
           "title": "콜레라",
@@ -799,6 +803,10 @@
         {
           "title": "굴",
           "traffic": "2000"
+        },
+        {
+          "title": "노화",
+          "traffic": "200"
         },
         {
           "title": "lig 디펜스&에어로스페이스",
@@ -811,10 +819,6 @@
         {
           "title": "의료기사",
           "traffic": "100"
-        },
-        {
-          "title": "알테오젠",
-          "traffic": "200"
         },
         {
           "title": "메디게이트뉴스",
