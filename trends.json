@@ -2,87 +2,87 @@
   "schema": 2,
   "country": "KR",
   "source": "https://trends.google.com/trending?geo=KR&hours=24&hl=ko",
-  "updatedAt": "2026-11-27T23:05:28.617071+00:00",
+  "updatedAt": "2026-11-28T04:41:58.504376+00:00",
   "items": [
     {
-      "title": "강시후",
-      "traffic": "20000"
-    },
-    {
-      "title": "남경필",
+      "title": "이효리",
       "traffic": "20000"
     },
     {
       "title": "파기환송",
-      "traffic": "10000"
-    },
-    {
-      "title": "현대 아반떼",
-      "traffic": "10000"
+      "traffic": "20000"
     },
     {
       "title": "박서진",
-      "traffic": "10000"
+      "traffic": "20000"
     },
     {
-      "title": "손원일 급 잠수함",
-      "traffic": "10000"
+      "title": "여행",
+      "traffic": "20000"
     },
     {
-      "title": "이효리",
+      "title": "이해욱",
       "traffic": "5000"
     },
     {
-      "title": "손연재",
-      "traffic": "10000"
-    },
-    {
-      "title": "대장동 개발 논란",
-      "traffic": "10000"
-    },
-    {
       "title": "노팅엄 포레스트 대 첼시",
+      "traffic": "10000"
+    },
+    {
+      "title": "이승엽",
+      "traffic": "5000"
+    },
+    {
+      "title": "삼성 배당금",
+      "traffic": "5000"
+    },
+    {
+      "title": "르윈 디아즈",
+      "traffic": "5000"
+    },
+    {
+      "title": "의사",
       "traffic": "5000"
     },
     {
       "title": "최휘영",
-      "traffic": "2000"
-    },
-    {
-      "title": "연금",
-      "traffic": "10000"
-    },
-    {
-      "title": "한동훈",
-      "traffic": "10000"
-    },
-    {
-      "title": "로스앤젤레스 fc",
       "traffic": "5000"
     },
     {
-      "title": "최성민",
+      "title": "콜럼버스 크루 대 인터 마이애미",
+      "traffic": "2000"
+    },
+    {
+      "title": "크리스 리벤",
+      "traffic": "5000"
+    },
+    {
+      "title": "오세훈",
+      "traffic": "5000"
+    },
+    {
+      "title": "100일의 거짓말 15화",
       "traffic": "2000"
     },
     {
       "title": "한국노인인력개발원",
-      "traffic": "2000"
-    },
-    {
-      "title": "오세훈",
-      "traffic": "2000"
-    },
-    {
-      "title": "엘니뇨",
       "traffic": "5000"
     },
     {
-      "title": "한능검",
-      "traffic": "5000"
+      "title": "농협은행",
+      "traffic": "10000"
     },
     {
       "title": "교사",
+      "traffic": "5000"
+    },
+    {
+      "title": "김승원",
       "traffic": "2000"
+    },
+    {
+      "title": "샌안토니오 대 la 레이커스",
+      "traffic": "1000"
     }
   ],
   "groups": [
@@ -93,90 +93,90 @@
       "source": "https://trends.google.com/trending?geo=KR&hours=24&hl=ko",
       "method": "google_feed_order",
       "googleCategoryIds": [],
-      "updatedAt": "2026-11-27T23:05:28.617071+00:00",
+      "updatedAt": "2026-11-28T04:41:58.504376+00:00",
       "status": "ok",
       "refreshFailed": false,
-      "totalAvailable": 157,
+      "totalAvailable": 164,
       "items": [
         {
-          "title": "강시후",
-          "traffic": "20000"
-        },
-        {
-          "title": "남경필",
+          "title": "이효리",
           "traffic": "20000"
         },
         {
           "title": "파기환송",
-          "traffic": "10000"
-        },
-        {
-          "title": "현대 아반떼",
-          "traffic": "10000"
+          "traffic": "20000"
         },
         {
           "title": "박서진",
-          "traffic": "10000"
+          "traffic": "20000"
         },
         {
-          "title": "손원일 급 잠수함",
-          "traffic": "10000"
+          "title": "여행",
+          "traffic": "20000"
         },
         {
-          "title": "이효리",
+          "title": "이해욱",
           "traffic": "5000"
         },
         {
-          "title": "손연재",
-          "traffic": "10000"
-        },
-        {
-          "title": "대장동 개발 논란",
-          "traffic": "10000"
-        },
-        {
           "title": "노팅엄 포레스트 대 첼시",
+          "traffic": "10000"
+        },
+        {
+          "title": "이승엽",
+          "traffic": "5000"
+        },
+        {
+          "title": "삼성 배당금",
+          "traffic": "5000"
+        },
+        {
+          "title": "르윈 디아즈",
+          "traffic": "5000"
+        },
+        {
+          "title": "의사",
           "traffic": "5000"
         },
         {
           "title": "최휘영",
-          "traffic": "2000"
-        },
-        {
-          "title": "연금",
-          "traffic": "10000"
-        },
-        {
-          "title": "한동훈",
-          "traffic": "10000"
-        },
-        {
-          "title": "로스앤젤레스 fc",
           "traffic": "5000"
         },
         {
-          "title": "최성민",
+          "title": "콜럼버스 크루 대 인터 마이애미",
+          "traffic": "2000"
+        },
+        {
+          "title": "크리스 리벤",
+          "traffic": "5000"
+        },
+        {
+          "title": "오세훈",
+          "traffic": "5000"
+        },
+        {
+          "title": "100일의 거짓말 15화",
           "traffic": "2000"
         },
         {
           "title": "한국노인인력개발원",
-          "traffic": "2000"
-        },
-        {
-          "title": "오세훈",
-          "traffic": "2000"
-        },
-        {
-          "title": "엘니뇨",
           "traffic": "5000"
         },
         {
-          "title": "한능검",
-          "traffic": "5000"
+          "title": "농협은행",
+          "traffic": "10000"
         },
         {
           "title": "교사",
+          "traffic": "5000"
+        },
+        {
+          "title": "김승원",
           "traffic": "2000"
+        },
+        {
+          "title": "샌안토니오 대 la 레이커스",
+          "traffic": "1000"
         }
       ]
     },
@@ -189,14 +189,18 @@
       "googleCategoryIds": [
         5
       ],
-      "updatedAt": "2026-11-27T23:05:28.617071+00:00",
+      "updatedAt": "2026-11-28T04:41:58.504376+00:00",
       "status": "ok",
       "refreshFailed": false,
-      "totalAvailable": 12,
+      "totalAvailable": 13,
       "items": [
         {
           "title": "맥도날드",
           "traffic": "50000"
+        },
+        {
+          "title": "물",
+          "traffic": "1000"
         },
         {
           "title": "김밥",
@@ -219,12 +223,12 @@
           "traffic": "2000"
         },
         {
-          "title": "태국",
-          "traffic": "1000"
-        },
-        {
           "title": "머랭롤",
           "traffic": "500"
+        },
+        {
+          "title": "태국",
+          "traffic": "1000"
         },
         {
           "title": "포장",
@@ -253,33 +257,25 @@
       "googleCategoryIds": [
         4
       ],
-      "updatedAt": "2026-11-27T23:05:28.617071+00:00",
+      "updatedAt": "2026-11-28T04:41:58.504376+00:00",
       "status": "ok",
       "refreshFailed": false,
-      "totalAvailable": 154,
+      "totalAvailable": 152,
       "items": [
         {
-          "title": "시그널",
+          "title": "이효리",
           "traffic": "20000"
         },
         {
-          "title": "고소영",
-          "traffic": "100000"
+          "title": "박서진",
+          "traffic": "20000"
         },
         {
           "title": "문근영",
           "traffic": "20000"
         },
         {
-          "title": "박서진",
-          "traffic": "10000"
-        },
-        {
-          "title": "이효리",
-          "traffic": "5000"
-        },
-        {
-          "title": "이동연",
+          "title": "최성민",
           "traffic": "10000"
         },
         {
@@ -287,32 +283,36 @@
           "traffic": "10000"
         },
         {
+          "title": "시그널",
+          "traffic": "20000"
+        },
+        {
+          "title": "이동연",
+          "traffic": "20000"
+        },
+        {
           "title": "지나",
-          "traffic": "2000"
+          "traffic": "5000"
         },
         {
-          "title": "최성민",
-          "traffic": "2000"
+          "title": "100일의 거짓말 15화",
+          "traffic": "5000"
         },
         {
-          "title": "청룡영화상",
+          "title": "띠별 운세",
+          "traffic": "5000"
+        },
+        {
+          "title": "둠스데이",
           "traffic": "10000"
         },
         {
-          "title": "한화그룹",
-          "traffic": "500"
-        },
-        {
-          "title": "박훈정",
-          "traffic": "500"
+          "title": "고소영",
+          "traffic": "100000"
         },
         {
           "title": "남진",
           "traffic": "200000"
-        },
-        {
-          "title": "죽음",
-          "traffic": "200"
         },
         {
           "title": "그냥사람친구",
@@ -331,11 +331,15 @@
           "traffic": "20000"
         },
         {
-          "title": "성유리",
-          "traffic": "20000"
+          "title": "현빈",
+          "traffic": "200"
         },
         {
           "title": "오정태",
+          "traffic": "20000"
+        },
+        {
+          "title": "성유리",
           "traffic": "20000"
         }
       ]
@@ -347,7 +351,7 @@
       "source": "https://trends.google.com/trending?geo=KR&hours=168&hl=ko",
       "method": "related_keyword_filter",
       "googleCategoryIds": [],
-      "updatedAt": "2026-11-27T23:05:28.617071+00:00",
+      "updatedAt": "2026-11-28T04:41:58.504376+00:00",
       "status": "ok",
       "refreshFailed": false,
       "totalAvailable": 0,
@@ -362,10 +366,10 @@
       "googleCategoryIds": [
         1
       ],
-      "updatedAt": "2026-11-27T23:05:28.617071+00:00",
+      "updatedAt": "2026-11-28T04:41:58.504376+00:00",
       "status": "ok",
       "refreshFailed": false,
-      "totalAvailable": 15,
+      "totalAvailable": 16,
       "items": [
         {
           "title": "현대자동차",
@@ -384,16 +388,16 @@
           "traffic": "10000"
         },
         {
+          "title": "교통",
+          "traffic": "1000"
+        },
+        {
           "title": "비야디 자동차",
           "traffic": "10000"
         },
         {
           "title": "제네시스",
           "traffic": "2000"
-        },
-        {
-          "title": "kg모빌리티",
-          "traffic": "5000"
         },
         {
           "title": "낸시랭",
@@ -412,16 +416,20 @@
           "traffic": "200"
         },
         {
-          "title": "현대자동차그룹",
+          "title": "비야디",
           "traffic": "500"
         },
         {
-          "title": "비야디",
+          "title": "현대자동차그룹",
           "traffic": "500"
         },
         {
           "title": "리튬인산철 배터리",
           "traffic": "100"
+        },
+        {
+          "title": "플러그인 하이브리드 자동차",
+          "traffic": "200"
         },
         {
           "title": "혼다",
@@ -438,11 +446,15 @@
       "googleCategoryIds": [
         19
       ],
-      "updatedAt": "2026-11-27T23:05:28.617071+00:00",
+      "updatedAt": "2026-11-28T04:41:58.504376+00:00",
       "status": "ok",
       "refreshFailed": false,
-      "totalAvailable": 3,
+      "totalAvailable": 4,
       "items": [
+        {
+          "title": "여행",
+          "traffic": "20000"
+        },
         {
           "title": "금오산",
           "traffic": "200"
@@ -466,90 +478,90 @@
       "googleCategoryIds": [
         3
       ],
-      "updatedAt": "2026-11-27T23:05:28.617071+00:00",
+      "updatedAt": "2026-11-28T04:41:58.504376+00:00",
       "status": "ok",
       "refreshFailed": false,
-      "totalAvailable": 241,
+      "totalAvailable": 240,
       "items": [
         {
-          "title": "빅테크",
-          "traffic": "100000"
+          "title": "삼성 배당금",
+          "traffic": "50000"
         },
         {
-          "title": "삼성전자 배당금",
+          "title": "국가장학금",
           "traffic": "20000"
         },
         {
-          "title": "연금",
+          "title": "농협은행",
           "traffic": "10000"
         },
         {
-          "title": "농협은행",
-          "traffic": "5000"
-        },
-        {
-          "title": "기부",
-          "traffic": "2000"
-        },
-        {
-          "title": "장갑차",
-          "traffic": "1000"
-        },
-        {
           "title": "국군간호사관학교",
-          "traffic": "1000"
-        },
-        {
-          "title": "마이클 버리",
-          "traffic": "5000"
-        },
-        {
-          "title": "부동산",
           "traffic": "2000"
         },
         {
-          "title": "창신메모리테크놀로지",
-          "traffic": "1000"
-        },
-        {
-          "title": "롯데그룹",
-          "traffic": "2000"
+          "title": "빅테크",
+          "traffic": "100000"
         },
         {
           "title": "연금 개혁",
           "traffic": "100000"
         },
         {
-          "title": "종부세",
-          "traffic": "10000"
-        },
-        {
-          "title": "보험",
-          "traffic": "5000"
-        },
-        {
-          "title": "jyp엔터테인먼트",
+          "title": "서울경제",
           "traffic": "2000"
         },
         {
-          "title": "한진칼",
-          "traffic": "500"
+          "title": "은평구",
+          "traffic": "1000"
         },
         {
-          "title": "주주",
-          "traffic": "500"
+          "title": "한화그룹",
+          "traffic": "1000"
         },
         {
-          "title": "물",
-          "traffic": "200"
+          "title": "뉴스1",
+          "traffic": "1000"
+        },
+        {
+          "title": "래미안원베일리",
+          "traffic": "10000"
         },
         {
           "title": "상장",
           "traffic": "100000"
         },
         {
-          "title": "장인화",
-          "traffic": "500"
+          "title": "한국은행 기준금리",
+          "traffic": "5000"
+        },
+        {
+          "title": "연금",
+          "traffic": "20000"
+        },
+        {
+          "title": "도로",
+          "traffic": "200"
+        },
+        {
+          "title": "국민연금공단",
+          "traffic": "2000"
+        },
+        {
+          "title": "장갑차",
+          "traffic": "2000"
+        },
+        {
+          "title": "국제 원자력 기구",
+          "traffic": "5000"
+        },
+        {
+          "title": "창신메모리테크놀로지",
+          "traffic": "2000"
+        },
+        {
+          "title": "가죽 재킷",
+          "traffic": "100000"
         }
       ]
     },
@@ -563,11 +575,19 @@
         15,
         18
       ],
-      "updatedAt": "2026-11-27T23:05:28.617071+00:00",
+      "updatedAt": "2026-11-28T04:41:58.504376+00:00",
       "status": "ok",
       "refreshFailed": false,
       "totalAvailable": 28,
       "items": [
+        {
+          "title": "삼성 엑시노스",
+          "traffic": "2000"
+        },
+        {
+          "title": "표절",
+          "traffic": "500"
+        },
         {
           "title": "스테이블코인",
           "traffic": "5000"
@@ -595,14 +615,6 @@
         {
           "title": "5세대 이동 통신",
           "traffic": "200"
-        },
-        {
-          "title": "google",
-          "traffic": "100"
-        },
-        {
-          "title": "삼성 갤럭시",
-          "traffic": "2000"
         },
         {
           "title": "애플",
@@ -645,8 +657,8 @@
           "traffic": "500"
         },
         {
-          "title": "리벨리온",
-          "traffic": "500"
+          "title": "google",
+          "traffic": "100"
         }
       ]
     },
@@ -659,10 +671,10 @@
       "googleCategoryIds": [
         17
       ],
-      "updatedAt": "2026-11-27T23:05:28.617071+00:00",
+      "updatedAt": "2026-11-28T04:41:58.504376+00:00",
       "status": "ok",
       "refreshFailed": false,
-      "totalAvailable": 247,
+      "totalAvailable": 248,
       "items": [
         {
           "title": "김사윤",
@@ -677,35 +689,43 @@
           "traffic": "50000"
         },
         {
+          "title": "노팅엄 포레스트 대 첼시",
+          "traffic": "20000"
+        },
+        {
           "title": "강소휘",
           "traffic": "10000"
         },
         {
-          "title": "제임스 네일",
-          "traffic": "20000"
-        },
-        {
-          "title": "노팅엄 포레스트 대 첼시",
-          "traffic": "10000"
-        },
-        {
-          "title": "로스앤젤레스 fc",
-          "traffic": "20000"
-        },
-        {
-          "title": "크리스 리벤",
-          "traffic": "100000"
-        },
-        {
-          "title": "최정민",
+          "title": "이승엽",
           "traffic": "5000"
         },
         {
-          "title": "복싱",
+          "title": "르윈 디아즈",
+          "traffic": "5000"
+        },
+        {
+          "title": "콜럼버스 크루 대 인터 마이애미",
+          "traffic": "5000"
+        },
+        {
+          "title": "골프장",
+          "traffic": "5000"
+        },
+        {
+          "title": "크리스 리벤",
+          "traffic": "10000"
+        },
+        {
+          "title": "샌안토니오 대 la 레이커스",
+          "traffic": "1000"
+        },
+        {
+          "title": "이동욱",
           "traffic": "2000"
         },
         {
-          "title": "박현경",
+          "title": "복싱",
           "traffic": "2000"
         },
         {
@@ -713,36 +733,28 @@
           "traffic": "20000"
         },
         {
-          "title": "고우석",
-          "traffic": "2000"
-        },
-        {
-          "title": "모리야스 하지메",
-          "traffic": "2000"
-        },
-        {
-          "title": "대한축구협회",
-          "traffic": "500"
-        },
-        {
-          "title": "골프장",
-          "traffic": "1000"
-        },
-        {
           "title": "최민정",
           "traffic": "2000"
         },
         {
-          "title": "온두라스 u-17 대 일본 u-17",
-          "traffic": "1000"
+          "title": "박현경",
+          "traffic": "2000"
         },
         {
-          "title": "nottm forest vs chelsea",
+          "title": "브론슨 리드",
           "traffic": "500"
         },
         {
-          "title": "교통",
-          "traffic": "1000"
+          "title": "이현중",
+          "traffic": "200"
+        },
+        {
+          "title": "국제 축구 연맹",
+          "traffic": "20000"
+        },
+        {
+          "title": "로스앤젤레스 fc",
+          "traffic": "20000"
         }
       ]
     },
@@ -755,14 +767,22 @@
       "googleCategoryIds": [
         7
       ],
-      "updatedAt": "2026-11-27T23:05:28.617071+00:00",
+      "updatedAt": "2026-11-28T04:41:58.504376+00:00",
       "status": "ok",
       "refreshFailed": false,
-      "totalAvailable": 18,
+      "totalAvailable": 21,
       "items": [
         {
           "title": "부부",
           "traffic": "50000"
+        },
+        {
+          "title": "의사",
+          "traffic": "5000"
+        },
+        {
+          "title": "tear gas",
+          "traffic": "200"
         },
         {
           "title": "대한간호협회",
@@ -777,12 +797,12 @@
           "traffic": "2000"
         },
         {
-          "title": "건강보험",
-          "traffic": "1000"
+          "title": "위암",
+          "traffic": "200"
         },
         {
-          "title": "응급실",
-          "traffic": "200"
+          "title": "건강보험",
+          "traffic": "1000"
         },
         {
           "title": "항생제",
@@ -791,6 +811,10 @@
         {
           "title": "치매",
           "traffic": "20000"
+        },
+        {
+          "title": "응급실",
+          "traffic": "500"
         },
         {
           "title": "국시원",
@@ -826,10 +850,6 @@
         },
         {
           "title": "의료기사",
-          "traffic": "100"
-        },
-        {
-          "title": "메디게이트뉴스",
           "traffic": "100"
         }
       ]
